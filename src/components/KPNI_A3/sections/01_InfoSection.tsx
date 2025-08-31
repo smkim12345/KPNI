@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
+import { InputField } from '../components/common/InputField';
 
 export const InfoSection = () => {
   return (
@@ -21,7 +22,7 @@ export const InfoSection = () => {
           width: '80px',
           height: '19px',
           backgroundColor: THEME.colors.mainWhite,
-          borderRadius: '4px',
+          borderRadius: `${THEME.borderRadius.xs}px`,
           backgroundImage: 'url(/path/to/logo.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -69,7 +70,26 @@ export const InfoSection = () => {
         flexDirection: 'column',
         justifyContent: 'center'
       }}>
-        {/* 정보 기입 내용 */}
+        {/* 정보 기입란 */}
+        <Box sx={{
+          width: '133px',
+          backgroundColor: THEME.colors.white,
+          borderRadius: `${THEME.borderRadius.sm}px`,
+          padding: '12px',
+          display: 'flex',
+          flexDirection: 'column',
+          boxSizing: 'border-box',
+          gap: '2px'
+        }}>
+          <InputField label="양육자명" value="김성민" />
+          <InputField label="양육자 생년월일" value="1995.12.14" />
+          <InputField label="자녀와의 관계" value="아들" />
+          <InputField label="양육구분" value="양육구분" />
+          <InputField label="자녀이름" value="김성근" />
+          <InputField label="자녀성별" value="남성" />
+          <InputField label="자녀연령" value="12세" />
+          <InputField label="검사 실시일" value="2025.08.26" />
+        </Box>
       </Box>
       
       {/* 용어설명섹션 */}
@@ -79,10 +99,6 @@ export const InfoSection = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: '18px',
-        padding: '0px 12px',
-        borderRadius: '15px 0px 0px 15px',
-        backgroundColor: THEME.colors.gray,
       }}>
         {/* 용어설명 내용 */}
       </Box>

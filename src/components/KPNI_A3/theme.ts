@@ -37,6 +37,12 @@ export const THEME = {
     xl: 24,
     xxl: 32
   },
+  borderRadius: {
+    xs: 4,
+    sm: 15,
+    md: 20,
+    lg: 25
+  },
   layout: {
     a3: {
       pageBackground: '#f5f5f5',
