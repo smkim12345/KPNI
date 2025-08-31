@@ -91,6 +91,17 @@ export const KPNIResultPage = () => {
           <RightBorder />
         </BorderContainer>
 
+        {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 /}
+        <Box sx={{
+          position: 'absolute',
+          left: '30px',
+          top: '349px',
+          width: '155px',
+          height: '54px',
+          backgroundColor: THEME.colors.gray,
+          zIndex: 1.5
+        }} />
+
         {/* 메인 흰 배경 */}
         <Box sx={{ 
           position: 'absolute',

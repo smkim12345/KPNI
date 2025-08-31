@@ -96,11 +96,113 @@ export const InfoSection = () => {
       <Box sx={{
         height: '414px',
         display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        flexDirection: 'row',
+        alignItems: 'stretch',
+        flex: 1
       }}>
-        {/* 용어설명 내용 */}
+        {/* 용어설명 */}
+        <Box sx={{
+          backgroundColor: THEME.colors.gray,
+          borderRadius: '15px 0px 0px 15px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '18px',
+          padding: '0px 12px',
+          flex: 1,
+          minHeight: '262px'
+        }}>
+          {/* 제목 */}
+          <Typography sx={{
+            fontFamily: THEME.typography.fontFamily.ohsquare,
+            fontWeight: 400,
+            fontSize: '14px',
+            lineHeight: '1.268em',
+            textAlign: 'center',
+            color: THEME.colors.text,
+            alignSelf: 'stretch'
+          }}>
+            부모양육종합검사란?
+          </Typography>
+
+          {/* 인용문 */}
+          <Typography sx={{
+            fontFamily: THEME.typography.fontFamily.ohsquare,
+            fontWeight: 400,
+            fontSize: '10px',
+            lineHeight: '1.268em',
+            textAlign: 'left',
+            color: THEME.colors.text,
+            width: 'fit-content'
+          }}>
+            " 좋은 부모는 완벽한 사람이{'\n'}아니라, 매일 아이와 함께{'\n'}성장하려는 사람입니다 "
+          </Typography>
+
+          {/* 본문 */}
+          <Typography sx={{
+            fontFamily: THEME.typography.fontFamily.ohsquareAir,
+            fontWeight: 300,
+            fontSize: '10px',
+            lineHeight: '1.268em',
+            textAlign: 'left',
+            color: THEME.colors.text,
+            alignSelf: 'stretch'
+          }}>
+            오늘날 부모는 단지 아이를 돌보는 사람을 넘어, 정서 코치, 학습 관리자, 갈등 조정자, 역할 모델 등 다층적인 정체성을 요구받고 있습니다.{'\n\n'}자녀를 양육하는 부모님들로 하여금 정보나 방법 이전에, 자기 자신을 먼저 바라볼 수 있는 거울이 되어주고자 합니다.{'\n'}부모는 누구나 '완벽'하진 않지만, '성찰하고 성장할 수 있는 존재'입니다. PNI는 바로 그 성장을 위한 출발점이 될 것입니다.
+          </Typography>
+
+          {/* 구분선 */}
+          <Box sx={{
+            width: '129px',
+            height: '2px',
+            backgroundColor: '#F2F2F2',
+            alignSelf: 'center'
+          }} />
+
+          {/* 큐알코드 섹션 */}
+          <Box sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '3px',
+            padding: '10px 0px',
+            alignSelf: 'stretch'
+          }}>
+            {/* 큐알코드 박스 */}
+            <Box sx={{
+              width: '64px',
+              height: '64px',
+              backgroundColor: '#4E57A6',
+              padding: '2px',
+              display: 'flex',
+              flexDirection: 'column',
+            }}>
+              {/* QR 코드 placeholder */}
+            </Box>
+
+            {/* 큐알 설명 */}
+            <Box sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '10px',
+              flex: 1
+            }}>
+              <Typography sx={{
+                fontFamily: THEME.typography.fontFamily.ohsquareAir,
+                fontWeight: 300,
+                fontSize: '11px',
+                lineHeight: '1.268em',
+                textAlign: 'center',
+                color: THEME.colors.text
+              }}>
+                QR을 스캔하여{'\n'}해당 동영상을{'\n'}시청해 보세요.
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
