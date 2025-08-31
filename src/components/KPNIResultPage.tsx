@@ -117,7 +117,6 @@ export const KPNIResultPage = () => {
           <Box sx={{
             width: '155px',
             height: '787px',
-            backgroundColor: 'rgb(255, 230, 230,0.5)',
             boxSizing: 'border-box',
           }}>
             <InfoSection />
