@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { THEME } from '../../theme';
+import { THEME } from '../theme';
 
 interface InputFieldProps {
   label: string;

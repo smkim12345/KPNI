@@ -6,7 +6,8 @@
       "Bash(framelink get-frame:*)",
       "mcp__Framelink_Figma_MCP__get_figma_data",
       "Bash(rm:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": []
