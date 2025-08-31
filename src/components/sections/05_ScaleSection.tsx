@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import { SectionTitle } from '../UI/SectionTitle';
 
 export const ScaleSection = () => {
   return (
@@ -8,7 +9,6 @@ export const ScaleSection = () => {
       alignSelf: 'stretch',
       width: '100%',
       height: '761px',
-      backgroundColor: 'rgba(255, 0, 255, 0.3)',
     }}>
       {/* 섹션 제목 */}
       <Box sx={{
@@ -16,10 +16,13 @@ export const ScaleSection = () => {
         flexDirection: 'row',
         alignSelf: 'stretch',
         gap: '4px',
-        backgroundColor: 'rgba(255, 0, 0, 0.3)',
         height: '20px'
       }}>
-        {/* 섹션 제목 내용 */}
+        <SectionTitle 
+          sectionNumber={4}
+          title="척도분석 종합"
+          description="각 척도별 분석 결과를 종합적으로 보여줍니다."
+        />
       </Box>
 
       {/* 척도분석 종합 */}

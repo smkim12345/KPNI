@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import { SectionTitle } from '../UI/SectionTitle';
 
 export const DetailSection = () => {
   return (
@@ -18,10 +19,13 @@ export const DetailSection = () => {
         flexDirection: 'row',
         alignSelf: 'stretch',
         gap: '4px',
-        backgroundColor: 'rgba(255, 0, 0, 0.3)',
         height: '20px'
       }}>
-        {/* 섹션 제목 내용 */}
+        <SectionTitle 
+          sectionNumber={3}
+          title="상세 프로파일"
+          description="각 영역별 상세한 결과를 보여줍니다."
+        />
       </Box>
 
       {/* 상세  프로파일 */}

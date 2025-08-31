@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import { SectionTitle } from '../UI/SectionTitle';
 
 export const ProfileSection = () => {
   return (
@@ -17,10 +18,13 @@ export const ProfileSection = () => {
         flexDirection: 'row',
         alignSelf: 'stretch',
         gap: '4px',
-        backgroundColor: 'rgba(255, 0, 0, 0.3)',
         height: '20px'
       }}>
-        {/* 섹션 제목 내용 */}
+        <SectionTitle 
+          sectionNumber={2}
+          title="종합 프로파일"
+          description="검사 결과에 대한 전체적인 프로파일을 보여줍니다."
+        />
       </Box>
 
       {/* 용어설명 */}
