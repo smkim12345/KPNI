@@ -9,8 +9,8 @@ import { ScaleSection } from './sections/05_ScaleSection';
 
 // A3 페이지 스타일 컴포넌트들
 const PageContainer = styled(Container)({
-  width: '100vw',
-  height: '100vh',
+  minWidth: '1231px', // A3 프레임 + 패딩 보장
+  minHeight: '100vh',
   backgroundColor: THEME.layout.a3.pageBackground,
   display: 'flex',
   justifyContent: 'center',
