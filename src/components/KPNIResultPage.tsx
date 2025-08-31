@@ -91,7 +91,7 @@ export const KPNIResultPage = () => {
           <RightBorder />
         </BorderContainer>
 
-        {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 /}
+        {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 */}
         <Box sx={{
           position: 'absolute',
           left: '30px',

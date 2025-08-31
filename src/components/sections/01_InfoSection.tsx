@@ -15,16 +15,17 @@ export const InfoSection = () => {
         height: '114px',
         display: 'flex',
         flexDirection: 'column',
-        gap: `${THEME.spacing.xs}px`
+        gap: `1px`
       }}>
         {/* 로고 이미지 */}
         <Box sx={{
           width: '80px',
-          height: '19px',
+          height: '30px',
           backgroundColor: THEME.colors.mainWhite,
           borderRadius: `${THEME.borderRadius.xs}px`,
-          backgroundImage: 'url(/path/to/logo.png)',
-          backgroundSize: 'cover',
+          backgroundImage: 'url(./src/images/logo.png)',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
         }} />
         
@@ -177,8 +178,17 @@ export const InfoSection = () => {
               padding: '2px',
               display: 'flex',
               flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}>
-              {/* QR 코드 placeholder */}
+              {/* QR 코드 이미지 */}
+              <Box sx={{
+                width: '60px',
+                height: '60px',
+                backgroundImage: 'url(./src/images/qrcode.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }} />
             </Box>
 
             {/* 큐알 설명 */}
