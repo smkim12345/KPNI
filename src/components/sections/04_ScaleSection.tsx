@@ -47,7 +47,7 @@ export const ScaleSection = () => {
           scaleResults={{
             tScore: "55",
             percentile: "70.5",
-            level: "보통"
+            level: "다소 높음"
           }}
         />
         

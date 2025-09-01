@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
-import { ScaleResultChip } from './ScaleResultChip';
+import { ScaleResultSummary } from './ScaleResultChip';
 
 interface ScaleResultData {
   tScore: string;
@@ -42,7 +42,8 @@ export const ScaleAnalysisCard = ({
         display: 'flex',
         alignItems: 'center',
         gap: '7px',
-        width: '252px'
+        width: '100%',
+        minWidth: '252px'
       }}>
         {/* 아이콘 */}
         <Box sx={{
@@ -54,7 +55,8 @@ export const ScaleAnalysisCard = ({
           width: '28px',
           height: '28px',
           backgroundColor: iconColor,
-          borderRadius: '30px'
+          borderRadius: '30px',
+          flexShrink: 0
         }}>
           <Box
             component="img"
@@ -73,6 +75,7 @@ export const ScaleAnalysisCard = ({
           display: 'flex',
           alignItems: 'center',
           gap: '10px',
+          flexShrink: 0
         }}>
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.pretendard,
@@ -87,29 +90,10 @@ export const ScaleAnalysisCard = ({
         </Box>
         
         {/* 상위척도 결과 요약 */}
-        <Box sx={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '5px',
-          width: '156px',
-        }}>
-          {/* T점수 칩 */}
-          <ScaleResultChip
-            label="T점수"
-            value={scaleResults.tScore}
-          />
-
-          {/* 백분위 칩 */}
-          <ScaleResultChip
-            label="백분위"
-            value={scaleResults.percentile}
-          />
-
-          {/* 수준 칩 (더 큰 크기) */}
-          <ScaleResultChip
-            label="수준"
-            value={scaleResults.level}
-            isLarge={true}
+        <Box sx={{ flexShrink: 1, minWidth: 0 }}>
+          <ScaleResultSummary
+            scaleResults={scaleResults}
+            borderColor={borderColor}
           />
         </Box>
       </Box>
