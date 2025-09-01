@@ -12,7 +12,7 @@ export const InfoSection = () => {
     }}>
       {/* 메인 제목 */}
       <Box sx={{
-        height: '114px',
+        height: '104px',
         display: 'flex',
         flexDirection: 'column',
         gap: `1px`
@@ -45,7 +45,7 @@ export const InfoSection = () => {
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.moyamoya,
           fontWeight: THEME.typography.fontWeight.semiBold,
-          fontSize: `${THEME.typography.fontSize.huge}px`,
+          fontSize: `${THEME.typography.fontSize.huge-8}px`,
           lineHeight: THEME.typography.lineHeight.tight,
           color: THEME.colors.mainWhite,
         }}>
@@ -78,7 +78,7 @@ export const InfoSection = () => {
       
       {/* 정보 기입 섹션 */}
       <Box sx={{
-        height: '259px',
+        height: '269px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center'
@@ -92,7 +92,7 @@ export const InfoSection = () => {
           display: 'flex',
           flexDirection: 'column',
           boxSizing: 'border-box',
-          gap: '2px'
+          gap: '3px'
         }}>
           <InputField label="양육자명" value="김성민" />
           <InputField label="양육자 생년월일" value="1995.12.14" />

@@ -16,7 +16,7 @@ export const InputField = ({ label, value }: InputFieldProps) => {
       {/* 하단 구분선 */}
       <Box sx={{
         position: 'absolute',
-        bottom: 1,
+        bottom: 0.5,
         left: 0,
         width: '109px',
         height: '0.5px',
