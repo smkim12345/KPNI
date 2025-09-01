@@ -32,7 +32,7 @@ export const InfoSection = () => {
         {/* K-PNI */}
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.moyamoya,
-          fontWeight: 400,
+          fontWeight: THEME.typography.fontWeight.semiBold,
           fontSize: `${THEME.typography.fontSize.huge}px`,
           lineHeight: THEME.typography.lineHeight.tight,
           color: THEME.colors.mainWhite,
@@ -43,7 +43,7 @@ export const InfoSection = () => {
         {/* 부모양육종합검사 */}
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.ohsquareAir,
-          fontWeight: 300,
+          fontWeight: THEME.typography.fontWeight.light,
           fontSize: `${THEME.typography.fontSize.xl}px`,
           lineHeight: THEME.typography.lineHeight.normal,
           color: THEME.colors.mainWhite,
@@ -54,7 +54,7 @@ export const InfoSection = () => {
         {/* 영문명 */}
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.ohsquareAir,
-          fontWeight: 300,
+          fontWeight: THEME.typography.fontWeight.light,
           fontSize: `${THEME.typography.fontSize.xs}px`,
           lineHeight: THEME.typography.lineHeight.normal,
           color: THEME.colors.mainWhite,
@@ -117,7 +117,7 @@ export const InfoSection = () => {
           {/* 제목 */}
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.ohsquare,
-            fontWeight: 400,
+            fontWeight: THEME.typography.fontWeight.normal,
             fontSize: '14px',
             lineHeight: '1.268em',
             textAlign: 'center',
@@ -130,7 +130,7 @@ export const InfoSection = () => {
           {/* 인용문 */}
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.ohsquare,
-            fontWeight: 400,
+            fontWeight: THEME.typography.fontWeight.normal,
             fontSize: '10px',
             lineHeight: '1.268em',
             textAlign: 'center',
@@ -144,7 +144,7 @@ export const InfoSection = () => {
           {/* 본문 */}
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.ohsquareAir,
-            fontWeight: 300,
+            fontWeight: THEME.typography.fontWeight.light,
             fontSize: '10px',
             lineHeight: '1.268em',
             textAlign: 'left',
@@ -204,7 +204,7 @@ export const InfoSection = () => {
             }}>
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.ohsquareAir,
-                fontWeight: 300,
+                fontWeight: THEME.typography.fontWeight.light,
                 fontSize: '11px',
                 lineHeight: '1.268em',
                 textAlign: 'center',

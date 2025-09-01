@@ -16,7 +16,7 @@ export const InputField = ({ label, value }: InputFieldProps) => {
       {/* 하단 구분선 */}
       <Box sx={{
         position: 'absolute',
-        bottom: 0.5,
+        bottom: 1,
         left: 0,
         width: '109px',
         height: '0.5px',
@@ -29,7 +29,7 @@ export const InputField = ({ label, value }: InputFieldProps) => {
         top: 0,
         left: 0,
         fontFamily: THEME.typography.fontFamily.ohsquareAir,
-        fontWeight: 300,
+        fontWeight: THEME.typography.fontWeight.light,
         fontSize: '7px',
         lineHeight: THEME.typography.lineHeight.normal,
         color: THEME.colors.text,
@@ -43,7 +43,7 @@ export const InputField = ({ label, value }: InputFieldProps) => {
         bottom: 0,
         right: 0,
         fontFamily: THEME.typography.fontFamily.ohsquareAir,
-        fontWeight: 300,
+        fontWeight: THEME.typography.fontWeight.light,
         fontSize: '10px',
         lineHeight: THEME.typography.lineHeight.normal,
         textAlign: 'right',

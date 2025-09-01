@@ -24,6 +24,14 @@ export const THEME = {
       ohsquareAir: 'Cafe24 Ohsquare air',
       pretendard: 'Pretendard Variable'
     },
+    fontWeight: {
+      light: 300,
+      normal: 400,
+      medium: 500,
+      semiBold: 600,
+      bold: 700,
+      extraBold: 800
+    },
     lineHeight: {
       tight: '1.23em',
       normal: '1.268em'
