@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 import { THEME } from '../theme';
 import { ScaleResultSummary } from './ScaleResultChip';
 
@@ -8,14 +8,24 @@ interface ScaleResultData {
   level: string;
 }
 
+interface SubScaleData {
+  name: string;
+  tScore: number;
+  percentile: string;
+  level: string;
+  interpretation: string;
+}
+
 interface ScaleAnalysisCardProps {
   title: string;
   iconColor: string;
   backgroundColor: string;
+  tableBackgroundColor: string;
   borderColor: string;
   summary: string;
   iconSrc: string;
   scaleResults: ScaleResultData; // 상위척도 결과 요약 데이터
+  subScaleData: SubScaleData[]; // 하위척도 데이터
   iconSize?: string; // 아이콘 크기 (선택사항, 기본값: '30px')
 }
 
@@ -23,10 +33,12 @@ export const ScaleAnalysisCard = ({
   title,
   iconColor,
   backgroundColor,
+  tableBackgroundColor,
   borderColor,
   summary,
   iconSrc,
   scaleResults,
+  subScaleData,
   iconSize = '30px' // 기본값 30px
 }: ScaleAnalysisCardProps) => {
   return (
@@ -110,11 +122,144 @@ export const ScaleAnalysisCard = ({
       }}>
         {/* 척도 분석 하위척도 테이블 전체 */}
         <Box sx={{
-          display: 'flex',
           width: '375px',
-          height: '97px',
-          backgroundColor: 'rgba(255, 100, 0, 0.3)' // 임시 테이블 배경색
+          minHeight: '102px',
+          border: `0.8px solid ${borderColor}`,
+          borderRadius: '5px',
+          overflow: 'hidden',
+          backgroundColor: '#FFFFFF'
         }}>
+
+          {/* 하위척도 테이블 */}
+          <Table sx={{
+            borderCollapse: 'separate',
+            borderSpacing: 0,
+            
+            '& .MuiTableCell-root': {
+              borderBottom: `0.8px solid ${borderColor}`,
+              borderRight: `0.8px solid ${borderColor}`,
+              padding: '2px 3px',
+              fontFamily: 'Pretendard Variable',
+              fontSize: '7px',
+              lineHeight: '1em',
+            },
+            '& .MuiTableCell-root:last-child': {
+              borderRight: 'none',
+            }
+          }}>
+            
+            
+            <TableHead>
+              <TableRow>
+                <TableCell sx={{
+                  backgroundColor: tableBackgroundColor,
+                  fontWeight: 600,
+                  textAlign: 'center',
+                  width: '45px',
+                  borderTopLeftRadius: '5px'
+                }}>
+                  하위 척도
+                </TableCell>
+                <TableCell sx={{
+                  backgroundColor: tableBackgroundColor,
+                  fontWeight: 600,
+                  textAlign: 'center',
+                  width: '20px'
+                }}>
+                  T점수
+                </TableCell>
+                <TableCell sx={{
+                  backgroundColor: tableBackgroundColor,
+                  fontWeight: 600,
+                  textAlign: 'center',
+                  width: '20px'
+                }}>
+                  백분위
+                </TableCell>
+                <TableCell sx={{
+                  backgroundColor: tableBackgroundColor,
+                  fontWeight: 600,
+                  textAlign: 'center',
+                  width: '28px'
+                }}>
+                  수준
+                </TableCell>
+                <TableCell sx={{
+                  backgroundColor: tableBackgroundColor,
+                  fontWeight: 600,
+                  textAlign: 'center',
+                  width: '220px',
+                  borderTopRightRadius: '5px',
+                  borderRight: 'none'
+                }}>
+                  하위 척도 소견
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {subScaleData.map((row, index) => (
+                <TableRow key={index} sx={{
+                  '&:last-child .MuiTableCell-root': {
+                    borderBottom: 'none'
+                  },
+                  '&:last-child .MuiTableCell-root:first-of-type': {
+                    borderBottomLeftRadius: '5px'
+                  },
+                  '&:last-child .MuiTableCell-root:nth-of-type(5)': {
+                    borderBottomRightRadius: '5px'
+                  }
+                }}>
+
+                  {/* 하위척도 이름 */}
+                  <TableCell sx={{
+                    backgroundColor: backgroundColor,
+                    fontWeight: 500,
+                    textAlign: 'left'
+                  }}>
+                    {row.name}
+                  </TableCell>
+
+                  {/* 하위척도 T점수 */}
+                  <TableCell sx={{
+                    backgroundColor: '#FFFFFF',
+                    fontWeight: 600,
+                    textAlign: 'center'
+                  }}>
+                    {row.tScore}
+                  </TableCell>
+
+                  {/* 하위척도 백분위 */}
+                  <TableCell sx={{
+                    backgroundColor: '#FFFFFF',
+                    fontWeight: 400,
+                    textAlign: 'left'
+                  }}>
+                    {row.percentile}
+                  </TableCell>
+
+                  {/* 하위척도 수준 */}
+                  <TableCell sx={{
+                    backgroundColor: '#FFFFFF',
+                    fontWeight: 400,
+                    textAlign: 'left'
+                  }}>
+                    {row.level}
+                  </TableCell>
+
+                  {/* 하위척도 소견 */}
+                  <TableCell sx={{
+                    backgroundColor: '#FFFFFF',
+                    fontWeight: 300,
+                    textAlign: 'left',
+                    lineHeight: '1em',
+                    borderRight: 'none'
+                  }}>
+                    {row.interpretation}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </Box>
         
         {/* 척도 분석 종합소견 */}
