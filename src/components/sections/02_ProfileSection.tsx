@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { SectionTitle } from '../UI/SectionTitle';
 import { SectionDescription } from '../UI/SectionTitleDescription';
 import { ProfileChart } from '../UI/ProfileChart';
+import { CompositeIndexTable } from '../UI/CompositeIndexTable';
 import { THEME } from '../theme';
 
 interface ProfileSectionProps {
@@ -11,7 +12,7 @@ interface ProfileSectionProps {
 }
 
 export const ProfileSection = ({ 
-  indexScore = 68, 
+  indexScore = 100, 
   percentile = 85,
   summaryLevel = "보통"
 }: ProfileSectionProps) => {
@@ -318,14 +319,7 @@ export const ProfileSection = ({
           </Box>
           
           {/* 종합지수 표 */}
-          <Box sx={{
-            width: '167px',
-            height: '39px',
-            position: 'relative',
-            backgroundColor: 'rgba(255, 100, 0, 0.3)'
-          }}>
-          
-          </Box>
+          <CompositeIndexTable score={indexScore} />
         </Box>
       </Box>
     </Box>

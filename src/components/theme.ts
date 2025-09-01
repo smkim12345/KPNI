@@ -6,7 +6,7 @@ export const THEME = {
     white: '#FFFFFF',
     mainWhite: '#FBFBFB',
     text: '#0B0B0B',
-    gray: '#D3D4D6',
+    gray: '#cfcfcf',
     lightGray: '#F3F3F3',
     tableGreen1: 'rgba(174, 218, 151, 0.7)',
     tableGreen2: 'rgba(157, 215, 128, 0.7)',
