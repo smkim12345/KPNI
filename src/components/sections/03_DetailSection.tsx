@@ -1,5 +1,8 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { SectionTitle } from '../UI/SectionTitle';
+import { DetailChart } from '../UI/DetailChart';
+import { THEME } from '../theme';
+import { SCALE_DATA } from '../../data/scaleData';
 
 export const DetailSection = () => {
   return (
@@ -8,7 +11,7 @@ export const DetailSection = () => {
       flexDirection: 'column',
       alignSelf: 'stretch',
       width: '100%',
-      height: '383px',
+      height: '360px',
       //backgroundColor: 'rgba(63, 200, 100, 0.3)',
 
     }}>
@@ -28,16 +31,167 @@ export const DetailSection = () => {
         />
       </Box>
 
-      {/* 상세  프로파일 */}
+      {/* 세부 프로파일 테이블 */}
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
         alignSelf: 'stretch',
-        backgroundColor: 'rgba(32, 190, 53, 0.3)',
-        height: '324px',
-        boxSizing: 'border-box'
+        width: '465px',
+        marginTop: '10px'
       }}>
-        {/* 상세 프로파일 내용 */}
+        {/* 테이블 헤더 */}
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'stretch',
+          width: '465px',
+          height: '24px',
+          border: `2px solid rgba(135, 135, 135, 0.65)`,
+          borderBottom: `1px solid rgba(135, 135, 135, 0.65)`
+        }}>
+          {/* 상위척도 헤더 */}
+          <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '33px',
+            height: '24px',
+            backgroundColor: '#E2E2E2',
+            borderRight: '1px solid rgba(194, 194, 194, 0.65)',
+            padding: '10px',
+            boxSizing: 'border-box'
+          }}>
+            <Typography sx={{
+              fontFamily: THEME.typography.fontFamily.pretendard,
+              fontWeight: THEME.typography.fontWeight.semiBold,
+              fontSize: `${THEME.typography.fontSize.xs}px`,
+              color: THEME.colors.text,
+              textAlign: 'center'
+            }}>
+              상위척도
+            </Typography>
+          </Box>
+
+          {/* 하위척도 헤더 */}
+          <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '83px',
+            height: '24px',
+            backgroundColor: '#E2E2E2',
+            borderRight: '1px solid #FBFBFB'
+          }}>
+            <Typography sx={{
+              fontFamily: THEME.typography.fontFamily.pretendard,
+              fontWeight: THEME.typography.fontWeight.semiBold,
+              fontSize: `${THEME.typography.fontSize.xs}px`,
+              color: THEME.colors.text
+            }}>
+              하위척도
+            </Typography>
+          </Box>
+
+          {/* T점수 헤더 */}
+          <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '33px',
+            height: '24px',
+            backgroundColor: THEME.colors.primary,
+            borderRight: '1px solid #FBFBFB'
+          }}>
+            <Typography sx={{
+              fontFamily: THEME.typography.fontFamily.pretendard,
+              fontWeight: THEME.typography.fontWeight.semiBold,
+              fontSize: `${THEME.typography.fontSize.xs}px`,
+              color: THEME.colors.mainWhite
+            }}>
+              T점수
+            </Typography>
+          </Box>
+
+          {/* 백분위 헤더 */}
+          <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '32px',
+            height: '24px',
+            backgroundColor: THEME.colors.primary,
+            borderRight: '1px solid #FBFBFB'
+          }}>
+            <Typography sx={{
+              fontFamily: THEME.typography.fontFamily.pretendard,
+              fontWeight: THEME.typography.fontWeight.semiBold,
+              fontSize: `${THEME.typography.fontSize.xs}px`,
+              color: THEME.colors.mainWhite
+            }}>
+              백분위
+            </Typography>
+          </Box>
+
+          {/* 수준 헤더 */}
+          <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '32px',
+            height: '24px',
+            backgroundColor: THEME.colors.primary,
+            borderRight: '0.5px solid #FBFBFB'
+          }}>
+            <Typography sx={{
+              fontFamily: THEME.typography.fontFamily.pretendard,
+              fontWeight: THEME.typography.fontWeight.semiBold,
+              fontSize: `${THEME.typography.fontSize.xs}px`,
+              color: THEME.colors.mainWhite
+            }}>
+              수준
+            </Typography>
+          </Box>
+
+          {/* T점수 및 단위 헤더 */}
+          <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '252px',
+            height: '24px',
+            backgroundColor: '#E2E2E2'
+          }}>
+            <Typography sx={{
+              fontFamily: THEME.typography.fontFamily.pretendard,
+              fontWeight: THEME.typography.fontWeight.semiBold,
+              fontSize: `${THEME.typography.fontSize.xs}px`,
+              color: THEME.colors.text
+            }}>
+              T점수 및 단위
+            </Typography>
+          </Box>
+        </Box>
+
+        {/* 세부 프로파일 차트들 */}
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          {SCALE_DATA.map((scale) => (
+            <DetailChart 
+              key={scale.id}
+              categoryName={scale.categoryName}
+              categoryColor={scale.colors.primary}
+              data={scale.subScaleData.map(sub => ({
+                name: sub.name,
+                value: sub.tScore,
+                percentile: parseFloat(sub.percentile),
+                level: sub.level,
+                levelColor: ''
+              }))}
+            />
+          ))}
+        </Box>
       </Box>
     </Box>
   );

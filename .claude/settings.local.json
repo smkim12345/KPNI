@@ -17,7 +17,8 @@
       "Read(D:\\github\\kpr-inventory-react2/**)",
       "Read(D:\\github\\kpr-inventory-react2/**)",
       "mcp__server-sequential-thinking__sequentialthinking",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
