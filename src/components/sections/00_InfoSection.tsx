@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
-import { InputField } from '../UI/InputField';
+import { InputField } from '../UI/00_InputField';
 
 export const InfoSection = () => {
   return (
