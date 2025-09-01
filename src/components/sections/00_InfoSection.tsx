@@ -71,6 +71,7 @@ export const InfoSection = () => {
           lineHeight: THEME.typography.lineHeight.normal,
           color: THEME.colors.mainWhite,
           width: '114px',
+          whiteSpace: 'pre-line',
         }}>
           comprehensive Parening{'\n'}& Nurturing Inventory
         </Typography>
@@ -161,9 +162,11 @@ export const InfoSection = () => {
             lineHeight: '1.268em',
             textAlign: 'left',
             color: THEME.colors.text,
-            alignSelf: 'stretch'
+            alignSelf: 'stretch',
+            whiteSpace: 'pre-line'
           }}>
-            오늘날 부모는 단지 아이를 돌보는 사람을 넘어, 정서 코치, 학습 관리자, 갈등 조정자, 역할 모델 등 다층적인 정체성을 요구받고 있습니다.{'\n'}
+            오늘날 부모는 단지 아이를 돌보는 사람을 넘어, 정서 코치, 학습 관리자, 갈등 조정자, 역할 모델 등 다층적인 정체성을 요구받고 있습니다.
+            {'\n'}
             자녀를 양육하는 부모님들로 하여금 정보나 방법 이전에, 자기 자신을 먼저 바라볼 수 있는 거울이 되어주고자 합니다.{'\n'}부모는 누구나 '완벽'하진 않지만, '성찰하고 성장할 수 있는 존재'입니다. PNI는 바로 그 성장을 위한 출발점이 될 것입니다.
           </Typography>
 
@@ -186,8 +189,8 @@ export const InfoSection = () => {
           }}>
             {/* 큐알코드 박스 */}
             <Box sx={{
-              width: '64px',
-              height: '64px',
+              width: '52px',
+              height: '52px',
               backgroundColor: '#4E57A6',
               padding: '2px',
               display: 'flex',
@@ -197,8 +200,8 @@ export const InfoSection = () => {
             }}>
               {/* QR 코드 이미지 */}
               <Box sx={{
-                width: '60px',
-                height: '60px',
+                width: '50px',
+                height: '50px',
                 backgroundImage: 'url(./src/images/qrcode.png)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
@@ -220,7 +223,8 @@ export const InfoSection = () => {
                 fontSize: '11px',
                 lineHeight: '1.268em',
                 textAlign: 'center',
-                color: THEME.colors.text
+                color: THEME.colors.text,
+                whiteSpace: 'pre-line'
               }}>
                 QR을 스캔하여{'\n'}해당 동영상을{'\n'}시청해 보세요.
               </Typography>
