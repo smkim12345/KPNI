@@ -60,7 +60,7 @@ export const ProfileChart = ({ data = defaultData }: ProfileChartProps) => {
           stroke={THEME.colors.gray} 
           strokeWidth={0.5}
           horizontal={true}
-          vertical={true}
+          vertical={false}
         />
         <XAxis 
           dataKey="name" 
@@ -97,10 +97,10 @@ export const ProfileChart = ({ data = defaultData }: ProfileChartProps) => {
           ))}
         </Bar>
         {/* 영역 구분을 위한 세로선들 */}
-        <ReferenceLine x={0.5} stroke={THEME.colors.gray} strokeWidth={1} strokeDasharray="2 2" />
-        <ReferenceLine x={1.5} stroke={THEME.colors.gray} strokeWidth={1} strokeDasharray="2 2" />
-        <ReferenceLine x={2.5} stroke={THEME.colors.gray} strokeWidth={1} strokeDasharray="2 2" />
-        <ReferenceLine x={3.5} stroke={THEME.colors.gray} strokeWidth={1} strokeDasharray="2 2" />
+        <ReferenceLine x={0.5} stroke={THEME.colors.gray} strokeWidth={1.5} strokeDasharray="3 3" strokeOpacity={0.8} />
+        <ReferenceLine x={1.5} stroke={THEME.colors.gray} strokeWidth={1.5} strokeDasharray="3 3" strokeOpacity={0.8} />
+        <ReferenceLine x={2.5} stroke={THEME.colors.gray} strokeWidth={1.5} strokeDasharray="3 3" strokeOpacity={0.8} />
+        <ReferenceLine x={3.5} stroke={THEME.colors.gray} strokeWidth={1.5} strokeDasharray="3 3" strokeOpacity={0.8} />
       </BarChart>
     </ResponsiveContainer>
   );
