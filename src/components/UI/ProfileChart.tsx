@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Cell, ReferenceLine, ReferenceArea } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Cell, ReferenceLine, ReferenceArea, LabelList } from 'recharts';
 import { THEME } from '../theme';
 
 interface ProfileChartData {
@@ -58,9 +58,39 @@ const defaultData: ProfileChartData[] = [
 ];
 
 export const ProfileChart = ({ data = defaultData }: ProfileChartProps) => {
+  const CustomLabel = (props: any) => {
+    const { x, y, width, index } = props;
+    const dataPoint = data[index];
+
+    if (!dataPoint) {
+      return null;
+    }
+
+    return (
+      <g>
+        <text x={x + width / 2} y={y} textAnchor="middle" dy={-12} 
+        style={{ fontSize: THEME.typography.fontSize.xxs, 
+        fontFamily: THEME.typography.fontFamily.pretendard, 
+        fontWeight: THEME.typography.fontWeight.medium, 
+        fill: '#000' }}>
+          {`${dataPoint.value}T (${dataPoint.percentile}%)`}
+        </text>
+
+        <text x={x + width / 2} y={y} 
+        textAnchor="middle" dy={-4} 
+        style={{ fontSize: THEME.typography.fontSize.xs, 
+        fontFamily: THEME.typography.fontFamily.pretendard, 
+        fontWeight: THEME.typography.fontWeight.bold, 
+        fill: '#000' }}>
+          {dataPoint.level}
+        </text>
+      </g>
+    );
+  };
+
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }} barCategoryGap={10}>
+      <BarChart data={data} margin={{ top: 20, right: 0, left: 0, bottom: 0 }} barCategoryGap={10}>
                 <CartesianGrid
           strokeDasharray="0"
           stroke="#B0B0B0"
@@ -107,6 +137,7 @@ export const ProfileChart = ({ data = defaultData }: ProfileChartProps) => {
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={entry.fill} fillOpacity={0.8} />
           ))}
+          <LabelList content={<CustomLabel />} />
         </Bar>
         {/* 영역 구분을 위한 세로선들 - 각 막대 사이 */}
         <ReferenceLine x={0.5} stroke="#B0B0B0" strokeWidth={0.5} strokeDasharray="3 3" />
