@@ -1,7 +1,20 @@
 import { Box } from '@mui/material';
 import { SectionTitle } from '../UI/SectionTitle';
+import { ReliabilityTable } from '../UI/01_ReliabilityTable';
 
 export const ReliabilitySection = () => {
+  // 결과신뢰지표 데이터
+  const reliabilityData = {
+    level: "높음",
+    description: "검사에 성실히 임하였으므로, 신뢰할 수 있는 결과 해석이 가능합니다.",
+    items: [
+      { name: "무응답", value: "0" },
+      { name: "연속동일반응", value: "아니오" },
+      { name: "반응일관성", value: "양호" },
+      { name: "부주의성", value: "아니오" }
+    ]
+  };
+
   return (
     <Box sx={{ 
       display: 'flex',
@@ -27,15 +40,7 @@ export const ReliabilitySection = () => {
       </Box>
       
       {/* 결과신뢰지표 테이블 */}
-      <Box sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '10px',
-        backgroundColor: 'rgba(0, 255, 0, 0.3)',
-        height: '41px'
-      }}>
-        {/* 테이블 내용 */}
-      </Box>
+      <ReliabilityTable data={reliabilityData} />
     </Box>
   );
 };
