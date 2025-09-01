@@ -1,5 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Cell, ReferenceLine, ReferenceArea, LabelList } from 'recharts';
 import { THEME } from '../theme';
+import { getProfileChartData } from '../../data/scaleData';
 
 interface ProfileChartData {
   name: string;
@@ -14,53 +15,11 @@ interface ProfileChartProps {
   data?: ProfileChartData[];
 }
 
-const defaultData: ProfileChartData[] = [
-  {
-    name: '자녀특성',
-    value: 57,
-    fill: THEME.colors.scale.childCharacter.primary,
-    percentile: 95.4,
-    level: '높음',
-    index: 0
-  },
-  {
-    name: '양육태도',
-    value: 44,
-    fill: THEME.colors.scale.parentingAttitude.primary,
-    percentile: 19,
-    level: '다소 낮음',
-    index: 1
-  },
-  {
-    name: '양육환경',
-    value: 65,
-    fill: THEME.colors.scale.parentingEnvironment.primary,
-    percentile: 95.4,
-    level: '높음',
-    index: 2
-  },
-  {
-    name: '양육스트레스',
-    value: 48,
-    fill: THEME.colors.scale.parentingStress.primary,
-    percentile: 25,
-    level: '다소 낮음',
-    index: 3
-  },
-  {
-    name: '양육과정',
-    value: 55,
-    fill: THEME.colors.scale.parentingProcess.primary,
-    percentile: 60,
-    level: '다소 높음',
-    index: 4
-  }
-];
-
-export const ProfileChart = ({ data = defaultData }: ProfileChartProps) => {
+export const ProfileChart = ({ data }: ProfileChartProps) => {
+  const chartData = data || getProfileChartData();
   const CustomLabel = (props: any) => {
     const { x, y, width, index } = props;
-    const dataPoint = data[index];
+    const dataPoint = chartData[index];
 
     if (!dataPoint) {
       return null;
@@ -90,7 +49,7 @@ export const ProfileChart = ({ data = defaultData }: ProfileChartProps) => {
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={data} margin={{ top: 20, right: 0, left: 0, bottom: 0 }} barCategoryGap={10}>
+      <BarChart data={chartData} margin={{ top: 20, right: 0, left: 0, bottom: 0 }} barCategoryGap={10}>
                 <CartesianGrid
           strokeDasharray="0"
           stroke="#B0B0B0"
@@ -103,7 +62,7 @@ export const ProfileChart = ({ data = defaultData }: ProfileChartProps) => {
           type="number"
           domain={[-0.5, 4.5]}
           ticks={[0, 1, 2, 3, 4]}
-          tickFormatter={(_, index) => data[index]?.name || ''}
+          tickFormatter={(_, index) => chartData[index]?.name || ''}
           tick={{
             fontSize: THEME.typography.fontSize.xs,
             fontFamily: THEME.typography.fontFamily.pretendard,
@@ -134,7 +93,7 @@ export const ProfileChart = ({ data = defaultData }: ProfileChartProps) => {
           radius={[2, 2, 0, 0]}
           fill="#8884d8"
         >
-          {data.map((entry, index) => (
+          {chartData.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={entry.fill} fillOpacity={0.8} />
           ))}
           <LabelList content={<CustomLabel />} />

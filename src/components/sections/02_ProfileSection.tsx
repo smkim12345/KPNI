@@ -4,17 +4,20 @@ import { SectionDescription } from '../UI/SectionTitleDescription';
 import { ProfileChart } from '../UI/ProfileChart';
 import { CompositeIndexTable } from '../UI/CompositeIndexTable';
 import { THEME } from '../theme';
+import { COMPOSITE_INDEX_DATA } from '../../data/scaleData';
 
 interface ProfileSectionProps {
   indexScore?: number;
   percentile?: number;
   summaryLevel?: string;
+  interpretation?: string;
 }
 
 export const ProfileSection = ({ 
-  indexScore = 100, 
-  percentile = 85,
-  summaryLevel = "보통"
+  indexScore = COMPOSITE_INDEX_DATA.indexScore, 
+  percentile = COMPOSITE_INDEX_DATA.percentile,
+  summaryLevel = COMPOSITE_INDEX_DATA.level,
+  interpretation = COMPOSITE_INDEX_DATA.interpretation
 }: ProfileSectionProps) => {
   return (
     <Box sx={{ 
@@ -172,7 +175,7 @@ export const ProfileSection = ({
                 textAlign: 'left',
                 width: '100%'
               }}>
-                성별과 관계없이 공평하게 대하려는마음은 있지만, 그것이 왜 중요한지에대해 깊이 생각해 본 적은 많지않습니다. 상황에 따라 조심하려는모습도 있지만, 친구들의 말을 따라하거나 무심코 넘기는 경우도있습니다. 말이나 행동에서 실천하려는마음은 있지만 꾸준하지 않고, 성별로친구가 힘들어해도 그 감정을 잘알아차리지 못하는 경우가 있습니다.앞으로 성에 대한 고정된 생각을줄이기 위해 더 많은 연습과 관심이필요합니다.
+                {interpretation}
               </Typography>
             </Box>
           </Box>
