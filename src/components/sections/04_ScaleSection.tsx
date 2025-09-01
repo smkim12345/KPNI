@@ -31,7 +31,7 @@ export const ScaleSection = () => {
         flexDirection: 'column',
         gap: '9px',
         width: '473px',
-        backgroundColor: 'rgba(100, 200, 255, 0.3)',
+        //backgroundColor: 'rgba(100, 200, 255, 0.3)',
         height: '741px',
       }}>
         {/* 척도분석_자녀특성 */}

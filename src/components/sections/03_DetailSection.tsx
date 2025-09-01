@@ -9,7 +9,7 @@ export const DetailSection = () => {
       alignSelf: 'stretch',
       width: '100%',
       height: '383px',
-      backgroundColor: 'rgba(63, 200, 100, 0.3)',
+      //backgroundColor: 'rgba(63, 200, 100, 0.3)',
 
     }}>
     
