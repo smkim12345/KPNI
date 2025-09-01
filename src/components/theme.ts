@@ -11,6 +11,44 @@ export const THEME = {
     tableGreen1: 'rgba(174, 218, 151, 0.7)',
     tableGreen2: 'rgba(157, 215, 128, 0.7)',
     blue: '#000DFF',
+    
+    // 척도별 색상 팔레트 (Scale Color Palette)
+    scale: {
+      // 자녀 특성 (Child Characteristics)
+      childCharacter: {
+        primary: '#FDB68C',    // 메인 색상
+        secondary: '#FCD9A3',  // 중간 색상
+        light: '#F9F0DA'       // 연한 색상
+      },
+      
+      // 양육 태도 (Parenting Attitude)  
+      parentingAttitude: {
+        primary: '#A9CEF4',    // 메인 색상
+        secondary: '#C9E0F8',  // 중간 색상
+        light: '#E9F4FF'       // 연한 색상
+      },
+      
+      // 양육 환경 (Parenting Environment)
+      parentingEnvironment: {
+        primary: '#88CACE',    // 메인 색상
+        secondary: '#BCEBEEE', // 중간 색상
+        light: '#DDF1F3'       // 연한 색상
+      },
+      
+      // 양육 스트레스 (Parenting Stress)
+      parentingStress: {
+        primary: '#D0AFF2',    // 메인 색상
+        secondary: '#D7D3F0',  // 중간 색상
+        light: '#EBE9F9'       // 연한 색상
+      },
+      
+      // 양육 과정 (Parenting Process)
+      parentingProcess: {
+        primary: '#F0C0CD',    // 메인 색상
+        secondary: '#F6DEE5',  // 중간 색상
+        light: '#FFF0F4'       // 연한 색상
+      }
+    }
   },
   typography: {
     fontSize: {
