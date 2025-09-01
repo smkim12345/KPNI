@@ -24,7 +24,7 @@ export const DetailSection = () => {
         <SectionTitle 
           sectionNumber={3}
           title="상세 프로파일"
-          description="각 영역별 상세한 결과를 보여줍니다."
+          description="각 상위척도별 하위척도에 대한 상세한 결과를 보여줍니다. "
         />
       </Box>
 
