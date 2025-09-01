@@ -2,6 +2,10 @@ import { Box } from '@mui/material';
 import { SectionTitle } from '../UI/SectionTitle';
 import { ScaleAnalysisCard } from '../UI/ScaleAnalysisCard';
 import icon01 from '../../images/01Icon.png';
+import icon02 from '../../images/02Icon.png';
+import icon03 from '../../images/03Icon.png';
+import icon04 from '../../images/04Icon.png';
+import icon05 from '../../images/05Icon.png';
 import { THEME } from '../theme';
 
 export const ScaleSection = () => {
@@ -32,7 +36,7 @@ export const ScaleSection = () => {
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '9px',
+        gap: '5px',
         width: '473px',
         //backgroundColor: 'rgba(100, 200, 255, 0.3)',
         height: '741px',
@@ -53,52 +57,68 @@ export const ScaleSection = () => {
         />
         
         {/* 척도분석_양육태도 */}
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignSelf: 'stretch',
-          backgroundColor: '#E9F4FF',
-          borderRadius: '5px',
-          minHeight: '140px'
-        }}>
-          {/* 양육태도 내용 */}
-        </Box>
+        <ScaleAnalysisCard
+          title="양육 태도"
+          iconColor={THEME.colors.scale.parentingAttitude.primary}
+          backgroundColor={THEME.colors.scale.parentingAttitude.light}
+          borderColor={THEME.colors.scale.parentingAttitude.primary}
+          summary="자녀에게 일관된 양육 태도를 보이며, 긍정적인 상호작용을 통해 건강한 관계를 형성하고 있습니다. 자녀의 성장 발달을 지원하는 적절한 양육 방식을 사용합니다."
+          iconSrc={icon02}
+          iconSize="37px"
+          scaleResults={{
+            tScore: "48",
+            percentile: "42.3",
+            level: "보통"
+          }}
+        />
         
         {/* 척도분석_양육환경 */}
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignSelf: 'stretch',
-          backgroundColor: '#DDF1F3',
-          borderRadius: '5px',
-          minHeight: '140px'
-        }}>
-          {/* 양육환경 내용 */}
-        </Box>
+        <ScaleAnalysisCard
+          title="양육 환경"
+          iconColor={THEME.colors.scale.parentingEnvironment.primary}
+          backgroundColor={THEME.colors.scale.parentingEnvironment.light}
+          borderColor={THEME.colors.scale.parentingEnvironment.primary}
+          summary="가정 내 물리적 환경과 정서적 분위기가 자녀 양육에 적합하게 조성되어 있습니다. 안전하고 안정적인 환경에서 자녀가 건강하게 성장할 수 있습니다."
+          iconSrc={icon03}
+          iconSize="40px"
+          scaleResults={{
+            tScore: "52",
+            percentile: "58.7",
+            level: "보통"
+          }}
+        />
         
         {/* 척도분석_양육스트레스 */}
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignSelf: 'stretch',
-          backgroundColor: '#EBE9F9',
-          borderRadius: '5px',
-          minHeight: '140px'
-        }}>
-          {/* 양육스트레스 내용 */}
-        </Box>
+        <ScaleAnalysisCard
+          title="양육 스트레스"
+          iconColor={THEME.colors.scale.parentingStress.primary}
+          backgroundColor={THEME.colors.scale.parentingStress.light}
+          borderColor={THEME.colors.scale.parentingStress.primary}
+          summary="양육 과정에서 경험하는 스트레스가 다소 높은 수준입니다. 자녀 양육에 대한 부담감이나 어려움을 느끼고 있어 적절한 지원과 관리가 필요합니다."
+          iconSrc={icon04}
+          iconSize="30px"
+          scaleResults={{
+            tScore: "62",
+            percentile: "84.2",
+            level: "높음"
+          }}
+        />
         
         {/* 척도분석_양육과정 */}
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignSelf: 'stretch',
-          backgroundColor: '#FFF0F4',
-          borderRadius: '5px',
-          minHeight: '140px'
-        }}>
-          {/* 양육과정 내용 */}
-        </Box>
+        <ScaleAnalysisCard
+          title="양육 과정"
+          iconColor={THEME.colors.scale.parentingProcess.primary}
+          backgroundColor={THEME.colors.scale.parentingProcess.light}
+          borderColor={THEME.colors.scale.parentingProcess.primary}
+          summary="자녀와의 상호작용과 소통이 원활하며, 양육 과정에서 적절한 방법을 사용하고 있습니다. 자녀의 발달 단계에 맞는 양육을 실천하고 있습니다."
+          iconSrc={icon05}
+          iconSize="20px"
+          scaleResults={{
+            tScore: "46",
+            percentile: "35.8",
+            level: "보통"
+          }}
+        />
       </Box>
     
     </Box>

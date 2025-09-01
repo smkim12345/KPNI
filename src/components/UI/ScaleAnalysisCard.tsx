@@ -16,6 +16,7 @@ interface ScaleAnalysisCardProps {
   summary: string;
   iconSrc: string;
   scaleResults: ScaleResultData; // 상위척도 결과 요약 데이터
+  iconSize?: string; // 아이콘 크기 (선택사항, 기본값: '30px')
 }
 
 export const ScaleAnalysisCard = ({
@@ -25,7 +26,8 @@ export const ScaleAnalysisCard = ({
   borderColor,
   summary,
   iconSrc,
-  scaleResults
+  scaleResults,
+  iconSize = '30px' // 기본값 30px
 }: ScaleAnalysisCardProps) => {
   return (
     <Box sx={{
@@ -63,8 +65,8 @@ export const ScaleAnalysisCard = ({
             src={iconSrc}
             alt={`${title} 아이콘`}
             sx={{
-              width: '30px',
-              height: '30px',
+              width: iconSize,
+              height: iconSize,
               objectFit: 'contain'
             }}
           />
