@@ -31,7 +31,7 @@ export const THEME = {
       // 양육 환경 (Parenting Environment)
       parentingEnvironment: {
         primary: '#88CACE',    // 메인 색상
-        secondary: '#BCEBEEE', // 중간 색상
+        secondary: '#BCEBEE', // 중간 색상
         light: '#DDF1F3'       // 연한 색상
       },
       
