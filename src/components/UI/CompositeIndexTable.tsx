@@ -10,14 +10,16 @@ export const CompositeIndexTable = ({
   score = 85,
   averageRange = 40
 }: CompositeIndexTableProps) => {
-  // 눈금 값들
-  const ticks = [0, 70, 80, 90, 100, 110, 120, 130, 140];
+  const ticks = [60, 70, 80, 90, 100, 110, 120, 130, 140];
+  const minScore = 60;
+  const maxScore = 140;
+  const maxWidth = 167;
 
-  // 점수를 픽셀로 변환 (0-140 범위를 167px로)
   const scoreToPixel = (value: number) => {
-    const maxValue = 140;
-    const maxWidth = 115;
-    return (value / maxValue) * maxWidth;
+    const clampedValue = Math.max(minScore, Math.min(value, maxScore));
+    const scoreRange = maxScore - minScore;
+    if (scoreRange === 0) return 0; // 0으로 나누기 방지
+    return ((clampedValue - minScore) / scoreRange) * maxWidth;
   };
 
   return (
