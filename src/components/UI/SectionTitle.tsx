@@ -57,9 +57,10 @@ export const SectionTitle = ({ sectionNumber, title, description }: SectionTitle
         fontFamily: THEME.typography.fontFamily.pretendard,
         fontWeight: 400,
         fontSize: '7px',
-        lineHeight: '1.193em',
+        lineHeight: '1.2em',
         color: THEME.colors.text,
-        flex: 1
+        flex: 1,
+        whiteSpace: 'pre-line'
       }}>
         {description}
       </Typography>

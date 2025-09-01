@@ -1,11 +1,11 @@
 import { Box, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { THEME } from './theme';
-import { InfoSection } from './sections/01_InfoSection';
-import { ReliabilitySection } from './sections/02_ReliabilitySection';
-import { ProfileSection } from './sections/03_ProfileSection';
-import { DetailSection } from './sections/04_DetailSection';
-import { ScaleSection } from './sections/05_ScaleSection';
+import { InfoSection } from './sections/00_InfoSection';
+import { ReliabilitySection } from './sections/01_ReliabilitySection';
+import { ProfileSection } from './sections/02_ProfileSection';
+import { DetailSection } from './sections/03_DetailSection';
+import { ScaleSection } from './sections/04_ScaleSection';
 
 // A3 페이지 스타일 컴포넌트들
 const PageContainer = styled(Container)({
