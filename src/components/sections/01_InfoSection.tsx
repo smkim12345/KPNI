@@ -19,15 +19,27 @@ export const InfoSection = () => {
       }}>
         {/* 로고 이미지 */}
         <Box sx={{
-          width: '80px',
-          height: '30px',
+          width: '70px',
+          height: '20px',
           backgroundColor: THEME.colors.mainWhite,
           borderRadius: `${THEME.borderRadius.xs}px`,
-          backgroundImage: 'url(./src/images/logo.png)',
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-        }} />
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '2px'
+        }}>
+          <img
+            src="./src/images/logo.png"
+            alt="K-PNI Logo"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain'
+            }}
+          />
+        </Box>
+
+        
         
         {/* K-PNI */}
         <Typography sx={{
