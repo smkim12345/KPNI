@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import { SectionTitle } from '../UI/SectionTitle';
+import { SectionDescription } from '../UI/03_SectionDescription';
 
 export const ProfileSection = () => {
   return (
@@ -28,17 +29,13 @@ export const ProfileSection = () => {
         />
       </Box>
 
-      {/* 용어설명 */}
-      <Box sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignSelf: 'stretch',
-        backgroundColor: 'rgba(243, 240, 78, 0.3)',
-        height: '14px',
-        padding: '0px 0px 7px 0px'
-      }}>
-        {/* 용어설명 내용 */}
-      </Box>
+      {/* 제목하단 용어설명 */}
+      <SectionDescription 
+        items={[
+          { text: '※T점수란? ', fontWeight: 'semiBold' },
+          { text: '평균이 50, 표준편차가 10점으로 환산된 점수로, 개인의 점수가 모집단 평균(50)에서 얼마나 차이가 나는지를 나타냅니다.', fontWeight: 'normal' }
+        ]}
+      />
 
       {/* 종합 프로파일 */}
       <Box sx={{

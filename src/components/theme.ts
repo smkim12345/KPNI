@@ -13,8 +13,9 @@ export const THEME = {
     blue: '#000DFF',
   },
   typography: {
-    fontSize: { 
-      xs: 6,
+    fontSize: {
+      xxs: 6,
+      xs: 7,
       sm: 9, 
       md: 11, 
       lg: 13, 
