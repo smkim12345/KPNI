@@ -15,7 +15,8 @@ export const SectionTitle = ({ sectionNumber, title, description }: SectionTitle
       alignItems: 'center',
       gap: '4px',
       width: '467px',
-      height: 'auto'
+      height: '20px',
+      //backgroundColor: 'rgba(255, 100, 0, 0.3)'
     }}>
       {/* 둥근 사각형 번호 아이콘 */}
       <Box sx={{

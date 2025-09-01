@@ -122,6 +122,7 @@ export const KPNIResultPage = () => {
           display: 'flex',
           height: '787px',
           zIndex: 3,
+          //backgroundColor: 'rgb(245, 245, 245,0.8)',
         }}>
           
           {/* 좌측 정보 섹션 */}
@@ -129,6 +130,7 @@ export const KPNIResultPage = () => {
             width: '155px',
             height: '787px',
             boxSizing: 'border-box',
+            //backgroundColor: 'rgb(245, 245, 245,0.5)',
           }}>
             <InfoSection />
           </Box>
@@ -139,7 +141,7 @@ export const KPNIResultPage = () => {
             height: '787px',
             display: 'flex',
             flexDirection: 'column',
-            backgroundColor: 'rgb(245, 245, 245,0.5)',
+            //backgroundColor: 'rgb(245, 245, 245,0.5)',
             boxSizing: 'border-box',
             padding: '10px 0px 10px 10px'
           }}>
@@ -154,7 +156,7 @@ export const KPNIResultPage = () => {
             height: '787px',
             display: 'flex',
             flexDirection: 'column',
-            backgroundColor: 'rgb(230, 255, 230,0.8)',
+            //backgroundColor: 'rgb(230, 255, 230,0.8)',
             boxSizing: 'border-box',
             padding: '10px 0 10px 10px'
           }}>

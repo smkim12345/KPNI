@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { SectionTitle } from '../UI/SectionTitle';
-import { SectionDescription } from '../UI/03_SectionDescription';
+import { SectionDescription } from '../UI/SectionTitleDescription';
 
 export const ProfileSection = () => {
   return (
@@ -10,7 +10,7 @@ export const ProfileSection = () => {
       alignSelf: 'stretch',
       width: '100%',
       height: '353px',
-      backgroundColor: 'rgba(255, 100, 0, 0.3)',
+      //backgroundColor: 'rgba(255, 100, 0, 0.3)',
     }}>
       
       {/* 섹션 제목 */}
