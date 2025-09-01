@@ -9,7 +9,15 @@
       "Bash(mkdir:*)",
       "Bash(tree:*)",
       "mcp__serena__list_dir",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Read(D:\\github\\kpr-inventory-react2\\src\\domains\\result\\components\\GST\\A3/**)",
+      "Read(D:\\github\\kpr-inventory-react2\\src\\domains\\result\\components\\GST\\A3/**)",
+      "Read(D:\\github\\kpr-inventory-react2\\src\\domains\\result\\components\\GST\\A3/**)",
+      "Read(D:\\github\\kpr-inventory-react2\\src\\domains\\result\\components\\GST\\A3/**)",
+      "Read(D:\\github\\kpr-inventory-react2/**)",
+      "Read(D:\\github\\kpr-inventory-react2/**)",
+      "mcp__server-sequential-thinking__sequentialthinking",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

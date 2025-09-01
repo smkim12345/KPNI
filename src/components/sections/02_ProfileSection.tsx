@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { SectionTitle } from '../UI/SectionTitle';
 import { SectionDescription } from '../UI/SectionTitleDescription';
+import { ProfileChart } from '../UI/ProfileChart';
 import { THEME } from '../theme';
 
 interface ProfileSectionProps {
@@ -69,15 +70,15 @@ export const ProfileSection = ({
           borderRadius: '10px',
           boxSizing: 'border-box'
         }}>
-          {/* 종합프로파일 그래프 영역 (배경색으로 표시) */}
+          {/* 종합프로파일 그래프 */}
           <Box sx={{
-            display: 'flex',
-            gap: '-0.9px',
-            padding: '2.26px',
             width: '295px',
             height: '226px',
-            backgroundColor: 'rgba(0, 150, 255, 0.3)' // 임시 배경색
-          }} />
+            position: 'relative',
+            //backgroundColor: 'rgba(0, 150, 255, 0.3)'
+          }}>
+            <ProfileChart />
+          </Box>
           
           {/* 결과 종합 */}
           <Box sx={{
