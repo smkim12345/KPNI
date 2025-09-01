@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import { SectionTitle } from '../UI/SectionTitle';
 import { ScaleAnalysisCard } from '../UI/ScaleAnalysisCard';
 import icon01 from '../../images/01Icon.png';
+import { THEME } from '../theme';
 
 export const ScaleSection = () => {
   return (
@@ -39,9 +40,9 @@ export const ScaleSection = () => {
         {/* 척도분석_자녀특성 */}
         <ScaleAnalysisCard
           title="자녀 특성"
-          iconColor="#FDB68C"
-          backgroundColor="#F9F0DA"
-          borderColor="#FDB68C"
+          iconColor={THEME.colors.scale.childCharacter.primary}
+          backgroundColor={THEME.colors.scale.childCharacter.light}
+          borderColor={THEME.colors.scale.childCharacter.primary}
           summary="자녀가 양육자와의 애착관계가 잘 형성되지않았을 가능성이 있습니다. 부모의 요구나 정서적 반응에 적절하게 반응하기 힘들어 할 수 있습니다."
           iconSrc={icon01}
           scaleResults={{
