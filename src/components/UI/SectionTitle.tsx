@@ -15,7 +15,7 @@ export const SectionTitle = ({ sectionNumber, title, description }: SectionTitle
       alignItems: 'center',
       gap: '4px',
       width: '467px',
-      height: '14px'
+      height: 'auto'
     }}>
       {/* 둥근 사각형 번호 아이콘 */}
       <Box sx={{
@@ -25,7 +25,8 @@ export const SectionTitle = ({ sectionNumber, title, description }: SectionTitle
         borderRadius: '3px',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        flexShrink: 0
       }}>
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.ohsquare,
@@ -45,7 +46,8 @@ export const SectionTitle = ({ sectionNumber, title, description }: SectionTitle
         fontSize: `${THEME.typography.fontSize.xl}px`,
         lineHeight: THEME.typography.lineHeight.normal,
         color: THEME.colors.text,
-        textShadow: 'rgba(0, 0, 0, 0.2) 0px 0px 0px'
+        textShadow: 'rgba(0, 0, 0, 0.2) 0px 0px 0px',
+        flexShrink: 0
       }}>
         {title}
       </Typography>
@@ -56,7 +58,8 @@ export const SectionTitle = ({ sectionNumber, title, description }: SectionTitle
         fontWeight: 400,
         fontSize: '7px',
         lineHeight: '1.193em',
-        color: THEME.colors.text
+        color: THEME.colors.text,
+        flex: 1
       }}>
         {description}
       </Typography>
