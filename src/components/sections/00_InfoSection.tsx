@@ -106,7 +106,7 @@ export const InfoSection = () => {
         </Box>
       </Box>
       
-      {/* 용어설명섹션 */}
+      {/* 검사명설명섹션 */}
       <Box sx={{
         height: '414px',
         display: 'flex',
@@ -114,7 +114,7 @@ export const InfoSection = () => {
         alignItems: 'stretch',
         flex: 1
       }}>
-        {/* 용어설명 */}
+        {/* 검사명설명 */}
         <Box sx={{
           backgroundColor: THEME.colors.gray,
           borderRadius: '15px 0px 0px 15px',
