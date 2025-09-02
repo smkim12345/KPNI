@@ -1,6 +1,6 @@
 import { Box, Typography, Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 import { THEME } from '../theme';
-import { ScaleResultSummary } from './ScaleResultChip';
+import { ScaleResultSummary } from './04_ScaleResultChip';
 
 interface ScaleResultData {
   tScore: string;

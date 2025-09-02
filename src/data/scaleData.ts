@@ -109,35 +109,35 @@ export const SCALE_DATA: ScaleCategory[] = [
     },
     subScaleData: [
       {
-        name: '수용적 양육',
+        name: '애정표현',
         tScore: 55,
         percentile: '68.2',
         level: '높음',
         interpretation: '자녀에게 애정과 사랑을 적절하게 표현하고 있어 정서적 안정감을 제공하고 있습니다.'
       },
       {
-        name: '반응적 양육',
+        name: '합리적 설명',
         tScore: 49,
         percentile: '52.3',
         level: '보통',
         interpretation: '자녀의 행동이나 규칙에 대해 논리적으로 설명하며 이해를 돕고 있어 자녀의 사고력 발달에 긍정적입니다.'
       },
       {
-        name: '일관성 있는 양육',
+        name: '일관적 태도',
         tScore: 42,
         percentile: '35.7',
         level: '다소 낮음',
         interpretation: '양육 태도가 일관되게 유지되어 자녀가 예측 가능한 환경에서 안정감을 느끼고 있습니다.'
       },
       {
-        name: '온정적 양육',
+        name: '훈육 방식',
         tScore: 58,
         percentile: '75.4',
         level: '높음',
         interpretation: '자녀의 발달 단계에 맞는 적절한 훈육 방법을 사용하고 있어 건전한 사회성 발달을 지원하고 있습니다.'
       },
       {
-        name: '구조화된 양육',
+        name: '자율성 존중',
         tScore: 45,
         percentile: '41.8',
         level: '보통',
@@ -162,35 +162,35 @@ export const SCALE_DATA: ScaleCategory[] = [
     },
     subScaleData: [
       {
-        name: '가족 응집성',
+        name: '부부간 불화',
         tScore: 61,
         percentile: '82.1',
         level: '높음',
         interpretation: '부부 간의 갈등이나 불화가 있어 가정 내 긴장감이 높아질 수 있습니다. 부부 관계 개선을 위한 노력이 필요합니다.'
       },
       {
-        name: '사회적 지지',
+        name: '사회적 지원 부족',
         tScore: 38,
         percentile: '28.6',
         level: '낮음',
         interpretation: '가족 외부의 사회적 지원 체계가 부족하여 양육 부담이 커질 수 있습니다. 사회적 네트워크 구축이 도움이 될 수 있습니다.'
       },
       {
-        name: '경제적 안정성',
+        name: '방임/무시',
         tScore: 53,
         percentile: '65.9',
         level: '높음',
         interpretation: '자녀의 정서적, 신체적 요구에 대한 관심과 돌봄이 부족할 수 있습니다. 자녀의 기본적 욕구 충족에 더 신경 써야 합니다.'
       },
       {
-        name: '양육 정보 접근',
+        name: '신체적 학대',
         tScore: 47,
         percentile: '46.2',
         level: '보통',
         interpretation: '신체적 처벌이나 학대적 행동이 나타날 수 있어 자녀의 신체적 안전이 위협받을 수 있습니다.'
       },
       {
-        name: '지역사회 자원',
+        name: '정서적 학대',
         tScore: 44,
         percentile: '38.7',
         level: '다소 낮음',
@@ -215,35 +215,35 @@ export const SCALE_DATA: ScaleCategory[] = [
     },
     subScaleData: [
       {
-        name: '부모 역할 스트레스',
+        name: '역할갈등',
         tScore: 56,
         percentile: '71.3',
         level: '높음',
         interpretation: '부모 역할과 사회적 역할 간의 갈등이 심하여 양육에 집중하기 어려운 상황입니다. 역할 간 균형을 찾는 것이 중요합니다.'
       },
       {
-        name: '양육 부담감',
+        name: '양육방식차이',
         tScore: 62,
         percentile: '85.4',
         level: '높음',
         interpretation: '부부 간 양육 방식의 차이로 인한 갈등이 스트레스의 주요 원인입니다. 양육 방식에 대한 합의가 필요합니다.'
       },
       {
-        name: '자녀와의 갈등',
+        name: '경제적 고민',
         tScore: 41,
         percentile: '32.8',
         level: '다소 낮음',
         interpretation: '자녀 양육에 필요한 경제적 부담으로 인한 스트레스가 높습니다. 경제적 지원이나 계획 수립이 도움이 될 수 있습니다.'
       },
       {
-        name: '시간 부족 스트레스',
+        name: '자녀갈등',
         tScore: 59,
         percentile: '78.2',
         level: '높음',
         interpretation: '자녀와의 관계에서 발생하는 갈등이나 어려움으로 스트레스가 높아져 있습니다. 자녀 이해와 소통 방법 개선이 필요합니다.'
       },
       {
-        name: '사회적 고립감',
+        name: '심리적 불안정',
         tScore: 35,
         percentile: '21.5',
         level: '낮음',
@@ -268,35 +268,35 @@ export const SCALE_DATA: ScaleCategory[] = [
     },
     subScaleData: [
       {
-        name: '의사소통',
+        name: '양육만족',
         tScore: 54,
         percentile: '63.7',
         level: '높음',
         interpretation: '양육 활동에 대한 전반적인 만족도가 보통 수준입니다. 양육의 긍정적 측면과 도전 과제를 균형 있게 인식하고 있습니다.'
       },
       {
-        name: '훈육 방식',
+        name: '현가족관계',
         tScore: 48,
         percentile: '48.9',
         level: '보통',
         interpretation: '현재 가족 구성원 간의 관계가 안정적으로 유지되고 있어 가족 전체의 화목함을 유지하려고 노력하고 있습니다.'
       },
       {
-        name: '놀이 참여',
+        name: '원가족관계',
         tScore: 51,
         percentile: '58.3',
         level: '보통',
         interpretation: '본인의 원가족과의 관계가 적절하게 유지되고 있어 가족 지원 체계를 효과적으로 활용하고 있습니다.'
       },
       {
-        name: '학습 지원',
+        name: '자녀만족',
         tScore: 57,
         percentile: '73.6',
         level: '높음',
         interpretation: '자녀가 가족 내에서 느끼는 만족도가 보통 수준입니다. 자녀의 정서적 안녕감을 유지하기 위한 노력이 필요합니다.'
       },
       {
-        name: '정서적 교감',
+        name: '회복경험',
         tScore: 43,
         percentile: '36.4',
         level: '다소 낮음',

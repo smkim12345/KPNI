@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import { SectionTitle } from '../UI/SectionTitle';
 import { SectionDescription } from '../UI/SectionTitleDescription';
-import { ProfileChart } from '../UI/ProfileChart';
-import { CompositeIndexTable } from '../UI/CompositeIndexTable';
+import { ProfileChart } from '../UI/02_ProfileChart';
+import { CompositeIndexTable } from '../UI/02_CompositeIndexTable';
 import { THEME } from '../theme';
 import { COMPOSITE_INDEX_DATA } from '../../data/scaleData';
 

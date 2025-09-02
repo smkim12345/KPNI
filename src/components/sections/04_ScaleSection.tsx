@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { SectionTitle } from '../UI/SectionTitle';
-import { ScaleAnalysisCard } from '../UI/ScaleAnalysisCard';
+import { ScaleAnalysisCard } from '../UI/04_ScaleAnalysisCard';
 import icon01 from '../../images/01Icon.png';
 import icon02 from '../../images/02Icon.png';
 import icon03 from '../../images/03Icon.png';
