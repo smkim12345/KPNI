@@ -9,7 +9,7 @@ export const THEME = {
     darkGray: '#4F4F4F',
     mediumGray: '#bdbdbd',
     gray: '#cfcfcf',
-    lightGray: '#F3F3F3',
+    lightGray: '#ebebeb',
     tableGreen1: 'rgba(174, 218, 151, 0.7)',
     tableGreen2: 'rgba(157, 215, 128, 0.7)',
     blue: '#000DFF',
@@ -78,7 +78,7 @@ export const THEME = {
       extraBold: 800
     },
     lineHeight: {
-      tight: '1.23em',
+      tight: '1em',
       normal: '1.268em'
     }
   },
