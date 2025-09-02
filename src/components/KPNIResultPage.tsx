@@ -7,11 +7,21 @@ import { ProfileSection } from './sections/02_ProfileSection';
 import { DetailSection } from './sections/03_DetailSection';
 import { ScaleSection } from './sections/04_ScaleSection';
 
-// A3 페이지 스타일 컴포넌트들
+// A3 페이지 캔버스
 const PageContainer = styled(Container)({
-  minWidth: '1231px', // A3 프레임 + 패딩 보장
-  minHeight: `900px`,
+  minWidth: '1287px', 
+  minHeight: `959px`,
   backgroundColor: THEME.layout.a3.pageBackground,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
+
+// 초록색 외곽 테두리 두께 조절 용
+const OuterGreenBox = styled(Box)({
+  width: '1191px',   
+  height: '847px',
+  backgroundColor: THEME.colors.primary, 
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -19,59 +29,21 @@ const PageContainer = styled(Container)({
 
 const FrameBox = styled(Box)({
   position: 'relative',
-  width: `1191px`,
-  height: `847px`,
-  backgroundColor: THEME.colors.white,
-});
-
-const BorderContainer = styled(Box)({
-  position: 'absolute',
-  zIndex: 1,
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-});
-
-const BorderElement = styled(Box)({
-  position: 'absolute',
+  width: '1191px',   // 기존 콘텐츠 크기 유지
+  height: '847px',
   backgroundColor: THEME.colors.primary,
 });
 
-const TopBorder = styled(BorderElement)({
+
+const CornerBox = styled(Box)({
+  position: 'absolute',
   top: 0,
   left: 0,
-  width: '100%',
-  height: `${THEME.layout.border.thickness}px`,
-});
-
-const BottomBorder = styled(BorderElement)({
-  bottom: 0,
-  left: 0,
-  width: '100%',
-  height: `${THEME.layout.border.thickness}px`,
-});
-
-const LeftBorder = styled(BorderElement)({
-  top: 0,
-  left: 0,
-  width: `${THEME.layout.border.thickness}px`,
-  height: '100%',
-});
-
-const RightBorder = styled(BorderElement)({
-  top: 0,
-  right: 0,
-  width: `${THEME.layout.border.thickness}px`,
-  height: '100%',
-});
-
-const CornerBox = styled(BorderElement)({
-  top: 0,
-  left: 0,
-  width: `185px`,
-  height: `403px`,  
-  borderRadius: `0px 0px 52px 0px`,
+  width: '185px',
+  height: '403px',
+  backgroundColor: THEME.colors.primary,
+  borderRadius: '0px 0px 52px 0px',
+  zIndex: 1,
 });
 
 /**
@@ -81,49 +53,44 @@ const CornerBox = styled(BorderElement)({
 export const KPNIResultPage = () => {
   return (
     <PageContainer maxWidth={false}>
-      <FrameBox>
-        {/* A3 페이지 테두리 */}
-        <BorderContainer>
+      <OuterGreenBox>
+        <FrameBox>
+          {/* 좌상단 둥근 모서리 */}
           <CornerBox />
-          <TopBorder />
-          <BottomBorder />
-          <LeftBorder />
-          <RightBorder />
-        </BorderContainer>
 
-        {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 */}
-        <Box sx={{
-          position: 'absolute',
-          left: '30px',
-          top: '349px',
-          width: '155px',
-          height: '70px',
-          backgroundColor: THEME.colors.gray,
-          zIndex: 1.5
-        }} />
+          {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 */}
+          <Box sx={{
+            position: 'absolute',
+            left: '30px',
+            top: '349px',
+            width: '155px',
+            height: '70px',
+            backgroundColor: THEME.colors.gray,
+            zIndex: 1.5
+          }} />
 
-        {/* 메인 흰 배경 */}
-        <Box sx={{ 
-          position: 'absolute',
-          left: '185px',
-          top: '30px',
-          width: '976px', 
-          height: '787px',
-          backgroundColor: '#F9F9F9',
-          borderRadius: '15px 15px 15px 0px',
-          zIndex: 2
-        }} />
+          {/* 메인 흰 배경 */}
+          <Box sx={{ 
+            position: 'absolute',
+            left: '185px',
+            top: '30px',
+            width: '976px', 
+            height: '787px',
+            backgroundColor: '#F9F9F9',
+            borderRadius: '15px 15px 15px 0px',
+            zIndex: 2
+          }} />
 
-        {/* 3개 메인 섹션 레이아웃 */}
-        <Box sx={{ 
-          position: 'absolute',
-          left: '30px',
-          top: '30px',
-          display: 'flex',
-          height: '787px',
-          zIndex: 3,
-          //backgroundColor: 'rgb(245, 245, 245,0.8)',
-        }}>
+          {/* 3개 메인 섹션 레이아웃 */}
+          <Box sx={{ 
+            position: 'absolute',
+            left: '30px',
+            top: '30px',
+            display: 'flex',
+            height: '787px',
+            zIndex: 3,
+            //backgroundColor: 'rgb(245, 245, 245,0.8)',
+          }}>
           
           {/* 좌측 정보 섹션 */}
           <Box sx={{
@@ -162,9 +129,10 @@ export const KPNIResultPage = () => {
           }}>
             <ScaleSection />
           </Box>
-          
-        </Box>
-      </FrameBox>
+            
+          </Box>
+        </FrameBox>
+      </OuterGreenBox>
     </PageContainer>
   );
 };

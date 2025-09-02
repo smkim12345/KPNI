@@ -116,9 +116,6 @@ export const THEME = {
     a3: {
       pageBackground: '#f5f5f5',
     },
-    border: {
-      thickness: 50,
-    }
   },
 
   // 차트 관련 상수
