@@ -66,7 +66,7 @@ export const ProfileSection = ({
           justifyContent: 'center',
           alignItems: 'center',
           gap: `${THEME.spacing.lg}px`,
-          padding: '6.84px 6.84px',
+          padding: '7px 6px',
           width: '472px',
           height: '243px',
           backgroundColor: THEME.colors.mainWhite,
@@ -89,29 +89,32 @@ export const ProfileSection = ({
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: '-6px',
-            height: '226px'
+            gap: '5px',
+            height: '226px',
+            //backgroundColor: 'rgba(0, 150, 255, 0.3)'
           }}>
             {/* 결과 요약 */}
             <Box sx={{
               display: 'flex',
+              flexDirection: 'column',
               justifyContent: 'stretch',
               alignItems: 'stretch',
-              gap: '7px',
-              padding: '6px 10px 10px',
-              width: '146px'
+              padding: '4px 10px',
+              width: '146px',
+              //backgroundColor: 'rgba(0, 150, 255, 0.3)'
             }}>
               <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-end',
                 gap: '5px',
-                flex: 1
+                flex: 1,
+                //backgroundColor: 'rgba(0, 150, 255, 0.3)'
               }}>
                 <Typography sx={{
                   fontFamily: THEME.typography.fontFamily.pretendard,
                   fontWeight: THEME.typography.fontWeight.semiBold,
-                  fontSize: `${THEME.typography.fontSize.xs}px`,
+                  fontSize: `${THEME.typography.fontSize.sm}px`,
                   lineHeight: '1.19em',
                   color: THEME.colors.text,
                   textAlign: 'left',
@@ -142,7 +145,7 @@ export const ProfileSection = ({
                 <Typography sx={{
                   fontFamily: 'Inter',
                   fontWeight: THEME.typography.fontWeight.medium,
-                  fontSize: `${THEME.typography.fontSize.xs}px`,
+                  fontSize: `${THEME.typography.fontSize.sm}px`,
                   lineHeight: '1.21em',
                   color: THEME.colors.text,
                   textAlign: 'right',
@@ -160,16 +163,17 @@ export const ProfileSection = ({
               justifyContent: 'center',
               alignItems: 'center',
               gap: '10px',
-              padding: '10px',
-              width: '136px',
-              height: '159px',
+              padding: '15px',
+              width: '160px',
+              height: '158px',
               backgroundColor: THEME.colors.tableGreen1,
-              borderRadius: '10px'
+              borderRadius: '10px',
+              boxSizing: 'border-box'
             }}>
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.pretendard,
                 fontWeight: THEME.typography.fontWeight.normal,
-                fontSize: '8.2px',
+                fontSize: '8px',
                 lineHeight: '1.46em',
                 color: THEME.colors.text,
                 textAlign: 'left',
