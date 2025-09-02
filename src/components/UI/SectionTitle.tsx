@@ -13,9 +13,10 @@ export const SectionTitle = ({ sectionNumber, title, description }: SectionTitle
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
+      justifyContent: 'flex-start',
       gap: '4px',
       width: '467px',
-      height: '20px',
+      height: '16px',
       //backgroundColor: 'rgba(255, 100, 0, 0.3)'
     }}>
       {/* 둥근 사각형 번호 아이콘 */}
