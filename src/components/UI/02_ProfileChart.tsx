@@ -49,29 +49,13 @@ export const ProfileChart = ({ data }: ProfileChartProps) => {
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={chartData} margin={{ top: 20, right: 0, left: 0, bottom: 0 }} barCategoryGap={10}>
+      <BarChart data={chartData} margin={{ top: 10, right: 0, left: 0, bottom: 1 }} barCategoryGap={10}>
                 <CartesianGrid
           strokeDasharray="0"
           stroke="#B0B0B0"
-          strokeWidth={0.5}
+          strokeWidth={0.3}
           horizontal={true}
           vertical={false}
-        />
-                <XAxis
-          dataKey="index"
-          type="number"
-          domain={[-0.5, 4.5]}
-          ticks={[0, 1, 2, 3, 4]}
-          tickFormatter={(_, index) => chartData[index]?.name || ''}
-          tick={{
-            fontSize: THEME.typography.fontSize.xs,
-            fontFamily: THEME.typography.fontFamily.pretendard,
-            fontWeight: THEME.typography.fontWeight.bold,
-            fill: THEME.colors.text
-          }}
-          axisLine={{ stroke: THEME.colors.text, strokeWidth: 0.5 }}
-          tickLine={false}
-          height={15}
         />
         <YAxis
           domain={[30, 70]}
@@ -98,11 +82,27 @@ export const ProfileChart = ({ data }: ProfileChartProps) => {
           ))}
           <LabelList content={<CustomLabel />} />
         </Bar>
+        <XAxis
+          dataKey="index"
+          type="number"
+          domain={[-0.5, 4.5]}
+          ticks={[0, 1, 2, 3, 4]}
+          tickFormatter={(_, index) => chartData[index]?.name || ''}
+          tick={{
+            fontSize: THEME.typography.fontSize.xs,
+            fontFamily: THEME.typography.fontFamily.pretendard,
+            fontWeight: THEME.typography.fontWeight.bold,
+            fill: THEME.colors.text
+          }}
+          axisLine={{ stroke: THEME.colors.text, strokeWidth: 1 }}
+          tickLine={false}
+          height={15}
+        />
         {/* 영역 구분을 위한 세로선들 - 각 막대 사이 */}
-        <ReferenceLine x={0.5} stroke="#B0B0B0" strokeWidth={0.5} strokeDasharray="3 3" />
-        <ReferenceLine x={1.5} stroke="#B0B0B0" strokeWidth={0.5} strokeDasharray="3 3" />
-        <ReferenceLine x={2.5} stroke="#B0B0B0" strokeWidth={0.5} strokeDasharray="3 3" />
-        <ReferenceLine x={3.5} stroke="#B0B0B0" strokeWidth={0.5} strokeDasharray="3 3" />
+        <ReferenceLine x={0.5} stroke="#B0B0B0" strokeWidth={0.3} strokeDasharray="3 3" />
+        <ReferenceLine x={1.5} stroke="#B0B0B0" strokeWidth={0.3} strokeDasharray="3 3" />
+        <ReferenceLine x={2.5} stroke="#B0B0B0" strokeWidth={0.3} strokeDasharray="3 3" />
+        <ReferenceLine x={3.5} stroke="#B0B0B0" strokeWidth={0.3} strokeDasharray="3 3" />
       </BarChart>
     </ResponsiveContainer>
   );

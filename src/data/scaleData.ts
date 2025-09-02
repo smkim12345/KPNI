@@ -42,6 +42,14 @@ export interface KPNITestResult {
   compositeIndex: CompositeIndexData;
 }
 
+// 종합 지수 데이터
+export const COMPOSITE_INDEX_DATA: CompositeIndexData = {
+  indexScore: 100,
+  percentile: 85,
+  level: '보통',
+  interpretation: '자녀 양육에 대한 기본적인 역량을 갖추고 있으며, 적절한 양육 환경을 제공하려고 노력하고 있습니다. 자녀와의 관계에서 긍정적인 상호작용을 유지하면서도 일부 영역에서는 개선의 여지가 있습니다. 양육 스트레스 관리와 일관된 양육 태도 유지에 더 많은 관심을 기울인다면 더욱 효과적인 양육이 가능할 것입니다. 자녀의 발달 단계에 맞는 지원과 가족 내 의사소통 개선을 통해 양육의 질을 높여나가실 수 있을 것입니다.'
+};
+
 // 척도별 공통 데이터 (03섹션과 04섹션에서 공유)
 export const SCALE_DATA: ScaleCategory[] = [
   {
@@ -311,13 +319,7 @@ export const SCALE_DATA: ScaleCategory[] = [
   }
 ];
 
-// 종합 지수 데이터
-export const COMPOSITE_INDEX_DATA: CompositeIndexData = {
-  indexScore: 100,
-  percentile: 85,
-  level: '보통',
-  interpretation: '전반적으로 자녀 양육에 대한 기본적인 역량을 갖추고 있으며, 적절한 양육 환경을 제공하려고 노력하고 있습니다. 자녀와의 관계에서 긍정적인 상호작용을 유지하면서도 일부 영역에서는 개선의 여지가 있습니다. 양육 스트레스 관리와 일관된 양육 태도 유지에 더 많은 관심을 기울인다면 더욱 효과적인 양육이 가능할 것입니다. 자녀의 발달 단계에 맞는 지원과 가족 내 의사소통 개선을 통해 양육의 질을 높여나가실 수 있을 것입니다.'
-};
+
 
 // ProfileChart용 데이터 변환 함수
 export const getProfileChartData = () => {
