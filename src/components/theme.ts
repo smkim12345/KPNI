@@ -7,6 +7,7 @@ export const THEME = {
     mainWhite: '#F5F6FA',
     text: '#0B0B0B',
     darkGray: '#4F4F4F',
+    mediumGray: '#bdbdbd',
     gray: '#cfcfcf',
     lightGray: '#F3F3F3',
     tableGreen1: 'rgba(174, 218, 151, 0.7)',

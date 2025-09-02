@@ -14,6 +14,7 @@ interface DetailChartProps {
   categoryColor: string;
   data: ScaleData[];
   isLast?: boolean;
+  isFirst?: boolean;
 }
 
 export const DetailChart = ({ categoryName, categoryColor, data, isLast = false }: DetailChartProps) => {
@@ -42,8 +43,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
       alignItems: 'stretch',
       width: '465px',
       height: '60px',
-      borderTop: '1px solid rgba(135, 135, 135, 0.65)',
-      borderBottom: isLast ? `2px solid rgba(135, 135, 135, 0.65)` : 'none'
+      borderBottom: isLast ? 'none' : `1px solid ${THEME.colors.mediumGray}`
     }}>
       {/* 상위척도 컬럼 */}
       <Box sx={{
@@ -54,9 +54,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         width: '33px',
         height: '60px',
         backgroundColor: categoryColor,
-        borderRight: '1px solid rgba(194, 194, 194, 0.65)',
-        padding: '10px',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
       }}>
         <Box sx={{
           display: 'flex',
@@ -64,7 +62,6 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           alignItems: 'center',
           justifyContent: 'center',
           height: '100%',
-          gap: '2px'
         }}>
           {categoryName.split('\n').map((line, index) => (
             <Typography key={index} sx={{
@@ -87,7 +84,8 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         display: 'flex',
         flexDirection: 'column',
         width: '83px',
-        borderRight: '1px solid rgba(194, 194, 194, 0.65)'
+        borderRight: '1px solid rgba(194, 194, 194, 0.65)',
+        boxSizing: 'border-box'
       }}>
         {data.map((item, index) => (
           <Box key={index} sx={{
@@ -96,7 +94,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
-            borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.68)' : 'none',
+            borderBottom: index < data.length - 1 ? '0.3px dashed ' + THEME.colors.mediumGray : 'none',
             padding: '0 10px',
             boxSizing: 'border-box'
           }}>
@@ -119,7 +117,8 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         display: 'flex',
         flexDirection: 'column',
         width: '32px',
-        borderRight: '1px solid rgba(194, 194, 194, 0.65)'
+        borderRight: '1px solid rgba(194, 194, 194, 0.65)',
+        boxSizing: 'border-box'
       }}>
         {data.map((item, index) => (
           <Box key={index} sx={{
@@ -128,7 +127,8 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
-            borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none'
+            borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none',
+            boxSizing: 'border-box'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
@@ -148,7 +148,8 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         display: 'flex',
         flexDirection: 'column',
         width: '32px',
-        borderRight: '1px solid rgba(194, 194, 194, 0.65)'
+        borderRight: '1px solid rgba(194, 194, 194, 0.65)',
+        boxSizing: 'border-box'
       }}>
         {data.map((item, index) => (
           <Box key={index} sx={{
@@ -157,7 +158,8 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
-            borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none'
+            borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none',
+            boxSizing: 'border-box'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
@@ -177,6 +179,8 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         display: 'flex',
         flexDirection: 'column',
         width: '32px',
+        boxSizing: 'border-box',
+        borderRight: '1px solid rgba(194, 194, 194, 0.65)'
       }}>
         {data.map((item, index) => (
           <Box key={index} sx={{
@@ -185,7 +189,8 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: getLevelColor(item.level),
-            borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none'
+            borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none',
+            boxSizing: 'border-box'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
@@ -203,8 +208,9 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
       {/* 차트 영역 */}
       <Box sx={{
         position: 'relative',
-        width: '252px',
-        height: '60px'
+        width: '253px',
+        height: '60px',
+        overflow: 'hidden',
       }}>
         {/* 평균범위 배경 (40-60) */}
         <Box sx={{
@@ -233,7 +239,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
               width: '0.3px',
               height: '100%',
               backgroundColor: index === 3 ? 'rgba(108, 108, 108, 0.65)' : 'transparent',
-              borderRight: index === 3 ? '0.5px solid rgba(108, 108, 108, 0.65)' : '0.3px dashed rgba(108, 108, 108, 0.65)',
+              borderRight: index === 0 ? 'none' : (index === 3 ? '0.5px solid rgba(108, 108, 108, 0.65)' : '0.3px dashed rgba(108, 108, 108, 0.65)'),
               opacity: 0.65
             }} />
           ))}
@@ -253,7 +259,8 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           {data.map((_, index) => (
             <Box key={index} sx={{
               height: `${itemHeight}px`,
-              borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none'
+              borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none',
+              boxSizing: 'border-box'
             }} />
           ))}
         </Box>
@@ -268,7 +275,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
-          paddingLeft: '2px'
+          paddingLeft: '1px'
         }}>
           {data.map((item, index) => {
             // T점수 20~80 범위에서 막대 길이 계산 (240px = 전체 차트 너비 - 패딩)
@@ -279,7 +286,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
                 display: 'flex',
                 alignItems: 'center',
                 height: `${itemHeight}px`,
-                paddingY: '2.5px'
+                paddingY: '2.5px',
               }}>
                 <Box sx={{
                   width: `${barWidth}px`,

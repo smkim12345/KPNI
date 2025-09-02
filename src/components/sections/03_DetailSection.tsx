@@ -37,6 +37,9 @@ export const DetailSection = () => {
         flexDirection: 'column',
         alignSelf: 'stretch',
         width: '465px',
+        marginTop: '3px',
+        borderTop: `2px solid rgba(135, 135, 135, 0.65)`,
+        borderBottom: `2px solid rgba(135, 135, 135, 0.65)`,
         //backgroundColor: 'rgba(63, 200, 100, 0.3)',
       }}>
         {/* 테이블 헤더 */}
@@ -45,8 +48,7 @@ export const DetailSection = () => {
           flexDirection: 'row',
           alignItems: 'stretch',
           width: '465px',
-          height: '20px',
-          borderTop: `2px solid rgba(135, 135, 135, 0.65)`,
+          height: '18px',
           borderBottom: `1px solid rgba(135, 135, 135, 0.65)`
         }}>
           {/* 상위척도 헤더 */}
@@ -58,7 +60,6 @@ export const DetailSection = () => {
             height: 'auto',
             backgroundColor: '#E2E2E2',
             borderRight: '1px solid rgba(194, 194, 194, 0.65)',
-            padding: '10px',
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -81,7 +82,8 @@ export const DetailSection = () => {
             width: '83px',
             height: 'auto',
             backgroundColor: '#E2E2E2',
-            borderRight: '1px solid #FBFBFB'
+            borderRight: '1px solid #FBFBFB',
+            boxSizing: 'border-box'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
@@ -101,7 +103,8 @@ export const DetailSection = () => {
             width: '32px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1px solid #FBFBFB'
+            borderRight: '1px solid #FBFBFB',
+            boxSizing: 'border-box'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
@@ -121,7 +124,8 @@ export const DetailSection = () => {
             width: '32px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1px solid #FBFBFB'
+            borderRight: '1px solid #FBFBFB',
+            boxSizing: 'border-box'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
@@ -141,7 +145,8 @@ export const DetailSection = () => {
             width: '32px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1px solid #FBFBFB'
+            borderRight: '1px solid #FBFBFB',
+            boxSizing: 'border-box'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
@@ -161,14 +166,15 @@ export const DetailSection = () => {
             alignItems: 'top',
             width: '252px',
             height: 'auto',
-            backgroundColor: '#E2E2E2'
+            backgroundColor: '#E2E2E2',
+            boxSizing: 'border-box'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
               fontWeight: THEME.typography.fontWeight.semiBold,
-              fontSize: `${THEME.typography.fontSize.sm}px`,
+              fontSize: `${THEME.typography.fontSize.xs}px`,
               color: THEME.colors.darkGray,
-              paddingTop: '2px',
+              paddingTop: '1px',
             }}>
               T점수
             </Typography>
@@ -203,11 +209,12 @@ export const DetailSection = () => {
           flexDirection: 'column'
         }}>
           {SCALE_DATA.map((scale, index) => (
-            <DetailChart 
+            <DetailChart
               key={scale.id}
               categoryName={scale.categoryName}
               categoryColor={scale.colors.primary}
               isLast={index === SCALE_DATA.length - 1}
+              isFirst={index === 0}
               data={scale.subScaleData.map(sub => ({
                 name: sub.name,
                 value: sub.tScore,
