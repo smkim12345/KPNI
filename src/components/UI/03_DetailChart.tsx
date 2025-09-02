@@ -275,7 +275,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
-          paddingLeft: '1px'
+          paddingLeft: '0px'
         }}>
           {data.map((item, index) => {
             // T점수 20~80 범위에서 막대 길이 계산 (240px = 전체 차트 너비 - 패딩)
@@ -292,7 +292,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
                   width: `${barWidth}px`,
                   height: '7px',
                   backgroundColor: categoryColor,
-                  borderRadius: '1px'
+                  borderRadius: '0px 1px 1px 0px'
                 }} />
               </Box>
             );

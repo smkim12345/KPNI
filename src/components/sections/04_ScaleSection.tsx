@@ -10,7 +10,7 @@ import { SCALE_DATA } from '../../data/scaleData';
 
 export const ScaleSection = () => {
   const icons = [icon01, icon02, icon03, icon04, icon05];
-  const iconSizes = ['30px', '37px', '40px', '30px', '20px'];
+  const iconSizes = ['20px', '20px', '20px', '20px', '20px'];
 
   return (
     <Box sx={{ 

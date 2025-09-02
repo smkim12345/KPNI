@@ -125,9 +125,9 @@ export const ScaleAnalysisCard = ({
           width: '375px',
           minHeight: '102px',
           border: `1px solid ${borderColor}`,
-          borderRadius: '5px',
+          borderRadius: '6px',
           overflow: 'hidden',
-          backgroundColor: '#FFFFFF'
+          //backgroundColor: 'red'
         }}>
 
           {/* 하위척도 테이블 */}
@@ -142,6 +142,7 @@ export const ScaleAnalysisCard = ({
               fontFamily: 'Pretendard Variable',
               fontSize: '7px',
               lineHeight: '1em',
+              //backgroundColor: 'blue'
             },
             '& .MuiTableCell-root:last-child': {
               borderRight: 'none',
@@ -214,7 +215,8 @@ export const ScaleAnalysisCard = ({
                   <TableCell sx={{
                     backgroundColor: backgroundColor,
                     fontWeight: 500,
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    wordBreak: 'keep-all'
                   }}>
                     {row.name}
                   </TableCell>
@@ -300,7 +302,7 @@ export const ScaleAnalysisCard = ({
             borderRadius: '28px',
             position: 'absolute',
             top: '-13px',
-            left: '20px'
+            left: '19px'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
