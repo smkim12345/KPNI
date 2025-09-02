@@ -22,17 +22,17 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
   const getLevelColor = (level: string) => {
     switch (level) {
       case '높음':
-        return 'rgba(130, 207, 91, 0.76)';  
+        return THEME.colors.level.high;
       case '다소 높음':
-        return 'rgba(152, 215, 115, 0.7)';  
+        return THEME.colors.level.mediumHigh;
       case '보통':
-        return 'rgba(174, 223, 139, 0.7)';  
+        return THEME.colors.level.medium;
       case '다소 낮음':
-        return 'rgba(188, 230, 167, 0.7)';  
+        return THEME.colors.level.mediumLow;
       case '낮음':
-        return 'rgba(201, 237, 183, 0.7)';  
+        return THEME.colors.level.low;
       default:
-        return 'rgba(174, 223, 139, 0.7)';
+        return THEME.colors.level.medium;
     }
   };
 
@@ -84,7 +84,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         display: 'flex',
         flexDirection: 'column',
         width: '83px',
-        borderRight: '1px solid rgba(194, 194, 194, 0.65)',
+        borderRight: `1px solid ${THEME.colors.border.light}`,
         boxSizing: 'border-box'
       }}>
         {data.map((item, index) => (
@@ -94,7 +94,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
-            borderBottom: index < data.length - 1 ? '0.3px dashed ' + THEME.colors.mediumGray : 'none',
+            borderBottom: index < data.length - 1 ? `0.3px dashed ${THEME.colors.border.medium}` : 'none',
             padding: '0 10px',
             boxSizing: 'border-box'
           }}>
@@ -117,7 +117,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         display: 'flex',
         flexDirection: 'column',
         width: '32px',
-        borderRight: '1px solid rgba(194, 194, 194, 0.65)',
+        borderRight: `1px solid ${THEME.colors.border.light}`,
         boxSizing: 'border-box'
       }}>
         {data.map((item, index) => (
@@ -127,7 +127,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
-            borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none',
+            borderBottom: index < data.length - 1 ? `0.3px dashed ${THEME.colors.border.medium}` : 'none',
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -148,7 +148,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         display: 'flex',
         flexDirection: 'column',
         width: '32px',
-        borderRight: '1px solid rgba(194, 194, 194, 0.65)',
+        borderRight: `1px solid ${THEME.colors.border.light}`,
         boxSizing: 'border-box'
       }}>
         {data.map((item, index) => (
@@ -158,7 +158,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
-            borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none',
+            borderBottom: index < data.length - 1 ? `0.3px dashed ${THEME.colors.border.medium}` : 'none',
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -189,7 +189,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: getLevelColor(item.level),
-            borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none',
+            borderBottom: index < data.length - 1 ? `0.3px dashed ${THEME.colors.border.medium}` : 'none',
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -238,8 +238,8 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             <Box key={value} sx={{
               width: '0.3px',
               height: '100%',
-              backgroundColor: index === 3 ? 'rgba(108, 108, 108, 0.65)' : 'transparent',
-              borderRight: index === 0 ? 'none' : (index === 3 ? '0.5px solid rgba(108, 108, 108, 0.65)' : '0.3px dashed rgba(108, 108, 108, 0.65)'),
+              backgroundColor: index === 3 ? THEME.colors.border.medium : 'transparent',
+              borderRight: index === 0 ? 'none' : (index === 3 ? `0.5px solid ${THEME.colors.border.medium}` : `0.3px dashed ${THEME.colors.border.medium}`),
               opacity: 0.65
             }} />
           ))}
@@ -259,7 +259,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           {data.map((_, index) => (
             <Box key={index} sx={{
               height: `${itemHeight}px`,
-              borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none',
+              borderBottom: index < data.length - 1 ? `0.3px dashed ${THEME.colors.border.medium}` : 'none',
               boxSizing: 'border-box'
             }} />
           ))}

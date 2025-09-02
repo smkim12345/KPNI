@@ -34,7 +34,7 @@ export const ProfileSection = ({
         display: 'flex',
         flexDirection: 'row',
         alignSelf: 'stretch',
-        gap: '4px',
+        gap: `${THEME.spacing.sm}px`,
         height: '20px'
       }}>
         <SectionTitle 
@@ -65,13 +65,13 @@ export const ProfileSection = ({
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          gap: '12px',
+          gap: `${THEME.spacing.lg}px`,
           padding: '6.84px 6.84px',
           width: '472px',
           height: '243px',
           backgroundColor: THEME.colors.mainWhite,
           border: `4px solid ${THEME.colors.primary}`,
-          borderRadius: '10px',
+          borderRadius: `${THEME.borderRadius.sm}px`,
           boxSizing: 'border-box'
         }}>
           {/* 종합프로파일 그래프 */}
@@ -111,7 +111,7 @@ export const ProfileSection = ({
                 <Typography sx={{
                   fontFamily: THEME.typography.fontFamily.pretendard,
                   fontWeight: THEME.typography.fontWeight.semiBold,
-                  fontSize: '8.2px',
+                  fontSize: `${THEME.typography.fontSize.xs}px`,
                   lineHeight: '1.19em',
                   color: THEME.colors.text,
                   textAlign: 'left',
@@ -125,7 +125,7 @@ export const ProfileSection = ({
                   alignItems: 'center',
                   gap: '10px',
                   backgroundColor: THEME.colors.primary,
-                  borderRadius: '14px',
+                  borderRadius: `${THEME.borderRadius.xs}px`,
                   width: '100%',
                   height: '20px'
                 }}>
@@ -142,7 +142,7 @@ export const ProfileSection = ({
                 <Typography sx={{
                   fontFamily: 'Inter',
                   fontWeight: THEME.typography.fontWeight.medium,
-                  fontSize: '8.2px',
+                  fontSize: `${THEME.typography.fontSize.xs}px`,
                   lineHeight: '1.21em',
                   color: THEME.colors.text,
                   textAlign: 'right',
@@ -199,14 +199,14 @@ export const ProfileSection = ({
           height: '59px',
           backgroundColor: THEME.colors.mainWhite,
           border: `4px solid ${THEME.colors.primary}`,
-          borderRadius: '10px',
+          borderRadius: `${THEME.borderRadius.sm}px`,
           boxSizing: 'border-box'
         }}>
           {/* 이상적 양육지수 제목 */}
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.pretendard,
             fontWeight: THEME.typography.fontWeight.bold,
-            fontSize: '11px',
+            fontSize: `${THEME.typography.fontSize.md}px`,
             lineHeight: '1.5em',
             color: THEME.colors.text,
             textAlign: 'center',

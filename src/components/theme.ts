@@ -13,6 +13,22 @@ export const THEME = {
     tableGreen1: 'rgba(174, 218, 151, 0.7)',
     tableGreen2: 'rgba(157, 215, 128, 0.7)',
     blue: '#000DFF',
+
+    // Level 색상 (등급별 색상)
+    level: {
+      high: 'rgba(130, 207, 91, 0.76)',
+      mediumHigh: 'rgba(152, 215, 115, 0.7)',
+      medium: 'rgba(174, 223, 139, 0.7)',
+      mediumLow: 'rgba(188, 230, 167, 0.7)',
+      low: 'rgba(201, 237, 183, 0.7)'
+    },
+
+    // Border 색상 (테두리 색상)
+    border: {
+      light: 'rgba(194, 194, 194, 0.65)',
+      medium: 'rgba(108, 108, 108, 0.65)',
+      dark: 'rgba(135, 135, 135, 0.65)'
+    },
     
     // 척도별 색상 팔레트 (Scale Color Palette)
     scale: {
@@ -82,13 +98,27 @@ export const THEME = {
       normal: '1.268em'
     }
   },
-  spacing: { 
+  spacing: {
     xs: 3,
-    sm: 4, 
-    md: 8, 
-    lg: 16, 
+    sm: 4,
+    md: 8,
+    lg: 16,
     xl: 24,
-    xxl: 32
+    xxl: 32,
+
+    // DetailChart 전용 사이즈
+    chart: {
+      totalWidth: 465,
+      categoryColumnWidth: 33,
+      subscaleColumnWidth: 83,
+      dataColumnWidth: 32,
+      chartAreaWidth: 253,
+      totalHeight: 60,
+      barHeight: 7,
+      barMaxWidth: 240,
+      paddingY: 2.5,
+      paddingX: 10
+    }
   },
   borderRadius: {
     xs: 4,
@@ -102,6 +132,19 @@ export const THEME = {
     },
     border: {
       thickness: 50,
+    }
+  },
+
+  // 차트 관련 상수
+  chart: {
+    scaleValues: [20, 30, 40, 50, 60, 70, 80],
+    averageRange: {
+      min: 40,
+      max: 60
+    },
+    tScoreRange: {
+      min: 20,
+      max: 80
     }
   }
 } as const;
