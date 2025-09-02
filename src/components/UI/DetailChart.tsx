@@ -20,15 +20,17 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
   const getLevelColor = (level: string) => {
     switch (level) {
       case '높음':
-        return 'rgba(130, 207, 91, 0.76)';
-      case '다소 낮음':
-        return 'rgba(174, 218, 151, 0.7)';
+        return 'rgba(130, 207, 91, 0.76)';  
+      case '다소 높음':
+        return 'rgba(152, 215, 115, 0.7)';  
       case '보통':
-        return 'rgba(157, 215, 128, 0.7)';
+        return 'rgba(174, 223, 139, 0.7)';  
+      case '다소 낮음':
+        return 'rgba(188, 230, 167, 0.7)';  
       case '낮음':
-        return 'rgba(201, 237, 183, 0.7)';
+        return 'rgba(201, 237, 183, 0.7)';  
       default:
-        return 'rgba(157, 215, 128, 0.7)';
+        return 'rgba(174, 223, 139, 0.7)';
     }
   };
 
