@@ -82,7 +82,7 @@ export const DetailSection = () => {
             width: '83px',
             height: 'auto',
             backgroundColor: '#E2E2E2',
-            borderRight: '1px solid #FBFBFB',
+            borderRight: '1px solid ' + THEME.colors.mediumGray,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -103,7 +103,7 @@ export const DetailSection = () => {
             width: '32px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1px solid #FBFBFB',
+            borderRight: '1px solid ' + THEME.colors.mediumGray,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -124,7 +124,7 @@ export const DetailSection = () => {
             width: '32px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1px solid #FBFBFB',
+            borderRight: '1px solid ' + THEME.colors.mediumGray,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -145,7 +145,7 @@ export const DetailSection = () => {
             width: '32px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1px solid #FBFBFB',
+            borderRight: '1px solid ' + THEME.colors.mediumGray,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
