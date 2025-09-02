@@ -54,17 +54,28 @@ export const DetailChart = ({ categoryName, categoryColor, data }: DetailChartPr
         padding: '10px',
         boxSizing: 'border-box'
       }}>
-        <Typography sx={{
-          fontFamily: THEME.typography.fontFamily.pretendard,
-          fontWeight: THEME.typography.fontWeight.bold,
-          fontSize: `${THEME.typography.fontSize.xs}px`,
-          lineHeight: THEME.typography.lineHeight.tight,
-          color: THEME.colors.text,
-          textAlign: 'center',
-          whiteSpace: 'pre-line'
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '100%',
+          gap: '2px'
         }}>
-          {categoryName}
-        </Typography>
+          {categoryName.split('\n').map((line, index) => (
+            <Typography key={index} sx={{
+              fontFamily: THEME.typography.fontFamily.pretendard,
+              fontWeight: THEME.typography.fontWeight.bold,
+              fontSize: `${THEME.typography.fontSize.xs}px`,
+              lineHeight: THEME.typography.lineHeight.tight,
+              color: THEME.colors.mainWhite,
+              textAlign: 'center',
+              whiteSpace: 'nowrap'
+            }}>
+              {line}
+            </Typography>
+          ))}
+        </Box>
       </Box>
 
       {/* 하위척도 컬럼 */}

@@ -46,7 +46,7 @@ export const DetailSection = () => {
           alignItems: 'stretch',
           width: '465px',
           height: '24px',
-          border: `2px solid rgba(135, 135, 135, 0.65)`,
+          border: `1px solid rgba(135, 135, 135, 0.65)`,
           borderBottom: `1px solid rgba(135, 135, 135, 0.65)`
         }}>
           {/* 상위척도 헤더 */}
@@ -66,9 +66,10 @@ export const DetailSection = () => {
               fontWeight: THEME.typography.fontWeight.semiBold,
               fontSize: `${THEME.typography.fontSize.xs}px`,
               color: THEME.colors.text,
-              textAlign: 'center'
+              textAlign: 'center',
+              wordBreak: 'keep-all'
             }}>
-              상위척도
+              상위 척도
             </Typography>
           </Box>
 
@@ -88,7 +89,7 @@ export const DetailSection = () => {
               fontSize: `${THEME.typography.fontSize.xs}px`,
               color: THEME.colors.text
             }}>
-              하위척도
+              하위 척도
             </Typography>
           </Box>
 
@@ -97,7 +98,7 @@ export const DetailSection = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '33px',
+            width: '32px',
             height: '24px',
             backgroundColor: THEME.colors.primary,
             borderRight: '1px solid #FBFBFB'
@@ -167,7 +168,7 @@ export const DetailSection = () => {
               fontSize: `${THEME.typography.fontSize.xs}px`,
               color: THEME.colors.text
             }}>
-              T점수 및 단위
+              T점수
             </Typography>
           </Box>
         </Box>
