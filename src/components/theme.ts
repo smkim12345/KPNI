@@ -105,20 +105,6 @@ export const THEME = {
     lg: 16,
     xl: 24,
     xxl: 32,
-
-    // DetailChart 전용 사이즈
-    chart: {
-      totalWidth: 465,
-      categoryColumnWidth: 33,
-      subscaleColumnWidth: 83,
-      dataColumnWidth: 32,
-      chartAreaWidth: 253,
-      totalHeight: 60,
-      barHeight: 7,
-      barMaxWidth: 240,
-      paddingY: 2.5,
-      paddingX: 10
-    }
   },
   borderRadius: {
     xs: 4,
