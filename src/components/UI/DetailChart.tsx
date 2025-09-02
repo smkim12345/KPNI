@@ -17,6 +17,7 @@ interface DetailChartProps {
 }
 
 export const DetailChart = ({ categoryName, categoryColor, data, isLast = false }: DetailChartProps) => {
+  const itemHeight = 60 / data.length; // 동적 높이 계산
   const getLevelColor = (level: string) => {
     switch (level) {
       case '높음':
@@ -41,6 +42,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
       alignItems: 'stretch',
       width: '465px',
       height: '60px',
+      borderTop: '1px solid rgba(135, 135, 135, 0.65)',
       borderBottom: isLast ? `2px solid rgba(135, 135, 135, 0.65)` : 'none'
     }}>
       {/* 상위척도 컬럼 */}
@@ -92,7 +94,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '12px',
+            height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
             borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.68)' : 'none',
             padding: '0 10px',
@@ -124,7 +126,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '12px',
+            height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
             borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none'
           }}>
@@ -153,7 +155,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '12px',
+            height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
             borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none'
           }}>
@@ -175,14 +177,13 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         display: 'flex',
         flexDirection: 'column',
         width: '32px',
-        borderRight: '0.5px solid rgba(194, 194, 194, 0.65)'
       }}>
         {data.map((item, index) => (
           <Box key={index} sx={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '12px',
+            height: `${itemHeight}px`,
             backgroundColor: getLevelColor(item.level),
             borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none'
           }}>
@@ -247,11 +248,11 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between'
+          justifyContent: 'flex-start'
         }}>
           {data.map((_, index) => (
             <Box key={index} sx={{
-              height: '12px',
+              height: `${itemHeight}px`,
               borderBottom: index < data.length - 1 ? '0.3px dashed rgba(108, 108, 108, 0.65)' : 'none'
             }} />
           ))}
@@ -266,7 +267,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-around',
+          justifyContent: 'flex-start',
           paddingLeft: '2px'
         }}>
           {data.map((item, index) => {
@@ -277,7 +278,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
               <Box key={index} sx={{
                 display: 'flex',
                 alignItems: 'center',
-                height: '12px',
+                height: `${itemHeight}px`,
                 paddingY: '2.5px'
               }}>
                 <Box sx={{

@@ -37,7 +37,7 @@ export const DetailSection = () => {
         flexDirection: 'column',
         alignSelf: 'stretch',
         width: '465px',
-        marginTop: '10px'
+        //backgroundColor: 'rgba(63, 200, 100, 0.3)',
       }}>
         {/* 테이블 헤더 */}
         <Box sx={{
@@ -45,9 +45,9 @@ export const DetailSection = () => {
           flexDirection: 'row',
           alignItems: 'stretch',
           width: '465px',
-          height: '24px',
+          height: '20px',
           borderTop: `2px solid rgba(135, 135, 135, 0.65)`,
-          borderBottom: `2px solid rgba(135, 135, 135, 0.65)`
+          borderBottom: `1px solid rgba(135, 135, 135, 0.65)`
         }}>
           {/* 상위척도 헤더 */}
           <Box sx={{
@@ -55,7 +55,7 @@ export const DetailSection = () => {
             justifyContent: 'center',
             alignItems: 'center',
             width: '33px',
-            height: '24px',
+            height: 'auto',
             backgroundColor: '#E2E2E2',
             borderRight: '1px solid rgba(194, 194, 194, 0.65)',
             padding: '10px',
@@ -79,7 +79,7 @@ export const DetailSection = () => {
             justifyContent: 'center',
             alignItems: 'center',
             width: '83px',
-            height: '24px',
+            height: 'auto',
             backgroundColor: '#E2E2E2',
             borderRight: '1px solid #FBFBFB'
           }}>
@@ -99,7 +99,7 @@ export const DetailSection = () => {
             justifyContent: 'center',
             alignItems: 'center',
             width: '32px',
-            height: '24px',
+            height: 'auto',
             backgroundColor: THEME.colors.primary,
             borderRight: '1px solid #FBFBFB'
           }}>
@@ -119,7 +119,7 @@ export const DetailSection = () => {
             justifyContent: 'center',
             alignItems: 'center',
             width: '32px',
-            height: '24px',
+            height: 'auto',
             backgroundColor: THEME.colors.primary,
             borderRight: '1px solid #FBFBFB'
           }}>
@@ -139,9 +139,9 @@ export const DetailSection = () => {
             justifyContent: 'center',
             alignItems: 'center',
             width: '32px',
-            height: '24px',
+            height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '0.5px solid #FBFBFB'
+            borderRight: '1px solid #FBFBFB'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
@@ -160,7 +160,7 @@ export const DetailSection = () => {
             justifyContent: 'center',
             alignItems: 'top',
             width: '252px',
-            height: '24px',
+            height: 'auto',
             backgroundColor: '#E2E2E2'
           }}>
             <Typography sx={{
