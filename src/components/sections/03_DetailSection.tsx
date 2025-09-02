@@ -46,8 +46,8 @@ export const DetailSection = () => {
           alignItems: 'stretch',
           width: '465px',
           height: '24px',
-          border: `1px solid rgba(135, 135, 135, 0.65)`,
-          borderBottom: `1px solid rgba(135, 135, 135, 0.65)`
+          borderTop: `2px solid rgba(135, 135, 135, 0.65)`,
+          borderBottom: `2px solid rgba(135, 135, 135, 0.65)`
         }}>
           {/* 상위척도 헤더 */}
           <Box sx={{
@@ -155,9 +155,10 @@ export const DetailSection = () => {
 
           {/* T점수 및 단위 헤더 */}
           <Box sx={{
+            position: 'relative',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: 'top',
             width: '252px',
             height: '24px',
             backgroundColor: '#E2E2E2'
@@ -165,11 +166,34 @@ export const DetailSection = () => {
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
               fontWeight: THEME.typography.fontWeight.semiBold,
-              fontSize: `${THEME.typography.fontSize.xs}px`,
-              color: THEME.colors.text
+              fontSize: `${THEME.typography.fontSize.sm}px`,
+              color: THEME.colors.darkGray,
+              paddingTop: '2px',
             }}>
               T점수
             </Typography>
+            {/* T점수 단위 표시 */}
+            <Box sx={{
+              position: 'absolute',
+              bottom: '1px',
+              left: 0,
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'space-around',
+              paddingX: '20px',
+            }}>
+              {[20, 30, 40, 50, 60, 70].map((value) => (
+                <Typography key={value} sx={{
+                  fontFamily: THEME.typography.fontFamily.pretendard,
+                  fontWeight: THEME.typography.fontWeight.normal,
+                  fontSize: '0.35rem',
+                  color: THEME.colors.darkGray,
+                  lineHeight: 1
+                }}>
+                  {value}
+                </Typography>
+              ))}
+            </Box>
           </Box>
         </Box>
 
@@ -178,11 +202,12 @@ export const DetailSection = () => {
           display: 'flex',
           flexDirection: 'column'
         }}>
-          {SCALE_DATA.map((scale) => (
+          {SCALE_DATA.map((scale, index) => (
             <DetailChart 
               key={scale.id}
               categoryName={scale.categoryName}
               categoryColor={scale.colors.primary}
+              isLast={index === SCALE_DATA.length - 1}
               data={scale.subScaleData.map(sub => ({
                 name: sub.name,
                 value: sub.tScore,

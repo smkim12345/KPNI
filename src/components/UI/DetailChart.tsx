@@ -13,13 +13,14 @@ interface DetailChartProps {
   categoryName: string;
   categoryColor: string;
   data: ScaleData[];
+  isLast?: boolean;
 }
 
-export const DetailChart = ({ categoryName, categoryColor, data }: DetailChartProps) => {
+export const DetailChart = ({ categoryName, categoryColor, data, isLast = false }: DetailChartProps) => {
   const getLevelColor = (level: string) => {
     switch (level) {
       case '높음':
-        return 'rgba(144, 216, 108, 0.76)';
+        return 'rgba(130, 207, 91, 0.76)';
       case '다소 낮음':
         return 'rgba(174, 218, 151, 0.7)';
       case '보통':
@@ -38,8 +39,7 @@ export const DetailChart = ({ categoryName, categoryColor, data }: DetailChartPr
       alignItems: 'stretch',
       width: '465px',
       height: '60px',
-      border: `1px solid rgba(135, 135, 135, 0.65)`,
-      borderTop: 'none'
+      borderBottom: isLast ? `2px solid rgba(135, 135, 135, 0.65)` : 'none'
     }}>
       {/* 상위척도 컬럼 */}
       <Box sx={{
@@ -114,7 +114,7 @@ export const DetailChart = ({ categoryName, categoryColor, data }: DetailChartPr
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
-        width: '33px',
+        width: '32px',
         borderRight: '1px solid rgba(194, 194, 194, 0.65)'
       }}>
         {data.map((item, index) => (
@@ -203,6 +203,17 @@ export const DetailChart = ({ categoryName, categoryColor, data }: DetailChartPr
         width: '252px',
         height: '60px'
       }}>
+        {/* 평균범위 배경 (40-60) */}
+        <Box sx={{
+          position: 'absolute',
+          top: 0,
+          left: `${((40 - 20) / 60) * 100}%`,
+          width: `${((60 - 40) / 60) * 100}%`,
+          height: '100%',
+          backgroundColor: THEME.colors.gray,
+          opacity: 0.3
+        }} />
+
         {/* 세로 기준선들 */}
         <Box sx={{
           position: 'absolute',
@@ -254,11 +265,11 @@ export const DetailChart = ({ categoryName, categoryColor, data }: DetailChartPr
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-around',
-          paddingLeft: '10px'
+          paddingLeft: '2px'
         }}>
           {data.map((item, index) => {
-            // T점수 20~80 범위에서 막대 길이 계산 (232px = 전체 차트 너비 - 패딩)
-            const barWidth = Math.max(0, Math.min(232, ((item.value - 20) / 60) * 232));
+            // T점수 20~80 범위에서 막대 길이 계산 (240px = 전체 차트 너비 - 패딩)
+            const barWidth = Math.max(0, Math.min(240, ((item.value - 20) / 60) * 240));
             
             return (
               <Box key={index} sx={{
