@@ -44,8 +44,8 @@ export const InfoSection = () => {
         {/* K-PNI */}
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.moyamoya,
-          fontWeight: THEME.typography.fontWeight.semiBold,
-          fontSize: `${THEME.typography.fontSize.huge-8}px`,
+          fontWeight: THEME.typography.fontWeight.bold,
+          fontSize: `${THEME.typography.fontSize.huge-4}px`,
           lineHeight: THEME.typography.lineHeight.tight,
           color: THEME.colors.mainWhite,
         }}>
