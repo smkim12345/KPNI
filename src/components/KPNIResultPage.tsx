@@ -135,9 +135,9 @@ export const KPNIResultPage = () => {
             <InfoSection />
           </Box>
           
-          {/* 왼쪽 메인 섹션 (2,3,4번 섹션들) */}
+          {/* 왼쪽 메인 섹션 (1,2,3번 섹션들) */}
           <Box sx={{
-            width: '488px',
+            width: '488px', 
             height: '787px',
             display: 'flex',
             flexDirection: 'column',
@@ -150,7 +150,7 @@ export const KPNIResultPage = () => {
             <DetailSection />
           </Box>
           
-          {/* 오른쪽 메인 섹션 (5번 섹션) */}
+          {/* 오른쪽 메인 섹션 (4번 섹션) */}
           <Box sx={{
             width: '488px',
             height: '787px',
