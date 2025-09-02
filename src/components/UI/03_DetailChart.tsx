@@ -68,7 +68,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
               fontFamily: THEME.typography.fontFamily.pretendard,
               fontWeight: THEME.typography.fontWeight.bold,
               fontSize: `${THEME.typography.fontSize.xs}px`,
-              lineHeight: THEME.typography.lineHeight.tight,
+              lineHeight: THEME.typography.lineHeight.normal,
               color: THEME.colors.mainWhite,
               textAlign: 'center',
               whiteSpace: 'nowrap'

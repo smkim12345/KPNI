@@ -24,7 +24,7 @@ export const ScaleResultChip = ({
       <Typography sx={{
         fontFamily: THEME.typography.fontFamily.pretendard,
         fontWeight: THEME.typography.fontWeight.medium,
-        fontSize: `${THEME.typography.fontSize.xxs}px`,
+        fontSize: `${THEME.typography.fontSize.xs}px`,
         lineHeight: '1.74em',
         color: THEME.colors.text,
         textAlign: 'center'
@@ -37,8 +37,9 @@ export const ScaleResultChip = ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        padding: '0 5px',
         width: 'auto',
-        minWidth: '28px',
+        minWidth: '14px',
         height: '12px',
         backgroundColor: THEME.colors.mainWhite,
         border: `1px solid ${borderColor}`,
@@ -47,7 +48,7 @@ export const ScaleResultChip = ({
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.pretendard,
           fontWeight: THEME.typography.fontWeight.medium,
-          fontSize: `${THEME.typography.fontSize.xxs}px`,
+          fontSize: `${THEME.typography.fontSize.xs}px`,
           lineHeight: '1em',
           color: THEME.colors.text,
           textAlign: 'center'
