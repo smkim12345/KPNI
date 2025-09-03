@@ -7,10 +7,35 @@ import icon03 from '../../images/03Icon.png';
 import icon04 from '../../images/04Icon.png';
 import icon05 from '../../images/05Icon.png';
 import { SCALE_DATA } from '../../data/scaleData';
+import { getScaleColorsByName } from '../../utils/scaleUtils';
+import type { ScaleSectionProps } from '../../types/KPNITypes';
 
-export const ScaleSection = () => {
+export const ScaleSection = ({ parentScales, scaleInterpretations }: ScaleSectionProps) => {
   const icons = [icon01, icon02, icon03, icon04, icon05];
   const iconSizes = ['20px', '20px', '20px', '20px', '20px'];
+
+  // GST 방식: parentScales 있으면 동적 데이터, 없으면 더미 데이터 사용
+  const scaleData = parentScales && parentScales.length > 0
+    ? parentScales.map((parentScale) => ({
+        id: parentScale.id,
+        title: parentScale.name,
+        categoryName: parentScale.name,
+        colors: getScaleColorsByName(parentScale.name), // 공통 유틸 함수 사용
+        summary: `${parentScale.name} 분석 결과`, // 기본 요약
+        scaleResults: {
+          tScore: parentScale.score.toString(),
+          percentile: parentScale.percentile.toString(),
+          level: parentScale.level
+        },
+        subScaleData: parentScale.subScales?.map(sub => ({
+          name: sub.name,
+          tScore: sub.score,
+          percentile: sub.percentile.toString(),
+          level: sub.level,
+          interpretation: sub.interpretation || ''
+        })) || []
+      }))
+    : SCALE_DATA;
 
   return (
     <Box sx={{ 
@@ -43,7 +68,7 @@ export const ScaleSection = () => {
         width: '473px',
         height: '741px',
       }}>
-        {SCALE_DATA.map((scale, index) => (
+        {scaleData.map((scale, index) => (
           <ScaleAnalysisCard
             key={scale.id}
             title={scale.title}

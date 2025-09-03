@@ -5,20 +5,27 @@ import { ProfileChart } from '../UI/02_ProfileChart';
 import { CompositeIndexTable } from '../UI/02_CompositeIndexTable';
 import { THEME } from '../theme';
 import { COMPOSITE_INDEX_DATA } from '../../data/scaleData';
+import { getScaleColorByName } from '../../utils/scaleUtils';
+import type { ProfileSectionProps } from '../../types/KPNITypes';
 
-interface ProfileSectionProps {
-  indexScore?: number;
-  percentile?: number;
-  summaryLevel?: string;
-  interpretation?: string;
-}
+export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
+  // GST 방식: parentScales에서 데이터 추출, 없으면 더미 데이터 사용
+  const fallbackData = {
+    indexScore: COMPOSITE_INDEX_DATA.indexScore,
+    percentile: COMPOSITE_INDEX_DATA.percentile,
+    level: COMPOSITE_INDEX_DATA.level,
+    interpretation: COMPOSITE_INDEX_DATA.interpretation
+  };
 
-export const ProfileSection = ({ 
-  indexScore = COMPOSITE_INDEX_DATA.indexScore, 
-  percentile = COMPOSITE_INDEX_DATA.percentile,
-  summaryLevel = COMPOSITE_INDEX_DATA.level,
-  interpretation = COMPOSITE_INDEX_DATA.interpretation
-}: ProfileSectionProps) => {
+  // parentScales가 있으면 첫 번째 척도의 데이터 사용 (종합 지수)
+  const profileData = parentScales && parentScales.length > 0
+    ? {
+        indexScore: parentScales[0]?.score ?? fallbackData.indexScore,
+        percentile: parentScales[0]?.percentile ?? fallbackData.percentile,
+        level: parentScales[0]?.level ?? fallbackData.level,
+        interpretation: fallbackData.interpretation // 해석은 기본값 유지
+      }
+    : fallbackData;
   return (
     <Box sx={{ 
       display: 'flex',
@@ -81,7 +88,14 @@ export const ProfileSection = ({
             position: 'relative',
             //backgroundColor: 'rgba(0, 150, 255, 0.3)'
           }}>
-            <ProfileChart />
+            <ProfileChart data={parentScales ? parentScales.map((scale, index) => ({
+              name: scale.name,
+              value: scale.score,
+              fill: getScaleColorByName(scale.name), // 공통 유틸 함수 사용
+              percentile: scale.percentile,
+              level: scale.level,
+              index
+            })) : undefined} />
           </Box>
           
           {/* 결과 종합 */}
@@ -139,7 +153,7 @@ export const ProfileSection = ({
                     color: THEME.colors.mainWhite,
                     textAlign: 'center'
                   }}>
-                    {summaryLevel}
+                    {profileData.level}
                   </Typography>
                 </Box>
                 <Typography sx={{
@@ -179,7 +193,7 @@ export const ProfileSection = ({
                 textAlign: 'left',
                 width: '100%'
               }}>
-                {interpretation}
+                {profileData.interpretation}
               </Typography>
             </Box>
           </Box>
@@ -278,7 +292,7 @@ export const ProfileSection = ({
                   color: THEME.colors.text,
                   textAlign: 'center'
                 }}>
-                  {indexScore}
+                  {profileData.indexScore}
                 </Typography>
               </Box>
             </Box>
@@ -319,14 +333,14 @@ export const ProfileSection = ({
                   color: THEME.colors.text,
                   textAlign: 'center'
                 }}>
-                  {percentile}
+                  {profileData.percentile}
                 </Typography>
               </Box>
             </Box>
           </Box>
           
           {/* 종합지수 표 */}
-          <CompositeIndexTable score={indexScore} />
+          <CompositeIndexTable score={profileData.indexScore} />
         </Box>
       </Box>
     </Box>

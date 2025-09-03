@@ -1,8 +1,10 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
 import { InputField } from '../UI/00_InputField';
+import type { InfoSectionProps } from '../../types/KPNITypes';
+import { format } from 'date-fns';
 
-export const InfoSection = () => {
+export const InfoSection = ({ participant }: InfoSectionProps) => {
   return (
     <Box sx={{
       display: 'flex',
@@ -43,7 +45,7 @@ export const InfoSection = () => {
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.moyamoya,
           fontWeight: THEME.typography.fontWeight.bold,
-          fontSize: `${THEME.typography.fontSize.huge-4}px`,
+          fontSize: `${THEME.typography.fontSize.huge - 4}px`,
           lineHeight: THEME.typography.lineHeight.tight,
           color: THEME.colors.mainWhite,
         }}>
@@ -93,14 +95,38 @@ export const InfoSection = () => {
           boxSizing: 'border-box',
           gap: '3px'
         }}>
-          <InputField label="양육자명" value="김성민" />
-          <InputField label="양육자 생년월일" value="1995.12.14" />
-          <InputField label="자녀와의 관계" value="아들" />
-          <InputField label="양육구분" value="양육구분" />
-          <InputField label="자녀이름" value="김성근" />
-          <InputField label="자녀성별" value="남성" />
-          <InputField label="자녀연령" value="12세" />
-          <InputField label="검사 실시일" value="2025.08.26" />
+          <InputField 
+            label="양육자명" 
+            value={participant?.name ?? "김성민"} 
+          />
+          <InputField 
+            label="양육자 생년월일" 
+            value={participant?.caregiverBirthDate ?? "1995.12.14"} 
+          />
+          <InputField 
+            label="자녀와의 관계" 
+            value={participant?.relationshipToChild ?? "아들"} 
+          />
+          <InputField 
+            label="양육구분" 
+            value={participant?.careType ?? "양육구분"} 
+          />
+          <InputField 
+            label="자녀이름" 
+            value={participant?.childName ?? "김성근"} 
+          />
+          <InputField 
+            label="자녀성별" 
+            value={participant?.gender === 'MALE' ? '남성' : participant?.gender === 'FEMALE' ? '여성' : "남성"} 
+          />
+          <InputField 
+            label="자녀연령" 
+            value={participant?.childAge ? `${participant.childAge}세` : "12세"} 
+          />
+          <InputField 
+            label="검사 실시일" 
+            value={participant?.testedDate ? format(new Date(participant.testedDate), 'yyyy.MM.dd') : "2025.08.26"} 
+          />
         </Box>
       </Box>
       

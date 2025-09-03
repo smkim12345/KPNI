@@ -18,7 +18,8 @@
       "Read(D:\\github\\kpr-inventory-react2/**)",
       "mcp__server-sequential-thinking__sequentialthinking",
       "Bash(npm install:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "mcp__serena__think_about_whether_you_are_done"
     ],
     "deny": [],
     "ask": []

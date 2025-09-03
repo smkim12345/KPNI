@@ -6,6 +6,7 @@ import { ReliabilitySection } from './sections/01_ReliabilitySection';
 import { ProfileSection } from './sections/02_ProfileSection';
 import { DetailSection } from './sections/03_DetailSection';
 import { ScaleSection } from './sections/04_ScaleSection';
+import type { KPNIResultPageProps } from '../types/KPNITypes';
 
 // A3 페이지 캔버스
 const PageContainer = styled(Container)({
@@ -34,7 +35,6 @@ const FrameBox = styled(Box)({
   backgroundColor: THEME.colors.primary,
 });
 
-
 const CornerBox = styled(Box)({
   position: 'absolute',
   top: 0,
@@ -49,8 +49,9 @@ const CornerBox = styled(Box)({
 /**
  * K-PNI A3 결과지 메인 페이지
  * A3 페이지 레이아웃과 결과 콘텐츠가 통합된 컴포넌트
+ * resultResponse 선택적으로 받아서 동적 데이터 바인딩
  */
-export const KPNIResultPage = () => {
+export const KPNIResultPage = ({ resultResponse }: KPNIResultPageProps) => {
   return (
     <PageContainer maxWidth={false}>
       <OuterGreenBox>
@@ -99,7 +100,7 @@ export const KPNIResultPage = () => {
             boxSizing: 'border-box',
             //backgroundColor: 'rgb(245, 245, 245,0.5)',
           }}>
-            <InfoSection />
+            <InfoSection participant={resultResponse?.participant} />
           </Box>
           
           {/* 왼쪽 메인 섹션 (1,2,3번 섹션들) */}
@@ -112,9 +113,9 @@ export const KPNIResultPage = () => {
             boxSizing: 'border-box',
             padding: '10px 0px 10px 10px'
           }}>
-            <ReliabilitySection />
-            <ProfileSection />
-            <DetailSection />
+            <ReliabilitySection trustIndicators={resultResponse?.resultData?.trustIndicators} />
+            <ProfileSection parentScales={resultResponse?.resultData?.parentScales} />
+            <DetailSection subScales={resultResponse?.resultData?.subScales} />
           </Box>
           
           {/* 오른쪽 메인 섹션 (4번 섹션) */}
@@ -127,7 +128,10 @@ export const KPNIResultPage = () => {
             boxSizing: 'border-box',
             padding: '10px 0 10px 10px'
           }}>
-            <ScaleSection />
+            <ScaleSection 
+              parentScales={resultResponse?.resultData?.parentScales}
+              scaleInterpretations={resultResponse?.resultData?.scaleInterpretations}
+            />
           </Box>
             
           </Box>

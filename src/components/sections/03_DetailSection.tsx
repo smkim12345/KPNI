@@ -3,8 +3,9 @@ import { SectionTitle } from '../UI/SectionTitle';
 import { DetailChart } from '../UI/03_DetailChart';
 import { THEME } from '../theme';
 import { SCALE_DATA } from '../../data/scaleData';
+import type { DetailSectionProps } from '../../types/KPNITypes';
 
-export const DetailSection = () => {
+export const DetailSection = ({ subScales }: DetailSectionProps) => {
   return (
     <Box sx={{ 
       display: 'flex',
@@ -208,6 +209,7 @@ export const DetailSection = () => {
           display: 'flex',
           flexDirection: 'column'
         }}>
+          {/* GST 방식: 간단한 fallback 패턴 사용 */}
           {SCALE_DATA.map((scale, index) => (
             <DetailChart
               key={scale.id}
@@ -215,13 +217,17 @@ export const DetailSection = () => {
               categoryColor={scale.colors.primary}
               isLast={index === SCALE_DATA.length - 1}
               isFirst={index === 0}
-              data={scale.subScaleData.map(sub => ({
-                name: sub.name,
-                value: sub.tScore,
-                percentile: parseFloat(sub.percentile),
-                level: sub.level,
-                levelColor: ''
-              }))}
+              data={scale.subScaleData.map(sub => {
+                // GST 방식: subScales에서 같은 이름의 데이터 찾아서 fallback 적용
+                const dynamicSub = subScales?.find(s => s.name === sub.name);
+                return {
+                  name: sub.name,
+                  value: dynamicSub?.score ?? sub.tScore,
+                  percentile: dynamicSub?.percentile ?? parseFloat(sub.percentile),
+                  level: dynamicSub?.level ?? sub.level,
+                  levelColor: ''
+                };
+              })}
             />
           ))}
         </Box>
