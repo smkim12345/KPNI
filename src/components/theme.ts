@@ -1,7 +1,7 @@
 // K-PNI A3 결과지 디자인 시스템
 export const THEME = {
   colors: {
-    primary: '#629449',
+    primary: '#66A247',
     background: '#FFFFFF',
     white: '#FFFFFF',
     mainWhite: '#F5F6FA',

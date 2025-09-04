@@ -322,7 +322,7 @@ export const InterpretationOrderSection = () => {
                   width: '42px',
                   padding: '5px',
                   backgroundColor: item.bgColor,
-                  border: '0.7px solid #868686',
+                  border: '0.5px solid #868686',
                   borderTopLeftRadius: index === 0 ? '5px' : 0,
                   borderTopRightRadius: index === 11 ? '5px' : 0,
                 }}
@@ -363,7 +363,7 @@ export const InterpretationOrderSection = () => {
                   width: '42px',
                   padding: '5px',
                   backgroundColor: item.bgColor,
-                  border: '0.7px solid #868686',
+                  border: '0.5px solid #868686',
                   borderBottomLeftRadius: index === 0 ? '5px' : 0,
                   borderBottomRightRadius: index === 11 ? '5px' : 0,
                 }}
@@ -442,7 +442,7 @@ export const InterpretationOrderSection = () => {
           borderSpacing: 0,
           //backgroundColor: 'blue',
           '& .MuiTableCell-root': {
-            border: '0.7px solid #868686',
+            border: '0.5px solid #868686',
             padding: '5px',
             textAlign: 'center',
             fontFamily: THEME.typography.fontFamily.pretendard,
@@ -459,7 +459,7 @@ export const InterpretationOrderSection = () => {
                     backgroundColor: header.bgColor,
                     color: header.color || THEME.colors.text,
                     fontWeight: 700,
-                    fontSize: '10px !important',
+                    fontSize: '9px !important',
                     width: '84px',
                     borderTopLeftRadius: index === 0 ? '5px' : 0,
                     borderTopRightRadius: index === TABLE_HEADERS.length - 1 ? '5px' : 0,

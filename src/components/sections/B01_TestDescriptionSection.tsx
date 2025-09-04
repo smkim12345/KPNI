@@ -77,8 +77,8 @@ PNI검사는 심리학적으로는 생태학적 양육이론(Bronfenbrenner), �
 
         {/* 부모양육 사진 */}
         <Box sx={{
-          width: '198px',
-          height: '198px',
+          width: '190px',
+          height: '190px',
           borderRadius: '60px',
           overflow: 'hidden',
           backgroundColor: '#f0f0f0',
