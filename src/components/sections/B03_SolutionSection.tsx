@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
+import { SectionTitleBox } from '../UI/SectionTitleBox';
 
 /**
  * K-PNI 솔루션 섹션
@@ -18,25 +19,7 @@ export const SolutionSection = () => {
       gap: '10px'
     }}>
       {/* 섹션 제목 */}
-      <Box sx={{
-        backgroundColor: THEME.colors.primary,
-        borderRadius: '0px 30px 30px 0px',
-        padding: '0px 10px 0px 5px',
-        height: '19px',
-        display: 'flex',
-        alignItems: 'center',
-        alignSelf: 'flex-start'
-      }}>
-        <Typography sx={{
-          fontFamily: THEME.typography.fontFamily.ohsquare,
-          fontWeight: THEME.typography.fontWeight.normal,
-          fontSize: `${THEME.typography.fontSize.lg}px`,
-          lineHeight: 1.5,
-          color: THEME.colors.mainWhite,
-        }}>
-          3. 좋은 부모가 되기위한 여정
-        </Typography>
-      </Box>
+      <SectionTitleBox title="3. 좋은 부모가 되기위한 여정" />
 
       {/* 메인 컨텐츠 영역 */}
       <Box sx={{

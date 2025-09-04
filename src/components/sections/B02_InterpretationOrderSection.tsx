@@ -8,6 +8,7 @@ import {
   TableCell
 } from '@mui/material';
 import { THEME } from '../theme';
+import { SectionTitleBox } from '../UI/SectionTitleBox';
 
 /**
  * K-PNI 검사 해석 순서 섹션
@@ -49,25 +50,7 @@ export const InterpretationOrderSection = () => {
     }}>
 
        {/* 섹션 제목 */}
-       <Box sx={{
-        backgroundColor: THEME.colors.primary,
-        borderRadius: '0px 30px 30px 0px',
-        padding: '0px 10px 0px 5px',
-        height: '19px',
-        display: 'flex',
-        alignItems: 'center',
-        alignSelf: 'flex-start',
-      }}>
-        <Typography sx={{
-          fontFamily: THEME.typography.fontFamily.ohsquare,
-          fontWeight: THEME.typography.fontWeight.normal,
-          fontSize: `${THEME.typography.fontSize.lg}px`,
-          lineHeight: 1.5,
-          color: THEME.colors.mainWhite,
-        }}>
-          2. 검사해석의 순서
-        </Typography>
-      </Box>
+       <SectionTitleBox title="2. 검사해석의 순서" />
 
       {/* 2-1. 신뢰지표 확인/해석 */}
       <Box sx={{

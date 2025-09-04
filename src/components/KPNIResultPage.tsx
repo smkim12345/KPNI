@@ -7,7 +7,7 @@ import { ProfileSection } from './sections/02_ProfileSection';
 import { DetailSection } from './sections/03_DetailSection';
 import { ScaleSection } from './sections/04_ScaleSection';
 import type { KPNIResultPageProps } from '../types/KPNITypes';
-import { BackTitleSection } from './UI/Back_SectionTitle';
+import { BackTitleSection } from './sections/B00_SectionTitle';
 import { TestDescriptionSection } from './sections/B01_TestDescriptionSection';
 import { InterpretationOrderSection } from './sections/B02_InterpretationOrderSection';
 import { ScaleOpinionSection } from './sections/B02_ScaleOpinionSection';

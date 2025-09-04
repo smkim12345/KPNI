@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
 import familyImage from '../../images/1_family.png';
+import { SectionTitleBox } from '../UI/SectionTitleBox';
 
 /**
  * K-PNI 검사명 설명 섹션 - 피그마 1번섹션_용어설명 1:1 구현
@@ -20,25 +21,7 @@ export const TestDescriptionSection = () => {
       gap: '5px'
     }}>
       {/* 섹션 제목 */}
-      <Box sx={{
-        backgroundColor: THEME.colors.primary,
-        borderRadius: '0px 30px 30px 0px',
-        padding: '0px 10px 0px 5px',
-        height: '19px',
-        display: 'flex',
-        alignItems: 'center',
-        alignSelf: 'flex-start',
-      }}>
-        <Typography sx={{
-          fontFamily: THEME.typography.fontFamily.ohsquare,
-          fontWeight: THEME.typography.fontWeight.normal,
-          fontSize: `${THEME.typography.fontSize.lg}px`,
-          lineHeight: 1.5,
-          color: THEME.colors.mainWhite,
-        }}>
-          1. 부모양육종합검사란?
-        </Typography>
-      </Box>
+      <SectionTitleBox title="1. 부모양육종합검사란?" />
 
       {/* 내용 영역 */}
       <Box sx={{
