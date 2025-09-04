@@ -230,7 +230,7 @@ const KPNIBackPage = () => {
               height: '787px',
               display: 'flex',
               flexDirection: 'column',
-              backgroundColor: 'rgb(245, 245, 25,0.5)',
+              //backgroundColor: 'rgb(245, 245, 25,0.5)',
               boxSizing: 'border-box',
             }}>
               <ScaleOpinionSection/>
