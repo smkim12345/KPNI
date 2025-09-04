@@ -7,7 +7,11 @@ import { ProfileSection } from './sections/02_ProfileSection';
 import { DetailSection } from './sections/03_DetailSection';
 import { ScaleSection } from './sections/04_ScaleSection';
 import type { KPNIResultPageProps } from '../types/KPNITypes';
-import { BackPage } from './sections/BackPage';
+import { BackTitleSection } from './sections/BackTitleSection';
+import { TestDescriptionSection } from './sections/TestDescriptionSection';
+import { InterpretationOrderSection } from './sections/InterpretationOrderSection';
+import { ScaleOpinionSection } from './sections/ScaleOpinionSection';
+import { SolutionSection } from './sections/SolutionSection';
 
 // A3 페이지 캔버스
 const PageContainer = styled(Container)({
@@ -76,7 +80,7 @@ const KPNIFrontPage = ({ resultResponse }: KPNIResultPageProps) => {
             top: '30px',
             width: '976px', 
             height: '787px',
-            backgroundColor: '#F9F9F9',
+            backgroundColor: THEME.colors.background,
             borderRadius: '15px 15px 15px 0px',
             zIndex: 2
           }} />
@@ -148,7 +152,91 @@ const KPNIBackPage = ({ resultResponse }: KPNIResultPageProps) => {
     <PageContainer maxWidth={false}>
       <OuterGreenBox>
         <FrameBox>
-          <BackPage />
+          {/* 왼쪽 흰색 배경 */}
+          <Box sx={{ 
+            position: 'absolute',
+            left: '30px',
+            top: '101px',
+            width: '432px', 
+            height: '716px',
+            backgroundColor: THEME.colors.background,
+            borderRadius: '15px 0px 0px 15px',
+            zIndex: 2
+          }} />
+
+          {/* 오른쪽 흰색 배경 */}
+          <Box sx={{ 
+            position: 'absolute',
+            left: '462px',
+            top: '30px',
+            width: '699px', 
+            height: '787px',
+            backgroundColor: THEME.colors.background,
+            borderRadius: '15px 15px 15px 0px',
+            zIndex: 2
+          }} />
+
+          {/* 제목 흰색 배경 */}
+          <Box sx={{ 
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            width: '462px', 
+            height: '101px',
+            backgroundColor: THEME.colors.primary,
+            borderRadius: '0 0 15px 0',
+            zIndex: 1
+          }} />
+
+          {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 */}
+          <Box sx={{
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            width: '462px', 
+            height: '101px',
+            backgroundColor: THEME.colors.background,
+            zIndex: 1.5
+          }} />
+
+          {/* 메인 섹션 레이아웃 */}
+          <Box sx={{ 
+            position: 'absolute',
+            left: '30px',
+            top: '30px',
+            display: 'flex',
+            width: '1131px',
+            height: '787px',
+            zIndex: 3,
+            backgroundColor: 'rgb(24, 245, 245,0.4)',
+          }}>
+            {/* 왼쪽 메인 섹션(제목, 2-1, 2-2, 2-3번) */}
+            <Box sx={{
+              width: '565px',
+              height: '787px',
+              display: 'flex',
+              flexDirection: 'column',
+              boxSizing: 'border-box',
+              backgroundColor: 'rgb(24, 24, 245,0.4)',
+            }}>
+              <BackTitleSection/>
+              <TestDescriptionSection/>
+              <InterpretationOrderSection/>
+            </Box>
+            
+            {/* 오른쪽 메인 섹션(2-4번, 3번) */}
+            <Box sx={{
+              width: '565px', 
+              height: '787px',
+              display: 'flex',
+              flexDirection: 'column',
+              backgroundColor: 'rgb(245, 245, 25,0.5)',
+              boxSizing: 'border-box',
+            }}>
+              <ScaleOpinionSection/>
+              <SolutionSection/>
+            </Box>
+          </Box>
         </FrameBox>
       </OuterGreenBox>
     </PageContainer>
