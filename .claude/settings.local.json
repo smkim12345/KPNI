@@ -20,7 +20,12 @@
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
       "mcp__serena__think_about_whether_you_are_done",
-      "Read(/D:\\github\\KPNI\\src\\components\\sections/**)"
+      "Read(/D:\\github\\KPNI\\src\\components\\sections/**)",
+      "Read(/D:\\github\\KPNI/**)",
+      "Read(/D:\\github\\KPNI/**)",
+      "Read(/D:\\github\\KPNI\\src\\components\\sections/**)",
+      "Read(/D:\\github\\KPNI/**)",
+      "Read(/D:\\github\\KPNI/**)"
     ],
     "deny": [],
     "ask": []

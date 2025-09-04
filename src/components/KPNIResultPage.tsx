@@ -217,7 +217,7 @@ const KPNIBackPage = () => {
               display: 'flex',
               flexDirection: 'column',
               boxSizing: 'border-box',
-              backgroundColor: 'rgb(24, 24, 245,0.4)',
+              //backgroundColor: 'rgb(24, 24, 245,0.4)',
             }}>
               <BackTitleSection/>
               <TestDescriptionSection/>
