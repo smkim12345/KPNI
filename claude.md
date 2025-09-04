@@ -144,223 +144,8 @@ export const BackPage = () => {  // Props 없음 - 하드코딩 구현
     </Box>
   );
 };
-```
-
-## 📊 **현재 활용 가능한 디자인 시스템**
-
-### **색상 팔레트** ✅
-```typescript
-THEME.colors = {
-  primary: '#629449',           // 메인 초록색
-  background: '#F5F5F5',        // 배경색
-  white: '#FFFFFF',             // 순수 흰색
-  mainWhite: '#F5F6FA',         // 메인 텍스트용 흰색
-  text: '#0B0B0B',             // 일반 텍스트
-  
-  // 척도별 색상 팔레트 (뒷면에서 활용)
-  scale: {
-    childCharacter: {           // 자녀 특성
-      primary: '#FDB68C',
-      secondary: '#FCD9A3',
-      light: '#F9F0DA'
-    },
-    parentingAttitude: {        // 양육 태도
-      primary: '#A9CEF4',
-      secondary: '#C9E0F8',
-      light: '#E9F4FF'
-    },
-    parentingEnvironment: {     // 양육 환경
-      primary: '#88CACE',
-      secondary: '#BCEBEE',
-      light: '#DDF1F3'
-    },
-    parentingStress: {          // 양육 스트레스
-      primary: '#D0AFF2',
-      secondary: '#D7D3F0',
-      light: '#EBE9F9'
-    },
-    parentingProcess: {         // 양육 과정
-      primary: '#F0C0CD',
-      secondary: '#F6DEE5',
-      light: '#FFF0F4'
-    }
-  }
-}
-```
-
-### **타이포그래피** ✅
-```typescript
-THEME.typography = {
-  fontSize: {
-    xxs: 6, xs: 7, sm: 9, md: 11, 
-    lg: 13, xl: 15, xxl: 20, huge: 48
-  },
-  fontFamily: {
-    moyamoya: 'Cafe24 Moyamoya OTF',     // K-PNI 타이틀용
-    ohsquare: 'Cafe24 Ohsquare',         // 제목용
-    ohsquareAir: 'Cafe24 Ohsquare air',  // 본문용
-    pretendard: 'Pretendard Variable'     // 설명용
-  }
-}
-```
-
-## 🔄 **구현 워크플로우**
-
-### **Phase 1: 뒷면 기본 구조 설정** 🏗️
-
-#### 1-1. FRAMELINK MCP로 뒷면 조사
-```bash
-# 피그마 뒷면 프레임 식별 및 구조 분석
-get_figma_data(fileKey="DAfGZDS2gtUa3sWrldHqve", nodeId="뒷면노드ID")
-```
-
-#### 1-2. KPNIResultPage.tsx GST A3 스타일로 변경 ✅ 완료
-```typescript
-// 앞면과 뒷면을 별도 컴포넌트로 분리
-const KPNIFrontPage = ({ resultResponse }: KPNIResultPageProps) => { /* 앞면 */ };
-const KPNIBackPage = ({ resultResponse }: KPNIResultPageProps) => { /* 뒷면 */ };
-
-// 전체 페이지에서 연속으로 렌더링 (GST A3 방식)
-export const KPNIResultPage = ({ resultResponse }: KPNIResultPageProps) => {
-  return (
-    <>
-      <KPNIFrontPage resultResponse={resultResponse} />
-      <KPNIBackPage resultResponse={resultResponse} />
-    </>
-  );
-};
-```
-
-#### 1-3. sections/BackPage.tsx 백엔드 연동 없이 생성 ✅ 완료
-```typescript
-// 데이터 연동 없이 하드코딩으로 구현
-export const BackPage = () => {  // Props 제거
-  return (
-    <Box sx={{
-      position: 'absolute',
-      left: '30px',
-      top: '30px',
-      width: '1131px',  // 전체 영역 사용
-      height: '787px',
-      display: 'flex',
-      flexDirection: 'column',
-      zIndex: 3,
-    }}>
-      {/* 하드코딩된 뒷면 콘텐츠 구현 */}
-      
-      {/* =============================================== */}
-      {/* 뒷면 섹션 1: 설명글 제목                        */}
-      {/* =============================================== */}
-      <Box sx={{ /* 섹션 1 레이아웃 */ }}>
-        {/* 하드코딩 설명 텍스트와 UI 요소들 */}
-      </Box>
-      
-      {/* =============================================== */}
-      {/* 뒷면 섹션 2: 다른 설명글                        */}
-      {/* =============================================== */}
-      <Box sx={{ /* 섹션 2 레이아웃 */ }}>
-        {/* 하드코딩 설명 텍스트와 UI 요소들 */}
-      </Box>
-      
-      {/* ... 이하 동일한 패턴으로 섹션 구현 */}
-    </Box>
-  );
-};
-```
-
-### **Phase 2: 사용자 승인 후 통합 파일 상세 구현** 🎨
-
-#### 2-1. 구현 순서
-```
-1. 피그마에서 뒷면 전체 구조 파악
-2. BackPage.tsx에서 레이아웃 박스부터 잡기
-3. 섹션별 하드코딩 텍스트와 UI 요소 구현
-4. THEME 시스템 100% 활용하여 스타일링
-5. 주석으로 각 섹션 명확히 구분
-```
-
-#### 2-2. 단일 파일 구현 패턴
-```typescript
-export const BackPage = ({ resultResponse }: BackPageProps) => {
-  return (
-    <Box sx={{ display: 'flex', width: '100%', height: '787px' }}>
-      
-      {/* InfoSection 재사용 */}
-      <Box sx={{ width: '155px', height: '100%' }}>
-        <InfoSection participant={resultResponse?.participant} />
-      </Box>
-      
-      <Stack spacing={THEME.spacing.md} sx={{ flex: 1, padding: THEME.spacing.md }}>
-        
-        {/* ========================================= */}
-        {/* 뒷면 섹션 1: K-PNI 검사결과 해석         */}
-        {/* ========================================= */}
-        <Box sx={{
-          backgroundColor: THEME.colors.white,
-          borderRadius: `${THEME.borderRadius.sm}px`,
-          padding: `${THEME.spacing.lg}px`
-        }}>
-          <Typography sx={{
-            fontSize: `${THEME.typography.fontSize.xl}px`,
-            fontFamily: THEME.typography.fontFamily.ohsquare,
-            color: THEME.colors.text,
-            marginBottom: `${THEME.spacing.md}px`
-          }}>
-            K-PNI 검사결과 해석
-          </Typography>
-          
-          <Typography sx={{
-            fontSize: `${THEME.typography.fontSize.md}px`,
-            fontFamily: THEME.typography.fontFamily.pretendard,
-            color: THEME.colors.text,
-            lineHeight: 1.6
-          }}>
-            하드코딩된 설명 텍스트가 여기에 들어갑니다...
-          </Typography>
-          
-          {/* 필요한 UI 요소들 (차트, 테이블 등) */}
-        </Box>
-        
-        {/* ========================================= */}
-        {/* 뒷면 섹션 2: 다른 내용                   */}
-        {/* ========================================= */}
-        <Box sx={{ /* 섹션 2 스타일 */ }}>
-          {/* 섹션 2 내용 */}
-        </Box>
-        
-        {/* ... 추가 섹션들 */}
-        
-      </Stack>
-    </Box>
-  );
-};
-```
 
 ## 🚀 **코드 최적화 적용 방안**
-
-### **1. Stack 컴포넌트 활용** 🔧
-```typescript
-// ✅ 개선 후: Stack 컴포넌트 사용
-import { Stack } from '@mui/material';
-
-<Stack 
-  direction="column" 
-  spacing={THEME.spacing.md}
-  sx={{ width: '100%', height: '100%' }}
->
-  <SectionTitle />
-  <ContentBox />
-</Stack>
-
-// ❌ 개선 전: 복잡한 Box + flexDirection
-<Box sx={{
-  display: 'flex',
-  flexDirection: 'column',
-  gap: `${THEME.spacing.md}px`,
-  width: '100%',
-  height: '100%'
-}}>
-```
 
 ### **2. 스타일 상수화** 🔧
 ```typescript
@@ -385,6 +170,11 @@ export const BACK_PAGE_STYLES = {
 // 사용
 <Box sx={BACK_PAGE_STYLES.sectionContainer}>
 ```
+
+##코딩 규칙 ##
+- 줄글 형태는 박스에 whiteSpace: 'pre-line' 추가해서 문단나누기가 그대로 보이도록할것
+
+
 
 ## 🔄 **FRAMELINK MCP 워크플로우**
 
@@ -411,21 +201,16 @@ get_figma_data(fileKey="...", nodeId="0-1") // 토큰 초과 오류
 - 레이아웃 정보 (크기, 위치, 간격)
 - 스타일 정보 (색상, 폰트, 테두리)
 - 계층 구조 (부모-자식 관계)
+- 기타 추가적인 정보 
 
 #### 4️⃣ **코드 구현**
 - **THEME 시스템 필수 활용**
 - **구조적 배치 우선** (flex, grid, gap)
 - **절대 위치 최소화**
+- **복잡한 코드를 단순한 mui 콤포넌트로 변환할수 있을시 활용(ex - 복잡한 블럭으로 구현한 피그마 테이블을 mui 테이블 콤포넌트로 효율적으로 구현)**
 
 ## 🏆 **구현 가이드라인 (claude.md 기반)**
 
-### **구조적 배치와 적절한 분리**
-
-| 직접 구현 ✅ | 컴포넌트 분리 ✅ |
-|-------------|----------------|
-| 해당 섹션에서만 사용 | 여러 섹션에서 재사용 |
-| 단순한 정적 콘텐츠 | 반복되는 패턴 |
-| 메인 제목, 설명 텍스트 | InputField, TableRow |
 
 ### **핵심 구현 원칙**
 1. **구조적 배치**: flex, grid, gap 활용하여 위치 관리
@@ -434,6 +219,13 @@ get_figma_data(fileKey="...", nodeId="0-1") // 토큰 초과 오류
 4. **일관성 유지**: 앞면 패턴을 뒷면에도 적용
 5. **피그마 정확도**: 디자인과 1:1 일치 목표
 6. **🚨 사용자 레이아웃 고정**: 사용자가 설정한 섹션 레이아웃(width, height, padding 등)은 절대 변경하지 않고 그 안에서만 피그마 내용 구현
+
+### **테마 활용 체크리스트**
+- [ ] 색상: `THEME.colors.*`
+- [ ] 폰트: `THEME.typography.fontFamily.*`
+- [ ] 크기: `THEME.typography.fontSize.*`
+- [ ] 간격: `THEME.spacing.*`
+- [ ] 모서리: `THEME.borderRadius.*`
 
 ### **사용자 레이아웃 보존 원칙 🔒**
 - ✅ **내용만 수정**: 사용자가 설정한 Box 레이아웃은 고정, 그 안의 Typography와 내부 요소만 피그마에 맞게 구현
@@ -449,37 +241,9 @@ get_figma_data(fileKey="...", nodeId="0-1") // 토큰 초과 오류
 - ❌ 절대 위치(absolute) 남용 - 구조적 배치 우선
 - ❌ **사용자 설정 레이아웃 변경 절대 금지** (width, height, padding, flexDirection 등)
 
-## 📋 **체크리스트**
-
-### **Phase 1 완료 조건**
-- [x] 피그마 뒷면 프레임 FRAMELINK MCP 조사 준비
-- [x] `KPNIResultPage.tsx` GST A3 스타일로 앞면/뒷면 분리
-- [x] `sections/BackPage.tsx` 백엔드 연동 없이 기본 구조 생성  
-- [x] 뒷면 바깥 테두리와 하단박스만 앞면과 공유
-- [x] 전체 영역(1131x787px) 사용 가능한 구조 완성
-
-### **Phase 2 완료 조건** 
-- [ ] FRAMELINK MCP로 피그마 뒷면 디자인 분석
-- [ ] BackPage.tsx에 피그마 기준 하드코딩 콘텐츠 구현
-- [ ] 각 섹션별 주석으로 명확한 구분
-- [ ] THEME 시스템 100% 활용한 스타일링
-- [ ] 피그마 디자인 1:1 일치 확인
-
-### **최종 검증**
-- [x] GST A3와 동일한 앞면/뒷면 동시 표시 구조
-- [x] 뒷면 백엔드 연동 제거 및 하드코딩 구현
-- [ ] THEME 시스템 100% 활용
-- [ ] 피그마 디자인 정확도 달성
 
 ## 🎯 **핵심 원칙 (단순화 버전)**
 
-1. **GST A3 스타일 구조**: 앞면과 뒷면을 연속으로 표시하는 구조
 2. **뒷면 독립 구현**: 백엔드 연동 없이 하드코딩으로 구현 (`BackPage` Props 없음)
 3. **THEME 우선**: 모든 스타일 값은 테마에서 가져오기
-4. **구조적 배치**: 바깥 테두리와 하단박스만 앞면과 공유, 나머지는 새로운 구조
-5. **전체 영역 활용**: 1131x787px 전체 영역 사용 가능
-6. **단계적 구현**: 기본 구조 → 피그마 분석 → 하드코딩 콘텐츠 구현
 7. **피그마 정확도**: FRAMELINK MCP 활용하여 1:1 디자인 구현
-
----
-**성공 기준**: GST A3와 동일한 구조 + 백엔드 연동 없는 하드코딩 뒷면 구현 🚀
