@@ -11,11 +11,7 @@
 src/
 ├── components/
 │   ├── sections/
-│   │   ├── back/                      # 🆕 뒷면 전용 섹션들
-│   │   │   ├── 05_BackSection1.tsx    # 뒷면 첫 번째 섹션
-│   │   │   ├── 06_BackSection2.tsx    # 뒷면 두 번째 섹션
-│   │   │   ├── 07_BackSection3.tsx    # 뒷면 세 번째 섹션
-│   │   │   └── 08_BackSection4.tsx    # 뒷면 네 번째 섹션
+│   │   ├── BackPage.tsx               # 🆕 뒷면 전체 섹션 통합 파일
 │   │   ├── 00_InfoSection.tsx         # ✅ 앞면 재사용
 │   │   ├── 01_ReliabilitySection.tsx  # ✅ 앞면 구현 완료
 │   │   ├── 02_ProfileSection.tsx      # ✅ 앞면 구현 완료
@@ -31,8 +27,7 @@ src/
 │   │   ├── 04_ScaleResultChip.tsx     # ✅ 앞면에서 활용
 │   │   ├── SectionTitle.tsx           # ✅ 앞면에서 활용
 │   │   └── SectionTitleDescription.tsx# ✅ 앞면에서 활용
-│   ├── KPNIResultPage.tsx             # ✅ 앞면 메인 페이지
-│   ├── KPNIResultBackPage.tsx         # 🆕 뒷면 메인 페이지
+│   ├── KPNIResultPage.tsx             # ✅ 앞면/뒷면 통합 메인 페이지
 │   ├── theme.ts                       # ✅ 완성된 디자인 시스템
 │   ├── types.ts                       # 🔧 뒷면 타입 추가 필요시
 │   └── index.ts                       # Export 관리
@@ -40,22 +35,38 @@ src/
 
 ## 🏗️ **기존 구조 재활용 전략**
 
-### **1. A3 페이지 캔버스 재활용** ✅
+### **1. KPNIResultPage.tsx 내부 앞면/뒷면 통합** ✅
 ```typescript
-// KPNIResultBackPage.tsx 생성 시 KPNIResultPage.tsx 구조 복사
-const PageContainer = styled(Container)({
-  minWidth: '1287px', 
-  minHeight: `959px`,
-  backgroundColor: THEME.layout.a3.pageBackground,
-  // ... 동일한 캔버스 구조
-});
+// KPNIResultPage.tsx 내부에 showBackPage prop 추가
+interface KPNIResultPageProps {
+  resultResponse?: KPNIResultResponseType;
+  showBackPage?: boolean; // 뒷면 표시 여부
+}
 
-const OuterGreenBox = styled(Box)({
-  width: '1191px',   
-  height: '847px',
-  backgroundColor: THEME.colors.primary, 
-  // ... 동일한 외곽 테두리
-});
+export const KPNIResultPage = ({ resultResponse, showBackPage = false }: KPNIResultPageProps) => {
+  return (
+    <PageContainer maxWidth={false}>
+      <OuterGreenBox>
+        <FrameBox>
+          {/* 공통 외곽 구조 재사용 */}
+          
+          {showBackPage ? (
+            <BackPage resultResponse={resultResponse} />
+          ) : (
+            <>
+              <InfoSection participant={resultResponse?.participant} />
+              <ReliabilitySection />
+              <ProfileSection />
+              <DetailSection />
+              <ScaleSection />
+            </>
+          )}
+          
+        </FrameBox>
+      </OuterGreenBox>
+    </PageContainer>
+  );
+};
 ```
 
 ### **2. 테마 시스템 100% 활용** ✅
@@ -78,19 +89,49 @@ sx={{
 }}
 ```
 
-### **3. 기존 UI 컴포넌트 재사용** ✅
+### **3. BackPage.tsx 단일 파일 구조** ✅
 ```typescript
-// ✅ 재사용 가능한 컴포넌트들
-import { InputField } from '../UI/00_InputField';
-import { SectionTitle } from '../UI/SectionTitle';
-import { SectionTitleDescription } from '../UI/SectionTitleDescription';
-
-// 사용 예시
-<SectionTitle 
-  sectionNumber={5}
-  title="뒷면 섹션 제목"
-  description="뒷면 섹션에 대한 설명"
-/>
+// sections/BackPage.tsx - 뒷면 전체 내용 통합
+export const BackPage = ({ resultResponse }: BackPageProps) => {
+  return (
+    <Box sx={{ display: 'flex', width: '100%', height: '787px' }}>
+      
+      {/* 좌측: InfoSection 재사용 */}
+      <Box sx={{ width: '155px', height: '100%' }}>
+        <InfoSection participant={resultResponse?.participant} />
+      </Box>
+      
+      {/* 메인 영역: 뒷면 섹션들 - 하드코딩 설명글 포함 */}
+      <Stack spacing={THEME.spacing.md} sx={{ flex: 1, padding: THEME.spacing.md }}>
+        
+        {/* 뒷면 섹션 1 - 주석으로 구분 */}
+        <Box sx={{ /* 섹션 1 스타일 */ }}>
+          <Typography>하드코딩된 설명 텍스트 1...</Typography>
+          {/* 섹션 1 내용 구현 */}
+        </Box>
+        
+        {/* 뒷면 섹션 2 - 주석으로 구분 */}
+        <Box sx={{ /* 섹션 2 스타일 */ }}>
+          <Typography>하드코딩된 설명 텍스트 2...</Typography>
+          {/* 섹션 2 내용 구현 */}
+        </Box>
+        
+        {/* 뒷면 섹션 3 - 주석으로 구분 */}
+        <Box sx={{ /* 섹션 3 스타일 */ }}>
+          <Typography>하드코딩된 설명 텍스트 3...</Typography>
+          {/* 섹션 3 내용 구현 */}
+        </Box>
+        
+        {/* 뒷면 섹션 4 - 주석으로 구분 */}
+        <Box sx={{ /* 섹션 4 스타일 */ }}>
+          <Typography>하드코딩된 설명 텍스트 4...</Typography>
+          {/* 섹션 4 내용 구현 */}
+        </Box>
+        
+      </Stack>
+    </Box>
+  );
+};
 ```
 
 ## 📊 **현재 활용 가능한 디자인 시스템**
@@ -153,7 +194,7 @@ THEME.typography = {
 
 ## 🔄 **구현 워크플로우**
 
-### **Phase 1: 뒷면 레이아웃 구조 설정** 🏗️
+### **Phase 1: 뒷면 단순 구조 설정** 🏗️
 
 #### 1-1. FRAMELINK MCP로 뒷면 조사
 ```bash
@@ -161,92 +202,119 @@ THEME.typography = {
 get_figma_data(fileKey="DAfGZDS2gtUa3sWrldHqve", nodeId="뒷면노드ID")
 ```
 
-#### 1-2. KPNIResultBackPage.tsx 생성
+#### 1-2. KPNIResultPage.tsx에 showBackPage 추가
 ```typescript
-// KPNIResultPage.tsx 복사 후 뒷면용으로 수정
-export const KPNIResultBackPage = ({ resultResponse }: KPNIResultPageProps) => {
-  return (
-    <PageContainer maxWidth={false}>
-      <OuterGreenBox>
-        <FrameBox>
-          {/* 동일한 외곽 구조 */}
-          
-          {/* 뒷면 섹션 레이아웃 - 박스만 먼저 잡기 */}
-          <Box sx={{ /* 뒷면 레이아웃 구조 */ }}>
-            
-            {/* 좌측: InfoSection 재사용 */}
-            <Box sx={{ width: '155px', height: '787px' }}>
-              <InfoSection participant={resultResponse?.participant} />
-            </Box>
-            
-            {/* 메인 영역: 뒷면 섹션들 - 박스만 */}
-            <Box sx={{ /* 뒷면 메인 영역 */ }}>
-              {/* 뒷면 섹션 박스들 */}
-            </Box>
-            
-          </Box>
-        </FrameBox>
-      </OuterGreenBox>
-    </PageContainer>
-  );
-};
+// KPNIResultPage.tsx 인터페이스 수정
+interface KPNIResultPageProps {
+  resultResponse?: KPNIResultResponseType;
+  showBackPage?: boolean; // 뒷면 표시 여부 추가
+}
+
+// 메인 렌더링 로직 수정
+{showBackPage ? (
+  <BackPage resultResponse={resultResponse} />
+) : (
+  <>
+    <InfoSection participant={resultResponse?.participant} />
+    <ReliabilitySection />
+    <ProfileSection />
+    <DetailSection />
+    <ScaleSection />
+  </>
+)}
 ```
 
-#### 1-3. 뒷면 섹션 박스 구조 잡기
+#### 1-3. sections/BackPage.tsx 생성
 ```typescript
-// sections/back/ 폴더에 섹션들 생성
-export const BackSection1 = () => {
+// 단일 파일에 모든 뒷면 섹션 통합 구현
+export const BackPage = ({ resultResponse }: BackPageProps) => {
   return (
-    <Box sx={{
-      width: 'XXXpx',
-      height: 'XXXpx',
-      backgroundColor: 'rgba(255,0,0,0.3)', // 임시 색상 (위치 확인용)
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}>
-      <Typography>뒷면 섹션 1 - 레이아웃 박스</Typography>
+    <Box sx={{ display: 'flex', width: '100%', height: '787px' }}>
+      {/* InfoSection 재사용 + 메인 영역에 하드코딩 텍스트 포함 */}
+      
+      {/* =============================================== */}
+      {/* 뒷면 섹션 1: 설명글 제목                        */}
+      {/* =============================================== */}
+      <Box sx={{ /* 섹션 1 레이아웃 */ }}>
+        {/* 하드코딩 설명 텍스트와 UI 요소들 */}
+      </Box>
+      
+      {/* =============================================== */}
+      {/* 뒷면 섹션 2: 다른 설명글                        */}
+      {/* =============================================== */}
+      <Box sx={{ /* 섹션 2 레이아웃 */ }}>
+        {/* 하드코딩 설명 텍스트와 UI 요소들 */}
+      </Box>
+      
+      {/* ... 이하 동일한 패턴으로 섹션 구현 */}
     </Box>
   );
 };
 ```
 
-### **Phase 2: 사용자 승인 후 섹션별 상세 구현** 🎨
+### **Phase 2: 사용자 승인 후 통합 파일 상세 구현** 🎨
 
-#### 2-1. 섹션별 구현 순서
+#### 2-1. 구현 순서
 ```
-1. 가장 중요한 섹션부터 시작
-2. 기존 UI 컴포넌트 최대한 재활용
-3. FRAMELINK MCP로 정확한 디자인 확인
-4. THEME 시스템 100% 활용
+1. 피그마에서 뒷면 전체 구조 파악
+2. BackPage.tsx에서 레이아웃 박스부터 잡기
+3. 섹션별 하드코딩 텍스트와 UI 요소 구현
+4. THEME 시스템 100% 활용하여 스타일링
+5. 주석으로 각 섹션 명확히 구분
 ```
 
-#### 2-2. 구현 패턴 (앞면과 동일)
+#### 2-2. 단일 파일 구현 패턴
 ```typescript
-export const BackSection1 = ({ data }: BackSection1Props) => {
+export const BackPage = ({ resultResponse }: BackPageProps) => {
   return (
-    <Box sx={{
-      // THEME 활용한 레이아웃
-      width: 'XXXpx',
-      height: 'XXXpx',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: `${THEME.spacing.md}px`,
-      padding: `${THEME.spacing.sm}px`
-    }}>
+    <Box sx={{ display: 'flex', width: '100%', height: '787px' }}>
       
-      {/* 섹션 제목 - 기존 컴포넌트 재사용 */}
-      <SectionTitle 
-        sectionNumber={5}
-        title="뒷면 섹션 제목"
-        description="섹션 설명"
-      />
-      
-      {/* 섹션 내용 - 피그마 기준 정확 구현 */}
-      <Box sx={{ /* 내용 구현 */ }}>
-        {/* ... */}
+      {/* InfoSection 재사용 */}
+      <Box sx={{ width: '155px', height: '100%' }}>
+        <InfoSection participant={resultResponse?.participant} />
       </Box>
       
+      <Stack spacing={THEME.spacing.md} sx={{ flex: 1, padding: THEME.spacing.md }}>
+        
+        {/* ========================================= */}
+        {/* 뒷면 섹션 1: K-PNI 검사결과 해석         */}
+        {/* ========================================= */}
+        <Box sx={{
+          backgroundColor: THEME.colors.white,
+          borderRadius: `${THEME.borderRadius.sm}px`,
+          padding: `${THEME.spacing.lg}px`
+        }}>
+          <Typography sx={{
+            fontSize: `${THEME.typography.fontSize.xl}px`,
+            fontFamily: THEME.typography.fontFamily.ohsquare,
+            color: THEME.colors.text,
+            marginBottom: `${THEME.spacing.md}px`
+          }}>
+            K-PNI 검사결과 해석
+          </Typography>
+          
+          <Typography sx={{
+            fontSize: `${THEME.typography.fontSize.md}px`,
+            fontFamily: THEME.typography.fontFamily.pretendard,
+            color: THEME.colors.text,
+            lineHeight: 1.6
+          }}>
+            하드코딩된 설명 텍스트가 여기에 들어갑니다...
+          </Typography>
+          
+          {/* 필요한 UI 요소들 (차트, 테이블 등) */}
+        </Box>
+        
+        {/* ========================================= */}
+        {/* 뒷면 섹션 2: 다른 내용                   */}
+        {/* ========================================= */}
+        <Box sx={{ /* 섹션 2 스타일 */ }}>
+          {/* 섹션 2 내용 */}
+        </Box>
+        
+        {/* ... 추가 섹션들 */}
+        
+      </Stack>
     </Box>
   );
 };
@@ -361,31 +429,33 @@ get_figma_data(fileKey="...", nodeId="0-1") // 토큰 초과 오류
 
 ### **Phase 1 완료 조건**
 - [ ] 피그마 뒷면 프레임 FRAMELINK MCP 조사 완료
-- [ ] `KPNIResultBackPage.tsx` 기본 구조 생성
-- [ ] 뒷면 섹션별 레이아웃 박스 구조 완성
+- [ ] `KPNIResultPage.tsx`에 showBackPage prop 추가
+- [ ] `sections/BackPage.tsx` 기본 구조 생성
+- [ ] 뒷면 전체 레이아웃 박스 구조 완성
 - [ ] 사용자 승인 완료
 
 ### **Phase 2 완료 조건** 
-- [ ] 각 뒷면 섹션 상세 구현 완료
+- [ ] BackPage.tsx에 모든 뒷면 섹션 통합 구현 완료
+- [ ] 각 섹션별 주석으로 명확한 구분
+- [ ] 하드코딩 설명 텍스트 모두 포함
 - [ ] Stack 컴포넌트로 레이아웃 최적화
-- [ ] 반복 스타일 상수화 완료
 - [ ] 피그마 디자인 1:1 일치 확인
 
 ### **최종 검증**
 - [ ] 앞면과 동일한 코드 품질 달성
 - [ ] THEME 시스템 100% 활용
-- [ ] 타입 안전성 확보
-- [ ] 성능 최적화 적용
+- [ ] 단일 파일 내 명확한 구조화
+- [ ] 주석 기반 가독성 확보
 
-## 🎯 **핵심 원칙**
+## 🎯 **핵심 원칙 (단순화 버전)**
 
-1. **기존 구조 최대한 재활용**: A3 캔버스, 외곽 테두리 등
+1. **통합 구조**: KPNIResultPage.tsx에 앞면/뒷면 통합, sections/BackPage.tsx 단일 파일로 모든 뒷면 내용 구현
 2. **THEME 우선**: 모든 스타일 값은 테마에서 가져오기
-3. **구조적 배치**: flex, grid, gap 활용하여 위치 관리 (절대 위치 최소화)
-4. **적절한 분리**: 반복 요소만 컴포넌트로 분리
-5. **단계적 구현**: 레이아웃 박스 → 사용자 승인 → 상세 구현
-6. **피그마 정확도**: FRAMELINK MCP 활용하여 1:1 디자인 구현
-7. **일관성 유지 및 코드 최적화**: 앞면과 동일한 코딩 스타일과 패턴 적용 하되 가능한 부분은 Stack 컴포넌트, 스타일 상수화, 컴포넌트 재사용
+3. **구조적 배치**: Stack, Box 활용하여 위치 관리 (절대 위치 최소화)
+4. **하드코딩 허용**: 백엔드 연동 없으므로 설명 텍스트는 하드코딩으로 구현
+5. **주석 기반 구분**: 각 섹션을 명확한 주석으로 구분하여 가독성 확보
+6. **단계적 구현**: 레이아웃 박스 → 사용자 승인 → 상세 구현
+7. **피그마 정확도**: FRAMELINK MCP 활용하여 1:1 디자인 구현
 
 ---
-**성공 기준**: 앞면과 동일한 품질의 뒷면 구현 + 더 나은 코드 최적화 달성 🚀
+**성공 기준**: 단순하고 명확한 뒷면 구현 + 앞면과 동일한 디자인 품질 달성 🚀

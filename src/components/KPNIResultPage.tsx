@@ -7,6 +7,7 @@ import { ProfileSection } from './sections/02_ProfileSection';
 import { DetailSection } from './sections/03_DetailSection';
 import { ScaleSection } from './sections/04_ScaleSection';
 import type { KPNIResultPageProps } from '../types/KPNITypes';
+import { BackPage } from './sections/BackPage';
 
 // A3 페이지 캔버스
 const PageContainer = styled(Container)({
