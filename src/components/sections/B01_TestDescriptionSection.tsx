@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
 import familyImage from '../../images/1_family.png';
-import { SectionTitleBox } from '../UI/SectionTitleBox';
+import { SectionTitleBox } from '../UI/B_SectionTitle';
 
 /**
  * K-PNI 검사명 설명 섹션 - 피그마 1번섹션_용어설명 1:1 구현

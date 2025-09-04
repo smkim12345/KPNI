@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
+import { SubSectionTitle } from '../UI/B_SubSectionTitle';
 
 /**
  * K-PNI 척도별 소견 확인 섹션
@@ -79,18 +80,7 @@ export const ScaleOpinionSection = () => {
       gap: '5px'
     }}>
       {/* 섹션 제목 */}
-      <Typography sx={{
-        fontFamily: THEME.typography.fontFamily.ohsquare,
-        fontWeight: THEME.typography.fontWeight.normal,
-        fontSize: '11px',
-        lineHeight: '1.268em',
-        color: '#274E13',
-        alignSelf: 'stretch',
-        textAlign: 'left',
-        padding: '0 10px',
-      }}>
-        4. 척도별 소견 확인
-      </Typography>
+      <SubSectionTitle title="4. 척도별 소견 확인" />
 
       {/* 설명 텍스트 */}
       <Box sx={{

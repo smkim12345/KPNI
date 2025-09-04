@@ -8,7 +8,8 @@ import {
   TableCell
 } from '@mui/material';
 import { THEME } from '../theme';
-import { SectionTitleBox } from '../UI/SectionTitleBox';
+import { SectionTitleBox } from '../UI/B_SectionTitle';
+import { SubSectionTitle } from '../UI/B_SubSectionTitle';
 
 /**
  * K-PNI 검사 해석 순서 섹션
@@ -144,16 +145,7 @@ export const InterpretationOrderSection = () => {
         </Box>
 
         {/* 설명 섹션 부제목 */}
-        <Typography sx={{
-          fontFamily: THEME.typography.fontFamily.ohsquare,
-          fontWeight: THEME.typography.fontWeight.normal,
-          fontSize: '11px',
-          lineHeight: 1.268,
-          color: '#274E13',
-          width: '545px'
-        }}>
-          1. 신뢰지표 확인/해석
-        </Typography>
+        <SubSectionTitle title="1. 신뢰지표 확인/해석" />
 
         {/* 신뢰지표 확인해석 설명 */}
         <Box sx={{
@@ -225,18 +217,7 @@ export const InterpretationOrderSection = () => {
         }}
       >
         {/* 설명 섹션 부제목 */}
-        <Typography
-          sx={{
-            fontFamily: THEME.typography.fontFamily.ohsquare,
-            fontWeight: THEME.typography.fontWeight.normal,
-            fontSize: '11px',
-            lineHeight: 1.268,
-            color: '#274E13',
-            //backgroundColor: THEME.colors.primary,
-          }}
-        >
-          2. T점수의 이해
-        </Typography>
+        <SubSectionTitle title="2. T점수의 이해" />
 
         {/* 내용 */}
         <Box
@@ -384,18 +365,7 @@ export const InterpretationOrderSection = () => {
         gap: '7px'
       }}>
 
-          <Typography
-          sx={{
-            fontFamily: THEME.typography.fontFamily.ohsquare,
-            fontWeight: THEME.typography.fontWeight.normal,
-            fontSize: '11px',
-            lineHeight: 1.268,
-            color: '#274E13',
-            //backgroundColor: THEME.colors.primary,
-          }}
-        >
-          3. 이상적 양육지수 확인
-        </Typography>
+          <SubSectionTitle title="3. 이상적 양육지수 확인" />
 
         {/* IPQ 설명 텍스트 */}
         <Box sx={{

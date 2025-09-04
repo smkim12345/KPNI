@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { SectionTitle } from '../UI/SectionTitle';
+import { SectionTitle } from '../UI/F_SectionTitle';
 import { ReliabilityTable } from '../UI/01_ReliabilityTable';
 import type { ReliabilitySectionProps } from '../../types/KPNITypes';
 

@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { SectionTitle } from '../UI/SectionTitle';
+import { SectionTitle } from '../UI/F_SectionTitle';
 import { DetailChart } from '../UI/03_DetailChart';
 import { THEME } from '../theme';
 import { SCALE_DATA } from '../../data/scaleData';

@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
-import { SectionTitleBox } from '../UI/SectionTitleBox';
+import { SectionTitleBox } from '../UI/B_SectionTitle';
+import { SubSectionTitle } from '../UI/B_SubSectionTitle';
 
 /**
  * K-PNI 솔루션 섹션
@@ -43,16 +44,7 @@ export const SolutionSection = () => {
             width: '293px',
             gap: '10px'
           }}>
-            <Typography sx={{
-              fontFamily: THEME.typography.fontFamily.ohsquare,
-              fontWeight: THEME.typography.fontWeight.normal,
-              fontSize: '11px',
-              lineHeight: '1.268em',
-              color: '#274E13',
-              //backgroundColor: 'red'
-            }}>
-              1. 좋은 부모의 특징
-            </Typography>
+            <SubSectionTitle title="1. 좋은 부모의 특징" />
               {/* 아이콘들 */}
               <Box sx={{
                 display: 'flex',
@@ -195,15 +187,7 @@ export const SolutionSection = () => {
             width: '293px',
             gap: '5px'
           }}>
-            <Typography sx={{
-              fontFamily: THEME.typography.fontFamily.ohsquare,
-              fontWeight: THEME.typography.fontWeight.normal,
-              fontSize: '11px',
-              lineHeight: '1.268em',
-              color: '#274E13'
-            }}>
-              2. 완벽한 부모에 대한 생각 내려 놓기
-            </Typography>
+            <SubSectionTitle title="2. 완벽한 부모에 대한 생각 내려 놓기" />
 
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
