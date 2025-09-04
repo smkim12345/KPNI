@@ -35,36 +35,47 @@ src/
 
 ## 🏗️ **기존 구조 재활용 전략**
 
-### **1. KPNIResultPage.tsx 내부 앞면/뒷면 통합** ✅
+### **1. KPNIResultPage.tsx GST A3 스타일로 앞면/뒷면 동시 표시** ✅
 ```typescript
-// KPNIResultPage.tsx 내부에 showBackPage prop 추가
-interface KPNIResultPageProps {
-  resultResponse?: KPNIResultResponseType;
-  showBackPage?: boolean; // 뒷면 표시 여부
-}
-
-export const KPNIResultPage = ({ resultResponse, showBackPage = false }: KPNIResultPageProps) => {
+// 앞면 컴포넌트
+const KPNIFrontPage = ({ resultResponse }: KPNIResultPageProps) => {
   return (
     <PageContainer maxWidth={false}>
       <OuterGreenBox>
         <FrameBox>
-          {/* 공통 외곽 구조 재사용 */}
-          
-          {showBackPage ? (
-            <BackPage resultResponse={resultResponse} />
-          ) : (
-            <>
-              <InfoSection participant={resultResponse?.participant} />
-              <ReliabilitySection />
-              <ProfileSection />
-              <DetailSection />
-              <ScaleSection />
-            </>
-          )}
-          
+          {/* 앞면 기존 구조 그대로 */}
+          <InfoSection participant={resultResponse?.participant} />
+          <ReliabilitySection />
+          <ProfileSection />
+          <DetailSection />
+          <ScaleSection />
         </FrameBox>
       </OuterGreenBox>
     </PageContainer>
+  );
+};
+
+// 뒷면 컴포넌트 (바깥 테두리와 하단박스만 앞면과 공유)
+const KPNIBackPage = ({ resultResponse }: KPNIResultPageProps) => {
+  return (
+    <PageContainer maxWidth={false}>
+      <OuterGreenBox>
+        <FrameBox>
+          {/* 바깥 테두리 + 하단박스만 공유, 나머지는 새로운 구조 */}
+          <BackPage />  {/* 데이터 연동 없음 */}
+        </FrameBox>
+      </OuterGreenBox>
+    </PageContainer>
+  );
+};
+
+// 전체 페이지 (GST A3와 동일하게 앞면+뒷면 연속 표시)
+export const KPNIResultPage = ({ resultResponse }: KPNIResultPageProps) => {
+  return (
+    <>
+      <KPNIFrontPage resultResponse={resultResponse} />
+      <KPNIBackPage resultResponse={resultResponse} />
+    </>
   );
 };
 ```
@@ -89,46 +100,47 @@ sx={{
 }}
 ```
 
-### **3. BackPage.tsx 단일 파일 구조** ✅
+### **3. BackPage.tsx 백엔드 연동 없는 하드코딩 구조** ✅
 ```typescript
-// sections/BackPage.tsx - 뒷면 전체 내용 통합
-export const BackPage = ({ resultResponse }: BackPageProps) => {
+// sections/BackPage.tsx - 뒷면 전체 내용 통합 (데이터 연동 없음)
+export const BackPage = () => {  // Props 없음 - 하드코딩 구현
   return (
-    <Box sx={{ display: 'flex', width: '100%', height: '787px' }}>
+    <Box sx={{
+      position: 'absolute',
+      left: '30px',
+      top: '30px',
+      width: '1131px',  // 전체 너비 사용 (바깥테두리 + 하단박스 외 모든 영역)
+      height: '787px',  // 전체 높이 사용
+      display: 'flex',
+      flexDirection: 'column',
+      zIndex: 3,
+    }}>
       
-      {/* 좌측: InfoSection 재사용 */}
-      <Box sx={{ width: '155px', height: '100%' }}>
-        <InfoSection participant={resultResponse?.participant} />
+      {/* 메인 콘텐츠 영역 - 앞면과 완전히 다른 새로운 구조 */}
+      <Box sx={{
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        borderRadius: `${THEME.borderRadius.lg}px`,
+        padding: `${THEME.spacing.xl}px`,
+        height: '100%',
+        border: `3px solid ${THEME.colors.primary}`,
+      }}>
+        
+        {/* 뒷면 섹션 1 - 하드코딩 텍스트 */}
+        <Typography sx={{ /* THEME 스타일 */ }}>
+          K-PNI 검사 해석 가이드...
+        </Typography>
+        
+        {/* 뒷면 섹션 2 - 하드코딩 텍스트 */}
+        <Typography sx={{ /* THEME 스타일 */ }}>
+          양육 스트레스 관리 방법...
+        </Typography>
+        
+        {/* 뒷면 섹션 3 - 하드코딩 텍스트 */}
+        <Typography sx={{ /* THEME 스타일 */ }}>
+          추가 참고 사항...
+        </Typography>
+        
       </Box>
-      
-      {/* 메인 영역: 뒷면 섹션들 - 하드코딩 설명글 포함 */}
-      <Stack spacing={THEME.spacing.md} sx={{ flex: 1, padding: THEME.spacing.md }}>
-        
-        {/* 뒷면 섹션 1 - 주석으로 구분 */}
-        <Box sx={{ /* 섹션 1 스타일 */ }}>
-          <Typography>하드코딩된 설명 텍스트 1...</Typography>
-          {/* 섹션 1 내용 구현 */}
-        </Box>
-        
-        {/* 뒷면 섹션 2 - 주석으로 구분 */}
-        <Box sx={{ /* 섹션 2 스타일 */ }}>
-          <Typography>하드코딩된 설명 텍스트 2...</Typography>
-          {/* 섹션 2 내용 구현 */}
-        </Box>
-        
-        {/* 뒷면 섹션 3 - 주석으로 구분 */}
-        <Box sx={{ /* 섹션 3 스타일 */ }}>
-          <Typography>하드코딩된 설명 텍스트 3...</Typography>
-          {/* 섹션 3 내용 구현 */}
-        </Box>
-        
-        {/* 뒷면 섹션 4 - 주석으로 구분 */}
-        <Box sx={{ /* 섹션 4 스타일 */ }}>
-          <Typography>하드코딩된 설명 텍스트 4...</Typography>
-          {/* 섹션 4 내용 구현 */}
-        </Box>
-        
-      </Stack>
     </Box>
   );
 };
@@ -194,7 +206,7 @@ THEME.typography = {
 
 ## 🔄 **구현 워크플로우**
 
-### **Phase 1: 뒷면 단순 구조 설정** 🏗️
+### **Phase 1: 뒷면 기본 구조 설정** 🏗️
 
 #### 1-1. FRAMELINK MCP로 뒷면 조사
 ```bash
@@ -202,35 +214,39 @@ THEME.typography = {
 get_figma_data(fileKey="DAfGZDS2gtUa3sWrldHqve", nodeId="뒷면노드ID")
 ```
 
-#### 1-2. KPNIResultPage.tsx에 showBackPage 추가
+#### 1-2. KPNIResultPage.tsx GST A3 스타일로 변경 ✅ 완료
 ```typescript
-// KPNIResultPage.tsx 인터페이스 수정
-interface KPNIResultPageProps {
-  resultResponse?: KPNIResultResponseType;
-  showBackPage?: boolean; // 뒷면 표시 여부 추가
-}
+// 앞면과 뒷면을 별도 컴포넌트로 분리
+const KPNIFrontPage = ({ resultResponse }: KPNIResultPageProps) => { /* 앞면 */ };
+const KPNIBackPage = ({ resultResponse }: KPNIResultPageProps) => { /* 뒷면 */ };
 
-// 메인 렌더링 로직 수정
-{showBackPage ? (
-  <BackPage resultResponse={resultResponse} />
-) : (
-  <>
-    <InfoSection participant={resultResponse?.participant} />
-    <ReliabilitySection />
-    <ProfileSection />
-    <DetailSection />
-    <ScaleSection />
-  </>
-)}
+// 전체 페이지에서 연속으로 렌더링 (GST A3 방식)
+export const KPNIResultPage = ({ resultResponse }: KPNIResultPageProps) => {
+  return (
+    <>
+      <KPNIFrontPage resultResponse={resultResponse} />
+      <KPNIBackPage resultResponse={resultResponse} />
+    </>
+  );
+};
 ```
 
-#### 1-3. sections/BackPage.tsx 생성
+#### 1-3. sections/BackPage.tsx 백엔드 연동 없이 생성 ✅ 완료
 ```typescript
-// 단일 파일에 모든 뒷면 섹션 통합 구현
-export const BackPage = ({ resultResponse }: BackPageProps) => {
+// 데이터 연동 없이 하드코딩으로 구현
+export const BackPage = () => {  // Props 제거
   return (
-    <Box sx={{ display: 'flex', width: '100%', height: '787px' }}>
-      {/* InfoSection 재사용 + 메인 영역에 하드코딩 텍스트 포함 */}
+    <Box sx={{
+      position: 'absolute',
+      left: '30px',
+      top: '30px',
+      width: '1131px',  // 전체 영역 사용
+      height: '787px',
+      display: 'flex',
+      flexDirection: 'column',
+      zIndex: 3,
+    }}>
+      {/* 하드코딩된 뒷면 콘텐츠 구현 */}
       
       {/* =============================================== */}
       {/* 뒷면 섹션 1: 설명글 제목                        */}
@@ -428,34 +444,34 @@ get_figma_data(fileKey="...", nodeId="0-1") // 토큰 초과 오류
 ## 📋 **체크리스트**
 
 ### **Phase 1 완료 조건**
-- [ ] 피그마 뒷면 프레임 FRAMELINK MCP 조사 완료
-- [ ] `KPNIResultPage.tsx`에 showBackPage prop 추가
-- [ ] `sections/BackPage.tsx` 기본 구조 생성
-- [ ] 뒷면 전체 레이아웃 박스 구조 완성
-- [ ] 사용자 승인 완료
+- [x] 피그마 뒷면 프레임 FRAMELINK MCP 조사 준비
+- [x] `KPNIResultPage.tsx` GST A3 스타일로 앞면/뒷면 분리
+- [x] `sections/BackPage.tsx` 백엔드 연동 없이 기본 구조 생성  
+- [x] 뒷면 바깥 테두리와 하단박스만 앞면과 공유
+- [x] 전체 영역(1131x787px) 사용 가능한 구조 완성
 
 ### **Phase 2 완료 조건** 
-- [ ] BackPage.tsx에 모든 뒷면 섹션 통합 구현 완료
+- [ ] FRAMELINK MCP로 피그마 뒷면 디자인 분석
+- [ ] BackPage.tsx에 피그마 기준 하드코딩 콘텐츠 구현
 - [ ] 각 섹션별 주석으로 명확한 구분
-- [ ] 하드코딩 설명 텍스트 모두 포함
-- [ ] Stack 컴포넌트로 레이아웃 최적화
+- [ ] THEME 시스템 100% 활용한 스타일링
 - [ ] 피그마 디자인 1:1 일치 확인
 
 ### **최종 검증**
-- [ ] 앞면과 동일한 코드 품질 달성
+- [x] GST A3와 동일한 앞면/뒷면 동시 표시 구조
+- [x] 뒷면 백엔드 연동 제거 및 하드코딩 구현
 - [ ] THEME 시스템 100% 활용
-- [ ] 단일 파일 내 명확한 구조화
-- [ ] 주석 기반 가독성 확보
+- [ ] 피그마 디자인 정확도 달성
 
 ## 🎯 **핵심 원칙 (단순화 버전)**
 
-1. **통합 구조**: KPNIResultPage.tsx에 앞면/뒷면 통합, sections/BackPage.tsx 단일 파일로 모든 뒷면 내용 구현
-2. **THEME 우선**: 모든 스타일 값은 테마에서 가져오기
-3. **구조적 배치**: Stack, Box 활용하여 위치 관리 (절대 위치 최소화)
-4. **하드코딩 허용**: 백엔드 연동 없으므로 설명 텍스트는 하드코딩으로 구현
-5. **주석 기반 구분**: 각 섹션을 명확한 주석으로 구분하여 가독성 확보
-6. **단계적 구현**: 레이아웃 박스 → 사용자 승인 → 상세 구현
+1. **GST A3 스타일 구조**: 앞면과 뒷면을 연속으로 표시하는 구조
+2. **뒷면 독립 구현**: 백엔드 연동 없이 하드코딩으로 구현 (`BackPage` Props 없음)
+3. **THEME 우선**: 모든 스타일 값은 테마에서 가져오기
+4. **구조적 배치**: 바깥 테두리와 하단박스만 앞면과 공유, 나머지는 새로운 구조
+5. **전체 영역 활용**: 1131x787px 전체 영역 사용 가능
+6. **단계적 구현**: 기본 구조 → 피그마 분석 → 하드코딩 콘텐츠 구현
 7. **피그마 정확도**: FRAMELINK MCP 활용하여 1:1 디자인 구현
 
 ---
-**성공 기준**: 단순하고 명확한 뒷면 구현 + 앞면과 동일한 디자인 품질 달성 🚀
+**성공 기준**: GST A3와 동일한 구조 + 백엔드 연동 없는 하드코딩 뒷면 구현 🚀
