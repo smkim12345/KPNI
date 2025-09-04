@@ -48,11 +48,9 @@ const CornerBox = styled(Box)({
 });
 
 /**
- * K-PNI A3 결과지 메인 페이지
- * A3 페이지 레이아웃과 결과 콘텐츠가 통합된 컴포넌트
- * resultResponse 선택적으로 받아서 동적 데이터 바인딩
+ * K-PNI A3 결과지 앞면 페이지
  */
-export const KPNIResultPage = ({ resultResponse }: KPNIResultPageProps) => {
+const KPNIFrontPage = ({ resultResponse }: KPNIResultPageProps) => {
   return (
     <PageContainer maxWidth={false}>
       <OuterGreenBox>
@@ -139,5 +137,32 @@ export const KPNIResultPage = ({ resultResponse }: KPNIResultPageProps) => {
         </FrameBox>
       </OuterGreenBox>
     </PageContainer>
+  );
+};
+
+/**
+ * K-PNI A3 결과지 뒷면 페이지
+ */
+const KPNIBackPage = ({ resultResponse }: KPNIResultPageProps) => {
+  return (
+    <PageContainer maxWidth={false}>
+      <OuterGreenBox>
+        <FrameBox>
+          <BackPage />
+        </FrameBox>
+      </OuterGreenBox>
+    </PageContainer>
+  );
+};
+
+/**
+ * K-PNI A3 결과지 전체 페이지
+ */
+export const KPNIResultPage = ({ resultResponse }: Omit<KPNIResultPageProps, 'showBackPage'>) => {
+  return (
+    <>
+      <KPNIFrontPage resultResponse={resultResponse} />
+      <KPNIBackPage resultResponse={resultResponse} />
+    </>
   );
 };

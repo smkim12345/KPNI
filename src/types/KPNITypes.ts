@@ -92,6 +92,7 @@ export interface KPNIResultResponse {
 // KPNI 결과 페이지 Props (Owner 제외)
 export interface KPNIResultPageProps {
   resultResponse?: KPNIResultResponse; // 선택적 - 없으면 더미 데이터
+  showBackPage?: boolean; // 뒷면 표시 여부
 }
 
 // 각 섹션별 Props 인터페이스들
@@ -115,3 +116,5 @@ export interface ScaleSectionProps {
   parentScales?: ParentScaleResult[];
   scaleInterpretations?: ScaleInterpretation[];
 }
+
+export interface BackPageProps {}
