@@ -82,55 +82,81 @@ export const InterpretationOrderSection = () => {
         boxSizing: 'border-box',
         gap: '12px'
       }}>
-        {/* 검사해석 순서 다이어그램 */}
-        <Box sx={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          gap: '2px'
-        }}>
+        {/* 검사해석 순서 다이어그램 (Redesigned) */}
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            width: '516px',
+            gap: '4px',
+            //backgroundColor: 'red',
+          }}
+        >
           {[
-            { num: '01', bgColor: '#66A247', text: '신뢰지표 확인 / 해석' },
-            { num: '02', bgColor: '#7CB261', text: 'T점수의 이해' },
-            { num: '03', bgColor: '#93CD76', text: '이상적 양육지수 확인' },
-            { num: '04', bgColor: 'rgba(130, 207, 91, 0.76)', text: '척도별 소견 확인' }
-          ].map((item, index) => (
-            <Box key={index} sx={{
-              position: 'relative',
-              width: index === 0 ? '104.5px' : '115.46px',
-              height: '20px',
-              backgroundColor: item.bgColor,
-              borderRadius: index === 0 ? '10px 0px 0px 10px' : '2px',
-              display: 'flex',
-              alignItems: 'center'
-            }}>
-              <Typography sx={{
-                fontFamily: THEME.typography.fontFamily.ohsquare,
-                fontWeight: THEME.typography.fontWeight.normal,
-                fontSize: '8px',
-                lineHeight: 1.268,
-                color: THEME.colors.text,
-                position: 'absolute',
-                left: index === 0 ? '5px' : '15px',
-                top: '5px'
-              }}>
-                {item.num}
-              </Typography>
-              <Typography sx={{
-                fontFamily: THEME.typography.fontFamily.ohsquare,
-                fontWeight: THEME.typography.fontWeight.normal,
-                fontSize: '8px',
-                lineHeight: 1.268,
-                color: THEME.colors.text,
-                position: 'absolute',
-                left: index === 0 ? '18px' : '28px',
-                top: '5px',
-                width: '83px',
-                textAlign: 'center'
-              }}>
-                {item.text}
-              </Typography>
-            </Box>
+            { num: '01', text: '신뢰지표 확인 / 해석', bgColor: '#66A247' },
+            { num: '02', text: 'T점수의 이해', bgColor: '#7CB261' },
+            { num: '03', text: '이상적 양육지수 확인', bgColor: '#93CD76' },
+            { num: '04', text: '척도별 소견 확인', bgColor: 'rgba(130, 207, 91, 0.76)' },
+          ].map((step, index, arr) => (
+            <>
+              <Box
+                key={index}
+                sx={{
+                  bgcolor: step.bgColor,
+                  borderRadius: '35px',
+                  padding: '0px 5px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flex: 1,
+                  height: '30px',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                  //backgroundColor: 'blue',
+                }}
+              >
+                <Box
+                  sx={{
+                    width: '20px',
+                    height: '20px',
+                    borderRadius: '50%',
+                    backgroundColor: 'white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    mr: '6px',
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: '#333',
+                      fontSize: '10px',
+                      fontWeight: 'bold',
+                      fontFamily: THEME.typography.fontFamily.ohsquare,
+                    }}
+                  >
+                    {step.num}
+                  </Typography>
+                </Box>
+                <Typography
+                  sx={{
+                    color: 'white',
+                    fontSize: `${THEME.typography.fontSize.md}px`,
+                    fontWeight: THEME.typography.fontWeight.medium,
+                    whiteSpace: 'nowrap',
+                    fontFamily: THEME.typography.fontFamily.ohsquare,
+                  }}
+                >
+                  {step.text}
+                </Typography>
+              </Box>
+              {index < arr.length - 1 && (
+                <Typography sx={{ fontSize: '20px', color: '#B0B0B0' }}>
+                  ›
+                </Typography>
+              )}
+            </>
           ))}
         </Box>
 
