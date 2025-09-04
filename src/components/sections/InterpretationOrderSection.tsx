@@ -1,9 +1,38 @@
-import { Box, Typography } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell
+} from '@mui/material';
 import { THEME } from '../theme';
 
 /**
  * K-PNI 검사 해석 순서 섹션
  */
+// 테이블 데이터 정의
+const TABLE_HEADERS = [
+  { text: '구분', bgColor: '#66A247', color: '#FBFBFB' },
+  { text: '낮음', bgColor: 'rgba(201, 237, 183, 0.7)' },
+  { text: '다소낮음', bgColor: 'rgba(188, 230, 167, 0.7)' },
+  { text: '보통', bgColor: 'rgba(174, 223, 139, 0.7)' },
+  { text: '높음', bgColor: 'rgba(152, 215, 115, 0.7)' },
+  { text: '매우 높음', bgColor: 'rgba(130, 207, 91, 0.76)' },
+];
+
+const TABLE_DATA = [
+  {
+    header: '양육지수(IPQ)',
+    values: ['77이하', '77초과~92이하', '92초과~108이하', '108초과~123이하', '123초과']
+  },
+  {
+    header: '백분위(%)',
+    values: ['약 6% 이하', '약 7%~30%', '약 30%~70%', '약 70%~94%', '약 94%이상']
+  }
+];
+
 export const InterpretationOrderSection = () => {
   return (
     <Box sx={{
@@ -328,8 +357,8 @@ export const InterpretationOrderSection = () => {
         </Box>
       </Box>
 
-            {/* 2-3. 이상적 양육지수 확인 */}
-  <Box sx={{
+      {/* 2-3. 이상적 양육지수 확인 */}
+      <Box sx={{
         width: '545px',
         height: '117px',
         //backgroundColor: 'red',//위치 확인용(지우지말것)
@@ -337,10 +366,109 @@ export const InterpretationOrderSection = () => {
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        padding: '10px 0 ',
+        padding: '0 10px ',
         boxSizing: 'border-box',
-        gap: '3px'
+        gap: '7px'
       }}>
+
+          <Typography
+          sx={{
+            fontFamily: THEME.typography.fontFamily.ohsquare,
+            fontWeight: THEME.typography.fontWeight.normal,
+            fontSize: '11px',
+            lineHeight: 1.268,
+            color: '#274E13',
+            //backgroundColor: THEME.colors.primary,
+          }}
+        >
+          3. 이상적 양육지수 확인
+        </Typography>
+
+        {/* IPQ 설명 텍스트 */}
+        <Box sx={{
+          display: 'flex',
+          alignSelf: 'stretch',
+          gap: '10px',
+          padding: '0 10px',
+        }}>
+          <Typography sx={{
+            fontFamily: THEME.typography.fontFamily.pretendard,
+            fontWeight: 500,
+            fontSize: '9px',
+            lineHeight: '1.189em',
+            color: THEME.colors.text,
+            flex: 1,
+            whiteSpace: 'pre-line',
+            wordBreak: 'keep-all'
+          }}>
+            이상적양육지수(IPQ)는 Ideal Parenting Quotient의 약자로, 이상적인 부모의 양육태도의 정도를 나타내는 지수입니다. 지수점수는 100점 평균에 15점의 표준편차를 가진 표준화 된 점수로, 점수가 높을수록 이상적인 양육태도를 가지고 있음을 의미하고 있습니다.
+          </Typography>
+        </Box>
+
+        {/* IPQ 테이블 */}
+        <Table sx={{
+          width: '504px',
+          borderCollapse: 'separate',
+          borderSpacing: 0,
+          //backgroundColor: 'blue',
+          '& .MuiTableCell-root': {
+            border: '0.7px solid #868686',
+            padding: '5px',
+            textAlign: 'center',
+            fontFamily: THEME.typography.fontFamily.pretendard,
+            fontSize: '9px',
+            lineHeight: '1.193em',
+          }
+        }}>
+          <TableHead>
+            <TableRow>
+              {TABLE_HEADERS.map((header, index) => (
+                <TableCell
+                  key={index}
+                  sx={{
+                    backgroundColor: header.bgColor,
+                    color: header.color || THEME.colors.text,
+                    fontWeight: 700,
+                    fontSize: '10px !important',
+                    width: '84px',
+                    borderTopLeftRadius: index === 0 ? '5px' : 0,
+                    borderTopRightRadius: index === TABLE_HEADERS.length - 1 ? '5px' : 0,
+                  }}
+                >
+                  {header.text}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {TABLE_DATA.map((row, rowIndex) => (
+              <TableRow key={rowIndex}>
+                <TableCell
+                  sx={{
+                    backgroundColor: '#66A247',
+                    color: '#FBFBFB',
+                    fontWeight: 600,
+                    borderBottomLeftRadius: rowIndex === TABLE_DATA.length - 1 ? '5px' : 0,
+                  }}
+                >
+                  {row.header}
+                </TableCell>
+                {row.values.map((value, colIndex) => (
+                  <TableCell
+                    key={colIndex}
+                    sx={{
+                      borderBottomRightRadius:
+                        rowIndex === TABLE_DATA.length - 1 && colIndex === row.values.length - 1 ? '5px' : 0,
+                    }}
+                  >
+                    {value}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+
       </Box>
 
     </Box>
