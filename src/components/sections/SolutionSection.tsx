@@ -244,67 +244,160 @@ export const SolutionSection = () => {
           flexDirection: 'column',
           alignItems: 'center',
           gap: '10px',
-          flex: 1
+          flex: 1,
+          position: 'relative'
         }}>
-          {/* 가족 이미지 */}
+          {/* 가족 이미지와 장식 요소들 */}
           <Box sx={{
-            width: '168px',
-            height: '168px',
-            borderRadius: '50%',
-            overflow: 'hidden',
+            position: 'relative',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            width: '168px',
+            height: '168px'
           }}>
-            <img
-              src="/src/images/3_family.jpg"
-              alt="가족 이미지"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                borderRadius: '50%'
-              }}
-            />
+            {/* 미묘한 원형 테두리 링 - 외부 */}
+            <Box sx={{
+              position: 'absolute',
+              width: '180px',
+              height: '180px',
+              borderRadius: '50%',
+              border: '1px solid rgba(114, 175, 129, 0.7)',
+              top: '-6px',
+              left: '-6px',
+              zIndex: 0
+            }} />
+            
+            {/* 미묘한 원형 테두리 링 - 내부 */}
+            <Box sx={{
+              position: 'absolute',
+              width: '174px',
+              height: '174px',
+              borderRadius: '50%',
+              border: '1px solid rgba(114, 175, 129, 0.6)',
+              top: '-3px',
+              left: '-3px',
+              zIndex: 0
+            }} />
+
+            {/* 작은 포인트 도트들 */}
+            <Box sx={{
+              position: 'absolute',
+              top: '8px',
+              right: '25px',
+              width: '9px',
+              height: '9px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(114, 175, 129, 0.7)',
+              zIndex: 1
+            }} />
+            
+            <Box sx={{
+              position: 'absolute',
+              bottom: '15px',
+              left: '20px',
+              width: '5px',
+              height: '5px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(114, 175, 129, 0.8)',
+              zIndex: 1
+            }} />
+
+            <Box sx={{
+              position: 'absolute',
+              top: '25px',
+              left: '12px',
+              width: '4px',
+              height: '4px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(114, 175, 129, 0.7)',
+              zIndex: 1
+            }} />
+
+            {/* 가족 이미지 */}
+            <Box sx={{
+              width: '168px',
+              height: '168px',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.08)',
+              border: '2px solid rgba(255, 255, 255, 0.9)',
+              zIndex: 2
+            }}>
+              <img
+                src="/src/images/3_family.jpg"
+                alt="가족 이미지"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '50%'
+                }}
+              />
+            </Box>
           </Box>
 
           {/* 인용구 박스 */}
           <Box sx={{
-            backgroundColor: '#E2E2E2',
-            borderRadius: '10px',
-            padding: '7px 10px',
+            position: 'relative',
+            background: `linear-gradient(145deg, ${THEME.colors.mainWhite}, rgba(218, 247, 231, 0.9))`,
+            borderRadius: '16px',
+            padding: '8px 16px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            maxWidth: '200px'
+            maxWidth: '150px',
+            boxShadow: `
+              0px 4px 12px rgba(114, 175, 129, 0.4),
+              0px 1px 3px rgba(0, 0, 0, 0.08),
+              inset 0px 1px 0px rgba(255, 255, 255, 0.9)
+            `,
           }}>
             <Box sx={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '4px'
+              gap: '6px'
             }}>
+              
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.pretendard,
-                fontWeight: THEME.typography.fontWeight.bold,
-                fontSize: '11px',
-                lineHeight: '1.268em',
-                color: THEME.colors.text,
+                fontWeight: 500,
+                fontSize: '9px',
+                lineHeight: '1.4em',
+                color: '#2D4A32',
                 textAlign: 'center',
-                whiteSpace: 'pre-line'
+                whiteSpace: 'pre-line',
+                letterSpacing: '-0.2px'
               }}>
-                {`"아이를 위한 가장 좋은 선물은,
-스스로를 돌볼 줄 아는 부모입니다."`}
+                {`" 아이를 위한 가장 좋은 선물은,`}
+                <br />
+                <Box component="span" sx={{ fontWeight: 700 }}>
+                  스스로를 돌볼 줄 아는 부모
+                </Box>
+                {`입니다. "`}
               </Typography>
+              
+              <Box sx={{
+                width: '30px',
+                height: '1px',
+                background: `linear-gradient(90deg, transparent, rgba(114, 175, 129, 0.4), transparent)`,
+              }} />
+              
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.pretendard,
                 fontWeight: THEME.typography.fontWeight.normal,
-                fontSize: '8px',
-                lineHeight: '1.2em',
-                color: THEME.colors.text,
-                textAlign: 'center'
+                fontSize: '7.5px',
+                lineHeight: '1em',
+                color: 'rgba(146, 146, 146, 0.9)',
+                textAlign: 'center',
+                fontStyle: 'italic',
+                letterSpacing: '0.2px'
               }}>
-                — [내 아이를 위한 감정코칭] 中
+                내 아이를 위한 감정코칭 中
               </Typography>
             </Box>
           </Box>
