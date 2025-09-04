@@ -150,7 +150,8 @@ export const InterpretationOrderSection = () => {
         <Box sx={{
           display: 'flex',
           alignSelf: 'stretch',
-          gap: '10px'
+          gap: '10px',
+          padding: '0 10px',
         }}>
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.pretendard,
@@ -168,7 +169,8 @@ export const InterpretationOrderSection = () => {
         <Box sx={{
           display: 'flex',
           alignSelf: 'stretch',
-          gap: '10px'
+          gap: '10px',
+          padding: '0 10px',
         }}>
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.pretendard,
@@ -234,7 +236,9 @@ export const InterpretationOrderSection = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            width: '100%',
+            width: '350px',
+            //backgroundColor: 'red', //영역 확인용
+            padding: '0 10px',
           }}
         >
           <Typography

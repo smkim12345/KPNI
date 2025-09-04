@@ -47,14 +47,15 @@ export const TestDescriptionSection = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         alignSelf: 'stretch',
-        flex: 1
+        flex: 1,
+        padding: '0 10px',
       }}>
         {/* 설명글 */}
         <Box sx={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          width: '346px',
+          width: '340px',
           height: '200px'
         }}>
           <Typography sx={{
