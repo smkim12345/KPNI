@@ -208,7 +208,7 @@ const KPNIBackPage = () => {
             width: '1131px',
             height: '787px',
             zIndex: 3,
-            backgroundColor: 'rgb(24, 245, 245,0.4)',
+            //backgroundColor: 'rgb(24, 245, 245,0.4)',
           }}>
             {/* 왼쪽 메인 섹션(제목, 2-1, 2-2, 2-3번) */}
             <Box sx={{
