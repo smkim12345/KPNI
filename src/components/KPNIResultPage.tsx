@@ -7,11 +7,11 @@ import { ProfileSection } from './sections/02_ProfileSection';
 import { DetailSection } from './sections/03_DetailSection';
 import { ScaleSection } from './sections/04_ScaleSection';
 import type { KPNIResultPageProps } from '../types/KPNITypes';
-import { BackTitleSection } from './sections/BackTitleSection';
-import { TestDescriptionSection } from './sections/TestDescriptionSection';
-import { InterpretationOrderSection } from './sections/InterpretationOrderSection';
-import { ScaleOpinionSection } from './sections/ScaleOpinionSection';
-import { SolutionSection } from './sections/SolutionSection';
+import { BackTitleSection } from './UI/Back_SectionTitle';
+import { TestDescriptionSection } from './sections/B01_TestDescriptionSection';
+import { InterpretationOrderSection } from './sections/B02_InterpretationOrderSection';
+import { ScaleOpinionSection } from './sections/B02_ScaleOpinionSection';
+import { SolutionSection } from './sections/B03_SolutionSection';
 
 // A3 페이지 캔버스
 const PageContainer = styled(Container)({
