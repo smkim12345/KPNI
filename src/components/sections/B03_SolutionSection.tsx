@@ -41,8 +41,9 @@ export const SolutionSection = () => {
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            width: '293px',
-            gap: '10px'
+            width: '300px',
+            gap: '10px',
+           
           }}>
             <SubSectionTitle title="1. 좋은 부모의 특징" />
               {/* 아이콘들 */}
@@ -60,7 +61,8 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '4px'
+                  gap: '4px',
+                  padding: '0 10px'
                 }}>
                   <img src="/src/images/3-1-1.png" alt="존중 아이콘" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
                   <Typography sx={{
@@ -169,7 +171,8 @@ export const SolutionSection = () => {
                   fontSize: '9px',
                   lineHeight: '1.33em',
                   color: THEME.colors.text,
-                  whiteSpace: 'pre-line'
+                  whiteSpace: 'pre-line',
+                  padding: '0 10px'
                 }}>
                   {`❖ 존중 : 자녀를 '작은 어른'이 아닌, 고유한 인격체로 존중합니다.
 ❖ 공감 : 자녀의 말에 반응하고, 감정을 읽고, 마음을 헤아립니다.
@@ -184,7 +187,7 @@ export const SolutionSection = () => {
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            width: '293px',
+            width: '300px',
             gap: '5px'
           }}>
             <SubSectionTitle title="2. 완벽한 부모에 대한 생각 내려 놓기" />
@@ -196,7 +199,8 @@ export const SolutionSection = () => {
               lineHeight: '1.193em',
               color: THEME.colors.text,
               whiteSpace: 'pre-line',
-              wordBreak: 'keep-all'
+              wordBreak: 'keep-all',
+              padding: '0 10px'
             }}>
               {`세상에는 '완벽한 부모'는 없습니다.
 좋은 부모는 실수를 안 하는 부모가 아니라, 실수를 인정하고 다시 관계를 회복하려는 부모입니다. 좋은 부모는 자신의 부족함을 인정하고, 부족한 자신의 모습으로 인해 영향을 받는 자녀의 마음을 늘 헤아리고 생각하는 부모입니다. 
@@ -210,7 +214,7 @@ export const SolutionSection = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '10px',
+          gap: '13px',
           flex: 1,
           position: 'relative'
         }}>
@@ -221,7 +225,8 @@ export const SolutionSection = () => {
             alignItems: 'center',
             justifyContent: 'center',
             width: '168px',
-            height: '168px'
+            height: '168px',
+            //backgroundColor: 'red'
           }}>
             {/* 미묘한 원형 테두리 링 - 외부 */}
             <Box sx={{
@@ -230,8 +235,8 @@ export const SolutionSection = () => {
               height: '180px',
               borderRadius: '50%',
               border: '1px solid rgba(114, 175, 129, 0.7)',
-              top: '-6px',
-              left: '-6px',
+              top: '-7px',
+              left: '-7px',
               zIndex: 0
             }} />
             
@@ -242,8 +247,8 @@ export const SolutionSection = () => {
               height: '174px',
               borderRadius: '50%',
               border: '1px solid rgba(114, 175, 129, 0.6)',
-              top: '-3px',
-              left: '-3px',
+              top: '-4px',
+              left: '-4px',
               zIndex: 0
             }} />
 
@@ -312,7 +317,7 @@ export const SolutionSection = () => {
             position: 'relative',
             background: `linear-gradient(145deg, ${THEME.colors.mainWhite}, rgba(218, 247, 231, 0.9))`,
             borderRadius: '16px',
-            padding: '8px 16px',
+            padding: '6px 16px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',

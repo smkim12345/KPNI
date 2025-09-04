@@ -20,7 +20,7 @@ export const SubSectionTitle = ({ title }: SubSectionTitleProps) => {
         color: '#274E13',
         alignSelf: 'stretch',
         textAlign: 'left',
-        padding: '0 10px',
+
       }}>
         {title}
       </Typography>

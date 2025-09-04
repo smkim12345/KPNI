@@ -72,7 +72,7 @@ export const ScaleOpinionSection = () => {
       height: '500px',
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       justifyContent: 'flex-start',
       padding: '10px',
       boxSizing: 'border-box',
@@ -113,7 +113,7 @@ export const ScaleOpinionSection = () => {
             alignItems: 'center',
             width: '565px',
             height: '81px',
-            padding: '0 20px',
+            padding: '0 10px',
             boxSizing: 'border-box'
           }}
         >
