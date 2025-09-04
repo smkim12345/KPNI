@@ -147,7 +147,7 @@ const KPNIFrontPage = ({ resultResponse }: KPNIResultPageProps) => {
 /**
  * K-PNI A3 결과지 뒷면 페이지
  */
-const KPNIBackPage = ({ resultResponse }: KPNIResultPageProps) => {
+const KPNIBackPage = () => {
   return (
     <PageContainer maxWidth={false}>
       <OuterGreenBox>
@@ -250,7 +250,7 @@ export const KPNIResultPage = ({ resultResponse }: Omit<KPNIResultPageProps, 'sh
   return (
     <>
       <KPNIFrontPage resultResponse={resultResponse} />
-      <KPNIBackPage resultResponse={resultResponse} />
+      <KPNIBackPage />
     </>
   );
 };
