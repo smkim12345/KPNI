@@ -1,11 +1,6 @@
 import {
   Box,
-  Typography,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell
+  Typography
 } from '@mui/material';
 import { THEME } from '../theme';
 import { SectionTitleBox } from '../UI/B_SectionTitle';
@@ -92,13 +87,14 @@ export const InterpretationOrderSection = () => {
                   padding: '0px 5px',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
+                  justifyContent: 'flex-start',
                   flex: 1,
                   height: '30px',
                   boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
                   //backgroundColor: 'blue',
                 }}
               >
+                {/* 번호 박스 */}
                 <Box
                   sx={{
                     width: '20px',
@@ -109,20 +105,24 @@ export const InterpretationOrderSection = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
-                    mr: '6px',
+                    mr: '5px',
                   }}
                 >
+                  {/* 번호 텍스트 */}
                   <Typography
                     sx={{
                       color: '#333',
                       fontSize: '10px',
                       fontWeight: 'bold',
                       fontFamily: THEME.typography.fontFamily.ohsquare,
+                      //backgroundColor: 'rgba(143, 30, 30, 0.1)',
                     }}
                   >
                     {step.num}
                   </Typography>
                 </Box>
+
+                {/* 텍스트 */}
                 <Typography
                   sx={{
                     color: 'white',
@@ -130,11 +130,14 @@ export const InterpretationOrderSection = () => {
                     fontWeight: THEME.typography.fontWeight.medium,
                     whiteSpace: 'nowrap',
                     fontFamily: THEME.typography.fontFamily.ohsquare,
+                    //backgroundColor: 'rgba(255, 255, 255, 0.1)',
                   }}
                 >
                   {step.text}
                 </Typography>
               </Box>
+
+              {/* 화살표 */}
               {index < arr.length - 1 && (
                 <Typography sx={{ fontSize: '20px', color: '#B0B0B0' }}>
                   ›
@@ -156,7 +159,7 @@ export const InterpretationOrderSection = () => {
         }}>
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.pretendard,
-            fontWeight: THEME.typography.fontWeight.medium,
+            fontWeight: THEME.typography.fontWeight.normal,
             fontSize: `${THEME.typography.fontSize.sm}px`,
             lineHeight: 1.189,
             color: THEME.colors.text,
@@ -234,7 +237,7 @@ export const InterpretationOrderSection = () => {
           <Typography
             sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
-              fontWeight: THEME.typography.fontWeight.medium,
+              fontWeight: THEME.typography.fontWeight.normal,
               fontSize: '9px',
               lineHeight: 1.189,
               color: THEME.colors.text,
@@ -263,9 +266,9 @@ export const InterpretationOrderSection = () => {
         </Box>
 
         {/* 테이블 */}
-        <Box sx={{ width: '504px', height: '63px' }}>
+        <Box sx={{ width: '495px', height: '63px', padding: '0 10px' }}>
           {/* 테이블 헤더 */}
-          <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
             {[
               { text: 'T점수', bgColor: '#66A247', color: '#FBFBFB' },
               { text: '25', bgColor: 'rgba(201, 237, 183, 0.7)' },
@@ -283,7 +286,7 @@ export const InterpretationOrderSection = () => {
               <Box
                 key={index}
                 sx={{
-                  width: '42px',
+                  flex: 1,
                   padding: '5px',
                   backgroundColor: item.bgColor,
                   border: '0.5px solid #868686',
@@ -306,7 +309,7 @@ export const InterpretationOrderSection = () => {
             ))}
           </Box>
           {/* 테이블 바디 */}
-          <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
             {[
               { text: '백분위', bgColor: '#66A247', color: '#FBFBFB' },
               { text: '0.6%' },
@@ -324,7 +327,7 @@ export const InterpretationOrderSection = () => {
               <Box
                 key={index}
                 sx={{
-                  width: '42px',
+                  flex: 1,
                   padding: '5px',
                   backgroundColor: item.bgColor,
                   border: '0.5px solid #868686',
@@ -376,7 +379,7 @@ export const InterpretationOrderSection = () => {
         }}>
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.pretendard,
-            fontWeight: 500,
+            fontWeight: THEME.typography.fontWeight.normal,
             fontSize: '9px',
             lineHeight: '1.189em',
             color: THEME.colors.text,
@@ -389,68 +392,89 @@ export const InterpretationOrderSection = () => {
         </Box>
 
         {/* IPQ 테이블 */}
-        <Table sx={{
-          width: '504px',
-          borderCollapse: 'separate',
-          borderSpacing: 0,
-          //backgroundColor: 'blue',
-          '& .MuiTableCell-root': {
-            border: '0.5px solid #868686',
-            padding: '5px',
-            textAlign: 'center',
-            fontFamily: THEME.typography.fontFamily.pretendard,
-            fontSize: '9px',
-            lineHeight: '1.193em',
-          }
-        }}>
-          <TableHead>
-            <TableRow>
-              {TABLE_HEADERS.map((header, index) => (
-                <TableCell
-                  key={index}
+        <Box sx={{ width: '495px', padding: '0 10px' }}>
+          {/* 테이블 헤더 */}
+          <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+            {TABLE_HEADERS.map((header, index) => (
+              <Box
+                key={index}
+                sx={{
+                  flex: 1,
+                  padding: '5px',
+                  backgroundColor: header.bgColor,
+                  border: '0.5px solid #868686',
+                  borderTopLeftRadius: index === 0 ? '5px' : 0,
+                  borderTopRightRadius: index === TABLE_HEADERS.length - 1 ? '5px' : 0,
+                }}
+              >
+                <Typography
                   sx={{
-                    backgroundColor: header.bgColor,
+                    fontFamily: THEME.typography.fontFamily.pretendard,
+                    fontWeight: THEME.typography.fontWeight.bold,
+                    fontSize: '9px',
                     color: header.color || THEME.colors.text,
-                    fontWeight: 700,
-                    fontSize: '9px !important',
-                    width: '84px',
-                    borderTopLeftRadius: index === 0 ? '5px' : 0,
-                    borderTopRightRadius: index === TABLE_HEADERS.length - 1 ? '5px' : 0,
+                    textAlign: 'center',
+                    lineHeight: '1.193em',
                   }}
                 >
                   {header.text}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {TABLE_DATA.map((row, rowIndex) => (
-              <TableRow key={rowIndex}>
-                <TableCell
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+          {/* 테이블 바디 */}
+          {TABLE_DATA.map((row, rowIndex) => (
+            <Box key={rowIndex} sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+              <Box
+                sx={{
+                  flex: 1,
+                  padding: '5px',
+                  backgroundColor: '#66A247',
+                  border: '0.5px solid #868686',
+                  borderBottomLeftRadius: rowIndex === TABLE_DATA.length - 1 ? '5px' : 0,
+                }}
+              >
+                <Typography
                   sx={{
-                    backgroundColor: '#66A247',
+                    fontFamily: THEME.typography.fontFamily.pretendard,
+                    fontWeight: THEME.typography.fontWeight.semiBold,
+                    fontSize: '9px',
                     color: '#FBFBFB',
-                    fontWeight: 600,
-                    borderBottomLeftRadius: rowIndex === TABLE_DATA.length - 1 ? '5px' : 0,
+                    textAlign: 'center',
+                    lineHeight: '1.193em',
                   }}
                 >
                   {row.header}
-                </TableCell>
-                {row.values.map((value, colIndex) => (
-                  <TableCell
-                    key={colIndex}
+                </Typography>
+              </Box>
+              {row.values.map((value, colIndex) => (
+                <Box
+                  key={colIndex}
+                  sx={{
+                    flex: 1,
+                    padding: '5px',
+                    border: '0.5px solid #868686',
+                    borderBottomRightRadius:
+                      rowIndex === TABLE_DATA.length - 1 && colIndex === row.values.length - 1 ? '5px' : 0,
+                  }}
+                >
+                  <Typography
                     sx={{
-                      borderBottomRightRadius:
-                        rowIndex === TABLE_DATA.length - 1 && colIndex === row.values.length - 1 ? '5px' : 0,
+                      fontFamily: THEME.typography.fontFamily.pretendard,
+                      fontWeight: THEME.typography.fontWeight.normal,
+                      fontSize: '9px',
+                      color: THEME.colors.text,
+                      textAlign: 'center',
+                      lineHeight: '1.193em',
                     }}
                   >
                     {value}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          ))}
+        </Box>
 
       </Box>
 
