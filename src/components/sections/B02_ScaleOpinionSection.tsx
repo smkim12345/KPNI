@@ -10,7 +10,8 @@ import { SubSectionTitle } from '../UI/B_SubSectionTitle';
 const SCALE_DATA = [
   {
     title: '자녀\n특성',
-    bgColor: '#FDB68C',
+    bgColor: THEME.colors.scale.childCharacter.primary,
+    brightColor: THEME.colors.scale.childCharacter.bright,
     subScales: [
       { name: '기질적 예민성', description: '환경 변화에 대한 민감도와 정서적 반응성을 측정합니다. 예민한 기질은 특별한 관심과 이해가 필요합니다.' },
       { name: '높은 요구수준', description: '부모에게 요구하는 관심과 돌봄 정도를 평가합니다. 요구 수준이 높을수록 양육 부담이 커질 수 있습니다.' },
@@ -21,7 +22,8 @@ const SCALE_DATA = [
   },
   {
     title: '양육\n태도',
-    bgColor: '#A9CEF4',
+    bgColor: THEME.colors.scale.parentingAttitude.primary,
+    brightColor: THEME.colors.scale.parentingAttitude.bright,
     subScales: [
       { name: '애정표현', description: '자녀에게 애정과 사랑을 표현하는 방식과 정도를 평가합니다. 적절한 애정 표현은 정서적 안정감을 높여줍니다.' },
       { name: '합리적 설명', description: '규칙이나 행동에 대해 논리적으로 설명하는 정도를 평가합니다. 자녀의 사고력 발달에 도움이 됩니다.' },
@@ -32,7 +34,8 @@ const SCALE_DATA = [
   },
   {
     title: '양육\n환경',
-    bgColor: '#88CACE',
+    bgColor: THEME.colors.scale.parentingEnvironment.primary,
+    brightColor: THEME.colors.scale.parentingEnvironment.bright,
     subScales: [
       { name: '부부간 불화', description: '부부 간 갈등과 불화 정도를 평가합니다. 부부 관계 안정성은 가정 전체 분위기에 영향을 미칩니다.' },
       { name: '사회적 지원 부족', description: '가족 외부 사회적 지원 체계 부족 정도를 평가합니다. 사회적 네트워크가 부족하면 양육 부담이 커집니다.' },
@@ -43,7 +46,8 @@ const SCALE_DATA = [
   },
   {
     title: '양육\n스트레스',
-    bgColor: '#C5ACDF',
+    bgColor: THEME.colors.scale.parentingStress.primary,
+    brightColor: THEME.colors.scale.parentingStress.bright,
     subScales: [
       { name: '역할갈등', description: '부모 역할과 사회적·직업적 역할 간 갈등 정도를 평가합니다. 역할 갈등이 심하면 양육에 집중하기 어려워집니다.' },
       { name: '양육방식차이', description: '부부 간 양육 방식 차이로 인한 갈등 정도를 평가합니다. 양육 방식의 일관성이 중요합니다.' },
@@ -54,7 +58,8 @@ const SCALE_DATA = [
   },
   {
     title: '양육\n과정',
-    bgColor: '#F0B9C8',
+    bgColor: THEME.colors.scale.parentingProcess.primary,
+    brightColor: THEME.colors.scale.parentingProcess.bright,
     subScales: [
       { name: '양육만족', description: '양육 활동에 대한 전반적인 만족도를 평가합니다. 양육의 긍정적 측면과 도전 과제를 균형 있게 보는 태도가 중요합니다.' },
       { name: '현가족관계', description: '현재 가족 구성원 간 관계 안정성을 평가합니다. 가족 화목은 자녀의 정서적 안정에 핵심적입니다.' },
@@ -159,11 +164,7 @@ export const ScaleOpinionSection = () => {
                 sx={{
                   width: '67px',
                   height: '12px',
-                  backgroundColor: scale.bgColor === '#FDB68C' ? '#F8CC89' :
-                                   scale.bgColor === '#A9CEF4' ? '#B9DBFF' :
-                                   scale.bgColor === '#88CACE' ? '#94D9DE' :
-                                   scale.bgColor === '#C5ACDF' ? '#C0BAEA' :
-                                   '#F2CBD6',
+                  backgroundColor: scale.brightColor,
                   borderRadius: '5px 0 0 5px',
                   display: 'flex',
                   alignItems: 'center',
@@ -200,11 +201,7 @@ export const ScaleOpinionSection = () => {
                 sx={{
                   width: '393px',
                   height: '12px',
-                  border: `1px solid ${scale.bgColor === '#FDB68C' ? '#F8CC89' :
-                                       scale.bgColor === '#A9CEF4' ? '#B9DBFF' :
-                                       scale.bgColor === '#88CACE' ? '#94D9DE' :
-                                       scale.bgColor === '#C5ACDF' ? '#C0BAEA' :
-                                       '#F2CBD6'}`,
+                  border: `1px solid ${scale.brightColor}`,
                   borderRadius: '0 5px 5px 0',
                   display: 'flex',
                   alignItems: 'center',
