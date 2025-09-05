@@ -138,13 +138,13 @@ export const THEME = {
   },
 
   // B섹션 설명글 공통 스타일
-  sectionDescription: {
-    fontFamily: 'typography.fontFamily.pretendard',
-    fontWeight: 'typography.fontWeight.normal',
-    fontSize: 'typography.fontSize.md',
-    lineHeight: 1.189,
-    color: 'colors.text',
+  B_SECTION_DESCRIPTION: {
+    fontFamily: 'Pretendard Variable',
+    fontWeight: 300,
+    fontSize: 9,
+    lineHeight: '1.2em',
+    color: '#0B0B0B',
     whiteSpace: 'pre-line',
-    wordBreak: 'keep-all'
-  }
+    wordBreak: 'keep-all',
+  },
 } as const;

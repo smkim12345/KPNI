@@ -145,11 +145,7 @@ export const InterpretationOrderSection = () => {
           padding: '0 10px',
         }}>
           <Typography sx={{
-            fontFamily: THEME.typography.fontFamily.pretendard,
-            fontWeight: THEME.typography.fontWeight.normal,
-            fontSize: `${THEME.typography.fontSize.sm}px`,
-            lineHeight: 1.189,
-            color: THEME.colors.text,
+            ...THEME.B_SECTION_DESCRIPTION,
             flex: 1
           }}>
             검사 결과의 신뢰도를 확인하기 위해 신뢰 지표를 점검해야 합니다. PNI 검사는 피검자가 검사에 성실하게 응답했는지를 평가하기 위해 무응답수, 연속 동일 반응, 반응 일관성, 사회적 바람직성 등 총 5가지 신뢰 지표를 제공합니다.
@@ -221,18 +217,11 @@ export const InterpretationOrderSection = () => {
             padding: '0 10px',
           }}
         >
-          <Typography
-            sx={{
-              fontFamily: THEME.typography.fontFamily.pretendard,
-              fontWeight: THEME.typography.fontWeight.normal,
-              fontSize: '9px',
-              lineHeight: 1.189,
-              color: THEME.colors.text,
-              width: '365px',
-              whiteSpace: 'pre-line',
-              wordBreak: 'keep-all',
-            }}
-          >
+          <Typography sx={{
+            ...THEME.B_SECTION_DESCRIPTION,
+            width: '365px',
+          }}>
+          
             {` T점수는 원점수를 평균 50, 표준편차 10인 정규분포로 변환한 값으로, 비교와 해석을 쉽게 하기 위해 사용됩니다. Z점수를 기반으로 변환되며, T=50은 50%, T=60은 약 84%, T=40은 약 16% 백분위를 의미합니다. 심리검사, 교육평가, 연구 등에서 데이터 분석과 비교를 위해 널리 활용됩니다.`}
           </Typography>
           <img
@@ -364,14 +353,8 @@ export const InterpretationOrderSection = () => {
           padding: '0 10px',
         }}>
           <Typography sx={{
-            fontFamily: THEME.typography.fontFamily.pretendard,
-            fontWeight: THEME.typography.fontWeight.normal,
-            fontSize: '9px',
-            lineHeight: '1.189em',
-            color: THEME.colors.text,
+            ...THEME.B_SECTION_DESCRIPTION,
             flex: 1,
-            whiteSpace: 'pre-line',
-            wordBreak: 'keep-all'
           }}>
             이상적양육지수(IPQ)는 Ideal Parenting Quotient의 약자로, 이상적인 부모의 양육태도의 정도를 나타내는 지수입니다. 지수점수는 100점 평균에 15점의 표준편차를 가진 표준화 된 점수로, 점수가 높을수록 이상적인 양육태도를 가지고 있음을 의미하고 있습니다.
           </Typography>

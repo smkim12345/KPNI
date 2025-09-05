@@ -57,15 +57,9 @@ export const TestDescriptionSection = () => {
 
         {/* 설명글 - 이미지 주변을 자연스럽게 감싸도록 배치 */}
         <Typography sx={{
-          fontFamily: THEME.typography.fontFamily.pretendard,
-          fontWeight: THEME.typography.fontWeight.light,
-          fontSize: `${THEME.typography.fontSize.sm}px`,
-          lineHeight: 1.193,
-          color: THEME.colors.text,
-          whiteSpace: 'pre-line',
+          ...THEME.B_SECTION_DESCRIPTION,
           textAlign: 'justify',
           margin: 0,
-          wordBreak: 'keep-all',
           letterSpacing: '-0.003em',
         }}>
           {`21세기 들어 가족의 형태와 부모 역할은 이전보다 훨씬 다양하고 복합적으로 변화하고 있습니다. 전통적인 '권위적 부모상'이 지배하던 시기를 지나, 이제는 부모와 자녀 간의 관계가 더 상호적이며, 정서적인 교류를 중시하는 방향으로 진화해가고 있습니다. 하지만 이러한 변화는 동시에 부모에게 더 큰 심리적 부담과 혼란을 안겨주고 있습니다. 또한 산업화와 핵가족화는 가족 내 역할을 재구성하며, 부모에게 양육 부담을 집중시켰습니다. 여성의 경제활동 증가, 맞벌이 가정의 증가는 부모가 자녀와 보내는 시간 자체를 줄이며, 질 높은 상호작용에 대한 압박을 증가시켰습니다.

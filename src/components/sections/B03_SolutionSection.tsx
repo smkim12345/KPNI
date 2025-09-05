@@ -205,13 +205,7 @@ export const SolutionSection = () => {
             <SubSectionTitle title="2. 완벽한 부모에 대한 생각 내려 놓기" />
 
             <Typography sx={{
-              fontFamily: THEME.typography.fontFamily.pretendard,
-              fontWeight: 300,
-              fontSize: '9px',
-              lineHeight: '1.193em',
-              color: THEME.colors.text,
-              whiteSpace: 'pre-line',
-              wordBreak: 'keep-all',
+              ...THEME.B_SECTION_DESCRIPTION,
               padding: '0 10px'
             }}>
               {<>
