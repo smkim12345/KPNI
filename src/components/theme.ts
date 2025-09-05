@@ -37,37 +37,42 @@ export const THEME = {
       childCharacter: {
         primary: '#FDB68C',    // 메인 색상
         secondary: '#FCD9A3',  // 중간 색상
-        light: '#F9F0DA'       // 연한 색상
+        light: '#F9F0DA',      // 연한 색상
+        bright: '#F8CC89'      // 밝은 강조 색상
       },
-      
-      // 양육 태도 (Parenting Attitude)  
+
+      // 양육 태도 (Parenting Attitude)
       parentingAttitude: {
         primary: '#A9CEF4',    // 메인 색상
         secondary: '#C9E0F8',  // 중간 색상
-        light: '#E9F4FF'       // 연한 색상
+        light: '#E9F4FF',      // 연한 색상
+        bright: '#B9DBFF'      // 밝은 강조 색상
       },
-      
+
       // 양육 환경 (Parenting Environment)
       parentingEnvironment: {
         primary: '#88CACE',    // 메인 색상
         secondary: '#BCEBEE', // 중간 색상
-        light: '#DDF1F3'       // 연한 색상
+        light: '#DDF1F3',      // 연한 색상
+        bright: '#94D9DE'      // 밝은 강조 색상
       },
-      
+
       // 양육 스트레스 (Parenting Stress)
       parentingStress: {
-        primary: '#D0AFF2',    // 메인 색상
+        primary: '#C5ACDF',    // 메인 색상
         secondary: '#D7D3F0',  // 중간 색상
-        light: '#EBE9F9'       // 연한 색상
+        light: '#EBE9F9',      // 연한 색상
+        bright: '#C0BAEA'      // 밝은 강조 색상
       },
-      
+
       // 양육 과정 (Parenting Process)
       parentingProcess: {
-        primary: '#F0C0CD',    // 메인 색상
+        primary: '#F0B9C8',    // 메인 색상
         secondary: '#F6DEE5',  // 중간 색상
-        light: '#FFF0F4'       // 연한 색상
+        light: '#FFF0F4',      // 연한 색상
+        bright: '#F2CBD6'      // 밝은 강조 색상
       }
-    }
+    },
   },
   typography: {
     fontSize: {
@@ -130,5 +135,16 @@ export const THEME = {
       min: 20,
       max: 80
     }
+  },
+
+  // B섹션 설명글 공통 스타일
+  sectionDescription: {
+    fontFamily: 'typography.fontFamily.pretendard',
+    fontWeight: 'typography.fontWeight.normal',
+    fontSize: 'typography.fontSize.md',
+    lineHeight: 1.189,
+    color: 'colors.text',
+    whiteSpace: 'pre-line',
+    wordBreak: 'keep-all'
   }
 } as const;
