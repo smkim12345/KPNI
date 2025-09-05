@@ -97,6 +97,13 @@ KPNI: A3Page(426mm) → OuterGreenBox(1191px) → 크기 거의 일치하지만 
 
 ## ⚠️ **주의사항**
 
+### **절대 수정 금지 파일 (백엔드 연동)**
+- `src/components/print/A3Page.tsx` - 백엔드 연동 완료, 수정 금지
+- `src/components/print/PdfDownloadButton.tsx` - 백엔드 연동 완료, 수정 금지  
+- `src/index.css` - 백엔드 연동 완료, 수정 금지
+- `src/App.tsx` - 백엔드 연동 완료, 수정 금지
+
+### **절대 수정 금지 컴포넌트 (레이아웃 보존)**
 1. **절대 금지**: OuterGreenBox 이하 모든 수정 (인쇄 테두리 보존)
 2. **절대 금지**: FrameBox 내부의 절대 위치 Box들 수정
 3. **절대 금지**: InfoSection, 메인 섹션들의 하드코딩 크기 변경  
@@ -112,10 +119,10 @@ KPNI: A3Page(426mm) → OuterGreenBox(1191px) → 크기 거의 일치하지만 
 - `D:\github\kpr-inventory-react2\src\index.css`
 
 ### **KPNI 대상**
-- `D:\github\KPNI\src\components\ResultPage.tsx`
-- `D:\github\KPNI\src\components\print\A3Page.tsx`
-- `D:\github\KPNI\src\components\print\PdfDownloadButton.tsx`
-- `D:\github\KPNI\src\index.css`
+- `D:\github\KPNI\src\components\ResultPage.tsx` - ✅ 수정 가능 (OuterGreenBox 이하 제외)
+- `D:\github\KPNI\src\components\print\A3Page.tsx` - ❌ 수정 금지 (백엔드 연동)
+- `D:\github\KPNI\src\components\print\PdfDownloadButton.tsx` - ❌ 수정 금지 (백엔드 연동)
+- `D:\github\KPNI\src\index.css` - ❌ 수정 금지 (백엔드 연동)
 
 ---
 **최종 목표**: GST A3 인쇄물과 1:1 동일한 크기의 KPNI 인쇄물 생성으로 공정한 검사 결과 비교 평가 구현
