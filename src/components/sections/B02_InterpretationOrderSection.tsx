@@ -9,26 +9,6 @@ import { SubSectionTitle } from '../UI/B_SubSectionTitle';
 /**
  * K-PNI 검사 해석 순서 섹션
  */
-// 테이블 데이터 정의
-const TABLE_HEADERS = [
-  { text: '구분', bgColor: '#66A247', color: '#FBFBFB' },
-  { text: '낮음', bgColor: 'rgba(201, 237, 183, 0.7)' },
-  { text: '다소낮음', bgColor: 'rgba(188, 230, 167, 0.7)' },
-  { text: '보통', bgColor: 'rgba(174, 223, 139, 0.7)' },
-  { text: '높음', bgColor: 'rgba(152, 215, 115, 0.7)' },
-  { text: '매우 높음', bgColor: 'rgba(130, 207, 91, 0.76)' },
-];
-
-const TABLE_DATA = [
-  {
-    header: '양육지수(IPQ)',
-    values: ['77이하', '77초과~92이하', '92초과~108이하', '108초과~123이하', '123초과']
-  },
-  {
-    header: '백분위(%)',
-    values: ['약 6% 이하', '약 7%~30%', '약 30%~70%', '약 70%~94%', '약 94%이상']
-  }
-];
 
 export const InterpretationOrderSection = () => {
   return (
@@ -266,28 +246,28 @@ export const InterpretationOrderSection = () => {
         </Box>
 
         {/* 테이블 */}
-        <Box sx={{ width: '495px', height: '63px', padding: '0 10px' }}>
+        <Box sx={{ width: '495px', height: 'auto', padding: '0 10px' }}>
           {/* 테이블 헤더 */}
           <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
             {[
               { text: 'T점수', bgColor: '#66A247', color: '#FBFBFB' },
-              { text: '25', bgColor: 'rgba(201, 237, 183, 0.7)' },
-              { text: '30', bgColor: 'rgba(188, 230, 167, 0.7)' },
-              { text: '35', bgColor: 'rgba(174, 223, 139, 0.7)' },
-              { text: '40', bgColor: 'rgba(152, 215, 115, 0.7)' },
-              { text: '45', bgColor: 'rgba(130, 207, 91, 0.76)' },
-              { text: '50', bgColor: '#93CD76' },
-              { text: '55', bgColor: '#7CB261' },
-              { text: '60', bgColor: '#7CB261' },
-              { text: '65', bgColor: '#66A247' },
-              { text: '70', bgColor: '#66A247' },
-              { text: '75', bgColor: '#4A7E2F' },
+              { text: '25', bgColor: 'hsl(105, 25%, 80%)' },
+              { text: '30', bgColor: 'hsl(105, 30%, 75%)' },
+              { text: '35', bgColor: 'hsl(105, 35%, 70%)' },
+              { text: '40', bgColor: 'hsl(105, 37%, 65%)' },
+              { text: '45', bgColor: 'hsl(105, 40%, 60%)' },
+              { text: '50', bgColor: 'hsl(105, 45%, 55%)' },
+              { text: '55', bgColor: 'hsl(105, 40%, 60%)' },
+              { text: '60', bgColor: 'hsl(105, 37%, 65%)' },
+              { text: '65', bgColor: 'hsl(105, 35%, 70%)' },
+              { text: '70', bgColor: 'hsl(105, 30%, 75%)' },
+              { text: '75', bgColor: 'hsl(105, 25%, 80%)' },
             ].map((item, index) => (
               <Box
                 key={index}
                 sx={{
                   flex: 1,
-                  padding: '5px',
+                  padding: '3px',
                   backgroundColor: item.bgColor,
                   border: '0.5px solid #868686',
                   borderTopLeftRadius: index === 0 ? '5px' : 0,
@@ -298,7 +278,7 @@ export const InterpretationOrderSection = () => {
                   sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
-                    fontSize: '9px',
+                    fontSize: `${THEME.typography.fontSize.sm - 1}px`,
                     color: item.color || THEME.colors.text,
                     textAlign: 'center',
                   }}
@@ -328,7 +308,7 @@ export const InterpretationOrderSection = () => {
                 key={index}
                 sx={{
                   flex: 1,
-                  padding: '5px',
+                  padding: '3px',
                   backgroundColor: item.bgColor,
                   border: '0.5px solid #868686',
                   borderBottomLeftRadius: index === 0 ? '5px' : 0,
@@ -341,7 +321,7 @@ export const InterpretationOrderSection = () => {
                     fontWeight: item.bgColor
                       ? THEME.typography.fontWeight.bold
                       : THEME.typography.fontWeight.normal,
-                    fontSize: '9px',
+                    fontSize: `${THEME.typography.fontSize.sm - 1}px`,
                     color: item.color || THEME.colors.text,
                     textAlign: 'center',
                   }}
@@ -365,7 +345,7 @@ export const InterpretationOrderSection = () => {
         justifyContent: 'center',
         padding: '0 10px ',
         boxSizing: 'border-box',
-        gap: '7px'
+        gap: '10px'
       }}>
 
           <SubSectionTitle title="3. 이상적 양육지수 확인" />
@@ -374,7 +354,6 @@ export const InterpretationOrderSection = () => {
         <Box sx={{
           display: 'flex',
           alignSelf: 'stretch',
-          gap: '10px',
           padding: '0 10px',
         }}>
           <Typography sx={{
@@ -392,88 +371,115 @@ export const InterpretationOrderSection = () => {
         </Box>
 
         {/* IPQ 테이블 */}
-        <Box sx={{ width: '495px', padding: '0 10px' }}>
-          {/* 테이블 헤더 */}
-          <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
-            {TABLE_HEADERS.map((header, index) => (
-              <Box
-                key={index}
-                sx={{
-                  flex: 1,
-                  padding: '5px',
-                  backgroundColor: header.bgColor,
-                  border: '0.5px solid #868686',
-                  borderTopLeftRadius: index === 0 ? '5px' : 0,
-                  borderTopRightRadius: index === TABLE_HEADERS.length - 1 ? '5px' : 0,
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontFamily: THEME.typography.fontFamily.pretendard,
-                    fontWeight: THEME.typography.fontWeight.bold,
-                    fontSize: '9px',
-                    color: header.color || THEME.colors.text,
-                    textAlign: 'center',
-                    lineHeight: '1.193em',
-                  }}
-                >
-                  {header.text}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-          {/* 테이블 바디 */}
-          {TABLE_DATA.map((row, rowIndex) => (
-            <Box key={rowIndex} sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
-              <Box
-                sx={{
-                  flex: 1,
-                  padding: '5px',
-                  backgroundColor: '#66A247',
-                  border: '0.5px solid #868686',
-                  borderBottomLeftRadius: rowIndex === TABLE_DATA.length - 1 ? '5px' : 0,
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontFamily: THEME.typography.fontFamily.pretendard,
-                    fontWeight: THEME.typography.fontWeight.semiBold,
-                    fontSize: '9px',
-                    color: '#FBFBFB',
-                    textAlign: 'center',
-                    lineHeight: '1.193em',
-                  }}
-                >
-                  {row.header}
-                </Typography>
-              </Box>
-              {row.values.map((value, colIndex) => (
-                <Box
-                  key={colIndex}
-                  sx={{
-                    flex: 1,
-                    padding: '5px',
-                    border: '0.5px solid #868686',
-                    borderBottomRightRadius:
-                      rowIndex === TABLE_DATA.length - 1 && colIndex === row.values.length - 1 ? '5px' : 0,
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontFamily: THEME.typography.fontFamily.pretendard,
-                      fontWeight: THEME.typography.fontWeight.normal,
-                      fontSize: '9px',
-                      color: THEME.colors.text,
-                      textAlign: 'center',
-                      lineHeight: '1.193em',
-                    }}
-                  >
-                    {value}
-                  </Typography>
+        <Box sx={{ width: '495px', padding: '0 10px'}}>
+          {/* IPQ 데이터 정의 */}
+          {(() => {
+            const ipqHeaders = [
+              { text: '구분', bgColor: '#66A247', color: '#FBFBFB' },
+              { text: '낮음', bgColor: 'hsl(105, 20%, 85%)' },
+              { text: '다소낮음', bgColor: 'hsl(105, 25%, 75%)' },
+              { text: '보통', bgColor: 'hsl(105, 30%, 65%)' },
+              { text: '높음', bgColor: 'hsl(105, 35%, 55%)' },
+              { text: '매우 높음', bgColor: 'hsl(105, 40%, 45%)' },
+            ];
+
+            const ipqData = [
+              {
+                header: '양육지수(IPQ)',
+                values: ['77이하', '77초과~92이하', '92초과~108이하', '108초과~123이하', '123초과']
+              },
+              {
+                header: '백분위(%)',
+                values: ['약 6% 이하', '약 7%~30%', '약 30%~70%', '약 70%~94%', '약 94%이상']
+              }
+            ];
+
+            return (
+              <>
+                {/* 테이블 헤더 */}
+                <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+                  {ipqHeaders.map((header, index) => (
+                    <Box
+                      key={index}
+                      sx={{
+                        flex: 1,
+                        padding: '3px',
+                        backgroundColor: header.bgColor,
+                        border: '0.5px solid #868686',
+                        borderTopLeftRadius: index === 0 ? '5px' : 0,
+                        borderTopRightRadius: index === ipqHeaders.length - 1 ? '5px' : 0,
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          fontFamily: THEME.typography.fontFamily.pretendard,
+                          fontWeight: THEME.typography.fontWeight.bold,
+                          fontSize: `${THEME.typography.fontSize.sm - 1}px`,
+                          color: header.color || THEME.colors.text,
+                          textAlign: 'center',
+                          lineHeight: '1.193em',
+                        }}
+                      >
+                        {header.text}
+                      </Typography>
+                    </Box>
+                  ))}
                 </Box>
-              ))}
-            </Box>
-          ))}
+                {/* 테이블 바디 */}
+                {ipqData.map((row, rowIndex) => (
+                  <Box key={rowIndex} sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+                    <Box
+                      sx={{
+                        flex: 1,
+                        padding: '3px',
+                        backgroundColor: '#66A247',
+                        border: '0.5px solid #868686',
+                        borderBottomLeftRadius: rowIndex === ipqData.length - 1 ? '5px' : 0,
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          fontFamily: THEME.typography.fontFamily.pretendard,
+                          fontWeight: THEME.typography.fontWeight.semiBold,
+                          fontSize: `${THEME.typography.fontSize.sm - 1}px`,
+                          color: '#FBFBFB',
+                          textAlign: 'center',
+                          lineHeight: '1.193em',
+                        }}
+                      >
+                        {row.header}
+                      </Typography>
+                    </Box>
+                    {row.values.map((value, colIndex) => (
+                      <Box
+                        key={colIndex}
+                        sx={{
+                          flex: 1,
+                          padding: '3px',
+                          border: '0.5px solid #868686',
+                          borderBottomRightRadius:
+                            rowIndex === ipqData.length - 1 && colIndex === row.values.length - 1 ? '5px' : 0,
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            fontFamily: THEME.typography.fontFamily.pretendard,
+                            fontWeight: THEME.typography.fontWeight.normal,
+                            fontSize: `${THEME.typography.fontSize.sm - 1}px`,
+                            color: THEME.colors.text,
+                            textAlign: 'center',
+                            lineHeight: '1.193em',
+                          }}
+                        >
+                          {value}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                ))}
+              </>
+            );
+          })()}
         </Box>
 
       </Box>
