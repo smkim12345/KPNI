@@ -53,8 +53,9 @@ export const SolutionSection = () => {
                 justifyContent: 'space-between',
                 gap: '5px',
                 width: '270px',
-                height: '57px',
+                height: '50px',
                 alignItems: 'center',
+                padding: '0 10px',
                 //backgroundColor: 'blue' //영역 확인용
               }}>
                 <Box sx={{
@@ -62,9 +63,10 @@ export const SolutionSection = () => {
                   flexDirection: 'column',
                   alignItems: 'center',
                   gap: '4px',
-                  padding: '0 10px'
+                  height: '50px',
+                  justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-1.png" alt="존중 아이콘" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-1.png" alt="존중 아이콘" style={{ width: '32px', height: '34px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -81,9 +83,11 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '4px'
+                  gap: '4px',
+                  height: '50px',
+                  justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-2.png" alt="공감 아이콘" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-2.png" alt="공감 아이콘" style={{ width: '34px', height: '40px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -100,9 +104,11 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '4px'
+                  gap: '4px',
+                  height: '50px',
+                  justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-3.png" alt="일관성 아이콘" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-3.png" alt="일관성 아이콘" style={{ width: '37px', height: '35px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -119,9 +125,11 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '4px'
+                  gap: '4px',
+                  height: '50px',
+                  justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-4.png" alt="회복력 아이콘" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-4.png" alt="회복력 아이콘" style={{ width: '32px', height: '37px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -138,9 +146,11 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '4px'
+                  gap: '4px',
+                  height: '50px',
+                  justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-5.png" alt="성장 아이콘" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-5.png" alt="성장 아이콘" style={{ width: '33px', height: '38px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -174,11 +184,13 @@ export const SolutionSection = () => {
                   whiteSpace: 'pre-line',
                   padding: '0 10px'
                 }}>
-                  {`❖ 존중 : 자녀를 '작은 어른'이 아닌, 고유한 인격체로 존중합니다.
-❖ 공감 : 자녀의 말에 반응하고, 감정을 읽고, 마음을 헤아립니다.
-❖ 일관성 : 기준이 흔들리지 않도록, 자녀가 예측할 수 있는 반응을 보여줍니다.
-❖ 회복력 : 갈등이 생겼을 때 대화를 통해 관계를 다시 회복할 수 있습니다.
-❖ 성장 : 자녀와 함께 배우고, 함께 성장하려는 자세를 가지고 있습니다.`}
+                  {<>
+                    ❖ <span style={{ fontWeight: 'bold' }}>존중</span> : 자녀를 '작은 어른'이 아닌, 고유한 인격체로 존중합니다.
+                    <br />❖ <span style={{ fontWeight: 'bold' }}>공감</span> : 자녀의 말에 반응하고, 감정을 읽고, 마음을 헤아립니다.
+                    <br />❖ <span style={{ fontWeight: 'bold' }}>일관성</span> : 기준이 흔들리지 않도록, 자녀가 예측할 수 있는 반응을 보여줍니다.
+                    <br />❖ <span style={{ fontWeight: 'bold' }}>회복력</span> : 갈등이 생겼을 때 대화를 통해 관계를 다시 회복할 수 있습니다.
+                    <br />❖ <span style={{ fontWeight: 'bold' }}>성장</span> : 자녀와 함께 배우고, 함께 성장하려는 자세를 가지고 있습니다.
+                  </>}
                 </Typography>
               </Box>
           </Box>
@@ -202,9 +214,11 @@ export const SolutionSection = () => {
               wordBreak: 'keep-all',
               padding: '0 10px'
             }}>
-              {`세상에는 '완벽한 부모'는 없습니다.
-좋은 부모는 실수를 안 하는 부모가 아니라, 실수를 인정하고 다시 관계를 회복하려는 부모입니다. 좋은 부모는 자신의 부족함을 인정하고, 부족한 자신의 모습으로 인해 영향을 받는 자녀의 마음을 늘 헤아리고 생각하는 부모입니다. 
-양육은 정답이 아니라'함께 만들어가는 길'입니다.`}
+              {<>
+                <span style={{ fontWeight: 'bold' }}>세상에는 '완벽한 부모'는 없습니다.</span>
+                <br />좋은 부모는 실수를 안 하는 부모가 아니라, 실수를 인정하고 다시 관계를 회복하려는 부모입니다. 좋은 부모는 자신의 부족함을 인정하고, 부족한 자신의 모습으로 인해 영향을 받는 자녀의 마음을 늘 헤아리고 생각하는 부모입니다.
+                <br /><span style={{ fontWeight: 'bold' }}>양육은 정답이 아니라 '함께 만들어가는 길' 입니다.</span>
+              </>}
             </Typography>
           </Box>
         </Box>

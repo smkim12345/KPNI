@@ -91,7 +91,7 @@ export const ScaleOpinionSection = () => {
       }}>
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.pretendard,
-          fontWeight: 500,
+          fontWeight: THEME.typography.fontWeight.normal,
           fontSize: '9px',
           lineHeight: '1.189em',
           color: THEME.colors.text,
