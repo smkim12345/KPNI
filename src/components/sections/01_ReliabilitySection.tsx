@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { SectionTitle } from '../UI/F_SectionTitle';
 import { ReliabilityTable } from '../UI/01_ReliabilityTable';
-import type { ReliabilitySectionProps } from '../../types/KPNITypes';
+import type { ReliabilitySectionProps } from '../../dtos/ResultTypes';
 
 export const ReliabilitySection = ({ trustIndicators }: ReliabilitySectionProps) => {
   // 결과신뢰지표 데이터 (GST 방식: trustIndicators 사용)

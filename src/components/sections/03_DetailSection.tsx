@@ -2,8 +2,8 @@ import { Box, Typography } from '@mui/material';
 import { SectionTitle } from '../UI/F_SectionTitle';
 import { DetailChart } from '../UI/03_DetailChart';
 import { THEME } from '../theme';
-import { SCALE_DATA } from '../../data/scaleData';
-import type { DetailSectionProps } from '../../types/KPNITypes';
+import { SCALE_DATA } from '../../data/mockData';
+import type { DetailSectionProps } from '../../dtos/ResultTypes';
 
 export const DetailSection = ({ subScales }: DetailSectionProps) => {
   return (

@@ -6,11 +6,11 @@ import icon02 from '../../images/02Icon.png';
 import icon03 from '../../images/03Icon.png';
 import icon04 from '../../images/04Icon.png';
 import icon05 from '../../images/05Icon.png';
-import { SCALE_DATA } from '../../data/scaleData';
+import { SCALE_DATA } from '../../data/mockData';
 import { getScaleColorsByName } from '../../utils/scaleUtils';
-import type { ScaleSectionProps } from '../../types/KPNITypes';
+import type { ScaleSectionProps } from '../../dtos/ResultTypes';
 
-export const ScaleSection = ({ parentScales, scaleInterpretations }: ScaleSectionProps) => {
+export const ScaleSection = ({ parentScales }: ScaleSectionProps) => {
   const icons = [icon01, icon02, icon03, icon04, icon05];
   const iconSizes = ['20px', '20px', '20px', '20px', '20px'];
 

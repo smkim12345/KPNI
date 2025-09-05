@@ -1,6 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Cell, ReferenceLine, ReferenceArea, LabelList } from 'recharts';
 import { THEME } from '../theme';
-import { getProfileChartData } from '../../data/scaleData';
+import { getProfileChartData } from '../../data/mockData';
 
 interface ProfileChartData {
   name: string;

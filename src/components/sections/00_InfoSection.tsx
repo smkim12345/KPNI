@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
 import { InputField } from '../UI/00_InputField';
-import type { InfoSectionProps } from '../../types/KPNITypes';
+import type { InfoSectionProps } from '../../dtos/ResultTypes';
 import { format } from 'date-fns';
 
 export const InfoSection = ({ participant }: InfoSectionProps) => {

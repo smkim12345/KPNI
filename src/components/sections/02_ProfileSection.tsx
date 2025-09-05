@@ -4,9 +4,9 @@ import { SectionDescription } from '../UI/F_SectionTitleDescription';
 import { ProfileChart } from '../UI/02_ProfileChart';
 import { CompositeIndexTable } from '../UI/02_CompositeIndexTable';
 import { THEME } from '../theme';
-import { COMPOSITE_INDEX_DATA } from '../../data/scaleData';
+import { COMPOSITE_INDEX_DATA } from '../../data/mockData';
 import { getScaleColorByName } from '../../utils/scaleUtils';
-import type { ProfileSectionProps } from '../../types/KPNITypes';
+import type { ProfileSectionProps } from '../../dtos/ResultTypes';
 
 export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
   // GST 방식: parentScales에서 데이터 추출, 없으면 더미 데이터 사용

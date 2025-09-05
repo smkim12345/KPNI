@@ -6,7 +6,7 @@ import { ReliabilitySection } from './sections/01_ReliabilitySection';
 import { ProfileSection } from './sections/02_ProfileSection';
 import { DetailSection } from './sections/03_DetailSection';
 import { ScaleSection } from './sections/04_ScaleSection';
-import type { KPNIResultPageProps } from '../types/KPNITypes';
+import type { ResultPageProps } from '../dtos/ResultTypes';
 import { BackTitleSection } from './sections/B00_SectionTitle';
 import { TestDescriptionSection } from './sections/B01_TestDescriptionSection';
 import { InterpretationOrderSection } from './sections/B02_InterpretationOrderSection';
@@ -54,7 +54,7 @@ const CornerBox = styled(Box)({
 /**
  * K-PNI A3 결과지 앞면 페이지
  */
-const KPNIFrontPage = ({ resultResponse }: KPNIResultPageProps) => {
+const FrontPage = ({ resultResponse }: ResultPageProps) => {
   return (
     <PageContainer maxWidth={false}>
       <OuterGreenBox>
@@ -246,10 +246,10 @@ const KPNIBackPage = () => {
 /**
  * K-PNI A3 결과지 전체 페이지
  */
-export const KPNIResultPage = ({ resultResponse }: Omit<KPNIResultPageProps, 'showBackPage'>) => {
+export const ResultPage = ({ resultResponse }: Omit<ResultPageProps, 'showBackPage'>) => {
   return (
     <>
-      <KPNIFrontPage resultResponse={resultResponse} />
+      <FrontPage resultResponse={resultResponse} />
       <KPNIBackPage />
     </>
   );

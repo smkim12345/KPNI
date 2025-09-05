@@ -335,7 +335,7 @@ export const getProfileChartData = () => {
 
 // 백엔드 API 연동을 위한 유틸리티 함수
 export class KPNIDataService {
-  private static apiBaseUrl = import.meta.env.VITE_API_BASE_URL || '/api';
+  private static apiBaseUrl = (import.meta.env?.VITE_API_BASE_URL as string) || '/api';
 
   // 검사 결과 조회
   static async getTestResult(testId: string): Promise<KPNITestResult> {

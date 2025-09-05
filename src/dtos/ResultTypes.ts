@@ -3,6 +3,32 @@
 
 // GST 기본 타입들 가져오기 (참조용) - Owner 제거
 
+// K-PNI A3 결과지 타입 정의 (types.ts에서 통합)
+
+// 공통 인터페이스
+export interface BaseSection {
+  title: string;
+  description?: string;
+}
+
+// 섹션 Props 공통 인터페이스
+export interface SectionProps<T = any> {
+  data: T;
+  theme?: typeof import('../components/theme').THEME;
+}
+
+// 컴포넌트 Props 인터페이스
+export interface ComponentProps {
+  children?: React.ReactNode;
+}
+
+// 제목 컴포넌트 Props
+export interface TitleProps {
+  title: string;
+  descriptions?: string[];
+  icon?: React.ReactNode;
+}
+
 export interface TemplateResponse {
   id: string;
   code: string;
@@ -89,8 +115,13 @@ export interface KPNIResultResponse {
   participant: KPNIParticipantResponse;
 }
 
-// KPNI 결과 페이지 Props (Owner 제외)
+// 결과 페이지 Props (Owner 제외)
 export interface KPNIResultPageProps {
+  resultResponse?: KPNIResultResponse; // 선택적 - 없으면 더미 데이터
+  showBackPage?: boolean; // 뒷면 표시 여부
+}
+
+export interface ResultPageProps {
   resultResponse?: KPNIResultResponse; // 선택적 - 없으면 더미 데이터
   showBackPage?: boolean; // 뒷면 표시 여부
 }

@@ -27,7 +27,9 @@
       "MultiEdit(D:\\github\\KPNI/**)",
       "Glob(D:\\github\\KPNI/**)",
       "Grep(D:\\github\\KPNI/**)",
-      "Read(/D:\\github\\KPNI\\src\\components\\sections/**)"
+      "Read(/D:\\github\\KPNI\\src\\components\\sections/**)",
+      "Bash(mv:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []
