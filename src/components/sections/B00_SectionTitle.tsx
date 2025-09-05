@@ -23,6 +23,7 @@ export const BackTitleSection = () => {
         alignItems: 'center',
         height: '52px',
         width: 'auto',
+        //backgroundColor: 'rgba(255, 255, 255, 0.1)',
       }}>
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.moyamoya,
@@ -31,6 +32,7 @@ export const BackTitleSection = () => {
           lineHeight: 1,
           textAlign: 'top',
           color: THEME.colors.white,
+          //backgroundColor: 'rgba(255, 255, 255, 0.1)',
         }}>
           K-PNI
         </Typography>
@@ -44,15 +46,18 @@ export const BackTitleSection = () => {
         padding: '0px 10px',
         width: '250px',
         height: '52px',
+        //backgroundColor: 'rgba(255, 255, 255, 0.1)',
       }}>
         {/* 부모양육종합검사 */}
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.ohsquare,
           fontWeight: THEME.typography.fontWeight.normal,
           fontSize: '29px',
-          lineHeight: 1.268,
+          lineHeight: 1.4,
           textAlign: 'left',
           color: THEME.colors.white,
+          letterSpacing: '0.01em', // 자간 늘림
+          //backgroundColor: 'rgba(255, 255, 255, 0.1)',
         }}>
           부모양육종합검사
         </Typography>
@@ -66,7 +71,7 @@ export const BackTitleSection = () => {
           textAlign: 'left',
           color: THEME.colors.mainWhite,
         }}>
-          comprehensive Parenting & Nurturing Inventory
+          Comprehensive Parenting & Nurturing Inventory
         </Typography>
       </Box>
     </Box>
