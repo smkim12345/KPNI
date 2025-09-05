@@ -62,21 +62,44 @@ export const InterpretationOrderSection = () => {
               <Box
                 key={index}
                 sx={{
-                  bgcolor: step.bgColor,
-                  borderRadius: '35px',
-                  padding: '0px 5px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'flex-start',
+                  position: 'relative',
                   flex: 1,
                   height: '30px',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-                  //backgroundColor: 'blue',
                 }}
               >
-                {/* 번호 박스 */}
+                {/* 텍스트 칩 */}
                 <Box
                   sx={{
+                    bgcolor: step.bgColor,
+                    borderRadius: '15px',
+                    padding: '4px 4px 4px 23px', // 왼쪽 패딩 증가 (번호 공간 확보)
+                    height: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: 'white',
+                      fontSize: `${THEME.typography.fontSize.sm}px`,
+                      fontWeight: THEME.typography.fontWeight.medium,
+                      fontFamily: THEME.typography.fontFamily.ohsquare,
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    {step.text}
+                  </Typography>
+                </Box>
+
+                {/* 번호 박스 - 칩 위에 겹쳐서 배치 */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: '4px',
+                    left: '5px',
                     width: '20px',
                     height: '20px',
                     borderRadius: '50%',
@@ -84,8 +107,7 @@ export const InterpretationOrderSection = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    flexShrink: 0,
-                    mr: '5px',
+                    zIndex: 2,
                   }}
                 >
                   {/* 번호 텍스트 */}
@@ -95,33 +117,36 @@ export const InterpretationOrderSection = () => {
                       fontSize: '10px',
                       fontWeight: 'bold',
                       fontFamily: THEME.typography.fontFamily.ohsquare,
-                      //backgroundColor: 'rgba(143, 30, 30, 0.1)',
                     }}
                   >
                     {step.num}
                   </Typography>
                 </Box>
-
-                {/* 텍스트 */}
-                <Typography
-                  sx={{
-                    color: 'white',
-                    fontSize: `${THEME.typography.fontSize.md}px`,
-                    fontWeight: THEME.typography.fontWeight.medium,
-                    whiteSpace: 'nowrap',
-                    fontFamily: THEME.typography.fontFamily.ohsquare,
-                    //backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  }}
-                >
-                  {step.text}
-                </Typography>
               </Box>
 
               {/* 화살표 */}
               {index < arr.length - 1 && (
-                <Typography sx={{ fontSize: '20px', color: '#B0B0B0' }}>
-                  ›
-                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    height: '30px',
+                    boxSizing: 'border-box',
+                    paddingBottom: '6px',
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: '20px',
+                      color: '#B0B0B0',
+                      lineHeight: 1,
+                      width: '100%',
+                      textAlign: 'center',
+                    }}
+                  >
+                    ›
+                  </Typography>
+                </Box>
               )}
             </>
           ))}
