@@ -29,7 +29,7 @@ export const TestDescriptionSection = () => {
         alignSelf: 'stretch',
         flex: 1,
         padding: '0 10px',
- 
+        //backgroundColor: 'red',
       }}>
         {/* 부모양육 사진 - 오른쪽에 배치하여 텍스트가 주변을 감싸도록 함 */}
         <Box sx={{
@@ -37,7 +37,7 @@ export const TestDescriptionSection = () => {
           height: '180px',
           borderRadius: '30px',
           float: 'right',
-          marginRight: '15px',
+          marginRight: '0px',
           marginBottom: '8px',
         }}
         style={{
