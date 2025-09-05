@@ -1,0 +1,82 @@
+@media print {
+  body, html {
+    width: 210mm;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  @page {
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  .no-print, .no-print * {
+    display: none;
+  }
+
+  #printArea {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw;
+    height: 100vh;
+    overflow: visible;
+    page-break-after: always;
+    page-break-inside: avoid;
+    box-sizing: border-box;
+  }
+
+  #printArea[data-print-size='a3'] .result-component {
+    display: grid;
+    grid-template-columns: 213mm 213mm;
+    grid-template-rows: 303mm;
+    width: 426mm;
+    height: 303mm;
+    page-break-after: always;
+    page-break-inside: avoid;
+    box-sizing: border-box;
+  }
+
+  .page {
+    padding: 10mm !important;
+    margin: 0 !important;
+  }
+
+  .footer-divider {
+    padding: 10mm !important;
+  }
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  background: #fff;
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  page-break-inside: avoid;
+  padding: 10mm;
+}
+
+.a3page {
+  width: 426mm; /* A3 width (420) + 3mm bleed left/right */
+  height: 303mm; /* A3 height (297) + 3mm bleed top/bottom */
+  background: #fff;
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  page-break-inside: avoid;
+}
+

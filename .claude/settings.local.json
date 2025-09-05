@@ -29,7 +29,9 @@
       "Grep(D:\\github\\KPNI/**)",
       "Read(/D:\\github\\KPNI\\src\\components\\sections/**)",
       "Bash(mv:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Read(//d/github/kpr-inventory-react2/src/domains/result/components/**)",
+      "Read(//d/github/kpr-inventory-react2/src/**)"
     ],
     "deny": [],
     "ask": []

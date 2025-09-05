@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { THEME } from './theme';
 import { InfoSection } from './sections/00_InfoSection';
@@ -12,16 +12,9 @@ import { TestDescriptionSection } from './sections/B01_TestDescriptionSection';
 import { InterpretationOrderSection } from './sections/B02_InterpretationOrderSection';
 import { ScaleOpinionSection } from './sections/B02_ScaleOpinionSection';
 import { SolutionSection } from './sections/B03_SolutionSection';
-
-// A3 페이지 캔버스
-const PageContainer = styled(Container)({
-  minWidth: '1287px', 
-  minHeight: `959px`,
-  backgroundColor: THEME.layout.a3.pageBackground,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-});
+import { useRef } from 'react';
+import A3Page from './print/A3Page';
+import { PdfDownloadButton } from './print/PdfDownloadButton';
 
 // 초록색 외곽 테두리 두께 조절 용
 const OuterGreenBox = styled(Box)({
@@ -56,7 +49,6 @@ const CornerBox = styled(Box)({
  */
 const FrontPage = ({ resultResponse }: ResultPageProps) => {
   return (
-    <PageContainer maxWidth={false}>
       <OuterGreenBox>
         <FrameBox>
           {/* 좌상단 둥근 모서리 */}
@@ -140,7 +132,6 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
           </Box>
         </FrameBox>
       </OuterGreenBox>
-    </PageContainer>
   );
 };
 
@@ -149,7 +140,6 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
  */
 const KPNIBackPage = () => {
   return (
-    <PageContainer maxWidth={false}>
       <OuterGreenBox>
         <FrameBox>
           {/* 왼쪽 흰색 배경 */}
@@ -239,7 +229,6 @@ const KPNIBackPage = () => {
           </Box>
         </FrameBox>
       </OuterGreenBox>
-    </PageContainer>
   );
 };
 
@@ -247,10 +236,22 @@ const KPNIBackPage = () => {
  * K-PNI A3 결과지 전체 페이지
  */
 export const ResultPage = ({ resultResponse }: Omit<ResultPageProps, 'showBackPage'>) => {
+  const contentRef = useRef<HTMLDivElement | null>(null);
   return (
     <>
-      <FrontPage resultResponse={resultResponse} />
-      <KPNIBackPage />
+      <Box className="no-print" sx={{ position: 'fixed', top: 16, right: 16, zIndex: 9999 }}>
+        <PdfDownloadButton isA3 contentRef={contentRef} downloadFileName="KPNI" />
+      </Box>
+      <div id="printArea" data-print-size="a3">
+        <div ref={contentRef} className="result-component">
+          <A3Page>
+            <FrontPage resultResponse={resultResponse} />
+          </A3Page>
+          <A3Page>
+            <KPNIBackPage />
+          </A3Page>
+        </div>
+      </div>
     </>
   );
 };
