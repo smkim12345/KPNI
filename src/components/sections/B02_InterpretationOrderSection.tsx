@@ -15,7 +15,7 @@ export const InterpretationOrderSection = () => {
     <Box sx={{
       width: '565px',
       height: '483px',
-      //backgroundColor: THEME.colors.scale.childCharacter.light, //위치 확인용(지우지말것)
+      //backgroundColor: THEME.colors.scale.childCharacter.light, //위치 확인용
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
@@ -126,27 +126,9 @@ export const InterpretationOrderSection = () => {
 
               {/* 화살표 */}
               {index < arr.length - 1 && (
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    height: '30px',
-                    boxSizing: 'border-box',
-                    paddingBottom: '6px',
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: '20px',
-                      color: '#B0B0B0',
-                      lineHeight: 1,
-                      width: '100%',
-                      textAlign: 'center',
-                    }}
-                  >
-                    ›
-                  </Typography>
-                </Box>
+                <Typography sx={{ fontSize: '20px', color: '#B0B0B0', display: 'flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box',paddingBottom: '6px' }}>
+                  ›
+                </Typography>
               )}
             </>
           ))}
