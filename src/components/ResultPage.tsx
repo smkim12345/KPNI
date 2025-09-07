@@ -16,6 +16,26 @@ import { useRef } from 'react';
 import A3Page from './print/A3Page';
 import { PdfDownloadButton } from './print/PdfDownloadButton';
 
+// 인쇄 시 전체 A3 영역에 정확히 맞추기 위한 스케일 값 (1191x847 → 426mm x 303mm)
+const PRINT_SCALE = 1.352;
+
+// 인쇄 레이아웃 그리드에서 각 페이지가 두 컬럼 전체를 차지하도록 강제
+const GridSpan = styled('div')({
+  '@media print': {
+    gridColumn: '1 / -1',
+  },
+});
+
+// 고정 px 레이아웃을 인쇄 시 A3 전체에 맞게 스케일링
+const ScaleWrapper = styled('div')({
+  width: '1191px',
+  height: '847px',
+  '@media print': {
+    transform: `scale(${PRINT_SCALE})`,
+    transformOrigin: 'top left',
+  },
+});
+
 // 초록색 외곽 테두리 두께 조절 용
 const OuterGreenBox = styled(Box)({
   width: '1191px',   
@@ -49,8 +69,9 @@ const CornerBox = styled(Box)({
  */
 const FrontPage = ({ resultResponse }: ResultPageProps) => {
   return (
-      <OuterGreenBox>
-        <FrameBox>
+      <ScaleWrapper>
+        <OuterGreenBox>
+          <FrameBox>
           {/* 좌상단 둥근 모서리 */}
           <CornerBox />
 
@@ -130,8 +151,9 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
           </Box>
             
           </Box>
-        </FrameBox>
-      </OuterGreenBox>
+          </FrameBox>
+        </OuterGreenBox>
+      </ScaleWrapper>
   );
 };
 
@@ -140,8 +162,9 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
  */
 const KPNIBackPage = () => {
   return (
-      <OuterGreenBox>
-        <FrameBox>
+      <ScaleWrapper>
+        <OuterGreenBox>
+          <FrameBox>
           {/* 왼쪽 흰색 배경 */}
           <Box sx={{ 
             position: 'absolute',
@@ -227,8 +250,9 @@ const KPNIBackPage = () => {
               <SolutionSection/>
             </Box>
           </Box>
-        </FrameBox>
-      </OuterGreenBox>
+          </FrameBox>
+        </OuterGreenBox>
+      </ScaleWrapper>
   );
 };
 
@@ -244,12 +268,16 @@ export const ResultPage = ({ resultResponse }: Omit<ResultPageProps, 'showBackPa
       </Box>
       <div id="printArea" data-print-size="a3">
         <div ref={contentRef} className="result-component">
-          <A3Page>
-            <FrontPage resultResponse={resultResponse} />
-          </A3Page>
-          <A3Page>
-            <KPNIBackPage />
-          </A3Page>
+          <GridSpan>
+            <A3Page>
+              <FrontPage resultResponse={resultResponse} />
+            </A3Page>
+          </GridSpan>
+          <GridSpan>
+            <A3Page>
+              <KPNIBackPage />
+            </A3Page>
+          </GridSpan>
         </div>
       </div>
     </>
