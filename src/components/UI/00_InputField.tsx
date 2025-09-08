@@ -10,16 +10,16 @@ export const InputField = ({ label, value }: InputFieldProps) => {
   return (
     <Box sx={{
       position: 'relative',
-      width: `${109 * 1.352}px`,  // 147.368px
-      height: `${23 * 1.352}px`,  // 31.096px
+      width: '147.4px',
+      height: '31.1px',
     }}>
       {/* 하단 구분선 */}
       <Box sx={{
         position: 'absolute',
         bottom: 0.5,
         left: 0,
-        width: `${109 * 1.352}px`,  // 147.368px
-        height: `${0.5 * 1.352}px`, // 0.676px
+        width: '147.4px',
+        height: '0.7px',
         backgroundColor: THEME.colors.text,
       }} />
 
@@ -30,7 +30,7 @@ export const InputField = ({ label, value }: InputFieldProps) => {
         left: 0,
         fontFamily: THEME.typography.fontFamily.ohsquareAir,
         fontWeight: THEME.typography.fontWeight.light,
-        fontSize: `${7 * 1.352}px`,   // 9.464px
+        fontSize: `${THEME.typography.fontSize.xs}px`,
         lineHeight: THEME.typography.lineHeight.normal,
         color: THEME.colors.text,
       }}>
@@ -44,7 +44,7 @@ export const InputField = ({ label, value }: InputFieldProps) => {
         right: 0,
         fontFamily: THEME.typography.fontFamily.ohsquareAir,
         fontWeight: THEME.typography.fontWeight.light,
-        fontSize: `${10 * 1.352}px`,  // 13.52px
+        fontSize: '13.5px',
         lineHeight: THEME.typography.lineHeight.normal,
         textAlign: 'right',
         color: THEME.colors.text,
