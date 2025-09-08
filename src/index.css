@@ -1,7 +1,40 @@
+/* Pretendard Static Fonts - Variable 폰트를 대체하여 용량 최적화 */
 @font-face {
-  font-family: 'Pretendard Variable';
-  src: url('/src/fonts/PretendardVariable.woff2') format('woff2');
-  font-weight: 100 900;
+  font-family: 'Pretendard';
+  src: url('/src/fonts/Pretendard-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/src/fonts/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/src/fonts/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/src/fonts/Pretendard-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/src/fonts/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -28,6 +61,33 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+/* 인쇄 시 Cafe24 폰트 강제 로딩 */
+@media print {
+  @font-face {
+    font-family: 'Cafe24 Moyamoya OTF';
+    src: url('/src/fonts/Cafe24Moyamoya-Regular-v1.0.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: 'Cafe24 Ohsquare';
+    src: url('/src/fonts/Cafe24Ohsquare-v2.0.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: 'Cafe24 Ohsquare air';
+    src: url('/src/fonts/Cafe24OhsquareAir-v2.0.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
 }
 
 @media print {

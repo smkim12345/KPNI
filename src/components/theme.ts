@@ -89,7 +89,7 @@ export const THEME = {
       moyamoya: 'Cafe24 Moyamoya OTF',
       ohsquare: 'Cafe24 Ohsquare',
       ohsquareAir: 'Cafe24 Ohsquare air',
-      pretendard: 'Pretendard Variable'
+      pretendard: 'Pretendard'
     },
     fontWeight: {
       light: 300,
@@ -139,7 +139,7 @@ export const THEME = {
 
   // B섹션 설명글 공통 스타일
   B_SECTION_DESCRIPTION: {
-    fontFamily: 'Pretendard Variable',
+    fontFamily: 'Pretendard',
     fontWeight: 300,
     fontSize: 9,
     lineHeight: '1.2em',
