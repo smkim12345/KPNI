@@ -13,7 +13,7 @@ export const CompositeIndexTable = ({
   const ticks = [60, 70, 80, 90, 100, 110, 120, 130, 140];
   const minScore = 60;
   const maxScore = 140;
-  const maxWidth = 167;
+  const maxWidth = 225.8;
 
   const scoreToPixel = (value: number) => {
     const clampedValue = Math.max(minScore, Math.min(value, maxScore));
@@ -24,13 +24,13 @@ export const CompositeIndexTable = ({
 
   return (
     <Box sx={{
-      width: '167px',
-      height: '39px',
+      width: '225.8px',
+      height: '52.7px',
       position: 'relative',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: '1px'
+      gap: '1.4px'
     }}>
       {/* 막대그래프 및 눈금 */}
       <Box sx={{
@@ -39,18 +39,18 @@ export const CompositeIndexTable = ({
         justifyContent: 'flex-end',
         alignItems: 'center',
         alignSelf: 'stretch',
-        gap: '10px',
-        padding: '0px 66px',
-        height: '30px',
+        gap: '13.5px',
+        padding: '0px 89.2px',
+        height: '40.6px',
         position: 'relative'
       }}>
         {/* 평균범위 배경 */}
         <Box sx={{
           position: 'absolute',
-          width: `${averageRange}px`,
-          height: '22px',
+          width: `${averageRange * 1.352}px`,
+          height: '29.7px',
           backgroundColor: 'rgba(217, 217, 217, 0.58)',
-          top: '9px',
+          top: '12.2px',
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 1
@@ -61,30 +61,30 @@ export const CompositeIndexTable = ({
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '167px',
-          height: '30px',
+          width: '225.8px',
+          height: '40.6px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: '14px'
+          gap: '18.9px'
         }}>
           {ticks.map((tickValue, index) => (
             <Box key={index} sx={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              width: '5px',
+              width: '6.8px',
               height: '100%'
             }}>
               {/* 눈금 텍스트 */}
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.pretendard,
                 fontWeight: THEME.typography.fontWeight.semiBold,
-                fontSize: '7px',
+                fontSize: '9.5px',
                 lineHeight: '1.19em',
                 color: '#6C6C6C',
                 textAlign: 'center',
-                marginBottom: '2px'
+                marginBottom: '2.7px'
               }}>
                 {tickValue}
               </Typography>
@@ -92,8 +92,8 @@ export const CompositeIndexTable = ({
               {/* 눈금 선 */}
               <Box sx={{
                 width: '0px',
-                height: '22px',
-                borderLeft: '0.8px solid ' + THEME.colors.gray,
+                height: '29.7px',
+                borderLeft: '1.1px solid ' + THEME.colors.gray,
                 flex: 1
               }} />
             </Box>
@@ -103,10 +103,10 @@ export const CompositeIndexTable = ({
         {/* 그래프 막대 */}
         <Box sx={{
           position: 'absolute',
-          left: '2px',
-          bottom: '2px',
+          left: '2.7px',
+          bottom: '2.7px',
           width: `${scoreToPixel(score)}px`,
-          height: '16px',
+          height: '21.6px',
           backgroundColor: THEME.colors.primary,
           zIndex: 2
         }} />
@@ -117,7 +117,7 @@ export const CompositeIndexTable = ({
         alignSelf: 'stretch',
         fontFamily: THEME.typography.fontFamily.pretendard,
         fontWeight: THEME.typography.fontWeight.semiBold,
-        fontSize: '7px',
+        fontSize: '9.5px',
         lineHeight: '1.09em',
         color: '#868686',
         textAlign: 'center'

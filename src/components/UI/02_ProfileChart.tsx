@@ -27,19 +27,19 @@ export const ProfileChart = ({ data }: ProfileChartProps) => {
 
     return (
       <g>
-        <text x={x + width / 2} y={y} textAnchor="middle" dy={-12} 
-        style={{ fontSize: THEME.typography.fontSize.xxs, 
-        fontFamily: THEME.typography.fontFamily.pretendard, 
-        fontWeight: THEME.typography.fontWeight.medium, 
+        <text x={x + width / 2} y={y} textAnchor="middle" dy={-16.8}
+        style={{ fontSize: THEME.typography.fontSize.xxs,
+        fontFamily: THEME.typography.fontFamily.pretendard,
+        fontWeight: THEME.typography.fontWeight.medium,
         fill: '#000' }}>
           {`${dataPoint.value}T (${dataPoint.percentile}%)`}
         </text>
 
-        <text x={x + width / 2} y={y} 
-        textAnchor="middle" dy={-4} 
-        style={{ fontSize: THEME.typography.fontSize.xs, 
-        fontFamily: THEME.typography.fontFamily.pretendard, 
-        fontWeight: THEME.typography.fontWeight.bold, 
+        <text x={x + width / 2} y={y}
+        textAnchor="middle" dy={-4}
+        style={{ fontSize: THEME.typography.fontSize.xs,
+        fontFamily: THEME.typography.fontFamily.pretendard,
+        fontWeight: THEME.typography.fontWeight.bold,
         fill: '#000' }}>
           {dataPoint.level}
         </text>
@@ -49,11 +49,11 @@ export const ProfileChart = ({ data }: ProfileChartProps) => {
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={chartData} margin={{ top: 10, right: 0, left: 0, bottom: 1 }} barCategoryGap={10}>
+      <BarChart data={chartData} margin={{ top: 13.5, right: 0, left: 0, bottom: 1.4 }} barCategoryGap={13.5}>
                 <CartesianGrid
           strokeDasharray="0"
           stroke="#B0B0B0"
-          strokeWidth={0.3}
+          strokeWidth={0.4}
           horizontal={true}
           vertical={false}
         />
@@ -68,13 +68,13 @@ export const ProfileChart = ({ data }: ProfileChartProps) => {
           axisLine={false}
           tickLine={false}
           tickCount={5}
-          width={9}
+          width={12.2}
         />
                 {/* 40-60 범위 배경색 추가 */}
         <ReferenceArea y1={40} y2={60} fill="#c9c9c9" fillOpacity={0.3} />
         <Bar
           dataKey="value"
-          radius={[2, 2, 0, 0]}
+          radius={[2.7, 2.7, 0, 0]}
           fill="#8884d8"
         >
           {chartData.map((entry, index) => (
@@ -94,15 +94,15 @@ export const ProfileChart = ({ data }: ProfileChartProps) => {
             fontWeight: THEME.typography.fontWeight.bold,
             fill: THEME.colors.text
           }}
-          axisLine={{ stroke: THEME.colors.text, strokeWidth: 1 }}
+          axisLine={{ stroke: THEME.colors.text, strokeWidth: 1.4 }}
           tickLine={false}
-          height={15}
+          height={20.3}
         />
         {/* 영역 구분을 위한 세로선들 - 각 막대 사이 */}
-        <ReferenceLine x={0.5} stroke="#B0B0B0" strokeWidth={0.3} strokeDasharray="3 3" />
-        <ReferenceLine x={1.5} stroke="#B0B0B0" strokeWidth={0.3} strokeDasharray="3 3" />
-        <ReferenceLine x={2.5} stroke="#B0B0B0" strokeWidth={0.3} strokeDasharray="3 3" />
-        <ReferenceLine x={3.5} stroke="#B0B0B0" strokeWidth={0.3} strokeDasharray="3 3" />
+        <ReferenceLine x={0.5} stroke="#B0B0B0" strokeWidth={0.4} strokeDasharray="4.1 4.1" />
+        <ReferenceLine x={1.5} stroke="#B0B0B0" strokeWidth={0.4} strokeDasharray="4.1 4.1" />
+        <ReferenceLine x={2.5} stroke="#B0B0B0" strokeWidth={0.4} strokeDasharray="4.1 4.1" />
+        <ReferenceLine x={3.5} stroke="#B0B0B0" strokeWidth={0.4} strokeDasharray="4.1 4.1" />
       </BarChart>
     </ResponsiveContainer>
   );

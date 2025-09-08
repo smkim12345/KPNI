@@ -27,12 +27,12 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
       }
     : fallbackData;
   return (
-    <Box sx={{ 
+    <Box sx={{
       display: 'flex',
       flexDirection: 'column',
       alignSelf: 'stretch',
       width: '100%',
-      height: '353px',
+      height: '477.3px',
       //backgroundColor: 'rgba(255, 100, 0, 0.3)',
     }}>
       
@@ -41,8 +41,8 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
         display: 'flex',
         flexDirection: 'row',
         alignSelf: 'stretch',
-        gap: `${THEME.spacing.sm}px`,
-        height: '20px'
+        gap: `${THEME.spacing.sm * 1.352}px`,
+        height: '27.0px'
       }}>
         <SectionTitle 
           sectionNumber={2}
@@ -65,26 +65,26 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
         display: 'flex',
         flexDirection: 'column',
         alignSelf: 'stretch',
-        padding: '0px 0px 7px'
+        padding: '0px 0px 9.5px'
       }}>
         {/* 상위척도 그래프 */}
         <Box sx={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          gap: `${THEME.spacing.lg}px`,
-          padding: '7px 6px',
-          width: '472px',
-          height: '243px',
+          gap: `${THEME.spacing.lg * 1.352}px`,
+          padding: '9.5px 8.1px',
+          width: '638.1px',
+          height: '328.5px',
           backgroundColor: THEME.colors.mainWhite,
-          border: `4px solid ${THEME.colors.primary}`,
-          borderRadius: `${THEME.borderRadius.sm}px`,
+          border: `${5.4}px solid ${THEME.colors.primary}`,
+          borderRadius: `${THEME.borderRadius.sm * 1.352}px`,
           boxSizing: 'border-box'
         }}>
           {/* 종합프로파일 그래프 */}
           <Box sx={{
-            width: '295px',
-            height: '226px',
+            width: '398.8px',
+            height: '305.6px',
             position: 'relative',
             //backgroundColor: 'rgba(0, 150, 255, 0.3)'
           }}>
@@ -103,8 +103,8 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: '5px',
-            height: '226px',
+            gap: '6.8px',
+            height: '305.6px',
             //backgroundColor: 'rgba(0, 150, 255, 0.3)'
           }}>
             {/* 결과 요약 */}
@@ -113,15 +113,15 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
               flexDirection: 'column',
               justifyContent: 'stretch',
               alignItems: 'stretch',
-              padding: '4px 10px',
-              width: '146px',
+              padding: '5.4px 13.5px',
+              width: '197.4px',
               //backgroundColor: 'rgba(0, 150, 255, 0.3)'
             }}>
               <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-end',
-                gap: '5px',
+                gap: '6.8px',
                 flex: 1,
                 //backgroundColor: 'rgba(0, 150, 255, 0.3)'
               }}>
@@ -140,11 +140,11 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  gap: '10px',
+                  gap: '13.5px',
                   backgroundColor: THEME.colors.primary,
-                  borderRadius: `${THEME.borderRadius.xs}px`,
+                  borderRadius: `${THEME.borderRadius.xs * 1.352}px`,
                   width: '100%',
-                  height: '20px'
+                  height: '27.0px'
                 }}>
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
@@ -176,18 +176,18 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              gap: '10px',
-              padding: '15px',
-              width: '160px',
-              height: '158px',
+              gap: '13.5px',
+              padding: '20.3px',
+              width: '216.3px',
+              height: '213.7px',
               backgroundColor: THEME.colors.tableGreen1,
-              borderRadius: '10px',
+              borderRadius: '13.5px',
               boxSizing: 'border-box'
             }}>
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.pretendard,
                 fontWeight: THEME.typography.fontWeight.normal,
-                fontSize: '8px',
+                fontSize: '10.8px',
                 lineHeight: '1.46em',
                 color: THEME.colors.text,
                 textAlign: 'left',
@@ -204,20 +204,20 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
-        padding: '0px 0px 10px'
+        padding: '0px 0px 13.5px'
       }}>
         {/* 이상적 지수 */}
         <Box sx={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          gap: '10px',
-          padding: '2px',
-          width: '472px',
-          height: '59px',
+          gap: '13.5px',
+          padding: '2.7px',
+          width: '638.1px',
+          height: '79.8px',
           backgroundColor: THEME.colors.mainWhite,
-          border: `4px solid ${THEME.colors.primary}`,
-          borderRadius: `${THEME.borderRadius.sm}px`,
+          border: `${5.4}px solid ${THEME.colors.primary}`,
+          borderRadius: `${THEME.borderRadius.sm * 1.352}px`,
           boxSizing: 'border-box'
         }}>
           {/* 이상적 양육지수 제목 */}
@@ -225,7 +225,7 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
             fontFamily: THEME.typography.fontFamily.pretendard,
             fontWeight: THEME.typography.fontWeight.bold,
             fontSize: `${THEME.typography.fontSize.md}px`,
-            lineHeight: '1.5em',
+            lineHeight: '2.03em',
             color: THEME.colors.text,
             textAlign: 'center',
             whiteSpace: 'pre-line'
@@ -238,7 +238,7 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
             fontFamily: THEME.typography.fontFamily.pretendard,
             fontWeight: THEME.typography.fontWeight.semiBold,
             fontSize: `${THEME.typography.fontSize.xs}px`,
-            lineHeight: '1.29em',
+            lineHeight: '1.75em',
             color: THEME.colors.text,
             textAlign: 'left',
             whiteSpace: 'pre-line'
@@ -250,10 +250,10 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '3px',
+            gap: '4.1px',
             boxSizing: 'border-box',
-            width: '39px',
-            height: '46px'
+            width: '52.7px',
+            height: '62.2px'
           }}>
             {/* 지수점수 */}
             <Box sx={{
@@ -261,7 +261,7 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
               flexDirection: 'column',
               alignItems: 'center',
               alignSelf: 'stretch',
-              height: '20px'
+              height: '27.0px'
             }}>
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.pretendard,
@@ -271,7 +271,7 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
                 color: THEME.colors.text,
                 textAlign: 'center',
                 width: '100%',
-                height: '10px'
+                height: '13.5px'
               }}>
                 지수점수
               </Typography>
@@ -280,10 +280,10 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 alignSelf: 'stretch',
-                gap: '10px',
+                gap: '13.5px',
                 backgroundColor: THEME.colors.tableGreen2,
-                borderRadius: '41px',
-                height: '10px'
+                borderRadius: '55.5px',
+                height: '13.5px'
               }}>
                 <Typography sx={{
                   fontFamily: THEME.typography.fontFamily.pretendard,
@@ -312,7 +312,7 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
                 color: THEME.colors.text,
                 textAlign: 'center',
                 width: '100%',
-                height: '10px'
+                height: '13.5px'
               }}>
                 백분위
               </Typography>
@@ -321,10 +321,10 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 alignSelf: 'stretch',
-                gap: '10px',
+                gap: '13.5px',
                 backgroundColor: THEME.colors.tableGreen2,
-                borderRadius: '41px',
-                height: '10px'
+                borderRadius: '55.5px',
+                height: '13.5px'
               }}>
                 <Typography sx={{
                   fontFamily: THEME.typography.fontFamily.pretendard,
