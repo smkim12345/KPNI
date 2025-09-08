@@ -66,7 +66,7 @@ export const SolutionSection = () => {
                   height: '50px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-1.png" alt="존중 아이콘" style={{ width: '32px', height: '34px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-1.gif" alt="존중 아이콘" style={{ width: '32px', height: '34px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -87,7 +87,7 @@ export const SolutionSection = () => {
                   height: '50px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-2.png" alt="공감 아이콘" style={{ width: '34px', height: '40px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-2.gif" alt="공감 아이콘" style={{ width: '34px', height: '40px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -108,7 +108,7 @@ export const SolutionSection = () => {
                   height: '50px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-3.png" alt="일관성 아이콘" style={{ width: '37px', height: '35px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-3.gif" alt="일관성 아이콘" style={{ width: '37px', height: '35px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -129,7 +129,7 @@ export const SolutionSection = () => {
                   height: '50px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-4.png" alt="회복력 아이콘" style={{ width: '32px', height: '37px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-4.gif" alt="회복력 아이콘" style={{ width: '32px', height: '37px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -150,7 +150,7 @@ export const SolutionSection = () => {
                   height: '50px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-5.png" alt="성장 아이콘" style={{ width: '33px', height: '38px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-5.gif" alt="성장 아이콘" style={{ width: '33px', height: '38px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
