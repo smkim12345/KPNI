@@ -76,14 +76,14 @@ export const THEME = {
   },
   typography: {
     fontSize: {
-      xxs: 6,
-      xs: 7,
-      sm: 9, 
-      md: 11, 
-      lg: 13, 
-      xl: 15,
-      xxl: 20,
-      huge: 48
+      xxs: 8.1,
+      xs: 9.5,
+      sm: 12.2, 
+      md: 14.9, 
+      lg: 17.6, 
+      xl: 20.3,
+      xxl: 27.0,
+      huge: 64.9
     },
     fontFamily: {
       moyamoya: 'Cafe24 Moyamoya OTF',
@@ -105,18 +105,18 @@ export const THEME = {
     }
   },
   spacing: {
-    xs: 3,
-    sm: 4,
-    md: 8,
-    lg: 16,
-    xl: 24,
-    xxl: 32,
+    xs: 4.1,
+    sm: 5.4,
+    md: 10.8,
+    lg: 21.6,
+    xl: 32.4,
+    xxl: 43.3,
   },
   borderRadius: {
-    xs: 4,
-    sm: 15,
-    md: 20,
-    lg: 25
+    xs: 5.4,
+    sm: 20.3,
+    md: 27.0,
+    lg: 33.8
   },
   layout: {
     a3: {
@@ -141,7 +141,7 @@ export const THEME = {
   B_SECTION_DESCRIPTION: {
     fontFamily: 'Pretendard Variable',
     fontWeight: 300,
-    fontSize: 9,
+    fontSize: 12.2,
     lineHeight: '1.2em',
     color: '#0B0B0B',
     whiteSpace: 'pre-line',
