@@ -19,7 +19,7 @@ interface ReliabilityTableProps {
 const borderStyles = {
   'top-solid': { borderTop: '1px solid #000000' },
   'bottom-thin-solid': { borderBottom: '0.7px solid #000000' },
-  'bottom-dashed': { borderBottom: '0.5px dashed #000000' },
+  'bottom-dashed': { borderBottom: '0.3px dashed #000000' },
   'bottom-solid': { borderBottom: '1px solid #000000' },
   'top-and-bottom-thin-solid': {
     borderTop: '1px solid #000000',

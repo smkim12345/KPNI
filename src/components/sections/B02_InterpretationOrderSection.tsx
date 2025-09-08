@@ -243,7 +243,7 @@ export const InterpretationOrderSection = () => {
         {/* 테이블 */}
         <Box sx={{ width: '495px', height: 'auto', padding: '0 10px' }}>
           {/* 테이블 헤더 */}
-          <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', borderCollapse: 'collapse' }}>
             {[
               { text: 'T점수', bgColor: '#66A247', color: '#FBFBFB' },
               { text: '25', bgColor: 'hsl(105, 25%, 80%)' },
@@ -264,7 +264,10 @@ export const InterpretationOrderSection = () => {
                   flex: 1,
                   padding: '3px',
                   backgroundColor: item.bgColor,
-                  border: '0.5px solid #868686',
+                  borderTop: '0.5px solid #868686',
+                  borderBottom: '0.5px solid #868686',
+                  borderLeft: index === 0 ? '0.5px solid #868686' : 'none',
+                  borderRight: '0.5px solid #868686',
                   borderTopLeftRadius: index === 0 ? '5px' : 0,
                   borderTopRightRadius: index === 11 ? '5px' : 0,
                 }}
@@ -305,7 +308,9 @@ export const InterpretationOrderSection = () => {
                   flex: 1,
                   padding: '3px',
                   backgroundColor: item.bgColor,
-                  border: '0.5px solid #868686',
+                  borderBottom: '0.5px solid #868686',
+                  borderLeft: index === 0 ? '0.5px solid #868686' : 'none',
+                  borderRight: '0.5px solid #868686',
                   borderBottomLeftRadius: index === 0 ? '5px' : 0,
                   borderBottomRightRadius: index === 11 ? '5px' : 0,
                 }}
@@ -394,7 +399,10 @@ export const InterpretationOrderSection = () => {
                         flex: 1,
                         padding: '3px',
                         backgroundColor: header.bgColor,
-                        border: '0.5px solid #868686',
+                        borderTop: '0.5px solid #868686',
+                        borderBottom: '0.5px solid #868686',
+                        borderLeft: index === 0 ? '0.5px solid #868686' : 'none',
+                        borderRight: '0.5px solid #868686',
                         borderTopLeftRadius: index === 0 ? '5px' : 0,
                         borderTopRightRadius: index === ipqHeaders.length - 1 ? '5px' : 0,
                       }}
@@ -422,7 +430,9 @@ export const InterpretationOrderSection = () => {
                         flex: 1,
                         padding: '3px',
                         backgroundColor: '#66A247',
-                        border: '0.5px solid #868686',
+                        borderBottom: '0.5px solid #868686',
+                        borderLeft: '0.5px solid #868686',
+                        borderRight: 'none',
                         borderBottomLeftRadius: rowIndex === ipqData.length - 1 ? '5px' : 0,
                       }}
                     >
@@ -445,7 +455,9 @@ export const InterpretationOrderSection = () => {
                         sx={{
                           flex: 1,
                           padding: '3px',
-                          border: '0.5px solid #868686',
+                          borderBottom: '0.5px solid #868686',
+                          borderLeft: colIndex === 0 ? '0.5px solid #868686' : 'none',
+                          borderRight: '0.5px solid #868686',
                           borderBottomRightRadius:
                             rowIndex === ipqData.length - 1 && colIndex === row.values.length - 1 ? '5px' : 0,
                         }}
