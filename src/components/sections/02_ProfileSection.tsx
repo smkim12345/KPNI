@@ -149,7 +149,7 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.semiBold,
-                    fontSize: `${THEME.typography.fontSize.md}px`,
+                    fontSize: `${THEME.typography.fontSize.lg}px`,
                     color: THEME.colors.mainWhite,
                     textAlign: 'center'
                   }}>

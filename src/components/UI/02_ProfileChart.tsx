@@ -39,7 +39,7 @@ export const ProfileChart = ({ data }: ProfileChartProps) => {
         textAnchor="middle" dy={-4} 
         style={{ fontSize: THEME.typography.fontSize.xs, 
         fontFamily: THEME.typography.fontFamily.pretendard, 
-        fontWeight: THEME.typography.fontWeight.bold, 
+        fontWeight: THEME.typography.fontWeight.semiBold, 
         fill: '#000' }}>
           {dataPoint.level}
         </text>

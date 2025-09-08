@@ -26,7 +26,7 @@ export const THEME = {
 
     // Border 색상 (테두리 색상)
     border: {
-      light: 'rgba(194, 194, 194, 0.65)',
+      light: 'rgba(212, 212, 212, 0.65)',
       medium: 'rgba(108, 108, 108, 0.65)',
       dark: 'rgba(135, 135, 135, 0.65)',
       table: '#a8a8a8'
