@@ -9,26 +9,26 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
     <Box sx={{
       display: 'flex',
       flexDirection: 'column',
-      width: `${155 * 1.352}px`,    // 209.56px
-      height: `${787 * 1.352}px`   // 1064.424px
+      width: '209.6px',
+      height: '1064.4px'
     }}>
       {/* 메인 제목 */}
       <Box sx={{
-        height: `${104 * 1.352}px`,  // 140.608px
+        height: '140.6px',
         display: 'flex',
         flexDirection: 'column',
-        gap: `${1 * 1.352}px`        // 1.352px
+        gap: '1.4px'
       }}>
         {/* 로고 이미지 */}
         <Box sx={{
-          width: `${70 * 1.352}px`,   // 94.64px
-          height: `${20 * 1.352}px`,  // 27.04px
+          width: '94.6px',
+          height: '27.0px',
           backgroundColor: THEME.colors.mainWhite,
-          borderRadius: `${THEME.borderRadius.xs * 1.352}px`, // 5.408px
+          borderRadius: `${THEME.borderRadius.xs}px`,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: `${2 * 1.352}px`   // 2.704px
+          padding: '2.7px'
         }}>
           <img
             src="./src/images/logo.png"
@@ -45,7 +45,7 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.moyamoya,
           fontWeight: THEME.typography.fontWeight.extraBold,
-          fontSize: `${(THEME.typography.fontSize.huge - 4) * 1.352}px`, // 59.488px
+          fontSize: `${THEME.typography.fontSize.huge - 5.4}px`,
           lineHeight: THEME.typography.lineHeight.tight,
           color: THEME.colors.mainWhite,
         }}>
@@ -56,7 +56,7 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.ohsquareAir,
           fontWeight: THEME.typography.fontWeight.light,
-          fontSize: `${THEME.typography.fontSize.xl * 1.352}px`, // 20.28px
+          fontSize: `${THEME.typography.fontSize.xl}px`,
           lineHeight: THEME.typography.lineHeight.normal,
           color: THEME.colors.mainWhite,
         }}>
@@ -67,10 +67,10 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.ohsquareAir,
           fontWeight: THEME.typography.fontWeight.light,
-          fontSize: `${THEME.typography.fontSize.xs * 1.352}px`, // 9.464px
+          fontSize: `${THEME.typography.fontSize.xs}px`,
           lineHeight: THEME.typography.lineHeight.normal,
           color: THEME.colors.mainWhite,
-          width: `${114 * 1.352}px`, // 154.128px
+          width: '154.1px',
           whiteSpace: 'pre-line',
         }}>
           comprehensive Parening{'\n'}& Nurturing Inventory
@@ -79,21 +79,21 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
       
       {/* 정보 기입 섹션 */}
       <Box sx={{
-        height: `${269 * 1.352}px`,  // 363.688px
+        height: '363.7px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center'
       }}>
         {/* 정보 기입란 */}
         <Box sx={{
-          width: `${133 * 1.352}px`,    // 179.816px
+          width: '179.8px',
           backgroundColor: THEME.colors.white,
-          borderRadius: `${THEME.borderRadius.sm * 1.352}px`, // 20.28px
-          padding: `${12 * 1.352}px`,   // 16.224px
+          borderRadius: `${THEME.borderRadius.sm}px`,
+          padding: '16.2px',
           display: 'flex',
           flexDirection: 'column',
           boxSizing: 'border-box',
-          gap: `${3 * 1.352}px`         // 4.056px
+          gap: '4.1px'
         }}>
           <InputField 
             label="양육자명" 
@@ -132,7 +132,7 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
       
       {/* 검사명설명섹션 */}
       <Box sx={{
-        height: `${414 * 1.352}px`,  // 559.728px
+        height: '559.7px',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'stretch',
@@ -142,21 +142,21 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
         {/* 검사명설명 */}
         <Box sx={{
           backgroundColor: THEME.colors.gray,
-          borderRadius: `${15 * 1.352}px 0px 0px ${15 * 1.352}px`, // 20.28px
+          borderRadius: '20.3px 0px 0px 20.3px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          gap: `${18 * 1.352}px`,    // 24.336px
-          padding: `0px ${12 * 1.352}px`, // 16.224px
+          gap: '24.3px',
+          padding: '0px 16.2px',
           flex: 1,
-          minHeight: `${262 * 1.352}px` // 354.224px
+          minHeight: '354.2px'
         }}>
           {/* 제목 */}
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.ohsquare,
             fontWeight: THEME.typography.fontWeight.normal,
-            fontSize: `${14 * 1.352}px`,  // 18.928px
+            fontSize: '18.9px',
             lineHeight: '1.268em',
             textAlign: 'center',
             color: THEME.colors.text,
@@ -169,7 +169,7 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.ohsquare,
             fontWeight: THEME.typography.fontWeight.normal,
-            fontSize: `${10 * 1.352}px`,  // 13.52px
+            fontSize: '13.5px',
             lineHeight: '1.268em',
             textAlign: 'center',
             color: THEME.colors.text,
@@ -183,7 +183,7 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.ohsquareAir,
             fontWeight: THEME.typography.fontWeight.light,
-            fontSize: `${10 * 1.352}px`,  // 13.52px
+            fontSize: '13.5px',
             lineHeight: '1.268em',
             textAlign: 'left',
             color: THEME.colors.text,
@@ -201,8 +201,8 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
 
           {/* 구분선 */}
           <Box sx={{
-            width: `${129 * 1.352}px`,  // 174.408px
-            height: `${2 * 1.352}px`,    // 2.704px
+            width: '174.4px',
+            height: '2.7px',
             backgroundColor: '#F2F2F2',
             alignSelf: 'center'
           }} />
@@ -212,16 +212,16 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
-            gap: `${3 * 1.352}px`,      // 4.056px
-            padding: `${10 * 1.352}px 0px`, // 13.52px
+            gap: '4.1px',
+            padding: '13.5px 0px',
             alignSelf: 'stretch'
           }}>
             {/* 큐알코드 박스 */}
             <Box sx={{
-              width: `${52 * 1.352}px`,   // 70.304px
-              height: `${52 * 1.352}px`,  // 70.304px
+              width: '70.3px',
+              height: '70.3px',
               backgroundColor: '#4E57A6',
-              padding: `${2 * 1.352}px`,  // 2.704px
+              padding: '2.7px',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -229,8 +229,8 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
             }}>
               {/* QR 코드 이미지 */}
               <Box sx={{
-                width: `${50 * 1.352}px`,   // 67.6px
-                height: `${50 * 1.352}px`,  // 67.6px
+                width: '67.6px',
+                height: '67.6px',
                 backgroundImage: 'url(./src/images/qrcode.png)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
@@ -243,13 +243,13 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
               flexDirection: 'row',
               justifyContent: 'center',
               alignItems: 'center',
-              gap: `${10 * 1.352}px`,    // 13.52px
+              gap: '13.5px',
               flex: 1
             }}>
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.ohsquareAir,
                 fontWeight: THEME.typography.fontWeight.light,
-                fontSize: `${11 * 1.352}px`, // 14.872px
+                fontSize: '14.9px',
                 lineHeight: '1.268em',
                 textAlign: 'center',
                 color: THEME.colors.text,
