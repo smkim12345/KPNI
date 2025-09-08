@@ -10,19 +10,19 @@ export const InputField = ({ label, value }: InputFieldProps) => {
   return (
     <Box sx={{
       position: 'relative',
-      width: '109px',
-      height: '23px',
+      width: `${109 * 1.352}px`,  // 147.368px
+      height: `${23 * 1.352}px`,  // 31.096px
     }}>
       {/* 하단 구분선 */}
       <Box sx={{
         position: 'absolute',
         bottom: 0.5,
         left: 0,
-        width: '109px',
-        height: '0.5px',
+        width: `${109 * 1.352}px`,  // 147.368px
+        height: `${0.5 * 1.352}px`, // 0.676px
         backgroundColor: THEME.colors.text,
       }} />
-      
+
       {/* 라벨 */}
       <Typography sx={{
         position: 'absolute',
@@ -30,13 +30,13 @@ export const InputField = ({ label, value }: InputFieldProps) => {
         left: 0,
         fontFamily: THEME.typography.fontFamily.ohsquareAir,
         fontWeight: THEME.typography.fontWeight.light,
-        fontSize: '7px',
+        fontSize: `${7 * 1.352}px`,   // 9.464px
         lineHeight: THEME.typography.lineHeight.normal,
         color: THEME.colors.text,
       }}>
         {label}
       </Typography>
-      
+
       {/* 값 */}
       <Typography sx={{
         position: 'absolute',
@@ -44,7 +44,7 @@ export const InputField = ({ label, value }: InputFieldProps) => {
         right: 0,
         fontFamily: THEME.typography.fontFamily.ohsquareAir,
         fontWeight: THEME.typography.fontWeight.light,
-        fontSize: '10px',
+        fontSize: `${10 * 1.352}px`,  // 13.52px
         lineHeight: THEME.typography.lineHeight.normal,
         textAlign: 'right',
         color: THEME.colors.text,
