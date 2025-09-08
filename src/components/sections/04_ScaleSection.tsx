@@ -56,7 +56,7 @@ export const ScaleSection = ({ parentScales }: ScaleSectionProps) => {
         <SectionTitle 
           sectionNumber={4}
           title="척도분석 종합"
-          description="각 척도별 분석 결과를 종합적으로 보여줍니다."
+          description="상위척도와 그 하위 척도별 소견 분석 결과를 종합적으로 보여줍니다."
         />
       </Box>
 
