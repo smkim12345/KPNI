@@ -141,7 +141,7 @@ export const ScaleOpinionSection = () => {
             </Typography>
           </Box>
 
-          {/* 하위척도 목록 */}
+          {/* 하위척도 제목 및 설명 목록 */}
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
@@ -149,9 +149,11 @@ export const ScaleOpinionSection = () => {
             width: '67px',
             height: '74px',
             padding: '0 0 0 5px',
-            gap: '2px',
+            gap: '0px',
             //backgroundColor: 'red' //영역 확인용
           }}>
+
+            {/* 하위척도 제목 목록 */}
             {scale.subScales.map((subScale, subIndex) => (
               <Box
                 key={subIndex}
@@ -187,15 +189,17 @@ export const ScaleOpinionSection = () => {
             justifyContent: 'space-between',
             width: '403px',
             height: '74px',
-            gap: '3px',
+            gap: '0px',
+            //backgroundColor: 'blue' //영역 확인용
           }}>
             {scale.subScales.map((subScale, subIndex) => (
               <Box
                 key={subIndex}
                 sx={{
-                  width: '393px',
+                  width: '403px',
                   height: '12px',
                   border: `1px solid ${scale.brightColor}`,
+                  borderLeft: 'none',
                   borderRadius: '0 5px 5px 0',
                   display: 'flex',
                   alignItems: 'center',
