@@ -17,13 +17,13 @@ interface ReliabilityTableProps {
 
 // --- 스타일 정의 ---
 const borderStyles = {
-  'top-solid': { borderTop: '1px solid #000000' },
-  'bottom-thin-solid': { borderBottom: '0.7px solid #000000' },
-  'bottom-dashed': { borderBottom: '0.5px dashed #000000' },
-  'bottom-solid': { borderBottom: '1px solid #000000' },
+  'top-solid': { borderTop: '1.4px solid #000000' },
+  'bottom-thin-solid': { borderBottom: '0.9px solid #000000' },
+  'bottom-dashed': { borderBottom: '0.7px dashed #000000' },
+  'bottom-solid': { borderBottom: '1.4px solid #000000' },
   'top-and-bottom-thin-solid': {
-    borderTop: '1px solid #000000',
-    borderBottom: '0.7px solid #000000',
+    borderTop: '1.4px solid #000000',
+    borderBottom: '0.9px solid #000000',
   },
 };
 
@@ -59,7 +59,7 @@ const TableCell = ({
       justifyContent: textAlign === 'left' ? 'flex-start' : textAlign,
       alignItems: 'center',
       width,
-      height: '13px',
+      height: '17.6px',
       backgroundColor,
       padding: `0 ${paddingX}px`,
       boxSizing: 'border-box',
@@ -67,7 +67,7 @@ const TableCell = ({
   >
     <Typography
       sx={{
-        fontSize: `${THEME.typography.fontSize.sm - 1}px`,
+        fontSize: '10.8px',
         fontFamily: THEME.typography.fontFamily.pretendard,
         fontWeight: THEME.typography.fontWeight.semiBold,
         color: textColor,
@@ -86,7 +86,7 @@ const TableRow = ({ borderType, children }: TableRowProps) => (
       display: 'flex',
       alignItems: 'center',
       alignSelf: 'stretch',
-      height: '13px',
+      height: '17.6px',
       ...(borderType && borderStyles[borderType]),
     }}
   >
@@ -101,31 +101,31 @@ export const ReliabilityTable = ({ data }: ReliabilityTableProps) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        width: '472px',
-        height: '41px',
+        width: '638.1px',
+        height: '55.4px',
       }}
     >
       {/* 첫 번째 행 - 결과신뢰수준 */}
       <TableRow borderType="top-and-bottom-thin-solid">
         <TableCell
-          width="94px"
+          width="127.1px"
           backgroundColor={THEME.colors.primary}
           textColor={THEME.colors.mainWhite}
         >
           결과신뢰수준
         </TableCell>
         <TableCell
-          width="46px"
+          width="62.2px"
           backgroundColor={THEME.colors.lightGray}
           textColor={THEME.colors.blue}
         >
           {data.level}
         </TableCell>
         <TableCell
-          width="332px"
+          width="448.9px"
           backgroundColor={THEME.colors.mainWhite}
           textAlign="left"
-          paddingX={8}
+          paddingX={10.8}
         >
           {data.description}
         </TableCell>
@@ -136,7 +136,7 @@ export const ReliabilityTable = ({ data }: ReliabilityTableProps) => {
         {data.items.map((item, index) => (
           <TableCell
             key={`item-${index}`}
-            width="118px"
+            width="159.5px"
             backgroundColor={
               index % 2 === 0
                 ? THEME.colors.tableGreen1
@@ -153,7 +153,7 @@ export const ReliabilityTable = ({ data }: ReliabilityTableProps) => {
         {data.items.map((item, index) => (
           <TableCell
             key={`value-${index}`}
-            width="118px"
+            width="159.5px"
             backgroundColor={
               index % 2 === 0
                 ? THEME.colors.mainWhite

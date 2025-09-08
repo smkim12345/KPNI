@@ -29,21 +29,21 @@ export const ReliabilitySection = ({ trustIndicators }: ReliabilitySectionProps)
     : fallbackData;
 
   return (
-    <Box sx={{ 
+    <Box sx={{
       display: 'flex',
       flexDirection: 'column',
       alignSelf: 'stretch',
-      padding: '0px 0px 10px',
+      padding: '0px 0px 13.5px',
       width: '100%',
-      height: '71px'
+      height: '96.0px'
     }}>
       {/* 섹션 제목 */}
       <Box sx={{
         display: 'flex',
         flexDirection: 'row',
         alignSelf: 'stretch',
-        gap: '4px',
-        height: '20px'
+        gap: '5.4px',
+        height: '27.0px'
       }}>
         <SectionTitle 
           sectionNumber={1}
