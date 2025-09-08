@@ -35,7 +35,8 @@ theme으로 처리되지 않는 값들:
 
 ## 주의사항
 - theme 값 적용 후 개별 컴포넌트에서 중복 적용 방지
-- theme 디자인 시스템값을 적용하기 좋은 반복 상수값에는 능동적으로 적용할것. 
+ex_ 이것은 금지!! 중복 적용되는것임 :  borderRadius: `${THEME.borderRadius.xs * 1.352}px`,
+- theme 디자인 시스템값을 적용하기 좋은 반복 상수값에는 능동적으로 비슷한 디자인 상수값으로 적용할것. 
 ex:
 before = fontSize: `9.5px`
 after = fontsize : 'theme.fontSizes.xs'

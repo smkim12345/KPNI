@@ -13,15 +13,15 @@ import { SubSectionTitle } from '../UI/B_SubSectionTitle';
 export const InterpretationOrderSection = () => {
   return (
     <Box sx={{
-      width: '565px',
-      height: '483px',
+      width: '764.1px',
+      height: '653.0px',
       //backgroundColor: THEME.colors.scale.childCharacter.light, //위치 확인용
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
-      padding: '10px',
-      gap: '16px',
+      padding: '13.5px',
+      gap: '21.6px',
       boxSizing: 'border-box'
     }}>
 
@@ -30,25 +30,25 @@ export const InterpretationOrderSection = () => {
 
       {/* 2-1. 신뢰지표 확인/해석 */}
       <Box sx={{
-        width: '545px',
-        height: '146px',
+        width: '737.2px',
+        height: '197.4px',
         //backgroundColor: 'red',//위치 확인용(지우지말것)
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        padding: '0px 10px',
+        padding: '0px 13.5px',
         boxSizing: 'border-box',
-        gap: '12px'
+        gap: '16.2px'
       }}>
         {/* 검사해석 순서 다이어그램 (Redesigned) */}
-        <Box 
-          sx={{ 
-            display: 'flex', 
+        <Box
+          sx={{
+            display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            width: '516px',
-            gap: '4px',
+            width: '697.6px',
+            gap: '5.4px',
             //backgroundColor: 'red',
           }}
         >
@@ -64,20 +64,20 @@ export const InterpretationOrderSection = () => {
                 sx={{
                   position: 'relative',
                   flex: 1,
-                  height: '30px',
+                  height: '40.6px',
                 }}
               >
                 {/* 텍스트 칩 */}
                 <Box
                   sx={{
                     bgcolor: step.bgColor,
-                    borderRadius: '15px',
-                    padding: '4px 4px 4px 23px', // 왼쪽 패딩 증가 (번호 공간 확보)
-                    height: '20px',
+                    borderRadius: THEME.borderRadius.sm,
+                    padding: '5.4px 5.4px 5.4px 31.1px', // 왼쪽 패딩 증가 (번호 공간 확보)
+                    height: '27.0px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                    boxShadow: '0 2.7px 5.4px rgba(0,0,0,0.2)',
                   }}
                 >
                   <Typography
@@ -98,10 +98,10 @@ export const InterpretationOrderSection = () => {
                 <Box
                   sx={{
                     position: 'absolute',
-                    top: '4px',
-                    left: '5px',
-                    width: '20px',
-                    height: '20px',
+                    top: '5.4px',
+                    left: '6.8px',
+                    width: '27.0px',
+                    height: '27.0px',
                     borderRadius: '50%',
                     backgroundColor: 'white',
                     display: 'flex',
@@ -114,7 +114,7 @@ export const InterpretationOrderSection = () => {
                   <Typography
                     sx={{
                       color: '#333',
-                      fontSize: '10px',
+                      fontSize: THEME.typography.fontSize.xxs,
                       fontWeight: 'bold',
                       fontFamily: THEME.typography.fontFamily.ohsquare,
                     }}
@@ -126,7 +126,7 @@ export const InterpretationOrderSection = () => {
 
               {/* 화살표 */}
               {index < arr.length - 1 && (
-                <Typography sx={{ fontSize: '20px', color: '#B0B0B0', display: 'flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box',paddingBottom: '6px' }}>
+                <Typography sx={{ fontSize: '27.0px', color: '#B0B0B0', display: 'flex', alignItems: 'center', justifyContent: 'center', boxSizing: 'border-box',paddingBottom: '8.1px' }}>
                   ›
                 </Typography>
               )}
@@ -141,8 +141,8 @@ export const InterpretationOrderSection = () => {
         <Box sx={{
           display: 'flex',
           alignSelf: 'stretch',
-          gap: '10px',
-          padding: '0 10px',
+          gap: '13.5px',
+          padding: '0 13.5px',
         }}>
           <Typography sx={{
             ...THEME.B_SECTION_DESCRIPTION,
@@ -156,13 +156,13 @@ export const InterpretationOrderSection = () => {
         <Box sx={{
           display: 'flex',
           alignSelf: 'stretch',
-          gap: '10px',
-          padding: '0 10px',
+          gap: '13.5px',
+          padding: '0 13.5px',
         }}>
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.pretendard,
             fontWeight: THEME.typography.fontWeight.normal,
-            fontSize: '8px',
+            fontSize: `${THEME.typography.fontSize.sm -1.4}px`,
             lineHeight: 1.375,
             letterSpacing: '2%',
             color: THEME.colors.text,
@@ -189,16 +189,16 @@ export const InterpretationOrderSection = () => {
       {/* 2-2. T점수의 이해 */}
       <Box
         sx={{
-          width: '545px',
-          height: '131px',
+          width: '737.2px',
+          height: '177.1px',
           //backgroundColor: 'red', //위치 확인용(지우지말것)
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          padding: '0px 10px',
+          padding: '0px 13.5px',
           boxSizing: 'border-box',
-          gap: '18px',
+          gap: '24.3px',
           position: 'relative',
         }}
       >
@@ -212,14 +212,14 @@ export const InterpretationOrderSection = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            width: '350px',
+            width: '473.2px',
             //backgroundColor: 'red', //영역 확인용
-            padding: '0 10px',
+            padding: '0 13.5px',
           }}
         >
           <Typography sx={{
             ...THEME.B_SECTION_DESCRIPTION,
-            width: '365px',
+            width: '493.2px',
           }}>
           
             {` T점수는 원점수를 평균 50, 표준편차 10인 정규분포로 변환한 값으로, 비교와 해석을 쉽게 하기 위해 사용됩니다. Z점수를 기반으로 변환되며, T=50은 50%, T=60은 약 84%, T=40은 약 16% 백분위를 의미합니다. 심리검사, 교육평가, 연구 등에서 데이터 분석과 비교를 위해 널리 활용됩니다.`}
@@ -228,12 +228,12 @@ export const InterpretationOrderSection = () => {
             src={'/src/images/3-7.png'}
             alt="T점수 그래프"
             style={{
-              width: '160px',
+              width: '216.3px',
               height: 'auto',
               objectFit: 'contain',
               position: 'absolute',
-              right: '10px',
-              top: '38px',
+              right: '13.5px',
+              top: '51.4px',
               transform: 'translateY(-50%)',
               pointerEvents: 'none',
               zIndex: 2,
@@ -242,7 +242,7 @@ export const InterpretationOrderSection = () => {
         </Box>
 
         {/* 테이블 */}
-        <Box sx={{ width: '495px', height: 'auto', padding: '0 10px' }}>
+        <Box sx={{ width: '669.2px', height: 'auto', padding: '0 13.5px' }}>
           {/* 테이블 헤더 */}
           <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
             {[
@@ -263,11 +263,11 @@ export const InterpretationOrderSection = () => {
                 key={index}
                 sx={{
                   flex: 1,
-                  padding: '3px',
+                  padding: '4.1px',
                   backgroundColor: item.bgColor,
-                  border: '0.5px solid #868686',
-                  borderTopLeftRadius: index === 0 ? '5px' : 0,
-                  borderTopRightRadius: index === 11 ? '5px' : 0,
+                  border: '0.7px solid #868686',
+                  borderTopLeftRadius: index === 0 ? '6.8px' : 0,
+                  borderTopRightRadius: index === 11 ? '6.8px' : 0,
                 }}
               >
                 <Typography
@@ -304,11 +304,11 @@ export const InterpretationOrderSection = () => {
                 key={index}
                 sx={{
                   flex: 1,
-                  padding: '3px',
+                  padding: '4.1px',
                   backgroundColor: item.bgColor,
-                  border: '0.5px solid #868686',
-                  borderBottomLeftRadius: index === 0 ? '5px' : 0,
-                  borderBottomRightRadius: index === 11 ? '5px' : 0,
+                  border: '0.7px solid #868686',
+                  borderBottomLeftRadius: index === 0 ? '6.8px' : 0,
+                  borderBottomRightRadius: index === 11 ? '6.8px' : 0,
                 }}
               >
                 <Typography
@@ -332,16 +332,16 @@ export const InterpretationOrderSection = () => {
 
       {/* 2-3. 이상적 양육지수 확인 */}
       <Box sx={{
-        width: '545px',
-        height: '117px',
+        width: '737.2px',
+        height: '158.2px',
         //backgroundColor: 'red',//위치 확인용(지우지말것)
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        padding: '0 10px ',
+        padding: '0 13.5px ',
         boxSizing: 'border-box',
-        gap: '10px'
+        gap: '13.5px'
       }}>
 
           <SubSectionTitle title="3. 이상적 양육지수 확인" />
@@ -350,7 +350,7 @@ export const InterpretationOrderSection = () => {
         <Box sx={{
           display: 'flex',
           alignSelf: 'stretch',
-          padding: '0 10px',
+          padding: '0 13.5px',
         }}>
           <Typography sx={{
             ...THEME.B_SECTION_DESCRIPTION,
@@ -361,7 +361,7 @@ export const InterpretationOrderSection = () => {
         </Box>
 
         {/* IPQ 테이블 */}
-        <Box sx={{ width: '495px', padding: '0 10px'}}>
+        <Box sx={{ width: '669.2px', padding: '0 13.5px'}}>
           {/* IPQ 데이터 정의 */}
           {(() => {
             const ipqHeaders = [
@@ -393,11 +393,11 @@ export const InterpretationOrderSection = () => {
                       key={index}
                       sx={{
                         flex: 1,
-                        padding: '3px',
+                        padding: '4.1px',
                         backgroundColor: header.bgColor,
-                        border: '0.5px solid #868686',
-                        borderTopLeftRadius: index === 0 ? '5px' : 0,
-                        borderTopRightRadius: index === ipqHeaders.length - 1 ? '5px' : 0,
+                        border: '0.7px solid #868686',
+                        borderTopLeftRadius: index === 0 ? '6.8px' : 0,
+                        borderTopRightRadius: index === ipqHeaders.length - 1 ? '6.8px' : 0,
                       }}
                     >
                       <Typography
@@ -421,10 +421,10 @@ export const InterpretationOrderSection = () => {
                     <Box
                       sx={{
                         flex: 1,
-                        padding: '3px',
+                        padding: '4.1px',
                         backgroundColor: '#66A247',
-                        border: '0.5px solid #868686',
-                        borderBottomLeftRadius: rowIndex === ipqData.length - 1 ? '5px' : 0,
+                        border: '0.7px solid #868686',
+                        borderBottomLeftRadius: rowIndex === ipqData.length - 1 ? '6.8px' : 0,
                       }}
                     >
                       <Typography
@@ -445,10 +445,10 @@ export const InterpretationOrderSection = () => {
                         key={colIndex}
                         sx={{
                           flex: 1,
-                          padding: '3px',
-                          border: '0.5px solid #868686',
+                          padding: '4.1px',
+                          border: '0.7px solid #868686',
                           borderBottomRightRadius:
-                            rowIndex === ipqData.length - 1 && colIndex === row.values.length - 1 ? '5px' : 0,
+                            rowIndex === ipqData.length - 1 && colIndex === row.values.length - 1 ? '6.8px' : 0,
                         }}
                       >
                         <Typography

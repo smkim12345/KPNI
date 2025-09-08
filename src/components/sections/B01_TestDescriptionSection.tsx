@@ -9,16 +9,16 @@ import { SectionTitleBox } from '../UI/B_SectionTitle';
 export const TestDescriptionSection = () => {
   return (
     <Box sx={{
-      width: '565px',
-      height: '234px',
+      width: '763.9px',
+      height: '316.4px',
       //backgroundColor: 'rgba(24, 221, 245,0.4)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'flex-start',
-      padding: '10px',
+      padding: '13.5px',
       boxSizing: 'border-box',
-      gap: '5px'
+      gap: '6.8px'
     }}>
       {/* 섹션 제목 */}
       <SectionTitleBox title="1. 부모양육종합검사란?" />
@@ -28,17 +28,17 @@ export const TestDescriptionSection = () => {
         position: 'relative',
         alignSelf: 'stretch',
         flex: 1,
-        padding: '0 10px',
+        padding: '0 13.5px',
         //backgroundColor: 'red',
       }}>
         {/* 부모양육 사진 - 오른쪽에 배치하여 텍스트가 주변을 감싸도록 함 */}
         <Box sx={{
-          width: '180px',
-          height: '180px',
-          borderRadius: '30px',
+          width: '243.4px',
+          height: '243.4px',
+          borderRadius: '40.6px',
           float: 'right',
           marginRight: '0px',
-          marginBottom: '8px',
+          marginBottom: '10.8px',
         }}
         style={{
           shapeOutside: 'circle(55%)',

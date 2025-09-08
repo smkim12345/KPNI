@@ -7,8 +7,8 @@ import { THEME } from '../theme';
 export const BackTitleSection = () => {
   return (
     <Box sx={{
-      width: '565px',
-      height: '70px',
+      width: '763.9px',
+      height: '94.6px',
       //backgroundColor: 'rgba(241, 22, 245,0.4)',
       display: 'flex',
       flexDirection: 'row',
@@ -21,14 +21,14 @@ export const BackTitleSection = () => {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        height: '52px',
+        height: '70.3px',
         width: 'auto',
         //backgroundColor: 'rgba(255, 255, 255, 0.1)',
       }}>
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.moyamoya,
           fontWeight: THEME.typography.fontWeight.extraBold,
-          fontSize: '55px',
+          fontSize: '74.4px',
           lineHeight: 1,
           textAlign: 'top',
           color: THEME.colors.white,
@@ -43,16 +43,16 @@ export const BackTitleSection = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '0px 10px',
-        width: '250px',
-        height: '52px',
+        padding: '0px 13.5px',
+        width: '338.0px',
+        height: '70.3px',
         //backgroundColor: 'rgba(255, 255, 255, 0.1)',
       }}>
         {/* 부모양육종합검사 */}
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.ohsquare,
           fontWeight: THEME.typography.fontWeight.normal,
-          fontSize: '29px',
+          fontSize: '39.2px',
           lineHeight: 1.4,
           textAlign: 'left',
           color: THEME.colors.white,
@@ -66,7 +66,7 @@ export const BackTitleSection = () => {
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.ohsquareAir,
           fontWeight: 300,
-          fontSize: '8px',
+          fontSize: '10.8px',
           lineHeight: 1.268,
           textAlign: 'left',
           color: THEME.colors.mainWhite,

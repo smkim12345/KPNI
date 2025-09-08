@@ -73,16 +73,16 @@ const SCALE_DATA = [
 export const ScaleOpinionSection = () => {
   return (
     <Box sx={{
-      width: '566px',
-      height: '500px',
+      width: '765.2px',
+      height: '676.0px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
-      padding: '10px',
+      padding: '13.5px',
       boxSizing: 'border-box',
       //backgroundColor: 'red',
-      gap: '5px'
+      gap: '6.8px'
     }}>
       {/* 섹션 제목 */}
       <SubSectionTitle title="4. 척도별 소견 확인" />
@@ -91,8 +91,8 @@ export const ScaleOpinionSection = () => {
       <Box sx={{
         display: 'flex',
         alignSelf: 'stretch',
-        padding: '0 10px',
-        width: '516px',
+        padding: '0 13.5px',
+        width: '698.8px',
       }}>
         <Typography sx={{
           ...THEME.B_SECTION_DESCRIPTION,
@@ -110,29 +110,29 @@ export const ScaleOpinionSection = () => {
           sx={{
             display: 'flex',
             alignItems: 'center',
-            width: '565px',
-            height: '81px',
-            padding: '0 10px',
+            width: '763.9px',
+            height: '109.5px',
+            padding: '0 13.5px',
             boxSizing: 'border-box'
           }}
         >
           {/* 상위척도 이름 박스 */}
           <Box sx={{
-            width: '40px',
-            height: '74px',
+            width: '54.1px',
+            height: '100.0px',
             backgroundColor: scale.bgColor,
-            borderRadius: '5px',
+            borderRadius: `${THEME.borderRadius.xs}px`,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '0 9px',
+            padding: '0 12.2px',
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.ohsquare,
               fontWeight: THEME.typography.fontWeight.light,
-              fontSize: '11px',
-              lineHeight: '1.268em',
+              fontSize: `${THEME.typography.fontSize.md}px`,
+              lineHeight: THEME.typography.lineHeight.normal,
               color: '#FBFBFB',
               textAlign: 'center',
               whiteSpace: 'pre-line'
@@ -146,20 +146,20 @@ export const ScaleOpinionSection = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            width: '67px',
-            height: '74px',
-            padding: '0 0 0 5px',
-            gap: '2px',
+            width: '90.6px',
+            height: '100.0px',
+            padding: '0 0 0 6.8px',
+            gap: '2.7px',
             //backgroundColor: 'red' //영역 확인용
           }}>
             {scale.subScales.map((subScale, subIndex) => (
               <Box
                 key={subIndex}
                 sx={{
-                  width: '67px',
-                  height: '12px',
+                  width: '90.6px',
+                  height: '16.2px',
                   backgroundColor: scale.brightColor,
-                  borderRadius: '5px 0 0 5px',
+                  borderRadius: `${THEME.borderRadius.xs}px 0 0 ${THEME.borderRadius.xs}px`,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -169,8 +169,8 @@ export const ScaleOpinionSection = () => {
                 <Typography sx={{
                   fontFamily: THEME.typography.fontFamily.pretendard,
                   fontWeight: 700,
-                  fontSize: '9px',
-                  lineHeight: '1.193em',
+                  fontSize: `${THEME.typography.fontSize.sm}px`,
+                  lineHeight: THEME.typography.lineHeight.normal,
                   color: '#FBFBFB',
                   textAlign: 'center'
                 }}>
@@ -185,30 +185,30 @@ export const ScaleOpinionSection = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            width: '403px',
-            height: '74px',
-            gap: '3px',
+            width: '544.9px',
+            height: '100.0px',
+            gap: '4.1px',
           }}>
             {scale.subScales.map((subScale, subIndex) => (
               <Box
                 key={subIndex}
                 sx={{
-                  width: '393px',
-                  height: '12px',
+                  width: '531.3px',
+                  height: '16.2px',
                   border: `1px solid ${scale.brightColor}`,
-                  borderRadius: '0 5px 5px 0',
+                  borderRadius: `0 ${THEME.borderRadius.xs}px ${THEME.borderRadius.xs}px 0`,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '0 5px',
+                  padding: '0 6.8px',
                   boxSizing: 'border-box'
                 }}
               >
                 <Typography sx={{
                   fontFamily: THEME.typography.fontFamily.pretendard,
                   fontWeight: THEME.typography.fontWeight.normal,
-                  fontSize: '8px',
-                  lineHeight: '1.193em',
+                  fontSize: '10.8px',
+                  lineHeight: THEME.typography.lineHeight.normal,
                   color: THEME.colors.text,
                   textAlign: 'left'
                 }}>

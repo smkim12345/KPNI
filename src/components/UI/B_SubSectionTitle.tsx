@@ -15,8 +15,8 @@ export const SubSectionTitle = ({ title }: SubSectionTitleProps) => {
       <Typography sx={{
         fontFamily: THEME.typography.fontFamily.ohsquare,
         fontWeight: THEME.typography.fontWeight.normal,
-        fontSize: '11px',
-        lineHeight: '1.268em',
+        fontSize: '14.9px',
+        lineHeight: '1.71em',
         color: '#274E13',
         alignSelf: 'stretch',
         textAlign: 'left',

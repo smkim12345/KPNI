@@ -141,8 +141,8 @@ export const THEME = {
   B_SECTION_DESCRIPTION: {
     fontFamily: 'Pretendard Variable',
     fontWeight: 300,
-    fontSize: 12.2,
-    lineHeight: '1.2em',
+    fontSize: 11.4,
+    lineHeight: '1.25em',
     color: '#0B0B0B',
     whiteSpace: 'pre-line',
     wordBreak: 'keep-all',

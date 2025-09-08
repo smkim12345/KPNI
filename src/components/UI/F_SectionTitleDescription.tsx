@@ -29,9 +29,9 @@ const getFontWeight = (weight: TextItem['fontWeight']) => {
 export const SectionDescription = ({
   items,
   textAlign = 'left',
-  fontSize = `${THEME.typography.fontSize.xs}px`,
-  width = '472px',
-  height = '14px',
+  fontSize = '9.5px',
+  width = '638.1px',
+  height = '18.9px',
 
 }: SectionDescriptionProps) => {
   return (

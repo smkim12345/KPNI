@@ -9,15 +9,15 @@ import { SubSectionTitle } from '../UI/B_SubSectionTitle';
 export const SolutionSection = () => {
   return (
     <Box sx={{
-      width: '566px',
-      height: '287px',
+      width: '765.2px',
+      height: '387.6px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
-      padding: '10px',
+      padding: '13.5px',
       boxSizing: 'border-box',
-      gap: '10px'
+      gap: '13.5px'
     }}>
       {/* 섹션 제목 */}
       <SectionTitleBox title="3. 좋은 부모가 되기위한 여정" />
@@ -26,24 +26,24 @@ export const SolutionSection = () => {
       <Box sx={{
         display: 'flex',
         alignSelf: 'stretch',
-        padding: '0 10px',
+        padding: '0 13.5px',
         flex: 1
       }}>
         {/* 왼쪽 영역 */}
         <Box sx={{
           display: 'flex',
           flexDirection: 'column',
-          width: '342px',
-          gap: '16px'
+          width: '462.4px',
+          gap: '21.6px'
         }}>
 
           {/* 좋은 부모의 특징 섹션 */}
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            width: '300px',
-            gap: '10px',
-           
+            width: '405.6px',
+            gap: '13.5px',
+
           }}>
             <SubSectionTitle title="1. 좋은 부모의 특징" />
               {/* 아이콘들 */}
@@ -51,26 +51,26 @@ export const SolutionSection = () => {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                gap: '5px',
-                width: '270px',
-                height: '50px',
+                gap: '6.8px',
+                width: '364.7px',
+                height: '67.6px',
                 alignItems: 'center',
-                padding: '0 10px',
+                padding: '0 13.5px',
                 //backgroundColor: 'blue' //영역 확인용
               }}>
                 <Box sx={{
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '4px',
-                  height: '50px',
+                  gap: '5.4px',
+                  height: '67.6px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-1.png" alt="존중 아이콘" style={{ width: '32px', height: '34px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-1.png" alt="존중 아이콘" style={{ width: '43.3px', height: '46.0px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
-                    fontSize: '8px',
+                    fontSize: THEME.typography.fontSize.sm - 1.4,
                     lineHeight: '1.2em',
                     color: THEME.colors.text,
                     textAlign: 'center',
@@ -83,15 +83,15 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '4px',
-                  height: '50px',
+                  gap: '5.4px',
+                  height: '67.6px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-2.png" alt="공감 아이콘" style={{ width: '34px', height: '40px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-2.png" alt="공감 아이콘" style={{ width: '46.0px', height: '54.1px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
-                    fontSize: '8px',
+                    fontSize: THEME.typography.fontSize.sm - 1.4,
                     lineHeight: '1.2em',
                     color: THEME.colors.text,
                     textAlign: 'center',
@@ -104,15 +104,15 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '4px',
-                  height: '50px',
+                  gap: '5.4px',
+                  height: '67.6px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-3.png" alt="일관성 아이콘" style={{ width: '37px', height: '35px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-3.png" alt="일관성 아이콘" style={{ width: '50.0px', height: '47.3px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
-                    fontSize: '8px',
+                    fontSize: THEME.typography.fontSize.sm - 1.4,
                     lineHeight: '1.2em',
                     color: THEME.colors.text,
                     textAlign: 'center',
@@ -125,15 +125,15 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '4px',
-                  height: '50px',
+                  gap: '5.4px',
+                  height: '67.6px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-4.png" alt="회복력 아이콘" style={{ width: '32px', height: '37px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-4.png" alt="회복력 아이콘" style={{ width: '43.3px', height: '50.0px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
-                    fontSize: '8px',
+                    fontSize: THEME.typography.fontSize.sm - 1.4,
                     lineHeight: '1.2em',
                     color: THEME.colors.text,
                     textAlign: 'center',
@@ -146,15 +146,15 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '4px',
-                  height: '50px',
+                  gap: '5.4px',
+                  height: '67.6px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-5.png" alt="성장 아이콘" style={{ width: '33px', height: '38px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-5.png" alt="성장 아이콘" style={{ width: '44.6px', height: '51.4px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
-                    fontSize: '8px',
+                    fontSize: THEME.typography.fontSize.sm - 1.4,
                     lineHeight: '1.2em',
                     color: THEME.colors.text,
                     textAlign: 'center',
@@ -173,16 +173,16 @@ export const SolutionSection = () => {
                 justifyContent: 'flex-start',
                 //backgroundColor: 'red',
                 width: '100%',
-                height: '60px'
+                height: '81.1px'
               }}>
                 <Typography sx={{
                   fontFamily: THEME.typography.fontFamily.pretendard,
                   fontWeight: 300,
-                  fontSize: '9px',
+                  fontSize: THEME.typography.fontSize.sm - 1.4,
                   lineHeight: '1.33em',
                   color: THEME.colors.text,
                   whiteSpace: 'pre-line',
-                  padding: '0 10px'
+                  padding: '0 13.5px'
                 }}>
                   {<>
                     ❖ <span style={{ fontWeight: 'bold' }}>존중</span> : 자녀를 '작은 어른'이 아닌, 고유한 인격체로 존중합니다.
@@ -199,14 +199,14 @@ export const SolutionSection = () => {
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            width: '300px',
-            gap: '5px'
+            width: '405.6px',
+            gap: '6.8px'
           }}>
             <SubSectionTitle title="2. 완벽한 부모에 대한 생각 내려 놓기" />
 
             <Typography sx={{
               ...THEME.B_SECTION_DESCRIPTION,
-              padding: '0 10px'
+              padding: '0 13.5px'
             }}>
               {<>
                 <span style={{ fontWeight: 'bold' }}>세상에는 '완벽한 부모'는 없습니다.</span>
@@ -222,7 +222,7 @@ export const SolutionSection = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '13px',
+          gap: '17.6px',
           flex: 1,
           position: 'relative'
         }}>
@@ -232,41 +232,41 @@ export const SolutionSection = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '168px',
-            height: '168px',
+            width: '227.1px',
+            height: '227.1px',
             //backgroundColor: 'red'
           }}>
             {/* 미묘한 원형 테두리 링 - 외부 */}
             <Box sx={{
               position: 'absolute',
-              width: '180px',
-              height: '180px',
+              width: '243.4px',
+              height: '243.4px',
               borderRadius: '50%',
               border: '1px solid rgba(114, 175, 129, 0.7)',
-              top: '-7px',
-              left: '-7px',
+              top: '-9.5px',
+              left: '-9.5px',
               zIndex: 0
             }} />
             
             {/* 미묘한 원형 테두리 링 - 내부 */}
             <Box sx={{
               position: 'absolute',
-              width: '174px',
-              height: '174px',
+              width: '235.2px',
+              height: '235.2px',
               borderRadius: '50%',
               border: '1px solid rgba(114, 175, 129, 0.6)',
-              top: '-4px',
-              left: '-4px',
+              top: '-5.4px',
+              left: '-5.4px',
               zIndex: 0
             }} />
 
             {/* 작은 포인트 도트들 */}
             <Box sx={{
               position: 'absolute',
-              top: '8px',
-              right: '25px',
-              width: '9px',
-              height: '9px',
+              top: '10.8px',
+              right: '33.8px',
+              width: '12.2px',
+              height: '12.2px',
               borderRadius: '50%',
               backgroundColor: 'rgba(114, 175, 129, 0.7)',
               zIndex: 1
@@ -274,10 +274,10 @@ export const SolutionSection = () => {
             
             <Box sx={{
               position: 'absolute',
-              bottom: '15px',
-              left: '20px',
-              width: '5px',
-              height: '5px',
+              bottom: '20.3px',
+              left: '27.0px',
+              width: '6.8px',
+              height: '6.8px',
               borderRadius: '50%',
               backgroundColor: 'rgba(114, 175, 129, 0.8)',
               zIndex: 1
@@ -285,10 +285,10 @@ export const SolutionSection = () => {
 
             <Box sx={{
               position: 'absolute',
-              top: '25px',
-              left: '12px',
-              width: '4px',
-              height: '4px',
+              top: '33.8px',
+              left: '16.2px',
+              width: '5.4px',
+              height: '5.4px',
               borderRadius: '50%',
               backgroundColor: 'rgba(114, 175, 129, 0.7)',
               zIndex: 1
@@ -296,15 +296,15 @@ export const SolutionSection = () => {
 
             {/* 가족 이미지 */}
             <Box sx={{
-              width: '168px',
-              height: '168px',
+              width: '227.1px',
+              height: '227.1px',
               borderRadius: '50%',
               overflow: 'hidden',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.08)',
-              border: '2px solid rgba(255, 255, 255, 0.9)',
+              boxShadow: '0px 5.4px 21.6px rgba(0, 0, 0, 0.08)',
+              border: '2.7px solid rgba(255, 255, 255, 0.9)',
               zIndex: 2
             }}>
               <img
@@ -324,34 +324,34 @@ export const SolutionSection = () => {
           <Box sx={{
             position: 'relative',
             background: `linear-gradient(145deg, ${THEME.colors.mainWhite}, rgba(218, 247, 231, 0.9))`,
-            borderRadius: '16px',
-            padding: '6px 16px',
+            borderRadius: THEME.borderRadius.sm,
+            padding: '8.1px 21.6px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            maxWidth: '150px',
+            maxWidth: '202.8px',
             boxShadow: `
-              0px 4px 12px rgba(114, 175, 129, 0.4),
-              0px 1px 3px rgba(0, 0, 0, 0.08),
-              inset 0px 1px 0px rgba(255, 255, 255, 0.9)
+              0px 5.4px 16.2px rgba(114, 175, 129, 0.4),
+              0px 1.4px 4.1px rgba(0, 0, 0, 0.08),
+              inset 0px 1.4px 0px rgba(255, 255, 255, 0.9)
             `,
           }}>
             <Box sx={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '6px'
+              gap: '8.1px'
             }}>
               
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.pretendard,
                 fontWeight: 500,
-                fontSize: '9px',
+                fontSize: THEME.typography.fontSize.xs,
                 lineHeight: '1.4em',
                 color: '#2D4A32',
                 textAlign: 'center',
                 whiteSpace: 'pre-line',
-                letterSpacing: '-0.2px'
+                letterSpacing: '-0.3px'
               }}>
                 {`" 아이를 위한 가장 좋은 선물은,`}
                 <br />
@@ -362,20 +362,20 @@ export const SolutionSection = () => {
               </Typography>
               
               <Box sx={{
-                width: '30px',
-                height: '1px',
+                width: '40.6px',
+                height: '1.4px',
                 background: `linear-gradient(90deg, transparent, rgba(114, 175, 129, 0.4), transparent)`,
               }} />
               
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.pretendard,
                 fontWeight: THEME.typography.fontWeight.normal,
-                fontSize: '7.5px',
+                fontSize: '10.1px',
                 lineHeight: '1em',
                 color: 'rgba(146, 146, 146, 0.9)',
                 textAlign: 'center',
                 fontStyle: 'italic',
-                letterSpacing: '0.2px'
+                letterSpacing: '0.3px'
               }}>
                 내 아이를 위한 감정코칭 中
               </Typography>

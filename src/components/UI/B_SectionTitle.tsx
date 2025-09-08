@@ -13,9 +13,9 @@ export const SectionTitleBox = ({ title }: SectionTitleBoxProps) => {
   return (
     <Box sx={{
       backgroundColor: THEME.colors.primaryDark,
-      borderRadius: '0px 30px 30px 0px',
-      padding: '0px 10px 0px 5px',
-      height: '19px',
+      borderRadius: '0px 40.6px 40.6px 0px',
+      padding: '0px 13.5px 0px 6.8px',
+      height: '25.7px',
       display: 'flex',
       alignItems: 'center',
       alignSelf: 'flex-start',
@@ -23,8 +23,8 @@ export const SectionTitleBox = ({ title }: SectionTitleBoxProps) => {
       <Typography sx={{
         fontFamily: THEME.typography.fontFamily.ohsquare,
         fontWeight: THEME.typography.fontWeight.normal,
-        fontSize: `${THEME.typography.fontSize.lg}px`,
-        lineHeight: 1.5,
+        fontSize: '17.6px',
+        lineHeight: 2.03,
         color: THEME.colors.mainWhite,
       }}>
         {title}
