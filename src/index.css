@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'Pretendard Variable';
+  src: url('/src/fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cafe24 Moyamoya OTF';
+  src: url('/src/fonts/Cafe24Moyamoya-Regular-v1.0.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cafe24 Ohsquare';
+  src: url('/src/fonts/Cafe24Ohsquare-v2.0.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cafe24 Ohsquare air';
+  src: url('/src/fonts/Cafe24OhsquareAir-v2.0.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @media print {
   body, html {
     width: 210mm;
