@@ -264,10 +264,10 @@ export const InterpretationOrderSection = () => {
                   flex: 1,
                   padding: '3px',
                   backgroundColor: item.bgColor,
-                  borderTop: '0.5px solid #868686',
-                  borderBottom: '0.5px solid #868686',
-                  borderLeft: index === 0 ? '0.5px solid #868686' : 'none',
-                  borderRight: '0.5px solid #868686',
+                  borderTop: '1px solid #868686',
+                  borderBottom: '1px solid #868686',
+                  borderLeft: index === 0 ? '1px solid #868686' : 'none',
+                  borderRight: '1px solid #868686',
                   borderTopLeftRadius: index === 0 ? '5px' : 0,
                   borderTopRightRadius: index === 11 ? '5px' : 0,
                 }}
@@ -308,9 +308,9 @@ export const InterpretationOrderSection = () => {
                   flex: 1,
                   padding: '3px',
                   backgroundColor: item.bgColor,
-                  borderBottom: '0.5px solid #868686',
-                  borderLeft: index === 0 ? '0.5px solid #868686' : 'none',
-                  borderRight: '0.5px solid #868686',
+                  borderBottom: '1px solid #868686',
+                  borderLeft: index === 0 ? '1px solid #868686' : 'none',
+                  borderRight: '1px solid #868686',
                   borderBottomLeftRadius: index === 0 ? '5px' : 0,
                   borderBottomRightRadius: index === 11 ? '5px' : 0,
                 }}
@@ -399,10 +399,10 @@ export const InterpretationOrderSection = () => {
                         flex: 1,
                         padding: '3px',
                         backgroundColor: header.bgColor,
-                        borderTop: '0.5px solid #868686',
-                        borderBottom: '0.5px solid #868686',
-                        borderLeft: index === 0 ? '0.5px solid #868686' : 'none',
-                        borderRight: '0.5px solid #868686',
+                        borderTop: '1px solid #868686',
+                        borderBottom: '1px solid #868686',
+                        borderLeft: index === 0 ? '1px solid #868686' : 'none',
+                        borderRight: '1px solid #868686',
                         borderTopLeftRadius: index === 0 ? '5px' : 0,
                         borderTopRightRadius: index === ipqHeaders.length - 1 ? '5px' : 0,
                       }}
@@ -422,7 +422,8 @@ export const InterpretationOrderSection = () => {
                     </Box>
                   ))}
                 </Box>
-                {/* 테이블 바디 */}
+                
+                {/* 테이블 바디 헤더더 */}
                 {ipqData.map((row, rowIndex) => (
                   <Box key={rowIndex} sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
                     <Box
@@ -430,8 +431,8 @@ export const InterpretationOrderSection = () => {
                         flex: 1,
                         padding: '3px',
                         backgroundColor: '#66A247',
-                        borderBottom: '0.5px solid #868686',
-                        borderLeft: '0.5px solid #868686',
+                        borderBottom: '1px solid #868686',
+                        borderLeft: '1px solid #868686',
                         borderRight: 'none',
                         borderBottomLeftRadius: rowIndex === ipqData.length - 1 ? '5px' : 0,
                       }}
@@ -449,15 +450,17 @@ export const InterpretationOrderSection = () => {
                         {row.header}
                       </Typography>
                     </Box>
+
+                    {/* 테이블 바디 */}
                     {row.values.map((value, colIndex) => (
                       <Box
                         key={colIndex}
                         sx={{
                           flex: 1,
                           padding: '3px',
-                          borderBottom: '0.5px solid #868686',
-                          borderLeft: colIndex === 0 ? '0.5px solid #868686' : 'none',
-                          borderRight: '0.5px solid #868686',
+                          borderBottom: '1px solid #868686',
+                          borderLeft: colIndex === 0 ? '1px solid #868686' : 'none',
+                          borderRight: '1px solid #868686',
                           borderBottomRightRadius:
                             rowIndex === ipqData.length - 1 && colIndex === row.values.length - 1 ? '5px' : 0,
                         }}
