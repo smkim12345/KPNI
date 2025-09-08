@@ -48,7 +48,7 @@ export const ScaleAnalysisCard = ({
       alignSelf: 'stretch',
       padding: '5px',
       backgroundColor,
-      borderRadius: '15px 0 0 5px',
+      borderRadius: '15px 5px 5px 5px',
       height: '140px',
     }}>
       {/* 척도 분석 상위척도 정보 */}
