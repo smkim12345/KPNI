@@ -28,7 +28,13 @@ export const THEME = {
     border: {
       light: 'rgba(194, 194, 194, 0.65)',
       medium: 'rgba(108, 108, 108, 0.65)',
-      dark: 'rgba(135, 135, 135, 0.65)'
+      dark: 'rgba(135, 135, 135, 0.65)',
+      table: '#a8a8a8'
+    },
+
+    // Table 색상 (테이블 색상)
+    table: {
+      cellGray: '#f0f0f0'
     },
     
     // 척도별 색상 팔레트 (Scale Color Palette)

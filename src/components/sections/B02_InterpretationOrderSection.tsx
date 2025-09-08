@@ -1,6 +1,13 @@
 import {
   Box,
-  Typography
+  Typography,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper
 } from '@mui/material';
 import { THEME } from '../theme';
 import { SectionTitleBox } from '../UI/B_SectionTitle';
@@ -241,97 +248,104 @@ export const InterpretationOrderSection = () => {
         </Box>
 
         {/* 테이블 */}
-        <Box sx={{ width: '495px', height: 'auto', padding: '0 10px' }}>
-          {/* 테이블 헤더 */}
-          <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%', borderCollapse: 'collapse' }}>
-            {[
-              { text: 'T점수', bgColor: '#66A247', color: '#FBFBFB' },
-              { text: '25', bgColor: 'hsl(105, 25%, 80%)' },
-              { text: '30', bgColor: 'hsl(105, 30%, 75%)' },
-              { text: '35', bgColor: 'hsl(105, 35%, 70%)' },
-              { text: '40', bgColor: 'hsl(105, 37%, 65%)' },
-              { text: '45', bgColor: 'hsl(105, 40%, 60%)' },
-              { text: '50', bgColor: 'hsl(105, 45%, 55%)' },
-              { text: '55', bgColor: 'hsl(105, 40%, 60%)' },
-              { text: '60', bgColor: 'hsl(105, 37%, 65%)' },
-              { text: '65', bgColor: 'hsl(105, 35%, 70%)' },
-              { text: '70', bgColor: 'hsl(105, 30%, 75%)' },
-              { text: '75', bgColor: 'hsl(105, 25%, 80%)' },
-            ].map((item, index) => (
-              <Box
-                key={index}
-                sx={{
-                  flex: 1,
-                  padding: '3px',
-                  backgroundColor: item.bgColor,
-                  borderTop: '1px solid #868686',
-                  borderBottom: '1px solid #868686',
-                  borderLeft: index === 0 ? '1px solid #868686' : 'none',
-                  borderRight: '1px solid #868686',
-                  borderTopLeftRadius: index === 0 ? '5px' : 0,
-                  borderTopRightRadius: index === 11 ? '5px' : 0,
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontFamily: THEME.typography.fontFamily.pretendard,
-                    fontWeight: THEME.typography.fontWeight.bold,
-                    fontSize: `${THEME.typography.fontSize.sm - 1}px`,
-                    color: item.color || THEME.colors.text,
-                    textAlign: 'center',
-                  }}
-                >
-                  {item.text}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-          {/* 테이블 바디 */}
-          <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
-            {[
-              { text: '백분위', bgColor: '#66A247', color: '#FBFBFB' },
-              { text: '0.6%' },
-              { text: '2.3%' },
-              { text: '6.7%' },
-              { text: '15.9%' },
-              { text: '30.9%' },
-              { text: '50%' },
-              { text: '69.1%' },
-              { text: '84.1%' },
-              { text: '93.3%' },
-              { text: '97.7%' },
-              { text: '99.4%' },
-            ].map((item, index) => (
-              <Box
-                key={index}
-                sx={{
-                  flex: 1,
-                  padding: '3px',
-                  backgroundColor: item.bgColor,
-                  borderBottom: '1px solid #868686',
-                  borderLeft: index === 0 ? '1px solid #868686' : 'none',
-                  borderRight: '1px solid #868686',
-                  borderBottomLeftRadius: index === 0 ? '5px' : 0,
-                  borderBottomRightRadius: index === 11 ? '5px' : 0,
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontFamily: THEME.typography.fontFamily.pretendard,
-                    fontWeight: item.bgColor
-                      ? THEME.typography.fontWeight.bold
-                      : THEME.typography.fontWeight.normal,
-                    fontSize: `${THEME.typography.fontSize.sm - 1}px`,
-                    color: item.color || THEME.colors.text,
-                    textAlign: 'center',
-                  }}
-                >
-                  {item.text}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-        </Box>
+        <TableContainer component={Paper} sx={{ width: '495px', boxShadow: 'none', borderRadius: '5px', padding: '0 10px' }}>
+          <Table sx={{
+            borderCollapse: 'collapse',
+            border: 'none'
+          }}>
+            <TableHead>
+              <TableRow>
+                {[
+                  { text: 'T점수', bgColor: '#66A247', color: '#FBFBFB' },
+                  { text: '25', bgColor: 'hsl(105, 25%, 80%)' },
+                  { text: '30', bgColor: 'hsl(105, 30%, 75%)' },
+                  { text: '35', bgColor: 'hsl(105, 35%, 70%)' },
+                  { text: '40', bgColor: 'hsl(105, 37%, 65%)' },
+                  { text: '45', bgColor: 'hsl(105, 40%, 60%)' },
+                  { text: '50', bgColor: 'hsl(105, 45%, 55%)' },
+                  { text: '55', bgColor: 'hsl(105, 40%, 60%)' },
+                  { text: '60', bgColor: 'hsl(105, 37%, 65%)' },
+                  { text: '65', bgColor: 'hsl(105, 35%, 70%)' },
+                  { text: '70', bgColor: 'hsl(105, 30%, 75%)' },
+                  { text: '75', bgColor: 'hsl(105, 25%, 80%)' },
+                ].map((item, index) => (
+                  <TableCell
+                    key={index}
+                    sx={{
+                      backgroundColor: item.bgColor,
+                      borderRight: index < 11 ? `0.5px solid ${THEME.colors.border.table}` : 'none',
+                      borderBottom: `0.5px solid ${THEME.colors.border.table}`,
+                      borderLeft: index > 0 ? `0.5px solid ${THEME.colors.border.table}` : 'none',
+                      borderTop: 'none',
+                      padding: '3px',
+                      textAlign: 'center',
+                      borderTopLeftRadius: index === 0 ? '5px' : 0,
+                      borderTopRightRadius: index === 11 ? '5px' : 0
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontFamily: THEME.typography.fontFamily.pretendard,
+                        fontWeight: THEME.typography.fontWeight.bold,
+                        fontSize: `${THEME.typography.fontSize.sm - 1}px`,
+                        color: item.color || THEME.colors.text,
+                      }}
+                    >
+                      {item.text}
+                    </Typography>
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                {[
+                  { text: '백분위', bgColor: '#66A247', color: '#FBFBFB' },
+                  { text: '0.6%' },
+                  { text: '2.3%' },
+                  { text: '6.7%' },
+                  { text: '15.9%' },
+                  { text: '30.9%' },
+                  { text: '50%' },
+                  { text: '69.1%' },
+                  { text: '84.1%' },
+                  { text: '93.3%' },
+                  { text: '97.7%' },
+                  { text: '99.4%' },
+                ].map((item, index) => (
+                  <TableCell
+                    key={index}
+                    sx={{
+                      backgroundColor: index === 0 ? '#66A247' : THEME.colors.table.cellGray,
+                      color: index === 0 ? '#FBFBFB' : 'inherit',
+                      borderRight: index < 11 ? `0.5px solid ${THEME.colors.border.table}` : 'none',
+                      borderBottom: 'none',
+                      borderLeft: index > 0 ? `0.5px solid ${THEME.colors.border.table}` : 'none',
+                      borderTop: `0.5px solid ${THEME.colors.border.table}`,
+                      padding: '3px',
+                      textAlign: 'center',
+                      borderBottomLeftRadius: index === 0 ? '5px' : 0,
+                      borderBottomRightRadius: index === 11 ? '5px' : 0
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontFamily: THEME.typography.fontFamily.pretendard,
+                        fontWeight: item.bgColor
+                          ? THEME.typography.fontWeight.bold
+                          : THEME.typography.fontWeight.normal,
+                        fontSize: `${THEME.typography.fontSize.sm - 1}px`,
+                        color: index === 0 ? '#FBFBFB' : (item.color || THEME.colors.text),
+                      }}
+                    >
+                      {item.text}
+                    </Typography>
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Box>
 
       {/* 2-3. 이상적 양육지수 확인 */}
@@ -365,126 +379,126 @@ export const InterpretationOrderSection = () => {
         </Box>
 
         {/* IPQ 테이블 */}
-        <Box sx={{ width: '495px', padding: '0 10px'}}>
-          {/* IPQ 데이터 정의 */}
-          {(() => {
-            const ipqHeaders = [
-              { text: '구분', bgColor: '#66A247', color: '#FBFBFB' },
-              { text: '낮음', bgColor: 'hsl(105, 20%, 85%)' },
-              { text: '다소낮음', bgColor: 'hsl(105, 25%, 75%)' },
-              { text: '보통', bgColor: 'hsl(105, 30%, 65%)' },
-              { text: '높음', bgColor: 'hsl(105, 35%, 55%)' },
-              { text: '매우 높음', bgColor: 'hsl(105, 40%, 45%)' },
-            ];
-
-            const ipqData = [
-              {
-                header: '양육지수(IPQ)',
-                values: ['77이하', '77초과~92이하', '92초과~108이하', '108초과~123이하', '123초과']
-              },
-              {
-                header: '백분위(%)',
-                values: ['약 6% 이하', '약 7%~30%', '약 30%~70%', '약 70%~94%', '약 94%이상']
-              }
-            ];
-
-            return (
-              <>
-                {/* 테이블 헤더 */}
-                <Box sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
-                  {ipqHeaders.map((header, index) => (
-                    <Box
-                      key={index}
+        <TableContainer component={Paper} sx={{ width: '495px', boxShadow: 'none', borderRadius: '5px', padding: '0 10px' }}>
+          <Table sx={{
+            borderCollapse: 'collapse',
+            border: 'none',
+            tableLayout: 'fixed'
+          }}>
+            <TableHead>
+              <TableRow>
+                {[
+                  { text: '구분', bgColor: '#66A247', color: '#FBFBFB' },
+                  { text: '낮음', bgColor: 'hsl(105, 20%, 85%)' },
+                  { text: '다소낮음', bgColor: 'hsl(105, 25%, 75%)' },
+                  { text: '보통', bgColor: 'hsl(105, 30%, 65%)' },
+                  { text: '높음', bgColor: 'hsl(105, 35%, 55%)' },
+                  { text: '매우 높음', bgColor: 'hsl(105, 40%, 45%)' },
+                ].map((header, index) => (
+                  <TableCell
+                    key={index}
+                    sx={{
+                      backgroundColor: header.bgColor,
+                      borderRight: index < 5 ? `0.5px solid ${THEME.colors.border.table}` : 'none',
+                      borderBottom: `0.5px solid ${THEME.colors.border.table}`,
+                      borderLeft: index > 0 ? `0.5px solid ${THEME.colors.border.table}` : 'none',
+                      borderTop: 'none',
+                      padding: '3px',
+                      textAlign: 'center',
+                      borderTopLeftRadius: index === 0 ? '5px' : 0,
+                      borderTopRightRadius: index === 5 ? '5px' : 0,
+                      width: index === 0 ? '67px' : 'auto',
+                      flex: index > 0 ? 1 : 'none'
+                    }}
+                  >
+                    <Typography
                       sx={{
-                        flex: 1,
-                        padding: '3px',
-                        backgroundColor: header.bgColor,
-                        borderTop: '1px solid #868686',
-                        borderBottom: '1px solid #868686',
-                        borderLeft: index === 0 ? '1px solid #868686' : 'none',
-                        borderRight: '1px solid #868686',
-                        borderTopLeftRadius: index === 0 ? '5px' : 0,
-                        borderTopRightRadius: index === ipqHeaders.length - 1 ? '5px' : 0,
+                        fontFamily: THEME.typography.fontFamily.pretendard,
+                        fontWeight: THEME.typography.fontWeight.bold,
+                        fontSize: `${THEME.typography.fontSize.sm - 1}px`,
+                        color: header.color || THEME.colors.text,
+                        lineHeight: '1.193em',
                       }}
                     >
-                      <Typography
-                        sx={{
-                          fontFamily: THEME.typography.fontFamily.pretendard,
-                          fontWeight: THEME.typography.fontWeight.bold,
-                          fontSize: `${THEME.typography.fontSize.sm - 1}px`,
-                          color: header.color || THEME.colors.text,
-                          textAlign: 'center',
-                          lineHeight: '1.193em',
-                        }}
-                      >
-                        {header.text}
-                      </Typography>
-                    </Box>
-                  ))}
-                </Box>
-                
-                {/* 테이블 바디 헤더더 */}
-                {ipqData.map((row, rowIndex) => (
-                  <Box key={rowIndex} sx={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
-                    <Box
-                      sx={{
-                        flex: 1,
-                        padding: '3px',
-                        backgroundColor: '#66A247',
-                        borderBottom: '1px solid #868686',
-                        borderLeft: '1px solid #868686',
-                        borderRight: 'none',
-                        borderBottomLeftRadius: rowIndex === ipqData.length - 1 ? '5px' : 0,
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontFamily: THEME.typography.fontFamily.pretendard,
-                          fontWeight: THEME.typography.fontWeight.semiBold,
-                          fontSize: `${THEME.typography.fontSize.sm - 1}px`,
-                          color: '#FBFBFB',
-                          textAlign: 'center',
-                          lineHeight: '1.193em',
-                        }}
-                      >
-                        {row.header}
-                      </Typography>
-                    </Box>
-
-                    {/* 테이블 바디 */}
-                    {row.values.map((value, colIndex) => (
-                      <Box
-                        key={colIndex}
-                        sx={{
-                          flex: 1,
-                          padding: '3px',
-                          borderBottom: '1px solid #868686',
-                          borderLeft: colIndex === 0 ? '1px solid #868686' : 'none',
-                          borderRight: '1px solid #868686',
-                          borderBottomRightRadius:
-                            rowIndex === ipqData.length - 1 && colIndex === row.values.length - 1 ? '5px' : 0,
-                        }}
-                      >
-                        <Typography
-                          sx={{
-                            fontFamily: THEME.typography.fontFamily.pretendard,
-                            fontWeight: THEME.typography.fontWeight.normal,
-                            fontSize: `${THEME.typography.fontSize.sm - 1}px`,
-                            color: THEME.colors.text,
-                            textAlign: 'center',
-                            lineHeight: '1.193em',
-                          }}
-                        >
-                          {value}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </Box>
+                      {header.text}
+                    </Typography>
+                  </TableCell>
                 ))}
-              </>
-            );
-          })()}
-        </Box>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {[
+                {
+                  header: '양육지수(IPQ)',
+                  values: ['77이하', '77초과~92이하', '92초과~108이하', '108초과~123이하', '123초과']
+                },
+                {
+                  header: '백분위(%)',
+                  values: ['약 6% 이하', '약 7%~30%', '약 30%~70%', '약 70%~94%', '약 94%이상']
+                }
+              ].map((row, rowIndex) => (
+                <TableRow key={rowIndex}>
+                  <TableCell
+                    sx={{
+                      backgroundColor: '#66A247',
+                      borderRight: `0.5px solid ${THEME.colors.border.table}`,
+                      borderBottom: rowIndex < 1 ? `0.5px solid ${THEME.colors.border.table}` : 'none',
+                      borderLeft: 'none',
+                      borderTop: `0.5px solid ${THEME.colors.border.table}`,
+                      padding: '3px',
+                      textAlign: 'center',
+                      borderBottomLeftRadius: rowIndex === 1 ? '5px' : 0,
+                      width: '67px',
+                      flex: 'none'
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontFamily: THEME.typography.fontFamily.pretendard,
+                        fontWeight: THEME.typography.fontWeight.semiBold,
+                        fontSize: `${THEME.typography.fontSize.sm - 1}px`,
+                        color: '#FBFBFB',
+                        lineHeight: '1.193em',
+                      }}
+                    >
+                      {row.header}
+                    </Typography>
+                  </TableCell>
+
+                  {row.values.map((value, colIndex) => (
+                    <TableCell
+                      key={colIndex}
+                      sx={{
+                        backgroundColor: THEME.colors.table.cellGray,
+                        borderRight: colIndex < row.values.length - 1 ? `0.5px solid ${THEME.colors.border.table}` : 'none',
+                        borderBottom: rowIndex < 1 ? `0.5px solid ${THEME.colors.border.table}` : 'none',
+                        borderLeft: `0.5px solid ${THEME.colors.border.table}`,
+                        borderTop: `0.5px solid ${THEME.colors.border.table}`,
+                        padding: '3px',
+                        textAlign: 'center',
+                        borderBottomRightRadius: rowIndex === 1 && colIndex === row.values.length - 1 ? '5px' : 0,
+                        width: 'auto',
+                        flex: 1
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          fontFamily: THEME.typography.fontFamily.pretendard,
+                          fontWeight: THEME.typography.fontWeight.normal,
+                          fontSize: `${THEME.typography.fontSize.sm - 1}px`,
+                          color: THEME.colors.text,
+                          lineHeight: '1.193em',
+                        }}
+                      >
+                        {value}
+                      </Typography>
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
 
       </Box>
 
