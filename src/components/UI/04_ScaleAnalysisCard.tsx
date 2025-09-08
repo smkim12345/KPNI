@@ -39,7 +39,7 @@ export const ScaleAnalysisCard = ({
   iconSrc,
   scaleResults,
   subScaleData,
-  iconSize = '30px' // 기본값 30px
+  iconSize = '28px' // 기본값 28px
 }: ScaleAnalysisCardProps) => {
   return (
     <Box sx={{
@@ -48,8 +48,8 @@ export const ScaleAnalysisCard = ({
       alignSelf: 'stretch',
       padding: '5px',
       backgroundColor,
-      borderRadius: '5px',
-      height: '136px'
+      borderRadius: '15px 0 0 5px',
+      height: '140px',
     }}>
       {/* 척도 분석 상위척도 정보 */}
       <Box sx={{
@@ -66,8 +66,8 @@ export const ScaleAnalysisCard = ({
           justifyContent: 'center',
           gap: '10px',
           padding: '3px',
-          width: '20px',
-          height: '20px',
+          width: '18px',
+          height: '18px',
           backgroundColor: iconColor,
           borderRadius: '30px',
           flexShrink: 0
@@ -270,7 +270,7 @@ export const ScaleAnalysisCard = ({
           justifyContent: 'center',
           width: '100px',
           height: '106px',
-          backgroundColor: THEME.colors.mainWhite,
+          backgroundColor: THEME.colors.white,
           borderRadius: '7px',
           position: 'relative',
           boxSizing: 'border-box',
@@ -297,12 +297,14 @@ export const ScaleAnalysisCard = ({
             alignItems: 'center',
             gap: '10px',
             padding: '8px',
-            height: '10px',
+            height: '6px',
+            minWidth: 'fit-content',
             backgroundColor: borderColor,
             borderRadius: '28px',
             position: 'absolute',
-            top: '-13px',
-            left: '19px'
+            top: '-11px',
+            left: '50%',
+            transform: 'translateX(-50%)'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
@@ -310,7 +312,8 @@ export const ScaleAnalysisCard = ({
               fontSize: '11px',
               lineHeight: '1.09em',
               color: THEME.colors.mainWhite,
-              textAlign: 'center'
+              textAlign: 'center',
+              whiteSpace: 'nowrap'
             }}>
               종합 소견
             </Typography>

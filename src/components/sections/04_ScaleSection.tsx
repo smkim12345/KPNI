@@ -64,7 +64,7 @@ export const ScaleSection = ({ parentScales }: ScaleSectionProps) => {
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '5px',
+        gap: '4px',
         width: '473px',
         height: '741px',
       }}>
