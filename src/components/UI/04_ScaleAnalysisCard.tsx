@@ -39,37 +39,37 @@ export const ScaleAnalysisCard = ({
   iconSrc,
   scaleResults,
   subScaleData,
-  iconSize = '30px' // 기본값 30px
+  iconSize = '40.6px' // 기본값
 }: ScaleAnalysisCardProps) => {
   return (
     <Box sx={{
       display: 'flex',
       flexDirection: 'column',
       alignSelf: 'stretch',
-      padding: '5px',
+      padding: '6.8px',
       backgroundColor,
-      borderRadius: '5px',
-      height: '136px'
+      borderRadius: '6.8px',
+      height: '183.9px'
     }}>
       {/* 척도 분석 상위척도 정보 */}
       <Box sx={{
         display: 'flex',
         alignItems: 'center',
-        gap: '7px',
+        gap: '9.5px',
         width: '100%',
-        minWidth: '252px'
+        minWidth: '340.7px'
       }}>
         {/* 아이콘 */}
         <Box sx={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '10px',
-          padding: '3px',
-          width: '20px',
-          height: '20px',
+          gap: '13.5px',
+          padding: '4.1px',
+          width: '27.0px',
+          height: '27.0px',
           backgroundColor: iconColor,
-          borderRadius: '30px',
+          borderRadius: '40.6px',
           flexShrink: 0
         }}>
           <Box
@@ -88,13 +88,13 @@ export const ScaleAnalysisCard = ({
         <Box sx={{
           display: 'flex',
           alignItems: 'center',
-          gap: '10px',
+          gap: '13.5px',
           flexShrink: 0
         }}>
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.pretendard,
             fontWeight: THEME.typography.fontWeight.bold,
-            fontSize: '12px',
+            fontSize: '16.2px',
             lineHeight: '1em',
             color: THEME.colors.text,
             textAlign: 'left'
@@ -117,15 +117,15 @@ export const ScaleAnalysisCard = ({
         display: 'flex',
         alignItems: 'flex-start',
         alignSelf: 'stretch',
-        gap: '7px',
-        paddingTop: '5px'
+        gap: '9.5px',
+        paddingTop: '6.8px'
       }}>
         {/* 척도 분석 하위척도 테이블 전체 */}
         <Box sx={{
-          width: '375px',
-          minHeight: '102px',
-          border: `1px solid ${borderColor}`,
-          borderRadius: '6px',
+          width: '507.0px',
+          minHeight: '137.9px',
+          border: `1.4px solid ${borderColor}`,
+          borderRadius: '8.1px',
           overflow: 'hidden',
           //backgroundColor: 'red'
         }}>
@@ -136,11 +136,11 @@ export const ScaleAnalysisCard = ({
             borderSpacing: 0,
             
             '& .MuiTableCell-root': {
-              borderBottom: `0.7px solid ${borderColor}`,
-              borderRight: `0.7px solid ${borderColor}`,
-              padding: '2px 3px',
+              borderBottom: `0.9px solid ${borderColor}`,
+              borderRight: `0.9px solid ${borderColor}`,
+              padding: '2.7px 3px',
               fontFamily: 'Pretendard Variable',
-              fontSize: '7px',
+              fontSize: `${THEME.typography.fontSize.xs-0.1}px`,
               lineHeight: '1em',
               //backgroundColor: 'blue'
             },
@@ -156,8 +156,8 @@ export const ScaleAnalysisCard = ({
                   backgroundColor: tableBackgroundColor,
                   fontWeight: 600,
                   textAlign: 'center',
-                  width: '45px',
-                  borderTopLeftRadius: '4px'
+                  width: '60.8px',
+                  borderTopLeftRadius: '5.4px'
                 }}>
                   하위 척도
                 </TableCell>
@@ -165,7 +165,7 @@ export const ScaleAnalysisCard = ({
                   backgroundColor: tableBackgroundColor,
                   fontWeight: 600,
                   textAlign: 'center',
-                  width: '20px'
+                  width: '27.0px'
                 }}>
                   T점수
                 </TableCell>
@@ -173,7 +173,7 @@ export const ScaleAnalysisCard = ({
                   backgroundColor: tableBackgroundColor,
                   fontWeight: 600,
                   textAlign: 'center',
-                  width: '20px'
+                  width: '27.0px'
                 }}>
                   백분위
                 </TableCell>
@@ -181,7 +181,7 @@ export const ScaleAnalysisCard = ({
                   backgroundColor: tableBackgroundColor,
                   fontWeight: 600,
                   textAlign: 'center',
-                  width: '28px'
+                  width: '37.9px'
                 }}>
                   수준
                 </TableCell>
@@ -189,8 +189,8 @@ export const ScaleAnalysisCard = ({
                   backgroundColor: tableBackgroundColor,
                   fontWeight: 600,
                   textAlign: 'center',
-                  width: '220px',
-                  borderTopRightRadius: '4px',
+                  width: '297.4px',
+                  borderTopRightRadius: '5.4px',
                   borderRight: 'none'
                 }}>
                   하위 척도 소견
@@ -204,10 +204,10 @@ export const ScaleAnalysisCard = ({
                     borderBottom: 'none'
                   },
                   '&:last-child .MuiTableCell-root:first-of-type': {
-                    borderBottomLeftRadius: '5px'
+                    borderBottomLeftRadius: '6.8px'
                   },
                   '&:last-child .MuiTableCell-root:nth-of-type(5)': {
-                    borderBottomRightRadius: '5px'
+                    borderBottomRightRadius: '6.8px'
                   }
                 }}>
 
@@ -268,23 +268,23 @@ export const ScaleAnalysisCard = ({
         <Box sx={{
           display: 'flex',
           justifyContent: 'center',
-          width: '100px',
-          height: '106px',
+          width: '135.2px',
+          height: '143.3px',
           backgroundColor: THEME.colors.mainWhite,
-          borderRadius: '7px',
+          borderRadius: '9.5px',
           position: 'relative',
           boxSizing: 'border-box',
-          paddingTop: '16px'
+          padding: '21.6px 13.5px',
         }}>
           {/* 종합소견 텍스트 */}
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.pretendard,
             fontWeight: 300,
-            fontSize: '7px',
+            fontSize: '9.5px',
             lineHeight: '1.71em',
             color: THEME.colors.text,
             textAlign: 'left',
-            width: '80px',
+            width: '146.0px',
 
           }}>
             {summary}
@@ -295,19 +295,19 @@ export const ScaleAnalysisCard = ({
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: '10px',
-            padding: '8px',
-            height: '10px',
+            gap: '13.5px',
+            padding: '10.8px',
+            height: '13.5px',
             backgroundColor: borderColor,
-            borderRadius: '28px',
+            borderRadius: '37.9px',
             position: 'absolute',
-            top: '-13px',
-            left: '19px'
+            top: '-17.6px',
+            left: '25.7px'
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
               fontWeight: 700,
-              fontSize: '11px',
+              fontSize: '14.9px',
               lineHeight: '1.09em',
               color: THEME.colors.mainWhite,
               textAlign: 'center'

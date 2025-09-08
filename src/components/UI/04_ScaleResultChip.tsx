@@ -18,7 +18,7 @@ export const ScaleResultChip = ({
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
-      gap: '3px'
+      gap: '4.1px'
     }}>
       {/* 라벨 */}
       <Typography sx={{
@@ -37,13 +37,13 @@ export const ScaleResultChip = ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '0 5px',
+        padding: '0 6.8px',
         width: 'auto',
-        minWidth: '14px',
-        height: '12px',
+        minWidth: '18.9px',
+        height: '16.2px',
         backgroundColor: THEME.colors.mainWhite,
-        border: `1px solid ${borderColor}`,
-        borderRadius: '35px'
+        border: `1.4px solid ${borderColor}`,
+        borderRadius: '47.3px'
       }}>
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.pretendard,
@@ -78,7 +78,7 @@ export const ScaleResultSummary = ({
     <Box sx={{
       display: 'flex',
       alignItems: 'center',
-      gap: '5px'
+      gap: '6.8px'
     }}>
       {/* T점수 칩 */}
       <ScaleResultChip

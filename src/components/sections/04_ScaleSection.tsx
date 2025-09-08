@@ -12,7 +12,7 @@ import type { ScaleSectionProps } from '../../dtos/ResultTypes';
 
 export const ScaleSection = ({ parentScales }: ScaleSectionProps) => {
   const icons = [icon01, icon02, icon03, icon04, icon05];
-  const iconSizes = ['20px', '20px', '20px', '20px', '20px'];
+  const iconSizes = ['27.0px', '27.0px', '27.0px', '27.0px', '27.0px'];
 
   // GST 방식: parentScales 있으면 동적 데이터, 없으면 더미 데이터 사용
   const scaleData = parentScales && parentScales.length > 0
@@ -43,15 +43,15 @@ export const ScaleSection = ({ parentScales }: ScaleSectionProps) => {
       flexDirection: 'column',
       alignSelf: 'stretch',
       width: '100%',
-      height: '761px',
+      height: '1029.1px',
     }}>
       {/* 섹션 제목 */}
       <Box sx={{
         display: 'flex',
         flexDirection: 'row',
         alignSelf: 'stretch',
-        gap: '4px',
-        height: '20px'
+        gap: '5.4px',
+        height: '27.0px'
       }}>
         <SectionTitle 
           sectionNumber={4}
@@ -64,9 +64,9 @@ export const ScaleSection = ({ parentScales }: ScaleSectionProps) => {
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '5px',
-        width: '473px',
-        height: '741px',
+        gap: '6.8px',
+        width: '639.5px',
+        height: '1002.1px',
       }}>
         {scaleData.map((scale, index) => (
           <ScaleAnalysisCard
