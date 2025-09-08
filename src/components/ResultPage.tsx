@@ -78,10 +78,10 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
           {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 */}
           <Box sx={{
             position: 'absolute',
-            left: '30px',
+            left: '100px',
             top: '349px',
-            width: '155px',
-            height: '70px',
+            width: '85px',
+            height: '56px',
             backgroundColor: THEME.colors.gray,
             zIndex: 1.5
           }} />
@@ -170,7 +170,7 @@ const KPNIBackPage = () => {
             position: 'absolute',
             left: '30px',
             top: '101px',
-            width: '432px', 
+            width: '433px', 
             height: '716px',
             backgroundColor: THEME.colors.background,
             borderRadius: '15px 0px 0px 15px',
@@ -204,11 +204,11 @@ const KPNIBackPage = () => {
           {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 */}
           <Box sx={{
             position: 'absolute',
-            left: '0px',
-            top: '0px',
-            width: '462px', 
-            height: '101px',
-            backgroundColor: THEME.colors.background,
+            left: '440px',
+            top: '80px',
+            width: '50px', 
+            height: '51px',
+            backgroundColor: THEME.colors.white,
             zIndex: 1.5
           }} />
 
