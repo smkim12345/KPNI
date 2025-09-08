@@ -7,12 +7,12 @@ import type { DetailSectionProps } from '../../dtos/ResultTypes';
 
 export const DetailSection = ({ subScales }: DetailSectionProps) => {
   return (
-    <Box sx={{ 
+    <Box sx={{
       display: 'flex',
       flexDirection: 'column',
       alignSelf: 'stretch',
       width: '100%',
-      height: '360px',
+      height: '487.2px',
       //backgroundColor: 'rgba(63, 200, 100, 0.3)',
 
     }}>
@@ -22,8 +22,8 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
         display: 'flex',
         flexDirection: 'row',
         alignSelf: 'stretch',
-        gap: '4px',
-        height: '20px'
+        gap: '5.4px',
+        height: '27.0px'
       }}>
         <SectionTitle 
           sectionNumber={3}
@@ -37,10 +37,10 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
         display: 'flex',
         flexDirection: 'column',
         alignSelf: 'stretch',
-        width: '465px',
-        marginTop: '3px',
-        borderTop: `2px solid rgba(135, 135, 135, 0.65)`,
-        borderBottom: `2px solid rgba(135, 135, 135, 0.65)`,
+        width: '628.8px',
+        marginTop: '4.1px',
+        borderTop: `2.7px solid rgba(135, 135, 135, 0.65)`,
+        borderBottom: `2.7px solid rgba(135, 135, 135, 0.65)`,
         //backgroundColor: 'rgba(63, 200, 100, 0.3)',
       }}>
         {/* 테이블 헤더 */}
@@ -48,19 +48,19 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'stretch',
-          width: '465px',
-          height: '18px',
-          borderBottom: `1px solid rgba(135, 135, 135, 0.65)`
+          width: '628.8px',
+          height: '24.3px',
+          borderBottom: `1.4px solid rgba(135, 135, 135, 0.65)`
         }}>
           {/* 상위척도 헤더 */}
           <Box sx={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '33px',
+            width: '44.6px',
             height: 'auto',
             backgroundColor: '#E2E2E2',
-            borderRight: '1px solid rgba(194, 194, 194, 0.65)',
+            borderRight: '1.4px solid rgba(194, 194, 194, 0.65)',
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -80,10 +80,10 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '83px',
+            width: '112.2px',
             height: 'auto',
             backgroundColor: '#E2E2E2',
-            borderRight: '1px solid ' + THEME.colors.mediumGray,
+            borderRight: '1.4px solid ' + THEME.colors.mediumGray,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -101,10 +101,10 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '32px',
+            width: '43.3px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1px solid ' + THEME.colors.mediumGray,
+            borderRight: '1.4px solid ' + THEME.colors.mediumGray,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -122,10 +122,10 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '32px',
+            width: '43.3px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1px solid ' + THEME.colors.mediumGray,
+            borderRight: '1.4px solid ' + THEME.colors.mediumGray,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -143,10 +143,10 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '32px',
+            width: '43.3px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1px solid ' + THEME.colors.mediumGray,
+            borderRight: '1.4px solid ' + THEME.colors.mediumGray,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -165,7 +165,7 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'top',
-            width: '252px',
+            width: '341.0px',
             height: 'auto',
             backgroundColor: '#E2E2E2',
             boxSizing: 'border-box'
@@ -175,25 +175,25 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
               fontWeight: THEME.typography.fontWeight.semiBold,
               fontSize: `${THEME.typography.fontSize.xs}px`,
               color: THEME.colors.darkGray,
-              paddingTop: '1px',
+              paddingTop: '1.4px',
             }}>
               T점수
             </Typography>
             {/* T점수 단위 표시 */}
             <Box sx={{
               position: 'absolute',
-              bottom: '1px',
+              bottom: '1.4px',
               left: 0,
               width: '100%',
               display: 'flex',
               justifyContent: 'space-around',
-              paddingX: '20px',
+              paddingX: '27.0px',
             }}>
               {[20, 30, 40, 50, 60, 70].map((value) => (
                 <Typography key={value} sx={{
                   fontFamily: THEME.typography.fontFamily.pretendard,
                   fontWeight: THEME.typography.fontWeight.normal,
-                  fontSize: '0.35rem',
+                  fontSize: '0.47rem',
                   color: THEME.colors.darkGray,
                   lineHeight: 1
                 }}>
