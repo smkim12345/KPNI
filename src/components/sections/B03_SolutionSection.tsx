@@ -226,99 +226,109 @@ export const SolutionSection = () => {
           flex: 1,
           position: 'relative'
         }}>
-          {/* 가족 이미지와 장식 요소들 */}
-          <Box sx={{
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '227.1px',
-            height: '227.1px',
-            //backgroundColor: 'red'
-          }}>
-            {/* 미묘한 원형 테두리 링 - 외부 */}
-            <Box sx={{
-              position: 'absolute',
-              width: '243.4px',
-              height: '243.4px',
-              borderRadius: '50%',
-              border: '1px solid rgba(114, 175, 129, 0.7)',
-              top: '-9.5px',
-              left: '-9.5px',
-              zIndex: 0
-            }} />
-            
-            {/* 미묘한 원형 테두리 링 - 내부 */}
-            <Box sx={{
-              position: 'absolute',
-              width: '235.2px',
-              height: '235.2px',
-              borderRadius: '50%',
-              border: '1px solid rgba(114, 175, 129, 0.6)',
-              top: '-5.4px',
-              left: '-5.4px',
-              zIndex: 0
-            }} />
+          {(() => {
+            // 전체 크기 조절을 위한 기본 사이즈 (이 값만 변경하면 전체가 비례해서 조정됩니다)
+            const baseSize = 200.1;
+            const scale = baseSize / 227.1; // 기준 사이즈 대비 배율 계산
 
-            {/* 작은 포인트 도트들 */}
-            <Box sx={{
-              position: 'absolute',
-              top: '10.8px',
-              right: '33.8px',
-              width: '12.2px',
-              height: '12.2px',
-              borderRadius: '50%',
-              backgroundColor: 'rgba(114, 175, 129, 0.7)',
-              zIndex: 1
-            }} />
-            
-            <Box sx={{
-              position: 'absolute',
-              bottom: '20.3px',
-              left: '27.0px',
-              width: '6.8px',
-              height: '6.8px',
-              borderRadius: '50%',
-              backgroundColor: 'rgba(114, 175, 129, 0.8)',
-              zIndex: 1
-            }} />
+            return (
+              <>
+                {/* 가족 이미지와 장식 요소들 */}
+                <Box sx={{
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: `${baseSize}px`,
+                  height: `${baseSize}px`,
+                  //backgroundColor: 'red'
+                }}>
+                  {/* 미묘한 원형 테두리 링 - 외부 */}
+                  <Box sx={{
+                    position: 'absolute',
+                    width: `${baseSize + 16.3 * scale}px`,
+                    height: `${baseSize + 16.3 * scale}px`,
+                    borderRadius: '50%',
+                    border: '1px solid rgba(114, 175, 129, 0.7)',
+                    top: `${-9.5 * scale}px`,
+                    left: `${-9.5 * scale}px`,
+                    zIndex: 0
+                  }} />
 
-            <Box sx={{
-              position: 'absolute',
-              top: '33.8px',
-              left: '16.2px',
-              width: '5.4px',
-              height: '5.4px',
-              borderRadius: '50%',
-              backgroundColor: 'rgba(114, 175, 129, 0.7)',
-              zIndex: 1
-            }} />
+                  {/* 미묘한 원형 테두리 링 - 내부 */}
+                  <Box sx={{
+                    position: 'absolute',
+                    width: `${baseSize + 8.1 * scale}px`,
+                    height: `${baseSize + 8.1 * scale}px`,
+                    borderRadius: '50%',
+                    border: '1px solid rgba(114, 175, 129, 0.6)',
+                    top: `${-5.4 * scale}px`,
+                    left: `${-5.4 * scale}px`,
+                    zIndex: 0
+                  }} />
 
-            {/* 가족 이미지 */}
-            <Box sx={{
-              width: '227.1px',
-              height: '227.1px',
-              borderRadius: '50%',
-              overflow: 'hidden',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0px 5.4px 21.6px rgba(0, 0, 0, 0.08)',
-              border: '2.7px solid rgba(255, 255, 255, 0.9)',
-              zIndex: 2
-            }}>
-              <img
-                src="/src/images/3_family.jpg"
-                alt="가족 이미지"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  borderRadius: '50%'
-                }}
-              />
-            </Box>
-          </Box>
+                  {/* 작은 포인트 도트들 */}
+                  <Box sx={{
+                    position: 'absolute',
+                    top: `${10.8 * scale}px`,
+                    right: `${33.8 * scale}px`,
+                    width: `${12.2 * scale}px`,
+                    height: `${12.2 * scale}px`,
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(114, 175, 129, 0.7)',
+                    zIndex: 1
+                  }} />
+
+                  <Box sx={{
+                    position: 'absolute',
+                    bottom: `${20.3 * scale}px`,
+                    left: `${27.0 * scale}px`,
+                    width: `${6.8 * scale}px`,
+                    height: `${6.8 * scale}px`,
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(114, 175, 129, 0.8)',
+                    zIndex: 1
+                  }} />
+
+                  <Box sx={{
+                    position: 'absolute',
+                    top: `${33.8 * scale}px`,
+                    left: `${16.2 * scale}px`,
+                    width: `${5.4 * scale}px`,
+                    height: `${5.4 * scale}px`,
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(114, 175, 129, 0.7)',
+                    zIndex: 1
+                  }} />
+
+                  {/* 가족 이미지 */}
+                  <Box sx={{
+                    width: `${baseSize}px`,
+                    height: `${baseSize}px`,
+                    borderRadius: '50%',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: `0px ${5.4 * scale}px ${21.6 * scale}px rgba(0, 0, 0, 0.08)`,
+                    border: `${2.7 * scale}px solid rgba(255, 255, 255, 0.9)`,
+                    zIndex: 2
+                  }}>
+                    <img
+                      src="/src/images/3_family.jpg"
+                      alt="가족 이미지"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        borderRadius: '50%'
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </>
+            );
+          })()}
 
           {/* 인용구 박스 */}
           <Box sx={{
