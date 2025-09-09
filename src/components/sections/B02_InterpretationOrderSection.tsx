@@ -297,7 +297,7 @@ export const InterpretationOrderSection = () => {
                   flex: 1,
                   padding: '4.1px',
                   backgroundColor: item.bgColor,
-                  border: `0.7px solid ${THEME.colors.border.table}`,
+                  border: `0.7px solid ${THEME.colors.border.dash}`,
                   borderTopLeftRadius: index === 0 ? '6.8px' : 0,
                   borderTopRightRadius: index === 11 ? '6.8px' : 0,
                 }}
@@ -338,7 +338,7 @@ export const InterpretationOrderSection = () => {
                   flex: 1,
                   padding: '4.1px',
                   backgroundColor: item.bgColor,
-                  border: `0.7px solid ${THEME.colors.border.table}`,
+                  border: `0.7px solid ${THEME.colors.border.dash}`,
                   borderBottomLeftRadius: index === 0 ? '6.8px' : 0,
                   borderBottomRightRadius: index === 11 ? '6.8px' : 0,
                 }}
@@ -427,7 +427,7 @@ export const InterpretationOrderSection = () => {
                         flex: 1,
                         padding: '4.1px',
                         backgroundColor: header.bgColor,
-                        border: `0.7px solid ${THEME.colors.border.table}`,
+                        border: `0.7px solid ${THEME.colors.border.dash}`,
                         borderTopLeftRadius: index === 0 ? '6.8px' : 0,
                         borderTopRightRadius: index === ipqHeaders.length - 1 ? '6.8px' : 0,
                       }}
@@ -455,7 +455,7 @@ export const InterpretationOrderSection = () => {
                         flex: 1,
                         padding: '4.1px',
                         backgroundColor: '#66A247',
-                        border: `0.7px solid ${THEME.colors.border.table}`,
+                        border: `0.7px solid ${THEME.colors.border.dash}`,
                         borderBottomLeftRadius: rowIndex === ipqData.length - 1 ? '6.8px' : 0,
                       }}
                     >
@@ -478,7 +478,7 @@ export const InterpretationOrderSection = () => {
                         sx={{
                           flex: 1,
                           padding: '4.1px',
-                          border: `0.7px solid ${THEME.colors.border.table}`,
+                          border: `0.7px solid ${THEME.colors.border.dash}`,
                           borderBottomRightRadius:
                             rowIndex === ipqData.length - 1 && colIndex === row.values.length - 1 ? '6.8px' : 0,
                         }}

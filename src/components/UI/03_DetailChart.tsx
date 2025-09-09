@@ -94,7 +94,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
-            borderBottom: index < data.length - 1 ? `0.4px dashed ${THEME.colors.border.medium}` : 'none',
+            borderBottom: index < data.length - 1 ? `0.1px dashed ${THEME.colors.border.dash}` : 'none',
             padding: '0 13.5px',
             boxSizing: 'border-box'
           }}>
@@ -127,7 +127,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
-            borderBottom: index < data.length - 1 ? `0.4px dashed ${THEME.colors.border.medium}` : 'none',
+            borderBottom: index < data.length - 1 ? `0.1px dashed ${THEME.colors.border.dash}` : 'none',
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -158,7 +158,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: THEME.colors.mainWhite,
-            borderBottom: index < data.length - 1 ? `0.4px dashed ${THEME.colors.border.medium}` : 'none',
+            borderBottom: index < data.length - 1 ? `0.1px dashed ${THEME.colors.border.dash}` : 'none',
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -180,7 +180,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         flexDirection: 'column',
         width: '43.3px',
         boxSizing: 'border-box',
-        borderRight: '1.4px solid rgba(194, 194, 194, 0.65)'
+        borderRight: `1.4px solid ${THEME.colors.border.light}`
       }}>
         {data.map((item, index) => (
           <Box key={index} sx={{
@@ -189,7 +189,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
             alignItems: 'center',
             height: `${itemHeight}px`,
             backgroundColor: getLevelColor(item.level),
-            borderBottom: index < data.length - 1 ? `0.4px dashed ${THEME.colors.border.medium}` : 'none',
+            borderBottom: index < data.length - 1 ? `0.1px dashed ${THEME.colors.border.dash}` : 'none',
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -216,30 +216,30 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         <Box sx={{
           position: 'absolute',
           top: 0,
-          left: `${((40 - 20) / 60) * 100}%`,
-          width: `${((60 - 40) / 60) * 100}%`,
+          left: `${((40 - 10) / 70) * 100}%`,
+          width: `${((60 - 40) / 70) * 100}%`,
           height: '100%',
           backgroundColor: THEME.colors.gray,
           opacity: 0.3
         }} />
 
-        {/* 세로 기준선들 */}
+        {/* 세로 기준선들 (10~80) */}
         <Box sx={{
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
-          height: '100%',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'stretch'
+          height: '100%'
         }}>
-          {[20, 30, 40, 50, 60, 70, 80].map((value, index) => (
+          {[10, 20, 30, 40, 50, 60, 70, 80].map((value) => (
             <Box key={value} sx={{
+              position: 'absolute',
+              left: `${((value - 10) / 70) * 100}%`,
+              top: 0,
               width: '0.4px',
               height: '100%',
-              backgroundColor: index === 3 ? THEME.colors.border.medium : 'transparent',
-              borderRight: index === 0 ? 'none' : (index === 3 ? `0.1px solid ${THEME.colors.border.light}` : `0.1px dashed ${THEME.colors.border.light}`),
+              backgroundColor: value === 50 ? THEME.colors.border.dash : 'transparent',
+              borderRight: value === 10 ? 'none' : (value === 50 ? `0.1px solid ${THEME.colors.border.dash}` : `0.1px dashed ${THEME.colors.border.dash}`),
               opacity: 0.65
             }} />
           ))}
@@ -259,7 +259,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           {data.map((_, index) => (
             <Box key={index} sx={{
               height: `${itemHeight}px`,
-              borderBottom: index < data.length - 1 ? `0.1px dashed ${THEME.colors.border.light}` : 'none',
+              borderBottom: index < data.length - 1 ? `0.1px dashed ${THEME.colors.border.dash}` : 'none',
               boxSizing: 'border-box'
             }} />
           ))}
@@ -278,8 +278,8 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           paddingLeft: '0px'
         }}>
           {data.map((item, index) => {
-            // T점수 20~80 범위에서 막대 길이 계산 (324.5px = 전체 차트 너비 - 패딩)
-            const barWidth = Math.max(0, Math.min(324.5, ((item.value - 20) / 60) * 324.5));
+            // T점수 10~80 범위에서 막대 길이 계산 (324.5px = 전체 차트 너비 - 패딩)
+            const barWidth = Math.max(0, Math.min(324.5, ((item.value - 10) / 70) * 324.5));
             
             return (
               <Box key={index} sx={{

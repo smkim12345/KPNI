@@ -39,8 +39,8 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
         alignSelf: 'stretch',
         width: '628.8px',
         marginTop: '4.1px',
-        borderTop: `2.7px solid rgba(135, 135, 135, 0.65)`,
-        borderBottom: `2.7px solid rgba(135, 135, 135, 0.65)`,
+        borderTop: `2.7px solid ${THEME.colors.border.dark}`,
+        borderBottom: `2.7px solid ${THEME.colors.border.dark}`,
         //backgroundColor: 'rgba(63, 200, 100, 0.3)',
       }}>
         {/* 테이블 헤더 */}
@@ -50,7 +50,7 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
           alignItems: 'stretch',
           width: '628.8px',
           height: '24.3px',
-          borderBottom: `1.4px solid rgba(135, 135, 135, 0.65)`
+          borderBottom: `1.4px solid ${THEME.colors.border.dark}`
         }}>
           {/* 상위척도 헤더 */}
           <Box sx={{
@@ -60,7 +60,7 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             width: '44.6px',
             height: 'auto',
             backgroundColor: '#E2E2E2',
-            borderRight: '1.4px solid rgba(194, 194, 194, 0.65)',
+            borderRight: `1.4px solid ${THEME.colors.border.light}`,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -83,7 +83,7 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             width: '112.2px',
             height: 'auto',
             backgroundColor: '#E2E2E2',
-            borderRight: '1.4px solid ' + THEME.colors.mediumGray,
+            borderRight: `1.4px solid ${THEME.colors.border.light}`,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -104,7 +104,7 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             width: '43.3px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1.4px solid ' + THEME.colors.mediumGray,
+            borderRight: `1.4px solid ${THEME.colors.border.light}`,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -125,7 +125,7 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             width: '43.3px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1.4px solid ' + THEME.colors.mediumGray,
+            borderRight: `1.4px solid ${THEME.colors.border.light}`,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -146,7 +146,7 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             width: '43.3px',
             height: 'auto',
             backgroundColor: THEME.colors.primary,
-            borderRight: '1.4px solid ' + THEME.colors.mediumGray,
+            borderRight: `1.4px solid ${THEME.colors.border.light}`,
             boxSizing: 'border-box'
           }}>
             <Typography sx={{
@@ -164,32 +164,69 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             position: 'relative',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'top',
-            width: '341.0px',
+            alignItems: 'flex-start',
+            width: '341.9px',
             height: 'auto',
             backgroundColor: '#E2E2E2',
             boxSizing: 'border-box'
           }}>
+            {/* 중간범위 배경 (40-60) */}
+            <Box sx={{
+              position: 'absolute',
+              top: 0,
+              left: `${((40 - 10) / 70) * 100}%`,
+              width: `${((60 - 40) / 70) * 100}%`,
+              height: '100%',
+              backgroundColor: THEME.colors.gray,
+              opacity: 0.3,
+              zIndex: 1
+            }} />
+
+            {/* 세로 기준선들 (20~80) */}
+            <Box sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'stretch',
+              zIndex: 2
+            }}>
+              {[10, 20, 30, 40, 50, 60, 70, 80].map((value, index) => (
+                <Box key={value} sx={{
+                  width: '0.4px',
+                  height: '100%',
+                  backgroundColor: index === 4 ? THEME.colors.border.dash : 'transparent',
+                  borderRight: index === 0 ? 'none' : (index === 4 ? `0.1px solid ${THEME.colors.border.dash}` : `0.1px dashed ${THEME.colors.border.dash}`),
+                  opacity: 0.9
+                }} />
+              ))}
+            </Box>
+
             <Typography sx={{
+              position: 'relative',
+              zIndex: 3,
               fontFamily: THEME.typography.fontFamily.pretendard,
               fontWeight: THEME.typography.fontWeight.semiBold,
-              fontSize: `${THEME.typography.fontSize.xs}px`,
-              color: THEME.colors.darkGray,
-              paddingTop: '1.4px',
+              fontSize: `${THEME.typography.fontSize.sm-2}px`,
+              color: THEME.colors.text,
             }}>
               T점수
             </Typography>
+
             {/* T점수 단위 표시 */}
             <Box sx={{
               position: 'absolute',
               bottom: '1.4px',
-              left: 0,
+              left: 4,
               width: '100%',
               display: 'flex',
-              justifyContent: 'space-around',
-              paddingX: '27.0px',
+              justifyContent: 'space-between',
+              zIndex: 3
             }}>
-              {[20, 30, 40, 50, 60, 70].map((value) => (
+              {[10, 20, 30, 40, 50, 60, 70, 80].map((value) => (
                 <Typography key={value} sx={{
                   fontFamily: THEME.typography.fontFamily.pretendard,
                   fontWeight: THEME.typography.fontWeight.normal,
@@ -197,7 +234,7 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
                   color: THEME.colors.darkGray,
                   lineHeight: 1
                 }}>
-                  {value}
+                  {value === 10 ? '' : value}
                 </Typography>
               ))}
             </Box>

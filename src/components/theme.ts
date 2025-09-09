@@ -26,10 +26,10 @@ export const THEME = {
 
     // Border 색상 (테두리 색상)
     border: {
-      light: 'rgba(194, 194, 194, 0.65)',
-      medium: 'rgba(108, 108, 108, 0.65)',
-      dark: 'rgba(135, 135, 135, 0.65)',
-      table: '#d4d4d4'
+      light: 'rgba(194, 194, 194)',
+      medium: 'rgba(108, 108, 108)',
+      dark: 'rgba(135, 135, 135)',
+      dash: '#d4d4d4'
     },
     
     // 척도별 색상 팔레트 (Scale Color Palette)
