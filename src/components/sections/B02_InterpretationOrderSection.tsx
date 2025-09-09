@@ -15,13 +15,13 @@ export const InterpretationOrderSection = () => {
     <Box sx={{
       width: '764.1px',
       height: '653.0px',
-      //backgroundColor: THEME.colors.scale.childCharacter.light, //위치 확인용
+      backgroundColor: THEME.colors.scale.childCharacter.light, //위치 확인용
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
       padding: '13.5px',
-      gap: '21.6px',
+      gap: '18.6px',
       boxSizing: 'border-box'
     }}>
 
@@ -40,6 +40,7 @@ export const InterpretationOrderSection = () => {
         padding: '0px 13.5px',
         boxSizing: 'border-box',
         gap: '8px'
+
       }}>
         {/* 검사해석 순서 다이어그램 (Redesigned) */}
         <Box
@@ -222,7 +223,7 @@ export const InterpretationOrderSection = () => {
       <Box
         sx={{
           width: '737.2px',
-          height: '177.1px',
+          height: '137.1px',
           //backgroundColor: 'red', //위치 확인용(지우지말것)
           display: 'flex',
           flexDirection: 'column',
@@ -230,7 +231,7 @@ export const InterpretationOrderSection = () => {
           justifyContent: 'center',
           padding: '0px 13.5px',
           boxSizing: 'border-box',
-          gap: '7px',
+          gap: '9px',
           position: 'relative',
         }}
       >
@@ -295,7 +296,7 @@ export const InterpretationOrderSection = () => {
                 key={index}
                 sx={{
                   flex: 1,
-                  padding: '4.1px',
+                  padding: '2.1px',
                   backgroundColor: item.bgColor,
                   border: `0.7px solid ${THEME.colors.border.dash}`,
                   borderTopLeftRadius: index === 0 ? '6.8px' : 0,
@@ -336,7 +337,7 @@ export const InterpretationOrderSection = () => {
                 key={index}
                 sx={{
                   flex: 1,
-                  padding: '4.1px',
+                  padding: '2.1px',
                   backgroundColor: item.bgColor,
                   border: `0.7px solid ${THEME.colors.border.dash}`,
                   borderBottomLeftRadius: index === 0 ? '6.8px' : 0,
@@ -365,7 +366,7 @@ export const InterpretationOrderSection = () => {
       {/* 2-3. 이상적 양육지수 확인 */}
       <Box sx={{
         width: '737.2px',
-        height: '158.2px',
+        height: '138.2px',
         //backgroundColor: 'red',//위치 확인용(지우지말것)
         display: 'flex',
         flexDirection: 'column',
@@ -425,7 +426,7 @@ export const InterpretationOrderSection = () => {
                       key={index}
                       sx={{
                         flex: 1,
-                        padding: '4.1px',
+                        padding: '2.5px',
                         backgroundColor: header.bgColor,
                         border: `0.7px solid ${THEME.colors.border.dash}`,
                         borderTopLeftRadius: index === 0 ? '6.8px' : 0,
@@ -453,7 +454,7 @@ export const InterpretationOrderSection = () => {
                     <Box
                       sx={{
                         flex: 1,
-                        padding: '4.1px',
+                        padding: '2.5px',
                         backgroundColor: '#66A247',
                         border: `0.7px solid ${THEME.colors.border.dash}`,
                         borderBottomLeftRadius: rowIndex === ipqData.length - 1 ? '6.8px' : 0,
@@ -477,7 +478,7 @@ export const InterpretationOrderSection = () => {
                         key={colIndex}
                         sx={{
                           flex: 1,
-                          padding: '4.1px',
+                          padding: '2.5px',
                           border: `0.7px solid ${THEME.colors.border.dash}`,
                           borderBottomRightRadius:
                             rowIndex === ipqData.length - 1 && colIndex === row.values.length - 1 ? '6.8px' : 0,

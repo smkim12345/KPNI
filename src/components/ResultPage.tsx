@@ -203,11 +203,11 @@ const KPNIBackPage = () => {
             {/* 왼쪽 메인 섹션(제목, 2-1, 2-2, 2-3번) */}
             <Box sx={{
               width: `${565 * 1.352}px`,   // 763.88px
-              height: `${787 * 1.352}px`,  // 1064.424px
+              height: `${787 * 1.352 - 90}px`,  // 1064.424px
               display: 'flex',
               flexDirection: 'column',
               boxSizing: 'border-box',
-              //backgroundColor: 'rgb(24, 24, 245,0.4)',
+              backgroundColor: 'rgb(24, 24, 245,0.4)',
             }}>
               <BackTitleSection/>
               <TestDescriptionSection/>

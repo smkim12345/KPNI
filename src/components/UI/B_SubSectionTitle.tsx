@@ -16,11 +16,11 @@ export const SubSectionTitle = ({ title }: SubSectionTitleProps) => {
         fontFamily: THEME.typography.fontFamily.ohsquare,
         fontWeight: THEME.typography.fontWeight.normal,
         fontSize: '14.9px',
-        lineHeight: '1.71em',
+        lineHeight: '1.11em',
         color: '#274E13',
         alignSelf: 'stretch',
         textAlign: 'left',
-
+        //backgroundColor: 'red',
       }}>
         {title}
       </Typography>
