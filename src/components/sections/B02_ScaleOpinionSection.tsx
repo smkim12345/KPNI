@@ -199,7 +199,7 @@ export const ScaleOpinionSection = () => {
                   borderRadius: `0 ${THEME.borderRadius.xs}px ${THEME.borderRadius.xs}px 0`,
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
+                  justifyContent: 'flex-start',
                   padding: '0 6.8px',
                   boxSizing: 'border-box'
                 }}

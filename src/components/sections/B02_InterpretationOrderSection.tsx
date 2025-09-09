@@ -39,7 +39,7 @@ export const InterpretationOrderSection = () => {
         justifyContent: 'center',
         padding: '0px 13.5px',
         boxSizing: 'border-box',
-        gap: '16.2px'
+        gap: '11px'
       }}>
         {/* 검사해석 순서 다이어그램 (Redesigned) */}
         <Box
@@ -148,7 +148,10 @@ export const InterpretationOrderSection = () => {
             ...THEME.B_SECTION_DESCRIPTION,
             flex: 1
           }}>
-            검사 결과의 신뢰도를 확인하기 위해 신뢰 지표를 점검해야 합니다. PNI 검사는 피검자가 검사에 성실하게 응답했는지를 평가하기 위해 무응답수, 연속 동일 반응, 반응 일관성, 사회적 바람직성 등 총 5가지 신뢰 지표를 제공합니다.
+                                  <strong>결과신뢰지표</strong>는 피검자의 반응을 바탕으로 산출된 검사 결과가{' '}
+                        <strong>신뢰할 수 있는지를 판단하는 기준</strong>입니다.
+                        <br />
+                        검사 결과를 해석하기 전에, 해당 결과가 신뢰 가능한지를 우선적으로 확인하는 것이 매우 중요합니다.
           </Typography>
         </Box>
 
@@ -198,7 +201,7 @@ export const InterpretationOrderSection = () => {
           justifyContent: 'center',
           padding: '0px 13.5px',
           boxSizing: 'border-box',
-          gap: '24.3px',
+          gap: '16px',
           position: 'relative',
         }}
       >

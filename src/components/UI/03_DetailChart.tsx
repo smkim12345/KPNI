@@ -71,7 +71,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
               lineHeight: THEME.typography.lineHeight.normal,
               color: THEME.colors.mainWhite,
               textAlign: 'center',
-              padding: '0 13.5px'
+              padding: '0 11px'
             }}>
               {line}
             </Typography>
