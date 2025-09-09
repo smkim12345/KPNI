@@ -13,11 +13,11 @@ const SCALE_DATA = [
     bgColor: THEME.colors.scale.childCharacter.primary,
     brightColor: THEME.colors.scale.childCharacter.bright,
     subScales: [
-      { name: '기질적 예민성', description: '환경 변화에 대한 민감도와 정서적 반응성을 측정합니다. 예민한 기질은 특별한 관심과 이해가 필요합니다.' },
-      { name: '높은 요구수준', description: '부모에게 요구하는 관심과 돌봄 정도를 평가합니다. 요구 수준이 높을수록 양육 부담이 커질 수 있습니다.' },
-      { name: '사회적 적응력', description: '사회적 상황 적응력과 또래 관계 형성을 평가합니다. 사회성이 발달하면 건강한 사회생활이 가능합니다.' },
-      { name: '발달 수준', description: '연령대에 맞는 언어·인지·정서 발달 정도를 평가합니다. 발달 단계에 맞는 자극과 지원이 필수적입니다.' },
-      { name: '애착관계형성', description: '양육자와 정서적 유대감 형성 정도를 평가합니다. 안정적인 애착은 정서적 안정의 기초가 됩니다.' }
+      { name: '기질적 예민성', description: '자녀가 감각적·정서적 자극에 얼마나 민감하게 반응하는지 (감각 민감성, 정서적 반응성, 환경 변화에 대한 적응성)' },
+      { name: '높은 요구수준', description: '자녀가 부모에게 정서적·신체적·인지적으로 요구하는 정도 (부모 의존도, 돌봄 필요성, 지속적인 관심 요구)' },
+      { name: '사회적 적응력', description: '자녀가 또래, 교사 등 사회적 관계에서 얼마나 잘 적응하는지 측정하는 척도 (또래관계형성, 사회적 기술, 공감능력)' },
+      { name: '발달 수준', description: '자녀의 연령에 따른 인지·정서·신체적 발달 정도 (언어발달, 문제해결능력, 정서조절능력)' },
+      { name: '애착관계형성', description: '주 양육자(부모)와의 정서적 유대감 및 신뢰 수준 (안정 애착, 불안 애착, 부모 의존도)' }
     ]
   },
   {
@@ -25,11 +25,11 @@ const SCALE_DATA = [
     bgColor: THEME.colors.scale.parentingAttitude.primary,
     brightColor: THEME.colors.scale.parentingAttitude.bright,
     subScales: [
-      { name: '애정표현', description: '자녀에게 애정과 사랑을 표현하는 방식과 정도를 평가합니다. 적절한 애정 표현은 정서적 안정감을 높여줍니다.' },
-      { name: '합리적 설명', description: '규칙이나 행동에 대해 논리적으로 설명하는 정도를 평가합니다. 자녀의 사고력 발달에 도움이 됩니다.' },
-      { name: '일관적 태도', description: '양육 태도의 일관성 유지 정도를 평가합니다. 일관된 태도는 예측 가능성과 안정감을 제공합니다.' },
-      { name: '훈육 방식', description: '자녀를 가르치고 훈육하는 방법을 평가합니다. 적절한 훈육은 건전한 사회성 발달을 지원합니다.' },
-      { name: '자율성 존중', description: '자녀의 독립성과 자율성을 존중하는 정도를 평가합니다. 적절한 자율성 존중은 자기주도성을 기릅니다.' }
+      { name: '애정표현', description: '부모가 자녀에게 애정을 표현하는 방식과 빈도 (스킨십, 칭찬, 격려, 정서적 교감 등)' },
+      { name: '합리적 설명', description: '자녀에게 행동의 이유와 규칙을 논리적으로 설명하는 정도 (논리적 대화, 원인-결과 설명)' },
+      { name: '일관적 태도', description: '부모가 자녀에게 일관된 규칙과 기대를 제공하는 정도 (규칙유지, 보상-처벌의 일관성)' },
+      { name: '훈육 방식', description: '자녀의 행동을 지도하는 방식(긍정적/부정적 훈육 포함) (설명적 훈육, 강화, 처벌 등)' },
+      { name: '자율성 존중', description: '부모가 자녀의 독립성과 선택을 존중하는 정도 (자기결정권, 독립성 장려, 자율적 의사결정)' }
     ]
   },
   {
@@ -37,11 +37,11 @@ const SCALE_DATA = [
     bgColor: THEME.colors.scale.parentingEnvironment.primary,
     brightColor: THEME.colors.scale.parentingEnvironment.bright,
     subScales: [
-      { name: '부부간 불화', description: '부부 간 갈등과 불화 정도를 평가합니다. 부부 관계 안정성은 가정 전체 분위기에 영향을 미칩니다.' },
-      { name: '사회적 지원 부족', description: '가족 외부 사회적 지원 체계 부족 정도를 평가합니다. 사회적 네트워크가 부족하면 양육 부담이 커집니다.' },
-      { name: '방임/무시', description: '자녀의 정서적·신체적 요구를 무시하거나 방임하는 정도를 평가합니다. 방임은 발달에 부정적 영향을 미칠 수 있습니다.' },
-      { name: '신체적 학대', description: '신체적 처벌이나 학대적 행동 정도를 평가합니다. 신체적 학대는 안전을 위협하고 발달 문제를 일으킬 수 있습니다.' },
-      { name: '정서적 학대', description: '정서적 무시나 비난 정도를 평가합니다. 정서적 학대는 자존감과 정서적 건강에 심각한 타격을 줄 수 있습니다.' }
+      { name: '부부간 불화', description: '부모 간의 관계에서 발생하는 갈등과 스트레스가 가정환경에 미치는 영향 (부부갈등, 언쟁, 감정적 거리)' },
+      { name: '사회적 지원 부족', description: '부모가 양육을 하는 데 있어 외부로부터 지원을 받지 못하는 정도 (배우자 도움 및 가족,친구 지원 부족, 경제적 어려움)' },
+      { name: '방임/무시', description: '부모가 자녀의 기본적인 필요(신체적·정서적)를 충분히 충족하지 못하는 정도 (기본 욕구 충족 부족, 정서적 단절)' },
+      { name: '신체적 학대', description: '부모가 자녀에게 신체적으로 해를 가하는 정도 (체벌, 폭력, 신체적 위협)' },
+      { name: '정서적 학대', description: '부모가 자녀에게 언어나 정서적으로 상처를 주는 정도 (언어폭력, 정서적 위협, 무시)' }
     ]
   },
   {
@@ -49,11 +49,11 @@ const SCALE_DATA = [
     bgColor: THEME.colors.scale.parentingStress.primary,
     brightColor: THEME.colors.scale.parentingStress.bright,
     subScales: [
-      { name: '역할갈등', description: '부모 역할과 사회적·직업적 역할 간 갈등 정도를 평가합니다. 역할 갈등이 심하면 양육에 집중하기 어려워집니다.' },
-      { name: '양육방식차이', description: '부부 간 양육 방식 차이로 인한 갈등 정도를 평가합니다. 양육 방식의 일관성이 중요합니다.' },
-      { name: '경제적 고민', description: '자녀 양육 경제적 부담으로 인한 스트레스 정도를 평가합니다. 경제적 어려움은 양육의 질을 저해할 수 있습니다.' },
-      { name: '자녀갈등', description: '자녀와의 관계에서 발생하는 갈등 정도를 평가합니다. 자녀 이해와 소통 방법 개선이 필요할 수 있습니다.' },
-      { name: '심리적 불안정', description: '양육 과정에서 경험하는 심리적 불안정감 정도를 평가합니다. 심리적 안정이 양육의 핵심입니다.' }
+      { name: '역할갈등', description: '부모가 양육 외의 다른 역할(직장인, 배우자, 개인 등)과의 충돌로 인해 스트레스를 느끼는 정도' },
+      { name: '양육방식차이', description: '부모가 자녀를 양육하는 과정에서 배우자와의 양육 방식이 다르거나 충돌할 때 경험하는 갈등과 스트레스' },
+      { name: '경제적 고민', description: '부모가 자녀 양육과 관련된 재정적 부담을 크게 느끼는 정도' },
+      { name: '자녀갈등', description: '부모와 자녀 사이에서 발생하는 의견 충돌, 기대 차이, 정서적 거리감 등을 포함하는 갈등의 정도' },
+      { name: '심리적 불안정', description: '부모가 양육 과정에서 경험하는 심리적 소진 및 정서적 고통의 정도' }
     ]
   },
   {
@@ -61,11 +61,11 @@ const SCALE_DATA = [
     bgColor: THEME.colors.scale.parentingProcess.primary,
     brightColor: THEME.colors.scale.parentingProcess.bright,
     subScales: [
-      { name: '양육만족', description: '양육 활동에 대한 전반적인 만족도를 평가합니다. 양육의 긍정적 측면과 도전 과제를 균형 있게 보는 태도가 중요합니다.' },
-      { name: '현가족관계', description: '현재 가족 구성원 간 관계 안정성을 평가합니다. 가족 화목은 자녀의 정서적 안정에 핵심적입니다.' },
-      { name: '원가족관계', description: '본인의 원가족과의 관계 상태를 평가합니다. 건강한 원가족 관계는 양육 역량 강화에 도움이 됩니다.' },
-      { name: '자녀만족', description: '자녀가 가족 내에서 느끼는 만족도를 평가합니다. 자녀의 정서적 안녕감이 가족 건강에 영향을 미칩니다.' },
-      { name: '회복경험', description: '과거 어려운 경험으로부터의 회복력을 평가합니다. 회복력은 미래 양육에 대한 희망과 자신감을 줍니다.' }
+      { name: '양육만족', description: '부모가 자신의 양육 과정에서 느끼는 전반적인 만족감과 보람의 정도' },
+      { name: '현가족관계', description: '부모가 현재 배우자 및 자녀와 경험하는 정서적 유대감과 관계의 질' },
+      { name: '원가족관계', description: '부모가 자신의 원가족(부모, 형제자매)과 맺고 있는 관계가 현재 양육에 미치는 영향' },
+      { name: '자녀만족', description: '자녀가 부모의 양육 방식에 대해 느끼는 만족도와 정서적 반응' },
+      { name: '회복경험', description: '부모가 양육 과정에서 스트레스를 해소하고 심리적 균형을 회복하는 정도' }
     ]
   }
 ];
