@@ -137,7 +137,6 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
         flexDirection: 'row',
         alignItems: 'stretch',
         flex: 1,
-        backgroundColor: THEME.colors.primary,
       }}>
         {/* 검사명설명 */}
         <Box sx={{

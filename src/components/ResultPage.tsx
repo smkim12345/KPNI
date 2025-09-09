@@ -57,10 +57,10 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
           {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 */}
           <Box sx={{
             position: 'absolute',
-            left: `${30 * 1.352}px`,      // 40.56px
+            left: `${100 * 1.352}px`,      // 40.56px
             top: `${349 * 1.352}px`,      // 471.848px
-            width: `${155 * 1.352}px`,    // 209.56px
-            height: `${70 * 1.352}px`,    // 94.64px
+            width: `${85 * 1.352}px`,    // 209.56px
+            height: `${56 * 1.352}px`,    // 94.64px
             backgroundColor: THEME.colors.gray,
             zIndex: 1.5
           }} />
@@ -147,7 +147,7 @@ const KPNIBackPage = () => {
             position: 'absolute',
             left: `${30 * 1.352}px`,     // 40.56px
             top: `${101 * 1.352}px`,     // 136.552px
-            width: `${432 * 1.352}px`,   // 584.064px
+            width: `${433 * 1.352}px`,   // 584.064px
             height: `${716 * 1.352}px`,  // 968.032px
             backgroundColor: THEME.colors.background,
             borderRadius: `${15 * 1.352}px 0px 0px ${15 * 1.352}px`, // 20.28px
@@ -181,10 +181,10 @@ const KPNIBackPage = () => {
           {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 */}
           <Box sx={{
             position: 'absolute',
-            left: '0px',
-            top: '0px',
-            width: `${462 * 1.352}px`,   // 624.624px
-            height: `${101 * 1.352}px`,  // 136.552px
+            left: '590px',
+            top: '100px',
+            width: `${50 * 1.352}px`,   // 624.624px
+            height: `${51 * 1.352}px`,  // 136.552px
             backgroundColor: THEME.colors.background,
             zIndex: 1.5
           }} />
