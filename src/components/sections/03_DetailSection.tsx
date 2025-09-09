@@ -59,7 +59,7 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             alignItems: 'center',
             width: '44.6px',
             height: 'auto',
-            backgroundColor: '#E2E2E2',
+            backgroundColor: THEME.colors.lightGray,
             borderRight: `1.4px solid ${THEME.colors.border.light}`,
             boxSizing: 'border-box'
           }}>
@@ -82,7 +82,7 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             alignItems: 'center',
             width: '112.2px',
             height: 'auto',
-            backgroundColor: '#E2E2E2',
+            backgroundColor: THEME.colors.lightGray,
             borderRight: `1.4px solid ${THEME.colors.border.light}`,
             boxSizing: 'border-box'
           }}>
@@ -167,43 +167,9 @@ export const DetailSection = ({ subScales }: DetailSectionProps) => {
             alignItems: 'flex-start',
             width: '341.9px',
             height: 'auto',
-            backgroundColor: '#E2E2E2',
+            backgroundColor: THEME.colors.lightGray,
             boxSizing: 'border-box'
           }}>
-            {/* 중간범위 배경 (40-60) */}
-            <Box sx={{
-              position: 'absolute',
-              top: 0,
-              left: `${((40 - 10) / 70) * 100}%`,
-              width: `${((60 - 40) / 70) * 100}%`,
-              height: '100%',
-              backgroundColor: THEME.colors.gray,
-              opacity: 0.3,
-              zIndex: 1
-            }} />
-
-            {/* 세로 기준선들 (20~80) */}
-            <Box sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'stretch',
-              zIndex: 2
-            }}>
-              {[10, 20, 30, 40, 50, 60, 70, 80].map((value, index) => (
-                <Box key={value} sx={{
-                  width: '0.4px',
-                  height: '100%',
-                  backgroundColor: index === 4 ? THEME.colors.border.dash : 'transparent',
-                  borderRight: index === 0 ? 'none' : (index === 4 ? `0.1px solid ${THEME.colors.border.dash}` : `0.1px dashed ${THEME.colors.border.dash}`),
-                  opacity: 0.9
-                }} />
-              ))}
-            </Box>
 
             <Typography sx={{
               position: 'relative',

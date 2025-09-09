@@ -59,16 +59,17 @@ export const ProfileChart = ({ data }: ProfileChartProps) => {
         />
         <YAxis
           domain={[30, 70]}
+          orientation="left"
           tick={{
             fontSize: THEME.typography.fontSize.xxs,
             fontFamily: THEME.typography.fontFamily.pretendard,
             fill: THEME.colors.text,
-            textAnchor: 'start',
+            textAnchor: 'end',
           }}
           axisLine={false}
           tickLine={false}
           tickCount={5}
-          width={12.2}
+          width={20}
         />
                 {/* 40-60 범위 배경색 추가 */}
         <ReferenceArea y1={40} y2={60} fill="#c9c9c9" fillOpacity={0.3} />
