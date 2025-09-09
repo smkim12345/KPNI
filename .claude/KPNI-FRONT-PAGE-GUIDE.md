@@ -52,7 +52,7 @@ export const THEME = {
       moyamoya: 'Cafe24 Moyamoya OTF',     // K-PNI 타이틀
       ohsquare: 'Cafe24 Ohsquare',         // 일반 제목
       ohsquareAir: 'Cafe24 Ohsquare air',  // 본문 텍스트
-      pretendard: 'Pretendard Variable'     // 설명 텍스트
+      pretendard: 'Pretendard'     // 설명 텍스트
     },
     lineHeight: { tight: '1.23em', normal: '1.268em' }
   },
