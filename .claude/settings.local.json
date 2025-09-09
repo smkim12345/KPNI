@@ -31,7 +31,8 @@
       "Bash(mv:*)",
       "Bash(find:*)",
       "Read(//d/github/kpr-inventory-react2/src/domains/result/components/**)",
-      "Read(//d/github/kpr-inventory-react2/src/**)"
+      "Read(//d/github/kpr-inventory-react2/src/**)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

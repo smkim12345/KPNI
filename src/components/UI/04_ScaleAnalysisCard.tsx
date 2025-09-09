@@ -49,7 +49,7 @@ export const ScaleAnalysisCard = ({
       padding: '6.8px',
       backgroundColor,
       borderRadius: '20.4px 6.8px 6.8px 6.8px',
-      height: '189.3px'
+      height: '175px'
     }}>
       {/* 척도 분석 상위척도 정보 */}
       <Box sx={{
@@ -122,26 +122,28 @@ export const ScaleAnalysisCard = ({
       }}>
         {/* 척도 분석 하위척도 테이블 전체 */}
         <Box sx={{
-          width: '507.0px',
-          minHeight: '137.9px',
+          width: '478.0px',
+          minHeight: '128px',
           border: `1.4px solid ${borderColor}`,
-          borderRadius: '8.1px',
-          overflow: 'hidden',
+          borderRadius: '7px',
           //backgroundColor: 'red'
         }}>
 
           {/* 하위척도 테이블 */}
           <Table sx={{
-            borderCollapse: 'separate',
+            borderCollapse: 'collapse',
             borderSpacing: 0,
+            width: '100%',
             
             '& .MuiTableCell-root': {
               borderBottom: `0.9px solid ${borderColor}`,
               borderRight: `0.9px solid ${borderColor}`,
-              padding: '2.7px 3px',
+              padding: '2.2px 2px',
               fontFamily: THEME.typography.fontFamily.pretendard,
               fontSize: `${THEME.typography.fontSize.xs-0.1}px`,
               lineHeight: '1em',
+              verticalAlign: 'middle',
+              margin: 0,
               //backgroundColor: 'blue'
             },
             '& .MuiTableCell-root:last-child': {
@@ -151,13 +153,20 @@ export const ScaleAnalysisCard = ({
             
             
             <TableHead>
-              <TableRow>
+              <TableRow sx={{
+                '& .MuiTableCell-root': { 
+                  borderTop: 'none',
+                  padding: '2.2px 2px',
+                  margin: 0,
+                  verticalAlign: 'middle',
+                }
+              }}>
                 <TableCell sx={{
                   backgroundColor: tableBackgroundColor,
                   fontWeight: 600,
                   textAlign: 'center',
-                  width: '60.8px',
-                  borderTopLeftRadius: '4px'
+                  width: '55px',
+                  borderTopLeftRadius: '5px',
                 }}>
                   하위 척도
                 </TableCell>
@@ -165,7 +174,7 @@ export const ScaleAnalysisCard = ({
                   backgroundColor: tableBackgroundColor,
                   fontWeight: 600,
                   textAlign: 'center',
-                  width: '27.0px'
+                  width: '24px'
                 }}>
                   T점수
                 </TableCell>
@@ -173,7 +182,7 @@ export const ScaleAnalysisCard = ({
                   backgroundColor: tableBackgroundColor,
                   fontWeight: 600,
                   textAlign: 'center',
-                  width: '27.0px'
+                  width: '24px'
                 }}>
                   백분위
                 </TableCell>
@@ -181,7 +190,7 @@ export const ScaleAnalysisCard = ({
                   backgroundColor: tableBackgroundColor,
                   fontWeight: 600,
                   textAlign: 'center',
-                  width: '37.9px'
+                  width: '40px'
                 }}>
                   수준
                 </TableCell>
@@ -190,7 +199,7 @@ export const ScaleAnalysisCard = ({
                   fontWeight: 600,
                   textAlign: 'center',
                   width: '297.4px',
-                  borderTopRightRadius: '4px',
+                  borderTopRightRadius: '5px',
                   borderRight: 'none'
                 }}>
                   하위 척도 소견
@@ -204,10 +213,10 @@ export const ScaleAnalysisCard = ({
                     borderBottom: 'none'
                   },
                   '&:last-child .MuiTableCell-root:first-of-type': {
-                    borderBottomLeftRadius: '6.8px'
+                    borderBottomLeftRadius: '5px'
                   },
                   '&:last-child .MuiTableCell-root:nth-of-type(5)': {
-                    borderBottomRightRadius: '6.8px'
+                    borderBottomRightRadius: '5px'
                   }
                 }}>
 
@@ -269,7 +278,7 @@ export const ScaleAnalysisCard = ({
           display: 'flex',
           justifyContent: 'center',
           width: '135.2px',
-          height: '143.3px',
+          height: '136px',
           backgroundColor: THEME.colors.white,
           borderRadius: '9.5px',
           position: 'relative',

@@ -201,9 +201,9 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
 
           {/* 구분선 */}
           <Box sx={{
-            width: '174.4px',
-            height: '2.7px',
-            backgroundColor: '#F2F2F2',
+            width: '170px',
+            height: '2px',
+            backgroundColor: THEME.colors.gray,
             alignSelf: 'center'
           }} />
 
