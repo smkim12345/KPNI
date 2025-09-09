@@ -12,6 +12,7 @@ import { TestDescriptionSection } from './sections/B01_TestDescriptionSection';
 import { InterpretationOrderSection } from './sections/B02_InterpretationOrderSection';
 import { ScaleOpinionSection } from './sections/B02_ScaleOpinionSection';
 import { SolutionSection } from './sections/B03_SolutionSection';
+import { BackFooterSection } from './sections/B04_BackFooterSection';
 import { useRef } from 'react';
 import A3Page from './print/A3Page';
 import { PdfDownloadButton } from './print/PdfDownloadButton';
@@ -189,42 +190,62 @@ const KPNIBackPage = () => {
             zIndex: 1.5
           }} />
 
-          {/* 메인 섹션 레이아웃 */}
+          {/* 왼쪽 + 오른쪽 + 푸터 레이아웃 */}
           <Box sx={{
             position: 'absolute',
             left: `${30 * 1.352}px`,     // 40.56px
             top: `${30 * 1.352}px`,      // 40.56px
             display: 'flex',
+            flexDirection: 'column',
             width: `${1131 * 1.352}px`,  // 1530.112px
             height: `${787 * 1.352}px`,  // 1064.424px
             zIndex: 3,
             //backgroundColor: 'rgb(24, 245, 245,0.4)',
           }}>
-            {/* 왼쪽 메인 섹션(제목, 2-1, 2-2, 2-3번) */}
+
+            {/* 왼쪽 + 오른쪽 메인 섹션(푸터 제외) */}
             <Box sx={{
-              width: `${565 * 1.352}px`,   // 763.88px
-              height: `${787 * 1.352 - 90}px`,  // 1064.424px
               display: 'flex',
-              flexDirection: 'column',
-              boxSizing: 'border-box',
-              backgroundColor: 'rgb(24, 24, 245,0.4)',
+              flexDirection: 'row',
+              width: '100%',
+              height: `${787 * 1.352 -70}px`,
+              //backgroundColor: 'rgb(24, 245, 25,0.4)',
             }}>
-              <BackTitleSection/>
-              <TestDescriptionSection/>
-              <InterpretationOrderSection/>
-            </Box>
-            
-            {/* 오른쪽 메인 섹션(2-4번, 3번) */}
+              {/* 왼쪽 메인 섹션(제목, 2-1, 2-2, 2-3번) */}
+                <Box sx={{
+                  width: `${565 * 1.352}px`,   // 763.88px
+                  height: `${787 * 1.352 -70}px`,  // 1064.424px
+                  display: 'flex',
+                  flexDirection: 'column',
+                  boxSizing: 'border-box',
+                  //backgroundColor: 'rgb(24, 24, 245,0.4)',
+                }}>
+                  <BackTitleSection/>
+                  <TestDescriptionSection/>
+                  <InterpretationOrderSection/>
+                </Box>
+                
+                {/* 오른쪽 메인 섹션(2-4번, 3번) */}
+                <Box sx={{
+                  width: `${565 * 1.352}px`,   // 763.88px
+                  height: `${787 * 1.352 - 70}px`,  // 1064.424px
+                  display: 'flex',
+                  flexDirection: 'column',
+                  //backgroundColor: 'rgb(245, 245, 25,0.5)',
+                  boxSizing: 'border-box',
+                }}>
+                  <ScaleOpinionSection/>
+                  <SolutionSection/>
+                </Box>
+              </Box>
+            {/* back_footer 섹션 */}
             <Box sx={{
-              width: `${565 * 1.352}px`,   // 763.88px
-              height: `${787 * 1.352}px`,  // 1064.424px
-              display: 'flex',
-              flexDirection: 'column',
-              //backgroundColor: 'rgb(245, 245, 25,0.5)',
-              boxSizing: 'border-box',
+              width: '100%',
+              height: '70px',
+              zIndex: 3,
+              //backgroundColor: 'rgb(245, 24, 245,0.4)',
             }}>
-              <ScaleOpinionSection/>
-              <SolutionSection/>
+              <BackFooterSection />
             </Box>
           </Box>
         </FrameBox>
