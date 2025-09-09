@@ -157,7 +157,7 @@ export const ScaleAnalysisCard = ({
                   fontWeight: 600,
                   textAlign: 'center',
                   width: '60.8px',
-                  borderTopLeftRadius: '5.4px'
+                  borderTopLeftRadius: '4px'
                 }}>
                   하위 척도
                 </TableCell>
@@ -190,7 +190,7 @@ export const ScaleAnalysisCard = ({
                   fontWeight: 600,
                   textAlign: 'center',
                   width: '297.4px',
-                  borderTopRightRadius: '5.4px',
+                  borderTopRightRadius: '4px',
                   borderRight: 'none'
                 }}>
                   하위 척도 소견
@@ -215,7 +215,7 @@ export const ScaleAnalysisCard = ({
                   <TableCell sx={{
                     backgroundColor: backgroundColor,
                     fontWeight: 500,
-                    textAlign: 'left',
+                    textAlign: 'center',
                     wordBreak: 'keep-all'
                   }}>
                     {row.name}

@@ -140,7 +140,7 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
       }}>
         {/* 검사명설명 */}
         <Box sx={{
-          backgroundColor: THEME.colors.gray,
+          backgroundColor: THEME.colors.lightGray,
           borderRadius: '20.3px 0px 0px 20.3px',
           display: 'flex',
           flexDirection: 'column',

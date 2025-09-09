@@ -225,7 +225,7 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
             fontFamily: THEME.typography.fontFamily.pretendard,
             fontWeight: THEME.typography.fontWeight.bold,
             fontSize: `${THEME.typography.fontSize.md}px`,
-            lineHeight: '2.03em',
+            lineHeight: '1.53em',
             color: THEME.colors.text,
             textAlign: 'center',
             whiteSpace: 'pre-line'
@@ -238,7 +238,7 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
             fontFamily: THEME.typography.fontFamily.pretendard,
             fontWeight: THEME.typography.fontWeight.semiBold,
             fontSize: `${THEME.typography.fontSize.xs}px`,
-            lineHeight: '1.75em',
+            lineHeight: '1.45em',
             color: THEME.colors.text,
             textAlign: 'left',
             whiteSpace: 'pre-line'
@@ -333,7 +333,7 @@ export const ProfileSection = ({ parentScales }: ProfileSectionProps) => {
                   color: THEME.colors.text,
                   textAlign: 'center'
                 }}>
-                  {profileData.percentile}
+                  {profileData.percentile}%
                 </Typography>
               </Box>
             </Box>

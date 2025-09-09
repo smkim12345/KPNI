@@ -10,7 +10,7 @@ export const THEME = {
     darkGray: '#4F4F4F',
     mediumGray: '#bdbdbd',
     gray: '#cfcfcf',
-    lightGray: '#ebebeb',
+    lightGray: '#f0f0f0',
     tableGreen1: 'rgba(174, 218, 151, 0.7)',
     tableGreen2: 'rgba(157, 215, 128, 0.7)',
     blue: '#000DFF',

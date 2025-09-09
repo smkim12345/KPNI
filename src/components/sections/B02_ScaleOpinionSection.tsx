@@ -82,7 +82,7 @@ export const ScaleOpinionSection = () => {
       padding: '13.5px',
       boxSizing: 'border-box',
       //backgroundColor: 'red',
-      gap: '6.8px'
+      gap: '10.8px'
     }}>
       {/* 섹션 제목 */}
       <SubSectionTitle title="4. 척도별 소견 확인" />
@@ -98,8 +98,7 @@ export const ScaleOpinionSection = () => {
           ...THEME.B_SECTION_DESCRIPTION,
           flex: 1,
         }}>
-          PNI 부모양육종합검사의 다섯 가지 상위척도(자녀특성, 양육태도, 양육환경, 양육스트레스, 양육과정)에 대한 척도별 정의를 확인하실 수 있습니다. 
-          각 척도별 결과는 단순한 점수 비교가 아닌, 부모님의 현재 양육 경험과 감정 상태, 관계 패턴을 보다 깊이 이해하는 데 목적이 있습니다. 점수가 높다고 반드시 '좋다'거나, 낮다고 '문제가 있다'는 의미는 아닙니다. 모든 결과는 현재의 모습에 대한 일시적인 단면이며, 앞으로의 변화 가능성과 회복력을 함께 고려하여 해석해주시기 바랍니다.
+          PNI 부모양육종합검사의 다섯 가지 상위척도(자녀특성, 양육태도, 양육환경, 양육스트레스, 양육과정)에 대한 척도별 정의를 확인하실 수 있습니다. 각 척도별 결과는 단순한 점수 비교가 아닌, 부모님의 현재 양육 경험과 감정 상태, 관계 패턴을 깊이 이해하는 데 목적이 있습니다. 점수가 높다고 반드시 '좋다'거나 낮다고 '문제가 있다'는 의미는 아닙니다. 모든 결과는 현재의 일시적인 단면으로, 앞으로의 변화 가능성과 회복력을 고려하여 해석해주시기 바랍니다.
         </Typography>
       </Box>
 
@@ -119,7 +118,7 @@ export const ScaleOpinionSection = () => {
           {/* 상위척도 이름 박스 */}
           <Box sx={{
             width: '54.1px',
-            height: '100.0px',
+            height: '108.0px',
             backgroundColor: scale.bgColor,
             borderRadius: `${THEME.borderRadius.xs}px`,
             display: 'flex',
@@ -147,7 +146,7 @@ export const ScaleOpinionSection = () => {
             flexDirection: 'column',
             justifyContent: 'space-between',
             width: '90.6px',
-            height: '100.0px',
+            height: '108.0px',
             padding: '0 0 0 6.8px',
             gap: '2.7px',
             //backgroundColor: 'red' //영역 확인용
@@ -186,7 +185,7 @@ export const ScaleOpinionSection = () => {
             flexDirection: 'column',
             justifyContent: 'space-between',
             width: '544.9px',
-            height: '100.0px',
+            height: '108.0px',
             gap: '4.1px',
           }}>
             {scale.subScales.map((subScale, subIndex) => (

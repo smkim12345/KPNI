@@ -216,7 +216,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
         <Box sx={{
           position: 'absolute',
           top: 0,
-          left: `${((40 - 10) / 70) * 100}%`,
+          left: `${((40 - 10) / 70) * 100.5}%`,
           width: `${((60 - 40) / 70) * 100}%`,
           height: '100%',
           backgroundColor: THEME.colors.gray,

@@ -62,7 +62,7 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
             top: `${349 * 1.352}px`,      // 471.848px
             width: `${85 * 1.352}px`,    // 209.56px
             height: `${56 * 1.352}px`,    // 94.64px
-            backgroundColor: THEME.colors.gray,
+            backgroundColor: THEME.colors.lightGray,
             zIndex: 1.5
           }} />
 

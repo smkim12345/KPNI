@@ -10,14 +10,15 @@ export const SolutionSection = () => {
   return (
     <Box sx={{
       width: '765.2px',
-      height: '387.6px',
+      height: '298px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
       padding: '13.5px',
       boxSizing: 'border-box',
-      gap: '13.5px'
+      gap: '9.5px',
+      //backgroundColor: 'blue'
     }}>
       {/* 섹션 제목 */}
       <SectionTitleBox title="3. 좋은 부모가 되기위한 여정" />
@@ -34,7 +35,9 @@ export const SolutionSection = () => {
           display: 'flex',
           flexDirection: 'column',
           width: '462.4px',
-          gap: '21.6px'
+          gap: '11.6px',
+          //backgroundColor: 'red',
+          height: '250px'
         }}>
 
           {/* 좋은 부모의 특징 섹션 */}
@@ -42,7 +45,7 @@ export const SolutionSection = () => {
             display: 'flex',
             flexDirection: 'column',
             width: '405.6px',
-            gap: '13.5px',
+            gap: '8px',
 
           }}>
             <SubSectionTitle title="1. 좋은 부모의 특징" />
@@ -51,9 +54,9 @@ export const SolutionSection = () => {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                gap: '6.8px',
+                gap: '5px',
                 width: '364.7px',
-                height: '67.6px',
+                height: '50px',
                 alignItems: 'center',
                 padding: '0 13.5px',
                 //backgroundColor: 'blue' //영역 확인용
@@ -62,11 +65,11 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '5.4px',
-                  height: '67.6px',
+                  gap: '3.4px',
+                  height: '50px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-1.png" alt="존중 아이콘" style={{ width: '43.3px', height: '46.0px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-1.png" alt="존중 아이콘" style={{ width: '33.3px', height: '36.0px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -83,11 +86,11 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '5.4px',
-                  height: '67.6px',
+                  gap: '3.4px',
+                  height: '50px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-2.png" alt="공감 아이콘" style={{ width: '46.0px', height: '54.1px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-2.png" alt="공감 아이콘" style={{width: '33.3px', height: '36.0px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -104,11 +107,11 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '5.4px',
-                  height: '67.6px',
+                  gap: '3.4px',
+                  height: '50px', 
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-3.png" alt="일관성 아이콘" style={{ width: '50.0px', height: '47.3px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-3.png" alt="일관성 아이콘" style={{ width: '33.3px', height: '36.0px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -125,11 +128,11 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '5.4px',
-                  height: '67.6px',
+                  gap: '3.4px',
+                  height: '50px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-4.png" alt="회복력 아이콘" style={{ width: '43.3px', height: '50.0px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-4.png" alt="회복력 아이콘" style={{width: '33.3px', height: '36.0px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -146,11 +149,11 @@ export const SolutionSection = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: '5.4px',
-                  height: '67.6px',
+                  gap: '3.4px',
+                  height: '50px',
                   justifyContent: 'space-between'
                 }}>
-                  <img src="/src/images/3-1-5.png" alt="성장 아이콘" style={{ width: '44.6px', height: '51.4px', objectFit: 'contain' }} />
+                  <img src="/src/images/3-1-5.png" alt="성장 아이콘" style={{width: '33.3px', height: '36.0px', objectFit: 'contain' }} />
                   <Typography sx={{
                     fontFamily: THEME.typography.fontFamily.pretendard,
                     fontWeight: THEME.typography.fontWeight.bold,
@@ -210,7 +213,7 @@ export const SolutionSection = () => {
             }}>
               {<>
                 <span style={{ fontWeight: 'bold' }}>세상에는 '완벽한 부모'는 없습니다.</span>
-                <br />좋은 부모는 실수를 안 하는 부모가 아니라, 실수를 인정하고 다시 관계를 회복하려는 부모입니다. 좋은 부모는 자신의 부족함을 인정하고, 부족한 자신의 모습으로 인해 영향을 받는 자녀의 마음을 늘 헤아리고 생각하는 부모입니다.
+                <br /> 좋은 부모는 자신의 부족함을 인정하고, 부족한 자신의 모습으로 인해 영향을 받는 자녀의 마음을 늘 헤아리고 생각하는 부모입니다.
                 <br /><span style={{ fontWeight: 'bold' }}>양육은 정답이 아니라 '함께 만들어가는 길' 입니다.</span>
               </>}
             </Typography>
@@ -228,7 +231,7 @@ export const SolutionSection = () => {
         }}>
           {(() => {
             // 전체 크기 조절을 위한 기본 사이즈 (이 값만 변경하면 전체가 비례해서 조정됩니다)
-            const baseSize = 200.1;
+            const baseSize = 170.1;
             const scale = baseSize / 227.1; // 기준 사이즈 대비 배율 계산
 
             return (
@@ -335,24 +338,24 @@ export const SolutionSection = () => {
             position: 'relative',
             background: 'rgba(238, 238, 238, 0.9)',
             borderRadius: THEME.borderRadius.sm,
-            padding: '8.1px 21.6px',
+            padding: '7px 20px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            maxWidth: '202.8px',
+            maxWidth: '172.8px',
             border: '2px solid rgba(114, 175, 129, 0.7)'
           }}>
             <Box sx={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '8.1px'
+              gap: '4.1px'
             }}>
               
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.pretendard,
                 fontWeight: 500,
-                fontSize: THEME.typography.fontSize.sm,
+                fontSize: THEME.typography.fontSize.sm - 0.5,
                 lineHeight: '1.2em',
                 color: '#2D4A32',
                 textAlign: 'center',
@@ -368,9 +371,9 @@ export const SolutionSection = () => {
               </Typography>
               
               <Box sx={{
-                width: '40.6px',
-                height: '1.4px',
-                background: `linear-gradient(90deg, transparent, rgba(114, 175, 129, 0.4), transparent)`,
+                width: '80.6px',
+                height: '1px',
+                background: THEME.colors.gray,
               }} />
               
               <Typography sx={{

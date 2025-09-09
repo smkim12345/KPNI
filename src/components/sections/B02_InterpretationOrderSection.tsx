@@ -15,13 +15,13 @@ export const InterpretationOrderSection = () => {
     <Box sx={{
       width: '764.1px',
       height: '653.0px',
-      backgroundColor: THEME.colors.scale.childCharacter.light, //위치 확인용
+      //backgroundColor: THEME.colors.scale.childCharacter.light, //위치 확인용
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
       padding: '13.5px',
-      gap: '18.6px',
+      gap: '26.6px',
       boxSizing: 'border-box'
     }}>
 
@@ -39,7 +39,7 @@ export const InterpretationOrderSection = () => {
         justifyContent: 'center',
         padding: '0px 13.5px',
         boxSizing: 'border-box',
-        gap: '8px'
+        gap: '14px'
 
       }}>
         {/* 검사해석 순서 다이어그램 (Redesigned) */}
@@ -298,7 +298,9 @@ export const InterpretationOrderSection = () => {
                   flex: 1,
                   padding: '2.1px',
                   backgroundColor: item.bgColor,
-                  border: `0.7px solid ${THEME.colors.border.dash}`,
+                  borderTop: `0.7px solid ${THEME.colors.border.dash}`,
+                  borderLeft: `0.7px solid ${THEME.colors.border.dash}`,
+                  borderRight: index === 11 ? `0.7px solid ${THEME.colors.border.dash}` : 0,
                   borderTopLeftRadius: index === 0 ? '6.8px' : 0,
                   borderTopRightRadius: index === 11 ? '6.8px' : 0,
                 }}
@@ -339,7 +341,10 @@ export const InterpretationOrderSection = () => {
                   flex: 1,
                   padding: '2.1px',
                   backgroundColor: item.bgColor,
-                  border: `0.7px solid ${THEME.colors.border.dash}`,
+                  borderTop: `0.7px solid ${THEME.colors.border.dash}`,
+                  borderLeft: `0.7px solid ${THEME.colors.border.dash}`,
+                  borderRight: index === 11 ? `0.7px solid ${THEME.colors.border.dash}` : 0,
+                  borderBottom: `0.7px solid ${THEME.colors.border.dash}`,
                   borderBottomLeftRadius: index === 0 ? '6.8px' : 0,
                   borderBottomRightRadius: index === 11 ? '6.8px' : 0,
                 }}
@@ -428,7 +433,9 @@ export const InterpretationOrderSection = () => {
                         flex: 1,
                         padding: '2.5px',
                         backgroundColor: header.bgColor,
-                        border: `0.7px solid ${THEME.colors.border.dash}`,
+                        borderTop: `0.7px solid ${THEME.colors.border.dash}`,
+                        borderLeft: `0.7px solid ${THEME.colors.border.dash}`,
+                        borderRight: index === ipqHeaders.length - 1 ? `0.7px solid ${THEME.colors.border.dash}` : 0,
                         borderTopLeftRadius: index === 0 ? '6.8px' : 0,
                         borderTopRightRadius: index === ipqHeaders.length - 1 ? '6.8px' : 0,
                       }}
@@ -456,7 +463,9 @@ export const InterpretationOrderSection = () => {
                         flex: 1,
                         padding: '2.5px',
                         backgroundColor: '#66A247',
-                        border: `0.7px solid ${THEME.colors.border.dash}`,
+                        borderTop: `0.7px solid ${THEME.colors.border.dash}`,
+                        borderLeft: `0.7px solid ${THEME.colors.border.dash}`,
+                        borderBottom: rowIndex === ipqData.length - 1 ? `0.7px solid ${THEME.colors.border.dash}` : 0,
                         borderBottomLeftRadius: rowIndex === ipqData.length - 1 ? '6.8px' : 0,
                       }}
                     >
@@ -479,7 +488,10 @@ export const InterpretationOrderSection = () => {
                         sx={{
                           flex: 1,
                           padding: '2.5px',
-                          border: `0.7px solid ${THEME.colors.border.dash}`,
+                          borderTop: `0.7px solid ${THEME.colors.border.dash}`,
+                          borderLeft: `0.7px solid ${THEME.colors.border.dash}`,
+                          borderRight: colIndex === row.values.length - 1 ? `0.7px solid ${THEME.colors.border.dash}` : 0,
+                          borderBottom: rowIndex === ipqData.length - 1 ? `0.7px solid ${THEME.colors.border.dash}` : 0,
                           borderBottomRightRadius:
                             rowIndex === ipqData.length - 1 && colIndex === row.values.length - 1 ? '6.8px' : 0,
                         }}
