@@ -28,7 +28,8 @@ export const THEME = {
     border: {
       light: 'rgba(194, 194, 194, 0.65)',
       medium: 'rgba(108, 108, 108, 0.65)',
-      dark: 'rgba(135, 135, 135, 0.65)'
+      dark: 'rgba(135, 135, 135, 0.65)',
+      table: '#d4d4d4'
     },
     
     // 척도별 색상 팔레트 (Scale Color Palette)
@@ -36,41 +37,36 @@ export const THEME = {
       // 자녀 특성 (Child Characteristics)
       childCharacter: {
         primary: '#FDB68C',    // 메인 색상
-        secondary: '#FCD9A3',  // 중간 색상
-        light: '#F9F0DA',      // 연한 색상
-        bright: '#F8CC89'      // 밝은 강조 색상
+        secondary: '#F8CC89',  // 중간 색상
+        light: '#F9F0DA'       // 연한 색상
       },
 
       // 양육 태도 (Parenting Attitude)
       parentingAttitude: {
-        primary: '#A9CEF4',    // 메인 색상
-        secondary: '#C9E0F8',  // 중간 색상
-        light: '#E9F4FF',      // 연한 색상
-        bright: '#B9DBFF'      // 밝은 강조 색상
+        primary: '#7FB8F0',    // 메인 색상
+        secondary: '#A9CEF4',  // 중간 색상
+        light: '#E9F4FF'       // 연한 색상
       },
 
       // 양육 환경 (Parenting Environment)
       parentingEnvironment: {
-        primary: '#88CACE',    // 메인 색상
-        secondary: '#BCEBEE', // 중간 색상
-        light: '#DDF1F3',      // 연한 색상
-        bright: '#94D9DE'      // 밝은 강조 색상
+        primary: '#5FB5BA',    // 메인 색상
+        secondary: '#88CACE',  // 중간 색상
+        light: '#DDF1F3'       // 연한 색상
       },
 
       // 양육 스트레스 (Parenting Stress)
       parentingStress: {
-        primary: '#C5ACDF',    // 메인 색상
-        secondary: '#D7D3F0',  // 중간 색상
-        light: '#EBE9F9',      // 연한 색상
-        bright: '#C0BAEA'      // 밝은 강조 색상
+        primary: '#B296D3',    // 메인 색상
+        secondary: '#C5ACDF',  // 중간 색상
+        light: '#EBE9F9'       // 연한 색상
       },
 
       // 양육 과정 (Parenting Process)
       parentingProcess: {
-        primary: '#F0B9C8',    // 메인 색상
-        secondary: '#F6DEE5',  // 중간 색상
-        light: '#FFF0F4',      // 연한 색상
-        bright: '#F2CBD6'      // 밝은 강조 색상
+        primary: '#E89BB0',    // 메인 색상
+        secondary: '#F0B9C8',  // 중간 색상
+        light: '#FFF0F4'       // 연한 색상
       }
     },
   },

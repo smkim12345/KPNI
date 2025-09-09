@@ -31,7 +31,7 @@ export const InterpretationOrderSection = () => {
       {/* 2-1. 신뢰지표 확인/해석 */}
       <Box sx={{
         width: '737.2px',
-        height: '197.4px',
+        height: '260.4px',
         //backgroundColor: 'red',//위치 확인용(지우지말것)
         display: 'flex',
         flexDirection: 'column',
@@ -39,7 +39,7 @@ export const InterpretationOrderSection = () => {
         justifyContent: 'center',
         padding: '0px 13.5px',
         boxSizing: 'border-box',
-        gap: '11px'
+        gap: '8px'
       }}>
         {/* 검사해석 순서 다이어그램 (Redesigned) */}
         <Box
@@ -84,7 +84,7 @@ export const InterpretationOrderSection = () => {
                     sx={{
                       color: 'white',
                       fontSize: `${THEME.typography.fontSize.sm}px`,
-                      fontWeight: THEME.typography.fontWeight.medium,
+                      fontWeight: THEME.typography.fontWeight.normal,
                       fontFamily: THEME.typography.fontFamily.ohsquare,
                       textAlign: 'center',
                       whiteSpace: 'nowrap',
@@ -114,7 +114,7 @@ export const InterpretationOrderSection = () => {
                   <Typography
                     sx={{
                       color: '#333',
-                      fontSize: THEME.typography.fontSize.xxs,
+                      fontSize: THEME.typography.fontSize.xs,
                       fontWeight: 'bold',
                       fontFamily: THEME.typography.fontFamily.ohsquare,
                     }}
@@ -141,7 +141,6 @@ export const InterpretationOrderSection = () => {
         <Box sx={{
           display: 'flex',
           alignSelf: 'stretch',
-          gap: '13.5px',
           padding: '0 13.5px',
         }}>
           <Typography sx={{
@@ -159,33 +158,63 @@ export const InterpretationOrderSection = () => {
         <Box sx={{
           display: 'flex',
           alignSelf: 'stretch',
-          gap: '13.5px',
           padding: '0 13.5px',
         }}>
-          <Typography sx={{
-            fontFamily: THEME.typography.fontFamily.pretendard,
-            fontWeight: THEME.typography.fontWeight.normal,
-            fontSize: `${THEME.typography.fontSize.sm -1.4}px`,
-            lineHeight: 1.375,
-            letterSpacing: '2%',
-            color: THEME.colors.text,
-            flex: 1
-          }}>
-            <span style={{ fontWeight: THEME.typography.fontWeight.semiBold }}>(1) 무응답수</span>
-            {` : 응답하지 않은 문항의 개수가 몇개인지를 확인합니다.('무응답'이 많을수록 결과에 대한 신뢰도가 낮아집니다)`}
-            <br />
-            <span style={{ fontWeight: THEME.typography.fontWeight.semiBold }}>(2) 연속동일반응</span>
-            {` : 연속된 문항에 대해 같은 응답을 지나치게 많이 했는지를 확인합니다. ('아니요' 일때, 신뢰도가 높음)`}
-            <br />
-            <span style={{ fontWeight: THEME.typography.fontWeight.semiBold }}>(3) 반응일관성</span>
-            {` : 유사항 문항들에 대해서 일관된 반응을 보였는지를 확인합니다. ('양호' 일 때, 신뢰도가 높음)`}
-            <br />
-            <span style={{ fontWeight: THEME.typography.fontWeight.semiBold }}>(4) 부주의성</span>
-            {` : 문항을 잘 읽고 의미를 이해하고 응답했는지를 확인합니다. (‘아니오’ 일 때, 신뢰도가 높음)`}
-            <br />
-            <span style={{ fontWeight: THEME.typography.fontWeight.semiBold }}>(5) 사회적 바람직성</span>
-            {` : 검사 문항들에 대해서 과장되거나 방어적인 반응을 보였는지 확인합니다. (‘양호’ 일 때, 신뢰도가 높음)`}
-          </Typography>
+          <Box sx={{ flex: 1 }}>
+            {[
+              {
+                title: '무응답수',
+                description: '전체 문항 중 응답하지 않고 비워둔 항목의 수',
+                noteline: '▷ 5개 이상일 경우, 피검자가 방어적인 태도로 응시했거나 무성의하게 답했을 가능성이 있습니다.'
+              },
+              {
+                title: '연속동일반응',
+                description: '피검자가 연속된 10 문항 이상에서 동일한 응답을 반복해서 선택한 경우',
+                noteline: "▷ '예' 로 표기 될 경우, 검사에 성실하게 응답하지 않았을 가능성이 있습니다."
+              },
+              {
+                title: '반응일관성',
+                description: '피검자가 전체 문항에 대해 논리적이고 일관된 방식으로 응답했는지를 평가하는 지표',
+                noteline: "▷'아니오' 로 표기 될 경우, 앞뒤 문항 간 맥락에 어긋나는 방식으로 응답했을 가능성이 있습니다."
+              },
+              {
+                title: '부주의성',
+                description: '피검자가 문항의 내용을 정확히 읽지 않거나 이해하지 않고, 무성의하게 응답하는 경향',
+                noteline: '▷\'예\' 로 표기 될 경우, 문항을 제대로 읽지 않거나 주의를 기울이지 않고 임의로 응답한 경향이 있음을 의미합니다.'
+              }
+            ].map((item, idx) => (
+              <Box key={idx} sx={{ mb: '8px' }}>
+                <Typography
+                  sx={{
+                    fontFamily: THEME.typography.fontFamily.pretendard,
+                    fontWeight: THEME.typography.fontWeight.normal,
+                    fontSize: `${THEME.typography.fontSize.sm -1.4}px`,
+                    lineHeight: 1.375,
+                    letterSpacing: '2%',
+                    color: THEME.colors.text,
+                    mb: '2px'
+                  }}
+                >
+                  ◎ <strong>{item.title}</strong> : {item.description}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: THEME.typography.fontFamily.pretendard,
+                    fontWeight: THEME.typography.fontWeight.normal,
+                    fontSize: `${THEME.typography.fontSize.sm -1.4}px`,
+                    lineHeight: 1.175,
+                    letterSpacing: '2%',
+                    color: THEME.colors.primaryDark,
+                    ml: 2,
+                    textIndent: '-1.2em',
+                    pl: '2.2em'
+                  }}
+                >
+                  {item.noteline}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
         </Box>
       </Box>
 
@@ -201,7 +230,7 @@ export const InterpretationOrderSection = () => {
           justifyContent: 'center',
           padding: '0px 13.5px',
           boxSizing: 'border-box',
-          gap: '16px',
+          gap: '7px',
           position: 'relative',
         }}
       >
@@ -236,10 +265,10 @@ export const InterpretationOrderSection = () => {
               objectFit: 'contain',
               position: 'absolute',
               right: '13.5px',
-              top: '51.4px',
+              top: '20.4px',
               transform: 'translateY(-50%)',
               pointerEvents: 'none',
-              zIndex: 2,
+              zIndex: -1,
             }}
           />
         </Box>
@@ -268,7 +297,7 @@ export const InterpretationOrderSection = () => {
                   flex: 1,
                   padding: '4.1px',
                   backgroundColor: item.bgColor,
-                  border: '0.7px solid #868686',
+                  border: `0.7px solid ${THEME.colors.border.table}`,
                   borderTopLeftRadius: index === 0 ? '6.8px' : 0,
                   borderTopRightRadius: index === 11 ? '6.8px' : 0,
                 }}
@@ -309,7 +338,7 @@ export const InterpretationOrderSection = () => {
                   flex: 1,
                   padding: '4.1px',
                   backgroundColor: item.bgColor,
-                  border: '0.7px solid #868686',
+                  border: `0.7px solid ${THEME.colors.border.table}`,
                   borderBottomLeftRadius: index === 0 ? '6.8px' : 0,
                   borderBottomRightRadius: index === 11 ? '6.8px' : 0,
                 }}
@@ -344,7 +373,7 @@ export const InterpretationOrderSection = () => {
         justifyContent: 'center',
         padding: '0 13.5px ',
         boxSizing: 'border-box',
-        gap: '13.5px'
+        gap: '7.5px'
       }}>
 
           <SubSectionTitle title="3. 이상적 양육지수 확인" />
@@ -398,7 +427,7 @@ export const InterpretationOrderSection = () => {
                         flex: 1,
                         padding: '4.1px',
                         backgroundColor: header.bgColor,
-                        border: '0.7px solid #868686',
+                        border: `0.7px solid ${THEME.colors.border.table}`,
                         borderTopLeftRadius: index === 0 ? '6.8px' : 0,
                         borderTopRightRadius: index === ipqHeaders.length - 1 ? '6.8px' : 0,
                       }}
@@ -426,7 +455,7 @@ export const InterpretationOrderSection = () => {
                         flex: 1,
                         padding: '4.1px',
                         backgroundColor: '#66A247',
-                        border: '0.7px solid #868686',
+                        border: `0.7px solid ${THEME.colors.border.table}`,
                         borderBottomLeftRadius: rowIndex === ipqData.length - 1 ? '6.8px' : 0,
                       }}
                     >
@@ -449,7 +478,7 @@ export const InterpretationOrderSection = () => {
                         sx={{
                           flex: 1,
                           padding: '4.1px',
-                          border: '0.7px solid #868686',
+                          border: `0.7px solid ${THEME.colors.border.table}`,
                           borderBottomRightRadius:
                             rowIndex === ipqData.length - 1 && colIndex === row.values.length - 1 ? '6.8px' : 0,
                         }}

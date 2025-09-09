@@ -323,18 +323,14 @@ export const SolutionSection = () => {
           {/* 인용구 박스 */}
           <Box sx={{
             position: 'relative',
-            background: `linear-gradient(145deg, ${THEME.colors.mainWhite}, rgba(218, 247, 231, 0.9))`,
+            background: 'rgba(238, 238, 238, 0.9)',
             borderRadius: THEME.borderRadius.sm,
             padding: '8.1px 21.6px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             maxWidth: '202.8px',
-            boxShadow: `
-              0px 5.4px 16.2px rgba(114, 175, 129, 0.4),
-              0px 1.4px 4.1px rgba(0, 0, 0, 0.08),
-              inset 0px 1.4px 0px rgba(255, 255, 255, 0.9)
-            `,
+            border: '2px solid rgba(114, 175, 129, 0.7)'
           }}>
             <Box sx={{
               display: 'flex',
@@ -346,8 +342,8 @@ export const SolutionSection = () => {
               <Typography sx={{
                 fontFamily: THEME.typography.fontFamily.pretendard,
                 fontWeight: 500,
-                fontSize: THEME.typography.fontSize.xs,
-                lineHeight: '1.4em',
+                fontSize: THEME.typography.fontSize.sm,
+                lineHeight: '1.2em',
                 color: '#2D4A32',
                 textAlign: 'center',
                 whiteSpace: 'pre-line',

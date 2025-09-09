@@ -11,7 +11,7 @@ const SCALE_DATA = [
   {
     title: '자녀\n특성',
     bgColor: THEME.colors.scale.childCharacter.primary,
-    brightColor: THEME.colors.scale.childCharacter.bright,
+    brightColor: THEME.colors.scale.childCharacter.secondary,
     subScales: [
       { name: '기질적 예민성', description: '자녀가 감각적·정서적 자극에 얼마나 민감하게 반응하는지 (감각 민감성, 정서적 반응성, 환경 변화에 대한 적응성)' },
       { name: '높은 요구수준', description: '자녀가 부모에게 정서적·신체적·인지적으로 요구하는 정도 (부모 의존도, 돌봄 필요성, 지속적인 관심 요구)' },
@@ -23,7 +23,7 @@ const SCALE_DATA = [
   {
     title: '양육\n태도',
     bgColor: THEME.colors.scale.parentingAttitude.primary,
-    brightColor: THEME.colors.scale.parentingAttitude.bright,
+    brightColor: THEME.colors.scale.parentingAttitude.secondary,
     subScales: [
       { name: '애정표현', description: '부모가 자녀에게 애정을 표현하는 방식과 빈도 (스킨십, 칭찬, 격려, 정서적 교감 등)' },
       { name: '합리적 설명', description: '자녀에게 행동의 이유와 규칙을 논리적으로 설명하는 정도 (논리적 대화, 원인-결과 설명)' },
@@ -35,7 +35,7 @@ const SCALE_DATA = [
   {
     title: '양육\n환경',
     bgColor: THEME.colors.scale.parentingEnvironment.primary,
-    brightColor: THEME.colors.scale.parentingEnvironment.bright,
+    brightColor: THEME.colors.scale.parentingEnvironment.secondary,
     subScales: [
       { name: '부부간 불화', description: '부모 간의 관계에서 발생하는 갈등과 스트레스가 가정환경에 미치는 영향 (부부갈등, 언쟁, 감정적 거리)' },
       { name: '사회적 지원 부족', description: '부모가 양육을 하는 데 있어 외부로부터 지원을 받지 못하는 정도 (배우자 도움 및 가족,친구 지원 부족, 경제적 어려움)' },
@@ -47,7 +47,7 @@ const SCALE_DATA = [
   {
     title: '양육\n스트레스',
     bgColor: THEME.colors.scale.parentingStress.primary,
-    brightColor: THEME.colors.scale.parentingStress.bright,
+    brightColor: THEME.colors.scale.parentingStress.secondary,
     subScales: [
       { name: '역할갈등', description: '부모가 양육 외의 다른 역할(직장인, 배우자, 개인 등)과의 충돌로 인해 스트레스를 느끼는 정도' },
       { name: '양육방식차이', description: '부모가 자녀를 양육하는 과정에서 배우자와의 양육 방식이 다르거나 충돌할 때 경험하는 갈등과 스트레스' },
@@ -59,7 +59,7 @@ const SCALE_DATA = [
   {
     title: '양육\n과정',
     bgColor: THEME.colors.scale.parentingProcess.primary,
-    brightColor: THEME.colors.scale.parentingProcess.bright,
+    brightColor: THEME.colors.scale.parentingProcess.secondary,
     subScales: [
       { name: '양육만족', description: '부모가 자신의 양육 과정에서 느끼는 전반적인 만족감과 보람의 정도' },
       { name: '현가족관계', description: '부모가 현재 배우자 및 자녀와 경험하는 정서적 유대감과 관계의 질' },

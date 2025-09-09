@@ -1,4 +1,5 @@
 // K-PNI 척도 데이터 타입 정의 및 더미 데이터
+import { THEME } from '../components/theme';
 export interface SubScaleData {
   name: string;
   tScore: number;
@@ -100,9 +101,9 @@ export const SCALE_DATA: ScaleCategory[] = [
       }
     ],
     colors: {
-      primary: '#FDB68C',
-      light: '#F9F0DA',
-      secondary: '#FCD9A3'
+      primary: THEME.colors.scale.childCharacter.primary,
+      light: THEME.colors.scale.childCharacter.light,
+      secondary: THEME.colors.scale.childCharacter.secondary
     }
   },
   {
@@ -153,9 +154,9 @@ export const SCALE_DATA: ScaleCategory[] = [
       }
     ],
     colors: {
-      primary: '#A9CEF4',
-      light: '#E9F4FF',
-      secondary: '#C9E0F8'
+      primary: THEME.colors.scale.parentingAttitude.primary,
+      light: THEME.colors.scale.parentingAttitude.light,
+      secondary: THEME.colors.scale.parentingAttitude.secondary
     }
   },
   {
@@ -206,9 +207,9 @@ export const SCALE_DATA: ScaleCategory[] = [
       }
     ],
     colors: {
-      primary: '#88CACE',
-      light: '#DDF1F3',
-      secondary: '#BCEBEE'
+      primary: THEME.colors.scale.parentingEnvironment.primary,
+      light: THEME.colors.scale.parentingEnvironment.light,
+      secondary: THEME.colors.scale.parentingEnvironment.secondary
     }
   },
   {
@@ -259,9 +260,9 @@ export const SCALE_DATA: ScaleCategory[] = [
       }
     ],
     colors: {
-      primary: '#D0AFF2',
-      light: '#EBE9F9',
-      secondary: '#D7D3F0'
+      primary: THEME.colors.scale.parentingStress.primary,
+      light: THEME.colors.scale.parentingStress.light,
+      secondary: THEME.colors.scale.parentingStress.secondary
     }
   },
   {
@@ -312,9 +313,9 @@ export const SCALE_DATA: ScaleCategory[] = [
       }
     ],
     colors: {
-      primary: '#F0C0CD',
-      light: '#FFF0F4',
-      secondary: '#F6DEE5'
+      primary: THEME.colors.scale.parentingProcess.primary,
+      light: THEME.colors.scale.parentingProcess.light,
+      secondary: THEME.colors.scale.parentingProcess.secondary
     }
   }
 ];
