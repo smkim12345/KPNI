@@ -225,7 +225,7 @@ export const InterpretationOrderSection = () => {
             {` T점수는 원점수를 평균 50, 표준편차 10인 정규분포로 변환한 값으로, 비교와 해석을 쉽게 하기 위해 사용됩니다. Z점수를 기반으로 변환되며, T=50은 50%, T=60은 약 84%, T=40은 약 16% 백분위를 의미합니다. 심리검사, 교육평가, 연구 등에서 데이터 분석과 비교를 위해 널리 활용됩니다.`}
           </Typography>
           <img
-            src={'/src/images/3-7.png'}
+            src={'/src/images/2_tscore.jpg'}
             alt="T점수 그래프"
             style={{
               width: '216.3px',

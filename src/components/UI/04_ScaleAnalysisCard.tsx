@@ -139,7 +139,7 @@ export const ScaleAnalysisCard = ({
               borderBottom: `0.9px solid ${borderColor}`,
               borderRight: `0.9px solid ${borderColor}`,
               padding: '2.7px 3px',
-              fontFamily: 'Pretendard Variable',
+              fontFamily: THEME.typography.fontFamily.pretendard,
               fontSize: `${THEME.typography.fontSize.xs-0.1}px`,
               lineHeight: '1em',
               //backgroundColor: 'blue'

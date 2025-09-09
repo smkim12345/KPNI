@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { THEME } from '../theme';
-import familyImage from '../../images/1_family.png';
+import familyImage from '../../images/1_family.jpg';
 import { SectionTitleBox } from '../UI/B_SectionTitle';
 
 /**
