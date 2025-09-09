@@ -1,0 +1,69 @@
+/* K-PNI A3 프로젝트 폰트 정의 */
+
+/* Cafe24 Moyamoya */
+@font-face {
+  font-family: 'Cafe24 Moyamoya OTF';
+  src: url('./Cafe24Moyamoya-Regular-v1.0.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cafe24 Ohsquare */
+@font-face {
+  font-family: 'Cafe24 Ohsquare';
+  src: url('./Cafe24Ohsquare-v2.0.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cafe24 Ohsquare Air */
+@font-face {
+  font-family: 'Cafe24 Ohsquare air';
+  src: url('./Cafe24OhsquareAir-v2.0.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Pretendard Static Fonts */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./Pretendard-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./Pretendard-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
