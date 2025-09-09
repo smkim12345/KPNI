@@ -82,8 +82,7 @@ export const THEME = {
       huge: 64.9
     },
     fontFamily: {
-      moyamoya: 'Cafe24 Moyamoya OTF',
-      ohsquare: 'Cafe24 Ohsquare',
+      ohsquare: 'Pretendard', // Cafe24 Ohsquare → Pretendard ExtraBold로 대체
       ohsquareAir: 'Cafe24 Ohsquare air',
       pretendard: 'Pretendard'
     },

@@ -43,11 +43,12 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
         
         {/* K-PNI */}
         <Typography sx={{
-          fontFamily: THEME.typography.fontFamily.moyamoya,
+          fontFamily: THEME.typography.fontFamily.pretendard,
           fontWeight: THEME.typography.fontWeight.extraBold,
           fontSize: `${THEME.typography.fontSize.huge - 5.4}px`,
           lineHeight: THEME.typography.lineHeight.tight,
           color: THEME.colors.mainWhite,
+          letterSpacing: '0.05em', // 자간 늘림
         }}>
           K-PNI
         </Typography>
@@ -154,7 +155,7 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
           {/* 제목 */}
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.ohsquare,
-            fontWeight: THEME.typography.fontWeight.normal,
+            fontWeight: THEME.typography.fontWeight.extraBold, // Pretendard ExtraBold 적용
             fontSize: '18.9px',
             lineHeight: '1.268em',
             textAlign: 'center',
@@ -167,7 +168,7 @@ export const InfoSection = ({ participant }: InfoSectionProps) => {
           {/* 인용문 */}
           <Typography sx={{
             fontFamily: THEME.typography.fontFamily.ohsquare,
-            fontWeight: THEME.typography.fontWeight.normal,
+            fontWeight: THEME.typography.fontWeight.extraBold, // Pretendard ExtraBold 적용
             fontSize: '13.5px',
             lineHeight: '1.268em',
             textAlign: 'center',

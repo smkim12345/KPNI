@@ -22,7 +22,7 @@ export const SectionTitleBox = ({ title }: SectionTitleBoxProps) => {
     }}>
       <Typography sx={{
         fontFamily: THEME.typography.fontFamily.ohsquare,
-        fontWeight: THEME.typography.fontWeight.normal,
+        fontWeight: THEME.typography.fontWeight.extraBold, // Pretendard ExtraBold 적용
         fontSize: '17.6px',
         lineHeight: 2.03,
         color: THEME.colors.mainWhite,

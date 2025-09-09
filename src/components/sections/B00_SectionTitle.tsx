@@ -26,9 +26,9 @@ export const BackTitleSection = () => {
         //backgroundColor: 'rgba(255, 255, 255, 0.1)',
       }}>
         <Typography sx={{
-          fontFamily: THEME.typography.fontFamily.moyamoya,
+          fontFamily: THEME.typography.fontFamily.pretendard,
           fontWeight: THEME.typography.fontWeight.extraBold,
-          fontSize: '74.4px',
+          fontSize: '80.4px',
           lineHeight: 1,
           textAlign: 'top',
           color: THEME.colors.white,
@@ -51,12 +51,12 @@ export const BackTitleSection = () => {
         {/* 부모양육종합검사 */}
         <Typography sx={{
           fontFamily: THEME.typography.fontFamily.ohsquare,
-          fontWeight: THEME.typography.fontWeight.normal,
+          fontWeight: THEME.typography.fontWeight.extraBold, // Pretendard ExtraBold 적용
           fontSize: '39.2px',
-          lineHeight: 1.4,
+          lineHeight: 1.2,
           textAlign: 'left',
           color: THEME.colors.white,
-          letterSpacing: '0.01em', // 자간 늘림
+          letterSpacing: '0.02em', // 자간 늘림
           //backgroundColor: 'rgba(255, 255, 255, 0.1)',
         }}>
           부모양육종합검사

@@ -14,7 +14,7 @@ export const SubSectionTitle = ({ title }: SubSectionTitleProps) => {
     <Box>
       <Typography sx={{
         fontFamily: THEME.typography.fontFamily.ohsquare,
-        fontWeight: THEME.typography.fontWeight.normal,
+        fontWeight: THEME.typography.fontWeight.extraBold, // Pretendard ExtraBold 적용
         fontSize: '14.9px',
         lineHeight: '1.11em',
         color: '#274E13',

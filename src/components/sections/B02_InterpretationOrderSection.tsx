@@ -85,7 +85,7 @@ export const InterpretationOrderSection = () => {
                     sx={{
                       color: 'white',
                       fontSize: `${THEME.typography.fontSize.sm}px`,
-                      fontWeight: THEME.typography.fontWeight.normal,
+                      fontWeight: THEME.typography.fontWeight.extraBold, // Pretendard ExtraBold 적용
                       fontFamily: THEME.typography.fontFamily.ohsquare,
                       textAlign: 'center',
                       whiteSpace: 'nowrap',
@@ -116,7 +116,7 @@ export const InterpretationOrderSection = () => {
                     sx={{
                       color: '#333',
                       fontSize: THEME.typography.fontSize.xs,
-                      fontWeight: 'bold',
+                      fontWeight: THEME.typography.fontWeight.extraBold, // Pretendard ExtraBold 적용
                       fontFamily: THEME.typography.fontFamily.ohsquare,
                     }}
                   >

@@ -129,7 +129,7 @@ export const ScaleOpinionSection = () => {
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.ohsquare,
-              fontWeight: THEME.typography.fontWeight.light,
+              fontWeight: THEME.typography.fontWeight.extraBold, // Pretendard ExtraBold 적용
               fontSize: `${THEME.typography.fontSize.md}px`,
               lineHeight: THEME.typography.lineHeight.normal,
               color: '#FBFBFB',
@@ -156,7 +156,7 @@ export const ScaleOpinionSection = () => {
                 key={subIndex}
                 sx={{
                   width: '90.6px',
-                  height: '16.2px',
+                  height: '18px',
                   backgroundColor: scale.brightColor,
                   borderRadius: `${THEME.borderRadius.xs}px 0 0 ${THEME.borderRadius.xs}px`,
                   display: 'flex',
@@ -193,8 +193,8 @@ export const ScaleOpinionSection = () => {
                 key={subIndex}
                 sx={{
                   width: '531.3px',
-                  height: '16.2px',
-                  border: `1px solid ${scale.brightColor}`,
+                  height: '18px',
+                  border: `0.5px solid ${scale.brightColor}`,
                   borderRadius: `0 ${THEME.borderRadius.xs}px ${THEME.borderRadius.xs}px 0`,
                   display: 'flex',
                   alignItems: 'center',
@@ -205,7 +205,7 @@ export const ScaleOpinionSection = () => {
               >
                 <Typography sx={{
                   fontFamily: THEME.typography.fontFamily.pretendard,
-                  fontWeight: THEME.typography.fontWeight.normal,
+                  fontWeight: THEME.typography.fontWeight.light,
                   fontSize: '10.8px',
                   lineHeight: THEME.typography.lineHeight.normal,
                   color: THEME.colors.text,

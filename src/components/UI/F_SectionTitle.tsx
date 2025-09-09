@@ -31,11 +31,11 @@ export const SectionTitle = ({ sectionNumber, title, description }: SectionTitle
         flexShrink: 0
       }}>
         <Typography sx={{
-          fontFamily: THEME.typography.fontFamily.ohsquare,
-          fontWeight: 700,
-          fontSize: '10.8px',
+          fontFamily: THEME.typography.fontFamily.pretendard,
+          fontWeight: THEME.typography.fontWeight.extraBold, // Pretendard ExtraBold 적용
+          fontSize: '15px',
           color: THEME.colors.white,
-          lineHeight: 1
+          lineHeight: 1.2
         }}>
           {sectionNumber}
         </Typography>
@@ -43,8 +43,8 @@ export const SectionTitle = ({ sectionNumber, title, description }: SectionTitle
 
       {/* 제목 텍스트 */}
       <Typography sx={{
-        fontFamily: THEME.typography.fontFamily.ohsquare,
-        fontWeight: THEME.typography.fontWeight.light,
+        fontFamily: THEME.typography.fontFamily.pretendard,
+        fontWeight: THEME.typography.fontWeight.extraBold,
         fontSize: `${THEME.typography.fontSize.xl}px`,
         lineHeight: THEME.typography.lineHeight.normal,
         color: THEME.colors.text,
