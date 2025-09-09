@@ -21,7 +21,7 @@ interface SectionDescriptionProps {
 // --- 헬퍼 함수 ---
 const getFontWeight = (weight: TextItem['fontWeight']) => {
   return weight === 'normal'
-    ? THEME.typography.fontWeight.normal
+    ? THEME.typography.fontWeight.light
     : THEME.typography.fontWeight.semiBold;
 };
 

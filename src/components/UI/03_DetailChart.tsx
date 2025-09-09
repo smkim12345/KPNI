@@ -66,12 +66,12 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           {categoryName.split('\n').map((line, index) => (
             <Typography key={index} sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
-              fontWeight: THEME.typography.fontWeight.bold,
-              fontSize: `${THEME.typography.fontSize.xs}px`,
+              fontWeight: THEME.typography.fontWeight.semiBold,
+              fontSize: `${THEME.typography.fontSize.sm}px`,
               lineHeight: THEME.typography.lineHeight.normal,
               color: THEME.colors.mainWhite,
               textAlign: 'center',
-              whiteSpace: 'nowrap'
+              padding: '0 13.5px'
             }}>
               {line}
             </Typography>
@@ -194,7 +194,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           }}>
             <Typography sx={{
               fontFamily: THEME.typography.fontFamily.pretendard,
-              fontWeight: THEME.typography.fontWeight.semiBold,
+              fontWeight: THEME.typography.fontWeight.medium,
               fontSize: `${THEME.typography.fontSize.xs}px`,
               lineHeight: THEME.typography.lineHeight.tight,
               color: THEME.colors.text
@@ -239,7 +239,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
               width: '0.4px',
               height: '100%',
               backgroundColor: index === 3 ? THEME.colors.border.medium : 'transparent',
-              borderRight: index === 0 ? 'none' : (index === 3 ? `0.7px solid ${THEME.colors.border.medium}` : `0.4px dashed ${THEME.colors.border.medium}`),
+              borderRight: index === 0 ? 'none' : (index === 3 ? `0.1px solid ${THEME.colors.border.light}` : `0.1px dashed ${THEME.colors.border.light}`),
               opacity: 0.65
             }} />
           ))}
@@ -259,7 +259,7 @@ export const DetailChart = ({ categoryName, categoryColor, data, isLast = false 
           {data.map((_, index) => (
             <Box key={index} sx={{
               height: `${itemHeight}px`,
-              borderBottom: index < data.length - 1 ? `0.4px dashed ${THEME.colors.border.medium}` : 'none',
+              borderBottom: index < data.length - 1 ? `0.1px dashed ${THEME.colors.border.light}` : 'none',
               boxSizing: 'border-box'
             }} />
           ))}

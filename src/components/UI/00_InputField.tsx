@@ -19,7 +19,7 @@ export const InputField = ({ label, value }: InputFieldProps) => {
         bottom: 0.5,
         left: 0,
         width: '147.4px',
-        height: '0.7px',
+        height: '0.2px',
         backgroundColor: THEME.colors.text,
       }} />
 

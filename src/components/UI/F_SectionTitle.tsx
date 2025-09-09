@@ -44,7 +44,7 @@ export const SectionTitle = ({ sectionNumber, title, description }: SectionTitle
       {/* 제목 텍스트 */}
       <Typography sx={{
         fontFamily: THEME.typography.fontFamily.ohsquare,
-        fontWeight: 400,
+        fontWeight: THEME.typography.fontWeight.light,
         fontSize: `${THEME.typography.fontSize.xl}px`,
         lineHeight: THEME.typography.lineHeight.normal,
         color: THEME.colors.text,

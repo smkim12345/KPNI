@@ -100,7 +100,7 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
           
           {/* 왼쪽 메인 섹션 (1,2,3번 섹션들) */}
           <Box sx={{
-            width: `${488 * 1.352}px`,    // 659.776px
+            width: `${484 * 1.352}px`,    // 659.776px
             height: `${787 * 1.352}px`,   // 1064.424px
             display: 'flex',
             flexDirection: 'column',
