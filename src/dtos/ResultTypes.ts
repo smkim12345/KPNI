@@ -55,6 +55,23 @@ export interface KPNIParticipantResponse {
   childAge: number;                // 자녀연령
 }
 
+// GST 호환: 참조 지표 타입 (필요 필드 최소 정의)
+export interface ReferenceIndicator {
+  name: string;
+  value: string | number;
+  level?: string;
+  description?: string;
+}
+
+// GST 호환: 종합 지수(Assessment Index) 타입 (필요 필드 최소 정의)
+export interface AssessmentIndex {
+  id: string;
+  name: string;
+  score: number;
+  percentile?: number;
+  level?: string;
+}
+
 // 신뢰도 지표 (GST와 동일)
 export interface TrustIndicator {
   name: string;
@@ -103,6 +120,14 @@ export interface KPNIResultData {
   strength: SubScaleResult[];
   weakness: SubScaleResult[];
   
+  // GST 추가 필드 (선택)
+  referenceIndicators?: ReferenceIndicator[];
+  referenceScales?: SubScaleResult[];
+  assessmentIndices?: AssessmentIndex[];
+  trustIndicatorKeys?: string[];
+  typology?: object;
+  similarity?: SubScaleResult[];
+  
   // KPNI 고유 (타입 구체화)
   scaleInterpretations?: ScaleInterpretation[];
   executionType?: string;
@@ -113,6 +138,15 @@ export interface KPNIResultResponse {
   resultData: KPNIResultData;
   template: TemplateResponse;
   participant: KPNIParticipantResponse;
+}
+
+// GST 호환 별칭 타입들 (마이그레이션 용이성 확보)
+export type ResultData = KPNIResultData;
+export interface ResultResponse {
+  resultData: ResultData;
+  template: TemplateResponse;
+  participant: KPNIParticipantResponse;
+  owner?: unknown; // GST 프로젝트에서는 OwnerResponse 포함
 }
 
 // 결과 페이지 Props (Owner 제외)
