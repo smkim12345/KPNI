@@ -19,8 +19,8 @@ import { PdfDownloadButton } from './print/PdfDownloadButton';
 
 // 초록색 외곽 테두리 두께 조절 용
 const OuterGreenBox = styled(Box)({
-  width: `${1610.232 * 1.352}px`,   // 2177.834px
-  height: `${1145.144 * 1.352}px`,  // 1548.515px
+  width: '1610.2px',
+  height: '1144.9px',
   backgroundColor: THEME.colors.primary,
   display: 'flex',
   justifyContent: 'center',
@@ -29,8 +29,8 @@ const OuterGreenBox = styled(Box)({
 
 const FrameBox = styled(Box)({
   position: 'relative',
-  width: `${1610.232 * 1.352}px`,   // 2177.834px
-  height: `${1145.144 * 1.352}px`,  // 1548.515px
+  width: '1610.2px',
+  height: '1144.9px',
   backgroundColor: THEME.colors.primary,
 });
 
@@ -38,10 +38,10 @@ const CornerBox = styled(Box)({
   position: 'absolute',
   top: 0,
   left: 0,
-  width: `${185 * 1.352}px`,      // 250.12px
-  height: `${403 * 1.352}px`,     // 544.856px
+  width: '250.1px',
+  height: '544.9px',
   backgroundColor: THEME.colors.primary,
-  borderRadius: `0px 0px ${52 * 1.352}px 0px`, // 70.304px
+  borderRadius: `0px 0px 70.3px 0px`,
   zIndex: 1,
 });
 
@@ -58,10 +58,10 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
           {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 */}
           <Box sx={{
             position: 'absolute',
-            left: `${100 * 1.352}px`,      // 40.56px
-            top: `${349 * 1.352}px`,      // 471.848px
-            width: `${85 * 1.352}px`,    // 209.56px
-            height: `${56 * 1.352}px`,    // 94.64px
+            left: '135.2px',
+            top: '471.8px',
+            width: '114.9px',
+            height: '75.7px',
             backgroundColor: THEME.colors.lightGray,
             zIndex: 1.5
           }} />
@@ -69,62 +69,62 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
           {/* 메인 흰 배경 */}
           <Box sx={{
             position: 'absolute',
-            left: `${185 * 1.352}px`,     // 250.12px
-            top: `${30 * 1.352}px`,       // 40.56px
-            width: `${976 * 1.352}px`,    // 1319.552px
-            height: `${787 * 1.352}px`,   // 1064.424px
+            left: '250.1px',
+            top: '40.6px',
+            width: '1319.6px',
+            height: '1064.4px',
             backgroundColor: THEME.colors.background,
-            borderRadius: `${15 * 1.352}px ${15 * 1.352}px ${15 * 1.352}px 0px`, // 20.28px
+            borderRadius: '20.3px 20.3px 20.3px 0px',
             zIndex: 2
           }} />
 
           {/* 3개 메인 섹션 레이아웃 */}
           <Box sx={{
             position: 'absolute',
-            left: `${30 * 1.352}px`,      // 40.56px
-            top: `${30 * 1.352}px`,       // 40.56px
+            left: '40.6px',
+            top: '40.6px',
             display: 'flex',
-            height: `${787 * 1.352}px`,   // 1064.424px
+            height: '1064.4px',
             zIndex: 3,
             //backgroundColor: 'rgb(245, 245, 245,0.8)',
           }}>
 
           {/* 좌측 정보 섹션 */}
           <Box sx={{
-            width: `${155 * 1.352}px`,    // 209.56px
-            height: `${787 * 1.352}px`,   // 1064.424px
+            width: '209.6px',
+            height: '1064.4px',
             boxSizing: 'border-box',
             //backgroundColor: 'rgb(245, 245, 245,0.5)',
           }}>
             <InfoSection participant={resultResponse?.participant} />
           </Box>
-          
+
           {/* 왼쪽 메인 섹션 (1,2,3번 섹션들) */}
           <Box sx={{
-            width: `${484 * 1.352}px`,    // 659.776px
-            height: `${787 * 1.352}px`,   // 1064.424px
+            width: '654.4px',
+            height: '1064.4px',
             display: 'flex',
             flexDirection: 'column',
             //backgroundColor: 'rgb(245, 245, 245,0.5)',
             boxSizing: 'border-box',
-            padding: `${10 * 1.352}px 0px ${10 * 1.352}px ${10 * 1.352}px` // 13.52px
+            padding: '13.5px 0px 13.5px 13.5px'
           }}>
             <ReliabilitySection trustIndicators={resultResponse?.resultData?.trustIndicators} />
             <ProfileSection parentScales={resultResponse?.resultData?.parentScales} />
             <DetailSection subScales={resultResponse?.resultData?.subScales} />
           </Box>
-          
+
           {/* 오른쪽 메인 섹션 (4번 섹션) */}
           <Box sx={{
-            width: `${488 * 1.352}px`,    // 659.776px
-            height: `${787 * 1.352}px`,   // 1064.424px
+            width: '659.8px',
+            height: '1064.4px',
             display: 'flex',
             flexDirection: 'column',
             //backgroundColor: 'rgb(230, 255, 230,0.8)',
             boxSizing: 'border-box',
-            padding: `${10 * 1.352}px 0 ${10 * 1.352}px ${10 * 1.352}px` // 13.52px
+            padding: '13.5px 0 13.5px 13.5px'
           }}>
-            <ScaleSection 
+            <ScaleSection
               parentScales={resultResponse?.resultData?.parentScales}
               scaleInterpretations={resultResponse?.resultData?.scaleInterpretations}
             />
@@ -146,24 +146,24 @@ const KPNIBackPage = () => {
           {/* 왼쪽 흰색 배경 */}
           <Box sx={{
             position: 'absolute',
-            left: `${30 * 1.352}px`,     // 40.56px
-            top: `${101 * 1.352}px`,     // 136.552px
-            width: `${433 * 1.352}px`,   // 584.064px
-            height: `${716 * 1.352}px`,  // 968.032px
+            left: '40.6px',
+            top: '136.6px',
+            width: '585.4px',
+            height: '968.0px',
             backgroundColor: THEME.colors.background,
-            borderRadius: `${15 * 1.352}px 0px 0px ${15 * 1.352}px`, // 20.28px
+            borderRadius: '20.3px 0px 0px 20.3px',
             zIndex: 2
           }} />
 
           {/* 오른쪽 흰색 배경 */}
           <Box sx={{
             position: 'absolute',
-            left: `${462 * 1.352}px`,    // 624.624px
-            top: `${30 * 1.352}px`,      // 40.56px
-            width: `${699 * 1.352}px`,   // 945.048px
-            height: `${787 * 1.352}px`,  // 1064.424px
+            left: '624.6px',
+            top: '40.6px',
+            width: '945.0px',
+            height: '1064.4px',
             backgroundColor: THEME.colors.background,
-            borderRadius: `${15 * 1.352}px ${15 * 1.352}px ${15 * 1.352}px 0px`, // 20.28px
+            borderRadius: '20.3px 20.3px 20.3px 0px',
             zIndex: 2
           }} />
 
@@ -172,10 +172,10 @@ const KPNIBackPage = () => {
             position: 'absolute',
             left: '0px',
             top: '0px',
-            width: `${462 * 1.352}px`,   // 624.624px
-            height: `${101 * 1.352}px`,  // 136.552px
+            width: '624.6px',
+            height: '136.6px',
             backgroundColor: THEME.colors.primary,
-            borderRadius: `0 0 ${15 * 1.352}px 0`, // 20.28px
+            borderRadius: `0 0 20.3px 0`,
             zIndex: 1
           }} />
 
@@ -184,8 +184,8 @@ const KPNIBackPage = () => {
             position: 'absolute',
             left: '590px',
             top: '100px',
-            width: `${50 * 1.352}px`,   // 624.624px
-            height: `${51 * 1.352}px`,  // 136.552px
+            width: '67.6px',
+            height: '69.0px',
             backgroundColor: THEME.colors.background,
             zIndex: 1.5
           }} />
@@ -193,12 +193,12 @@ const KPNIBackPage = () => {
           {/* 왼쪽 + 오른쪽 + 푸터 레이아웃 */}
           <Box sx={{
             position: 'absolute',
-            left: `${30 * 1.352}px`,     // 40.56px
-            top: `${30 * 1.352}px`,      // 40.56px
+            left: '40.6px',
+            top: '40.6px',
             display: 'flex',
             flexDirection: 'column',
-            width: `${1131 * 1.352}px`,  // 1530.112px
-            height: `${787 * 1.352}px`,  // 1064.424px
+            width: '1528.7px',
+            height: '1064.4px',
             zIndex: 3,
             //backgroundColor: 'rgb(24, 245, 245,0.4)',
           }}>
@@ -208,13 +208,13 @@ const KPNIBackPage = () => {
               display: 'flex',
               flexDirection: 'row',
               width: '100%',
-              height: `${787 * 1.352 -70}px`,
+              height: '994.4px',
               //backgroundColor: 'rgb(24, 245, 25,0.4)',
             }}>
               {/* 왼쪽 메인 섹션(제목, 2-1, 2-2, 2-3번) */}
                 <Box sx={{
-                  width: `${565 * 1.352}px`,   // 763.88px
-                  height: `${787 * 1.352 -70}px`,  // 1064.424px
+                  width: '763.9px',
+                  height: '994.4px',
                   display: 'flex',
                   flexDirection: 'column',
                   boxSizing: 'border-box',
@@ -224,11 +224,11 @@ const KPNIBackPage = () => {
                   <TestDescriptionSection/>
                   <InterpretationOrderSection/>
                 </Box>
-                
+
                 {/* 오른쪽 메인 섹션(2-4번, 3번) */}
                 <Box sx={{
-                  width: `${565 * 1.352}px`,   // 763.88px
-                  height: `${787 * 1.352 - 70}px`,  // 1064.424px
+                  width: '763.9px',
+                  height: '994.4px',
                   display: 'flex',
                   flexDirection: 'column',
                   //backgroundColor: 'rgb(245, 245, 25,0.5)',
