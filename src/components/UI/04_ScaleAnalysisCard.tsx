@@ -8,13 +8,7 @@ interface ScaleResultData {
   level: string;
 }
 
-interface SubScaleData {
-  name: string;
-  tScore: number;
-  percentile: string;
-  level: string;
-  interpretation: string;
-}
+import type { SubScaleData } from '../../data/mockData';
 
 interface ScaleAnalysisCardProps {
   title: string;
