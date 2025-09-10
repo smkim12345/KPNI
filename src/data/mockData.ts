@@ -1,5 +1,9 @@
 // K-PNI 척도 데이터 타입 정의 및 더미 데이터
 import { THEME } from '../components/theme';
+
+/**
+ * 하위 척도 데이터 인터페이스
+ */
 export interface SubScaleData {
   name: string;
   tScore: number;
@@ -8,6 +12,9 @@ export interface SubScaleData {
   interpretation: string;
 }
 
+/**
+ * 척도 카테고리 인터페이스
+ */
 export interface ScaleCategory {
   id: string;
   title: string;
@@ -26,7 +33,9 @@ export interface ScaleCategory {
   };
 }
 
-// 종합 지수 데이터 타입
+/**
+ * 종합 지수 데이터 인터페이스
+ */
 export interface CompositeIndexData {
   indexScore: number;
   percentile: number;
@@ -34,7 +43,9 @@ export interface CompositeIndexData {
   interpretation: string;
 }
 
-// 백엔드 연동을 위한 API 응답 타입
+/**
+ * 백엔드 API 응답 인터페이스
+ */
 export interface KPNITestResult {
   testId: string;
   userId: string;

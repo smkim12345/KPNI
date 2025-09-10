@@ -12,7 +12,7 @@ export interface BaseSection {
 }
 
 // 섹션 Props 공통 인터페이스
-export interface SectionProps<T = any> {
+export interface SectionProps<T = Record<string, unknown>> {
   data: T;
   theme?: typeof import('../components/theme').THEME;
 }
