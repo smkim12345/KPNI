@@ -72,14 +72,14 @@ export const THEME = {
   },
   typography: {
     fontSize: {
-      xxs: 8.1,
-      xs: 9.5,
-      sm: 12.2, 
-      md: 14.9, 
-      lg: 17.6, 
-      xl: 20.3,
-      xxl: 27.0,
-      huge: 64.9
+      xxs: 8, 
+      xs: 9,
+      sm: 12,   
+      md: 14, 
+      lg: 17, 
+      xl: 20,
+      xxl: 27,
+      huge: 64
     },
     fontFamily: {
       ohsquare: 'Pretendard', // Cafe24 Ohsquare → Pretendard ExtraBold로 대체
@@ -100,36 +100,18 @@ export const THEME = {
     }
   },
   spacing: {
-    xs: 4.1,
-    sm: 5.4,
-    md: 10.8,
-    lg: 21.6,
-    xl: 32.4,
-    xxl: 43.3,
+    xs: 4,
+    sm: 5,
+    md: 10,
+    lg: 21,
+    xl: 32,
+    xxl: 43,
   },
   borderRadius: {
-    xs: 5.4,
-    sm: 20.3,
-    md: 27.0,
-    lg: 33.8
-  },
-  layout: {
-    a3: {
-      pageBackground: '#f5f5f5',
-    },
-  },
-
-  // 차트 관련 상수
-  chart: {
-    scaleValues: [20, 30, 40, 50, 60, 70, 80],
-    averageRange: {
-      min: 40,
-      max: 60
-    },
-    tScoreRange: {
-      min: 20,
-      max: 80
-    }
+    xs: 5,
+    sm: 20,
+    md: 27,
+    lg: 33
   },
 
   // B섹션 설명글 공통 스타일
