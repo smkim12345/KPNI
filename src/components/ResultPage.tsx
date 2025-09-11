@@ -55,7 +55,7 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
           {/* 좌상단 둥근 모서리 */}
           <CornerBox />
 
-          {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용 */}
+          {/* 바깥테두리 하단 박스 - 둥근모서리 채우기용_fillbox*/}
           <Box sx={{
             position: 'absolute',
             left: '135.2px',
@@ -66,7 +66,7 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
             zIndex: 1.5
           }} />
 
-          {/* 메인 흰 배경 */}
+          {/* 메인 흰 배경_whiteback */}
           <Box sx={{
             position: 'absolute',
             left: '250.1px',
@@ -78,7 +78,7 @@ const FrontPage = ({ resultResponse }: ResultPageProps) => {
             zIndex: 2
           }} />
 
-          {/* 3개 메인 섹션 레이아웃 */}
+          {/* 3개 메인 섹션 레이아웃_sectionbox*/}
           <Box sx={{
             position: 'absolute',
             left: '40.6px',
